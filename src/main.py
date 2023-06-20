@@ -3,6 +3,8 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import pandas as pd
+import functions as f
+import argparse
 
 """
 Test functions are available in https://www.sfu.ca/~ssurjano/optimization.html
@@ -79,7 +81,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return alpha
     
     def evalute_hdmr(x, f0, alpha):
-        N, n = x.shape  
+        N, n = x.shape
         m, _ = alpha.shape
         y = f0 * np.ones((N,1))
         for r in range(m):  
@@ -134,13 +136,14 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
 
             axs[jj-1, 0].legend()
             axs[jj-1, 1].legend()
-
         plt.subplots_adjust(hspace=0.6, wspace=0.3)
-        plt.savefig('results/scatter_plot.png') 
+        plt.savefig(file_name + '.png') 
 
 
     xs = (b-a)*np.random.random((N,n))+a # Generate sampling data
+    print('XS: ', xs.shape)
     alpha = calculate_alpha_coeff(xs)
+    print("Alpha: ", alpha)
     plot_results()
     temp_status = []
     for i in range(n):
@@ -151,18 +154,56 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
 
     return result
 
+parser = argparse.ArgumentParser(
+                    prog='HDMR',
+                    description='Program applies the hdmr-opt method and plots the results.')
+parser.add_argument('num_of_samples', type=int, help='Number of samples to calculate alpha coefficients.')
+parser.add_argument('num_of_variable', type=int, help='Number of variable of the test function.')
+parser.add_argument('function_name', help='Test function name.')
+parser.add_argument('min', type=int, help='Lower range of the test function.')
+parser.add_argument('max', type=int, help='Upper range of the test function.')
+parser.add_argument('-m', type=int, default=7, help='Number of legendre polynomial. Default is 7.')
+parser.add_argument('--random_init', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
 
+global_args = parser.parse_args()
 
 if __name__ == "__main__":
 
-    N = 50_000 # Number of samples to calculate alpha coefficients
-    n = 3 # Number of variable
-    m = 13 # Degree of the Legendre polynomial
-    a= -7 # Range of the function
-    b=7 # Range of the function
-    x0 = np.array([0.9, 0.3, 0.6]) # Initial value of function for optimizing process
-    status = minimize(rastrigin, x0, method="BFGS") # Applying direct optimization method to the function
-    print(status)
+    # N = 100 # Number of samples to calculate alpha coefficients
+    # n = 2 # Number of variable
+    # m = 7 # Degree of the Legendre polynomial
+    # a = -5 # Range of the function
+    # b = 5 # Range of the function
+    print('Args: ', global_args)
 
-    status = minimize(rastrigin, x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
-    print(status)
+    N = global_args.num_of_samples # Number of samples to calculate alpha coefficients
+    n = global_args.num_of_variable # Number of variable
+    test_function = getattr(f, global_args.function_name)
+    m = global_args.m # Degree of the Legendre polynomial
+    a = global_args.min # Range of the function
+    b = global_args.max # Range of the function
+
+    file_name = f"results/{global_args.function_name}_a{a}_b{b}_N{N}_m{m}"
+    
+    if not global_args.random_init:
+        if global_args.function_name.split('_')[1] == '2d':
+            x0 = np.array([0.0, 0.0]) # Initial value of function for optimizing process
+        elif global_args.function_name.split('_')[1] == '10d':
+            x0 = np.zeros((10,))
+    else:
+        file_name += '_randomInit'
+        if global_args.function_name.split('_')[1] == '2d':
+            x0 = np.random.rand(2) * (b - a) + a # Initial value of function for optimizing process
+        elif global_args.function_name.split('_')[1] == '10d':
+            x0 = np.random.rand(10) * (b - a) + a
+
+    status_bfgs = minimize(test_function, x0, method="BFGS") # Applying direct optimization method to the function
+    print(f"BFGS status: {status_bfgs}")
+
+    status_hdmr = minimize(test_function, x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
+    print(f"hdmr_opt status: {status_hdmr}")
+
+    with open(file_name + '.txt', 'w') as f:
+        f.write("BFGS Status\n" + str(status_bfgs) + "\n\n")
+        f.write("HDMR Status\n" + str(status_hdmr))
+    f.close()
