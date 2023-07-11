@@ -149,5 +149,4 @@ if __name__ == "__main__":
     ax.set_ylabel('x2')
     ax.set_zlabel('y')
     plt.show()
-
     

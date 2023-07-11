@@ -17,7 +17,7 @@ Example script: `python src/functions.py camel3_2d`
 
 ### Module: `main.py`
 
-`main.py` computes the global minimum points of given function with parameters. The outputs are status reports and HDMR plots.
+`main.py` computes the global minimum points of given function with parameters. The outputs are status reports and HDMR plots. You can also use adaptive hdmr by setting adaptive parameter.
 
 Prints status reports and also writes them into one .txt file in `results` folder.
 - The status report for BFGS method.
@@ -30,31 +30,40 @@ The output files are
 - `<file_name_for_given_parameters>.png`
 
 #### Running `main.py`
-You can enter the script `python src/main.py --help`
+You can enter the script `python src/main.py --help`:
 
 ```
-usage: HDMR [-h] [-m M] [--random_init] num_of_samples num_of_variable function_name min max
+usage: HDMR [-h] --numSamples NUMSAMPLES --numVariables NUMVARIABLES --function FUNCTION --min MIN --max MAX [--randomInit] [--legendreDegree LEGENDREDEGREE]
+            [--adaptive] [--numClosestPoints NUMCLOSESTPOINTS] [--epsilon EPSILON] [--clip CLIP]
 
 Program applies the hdmr-opt method and plots the results.
 
-positional arguments:
-  num_of_samples   Number of samples to calculate alpha coefficients.
-  num_of_variable  Number of variable of the test function.
-  function_name    Test function name.
-  min              Lower range of the test function.
-  max              Upper range of the test function.
-
-options:
-  -h, --help       show this help message and exit
-  -m M             Number of legendre polynomial. Default is 7.
-  --random_init    Initializes x0 as random numbers in the range of xs. Default is initializing as 0.
+optional arguments:
+  -h, --help            show this help message and exit
+  --numSamples NUMSAMPLES
+                        Number of samples to calculate alpha coefficients.
+  --numVariables NUMVARIABLES
+                        Number of variable of the test function.
+  --function FUNCTION   Test function name.
+  --min MIN             Lower range of the test function.
+  --max MAX             Upper range of the test function.
+  --randomInit          Initializes x0 as random numbers in the range of xs. Default is initializing as 0.
+  --legendreDegree LEGENDREDEGREE
+                        Number of legendre polynomial. Default is 7.
+  --adaptive            Uses iterative method when set.
+  --numClosestPoints NUMCLOSESTPOINTS
+                        Number of closest points to x0. Default is 100.
+  --epsilon EPSILON     Epsilon value for convergence. Default is 0.1.
+  --clip CLIP           Clipping value for updating interval (a, b). Default is 0.9.
 ```
 
-Script format (x_0 initializes as zeros):
-- `python src/main.py <num_of_samples> <num_of_variable> <function_name> <min> <max> -m <legendre_polynomial_degree>`
+
+An example script (default version, not adaptive hdmr): `python src/main.py --numSamples 1000 --numVariables 2 --function camel16_2d --min -5 --max 5`
+
+An example script (Runs adaptive hdmr): `python src/main.py --numSamples 1000 --numVariables 2 --function camel16_2d --min -5 --max 5 --adaptive --epsilon 0.2`
+
+If adaptive parameter is set, the output file will be additional parameters and will be starting with 'adaptive' key.
 
 
-Another script (x_0 initializes as random numbers between the range of xs):
-- `python src/main.py <num_of_samples> <num_of_variable> <function_name> <min> <max> -m <legendre_polynomial_degree> --random_init`
 
-An example: `python src/main.py 500 2 ackley_2d -30 30 -m 11 --random_init`
+
