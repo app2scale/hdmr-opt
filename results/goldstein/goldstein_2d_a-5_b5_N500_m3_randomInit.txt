@@ -1,0 +1,21 @@
+BFGS Status
+      fun: -526.9091790189841
+ hess_inv: array([[0.0009859 , 0.00063459],
+       [0.00063459, 0.000446  ]])
+      jac: array([4.57763672e-05, 7.62939453e-05])
+  message: 'Desired error not necessarily achieved due to precision loss.'
+     nfev: 210
+      nit: 41
+     njev: 66
+   status: 2
+  success: False
+        x: array([ 1.23093997, -0.2309402 ])
+
+HDMR Status
+     fun: array([[242595.87512786]])
+ message: ' '
+    nfev: 500
+    nhev: 0
+    njev: 0
+ success: True
+       x: [-3.827196973688077, -0.00894643136866115]

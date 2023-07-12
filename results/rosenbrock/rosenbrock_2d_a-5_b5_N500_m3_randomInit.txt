@@ -1,0 +1,21 @@
+BFGS Status
+      fun: 2.706301066428224e-13
+ hess_inv: array([[0.51397562, 1.02691791],
+       [1.02691791, 3.05185056]])
+      jac: array([ 1.17811424e-06, -4.01222904e-08])
+  message: 'Optimization terminated successfully.'
+     nfev: 42
+      nit: 12
+     njev: 14
+   status: 0
+  success: True
+        x: array([1.00000052, 1.00000099])
+
+HDMR Status
+     fun: array([[8.21363569]])
+ message: ' '
+    nfev: 500
+    nhev: 0
+    njev: 0
+ success: True
+       x: [0.013533306166708897, 584.7822258330661]
