@@ -3,6 +3,16 @@ import numpy as np
 # ------- BEGIN FUNCTIONS -------
 
 # 2d Camel3
+def testfunc_2d(x):
+    if len(x.shape) == 2:
+        N, n = x.shape
+        axis = 1
+    else:
+        n = len(x)
+        axis = 0
+    y = np.sum(x**2, axis=axis, keepdims=True)
+    return y
+
 def camel3_2d(X):
     try:
         X.shape[1]

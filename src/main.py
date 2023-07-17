@@ -104,6 +104,8 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return f
 
     def plot_results():
+        a = a_
+        b = b_
         f = np.zeros((N,n))
         y = fun(xs)
         for idx in range(n):
@@ -138,6 +140,43 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             axs[jj-1, 1].legend()
         plt.subplots_adjust(hspace=0.6, wspace=0.3)
         plt.savefig(file_name + '.png')
+    
+    def plot_with_function():
+        a = a_
+        b = b_
+        Y = fun(xs)
+        yhat = evalute_hdmr(xs, np.mean(Y, axis=0), alpha)
+
+        X1, X2 = zip(*xs)
+        fig = plt.figure(figsize=(8, n*4))
+        ax = fig.add_subplot(111, projection='3d')
+
+        # Scatter plot
+        
+        # ax.scatter(X1, X2, Y, c='r', marker='o', alpha=0.6)
+        ax.scatter(X1, X2, yhat, c='b', marker='o', alpha=0.6)
+        x1_min, x1_max = np.array((np.min(X1), np.max(X1)))
+        x2_min, x2_max = np.array((np.min(X2), np.max(X2)))
+
+        print("x1_min: ", x1_min)
+
+        x1 = np.linspace(x1_min, x1_max, N)
+        x2 = np.linspace(x2_min, x2_max, N)
+
+        x1, x2 = np.meshgrid(x1, x2)
+        y = fun(np.column_stack((x1.ravel(), x2.ravel()))).reshape(x1.shape)
+
+        ax.plot_surface(x1, x2, y, cmap='jet', alpha=0.5)
+
+        # Limit the Y axis so scatter is easier to see.
+        # ax.set_zlim(np.min(yhat), np.max(yhat))
+
+        # Set labels for each axis
+        ax.set_xlabel('X1')
+        ax.set_ylabel('X2')
+        ax.set_zlabel('y')
+        plt.show()
+
 
     def calculate_distances(x0, arr):
         return np.sqrt(np.sum((x0 - np.array(arr)) ** 2, axis=1))
@@ -219,9 +258,13 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             new_x0 = np.array(result.x)
             old_a = new_a
             old_b = new_b
-            plot_results()
+        a_ = new_a
+        b_ = new_b
+        plot_results()
+        plot_with_function()
     else:
-
+        a_ = a
+        b_ = b
         xs = (b-a)*np.random.random((N,n))+a # Generate sampling data
         print('XS: ', xs.shape)
         alpha = calculate_alpha_coeff(xs)
@@ -233,6 +276,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             temp_status.append(status.x[0])
         result = OptimizeResult(x=temp_status, fun=fun(x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
         result.nfev = N
+        plot_with_function()
 
     return result
 
@@ -243,8 +287,8 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--numSamples', type=int, help='Number of samples to calculate alpha coefficients.', required=True)
 parser.add_argument('--numVariables', type=int, help='Number of variable of the test function.', required=True)
 parser.add_argument('--function', help='Test function name.', required=True)
-parser.add_argument('--min', type=int, help='Lower range of the test function.', required=True)
-parser.add_argument('--max', type=int, help='Upper range of the test function.', required=True)
+parser.add_argument('--min', type=float, help='Lower range of the test function.', required=True)
+parser.add_argument('--max', type=float, help='Upper range of the test function.', required=True)
 parser.add_argument('--randomInit', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
 parser.add_argument('--legendreDegree', type=int, default=7, help='Number of legendre polynomial. Default is 7.')
 parser.add_argument('--adaptive', action='store_true', help='Uses iterative method when set.')
@@ -294,7 +338,6 @@ if __name__ == "__main__":
 
     # status_bfgs = minimize(test_function, x0, method="BFGS") # Applying direct optimization method to the function
     # print(f"BFGS status: {status_bfgs}")
-
     status_hdmr = minimize(test_function, x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
     print(f"hdmr_opt status: {status_hdmr}")
 

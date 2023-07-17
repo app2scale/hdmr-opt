@@ -1,3 +1,4 @@
 src/__pycache__/
 deneme.py
-results/*
+results/*.png
+results/*.txt
