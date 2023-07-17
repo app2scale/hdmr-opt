@@ -13,7 +13,7 @@ Different parameter sets have been tried to optimize The Three-hump Camel functi
 - Command: `python3 main.py 50 2 camel3_2d -5 5 -m 3 --random_init `
 - Description: This parameter set runs The Three-hump Camel function in 2 dimensions. The details of the parameters are provided below:
 
-  - N (Dimension): 50
+  - N (Number of Samples): 50
   - n (Number of Variables): 2
   - m (HDMR Parameter): 3
   - a (Lower Bound): -5
@@ -32,7 +32,7 @@ Different parameter sets have been tried to optimize The Three-hump Camel functi
 - Command: `python3 main.py 100 2 camel3_2d -5 5 -m 3 --random_init`
 - Description: This parameter set runs The Three-hump Camel function  in 2 dimensions. The details of the parameters are provided below:
 
-  - N (Dimension): 100
+  - N Number of Samples): 100
   - n (Number of Variables): 2
   - m (HDMR Parameter): 3
   - a (Lower Bound): -5
@@ -51,7 +51,7 @@ Different parameter sets have been tried to optimize The Three-hump Camel functi
 - Command: `python3 main.py 500 2 camel3_2d -5 5 -m 3 --random_init`
 - Description: This parameter set runs The Three-hump Camel function  in 2 dimensions. The details of the parameters are provided below:
 
-  - N (Dimension): 500
+  - N (Number of Samples): 500
   - n (Number of Variables): 2
   - m (HDMR Parameter): 3
   - a (Lower Bound): -5
@@ -70,7 +70,7 @@ Different parameter sets have been tried to optimize The Three-hump Camel functi
 - Command: `python3 main.py 100 2 camel3_2d -5 5 -m 5 --random_init`
 - Description: This parameter set runs The Three-hump Camel function  in 2 dimensions. The details of the parameters are provided below:
 
-  - N (Dimension): 100
+  - N (Number of Samples): 100
   - n (Number of Variables): 2
   - m (HDMR Parameter): 5
   - a (Lower Bound): -5
@@ -89,7 +89,7 @@ Different parameter sets have been tried to optimize The Three-hump Camel functi
 - Command: `python3 main.py 100 2 camel3_2d -5 5 -m 7 --random_init`
 - Description: This parameter set runs The Three-hump Camel function in 2 dimensions. The details of the parameters are provided below:
 
-  - N (Dimension): 100
+  - N (Number of Samples): 100
   - n (Number of Variables): 2
   - m (HDMR Parameter): 7
   - a (Lower Bound): -5
