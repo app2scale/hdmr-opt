@@ -77,7 +77,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         f0 = np.mean(y)
         for r in range(m): # Iterate degree of the Legendre polynomial
             for i in range(n): # Iterate number of variable
-                alpha[r, i] = np.mean((y-f0) * L(a, b, r+1, np.array(xs[:, [i]])))
+                alpha[r, i] = (b - a) * np.mean((y-f0) * L(a, b, r+1, np.array(xs[:, [i]])))
         return alpha
     
     def evalute_hdmr(x, f0, alpha):
