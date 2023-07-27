@@ -28,8 +28,8 @@ def camel16_2d(X):
         X = np.array([X])
     return (4*X[:, 0]**2 - 2.1*X[:, 0]**4 + (X[:, 0]**6)/3 + X[:, 0]*X[:, 1] - 4*X[:, 1]**2 + 4*X[:, 1]**4).reshape(-1, 1)
 
-# 2d Trecanni
-def trecanni_2d(X):
+# 2d Treccani
+def treccani_2d(X):
     try:
         X.shape[1]
     except:
@@ -119,9 +119,9 @@ if __name__ == "__main__":
     # Evaluate the function based on the provided name
     f = globals().get(function_name)
 
-    if f == camel3_2d or f == camel16_2d or f == trecanni_2d:
-        x1_min = x2_min = -3
-        x1_max = x2_max = 3
+    if f == camel3_2d or f == camel16_2d or f == treccani_2d:
+        x1_min = x2_min = -5
+        x1_max = x2_max = 5
     elif f == goldstein_2d:
         x1_min = x2_min = -2
         x1_max = x2_max = 2

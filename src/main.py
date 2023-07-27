@@ -3,13 +3,18 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import pandas as pd
-import functions as f
+try:
+    import src.functions as functions
+except:
+    import functions    
 import argparse
 
 """
 Test functions are available in https://www.sfu.ca/~ssurjano/optimization.html
 
 """
+
+is_streamlit = False
 
 
 def rastrigin(x):
@@ -58,6 +63,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                  gtol=1e-5, maxiter=None,
                  disp=False, return_all=False, finite_diff_rel_step=None,
                  **unknown_options):
+    global plt1, plt2
 
     def Pn(m, x):
         if m == 0:
@@ -104,8 +110,6 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return f
 
     def plot_results():
-        a = a_
-        b = b_
         f = np.zeros((N,n))
         y = fun(xs)
         for idx in range(n):
@@ -139,22 +143,56 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             axs[jj-1, 0].legend()
             axs[jj-1, 1].legend()
         plt.subplots_adjust(hspace=0.6, wspace=0.3)
-        plt.savefig(file_name + '.png')
+        return fig
     
     def plot_with_function():
-        a = a_
-        b = b_
+        global is_streamlit
+        if is_streamlit == True:
+            import plotly.graph_objects as go
+            Y = fun(xs)
+            yhat = evalute_hdmr(xs, np.mean(Y, axis=0), alpha)
+
+            X1, X2 = zip(*xs)
+            X1 = np.array(X1).flatten()
+            X2 = np.array(X2).flatten()
+            yhat = np.array(yhat).flatten()
+
+            # Scatter plot
+            scatter_trace = go.Scatter3d(x=X1, y=X2, z=yhat, mode='markers', marker=dict(color='blue', size=2), name='Data Points')
+
+            x1_min, x1_max = np.array((np.min(X1), np.max(X1)))
+            x2_min, x2_max = np.array((np.min(X2), np.max(X2)))
+
+            X1 = np.linspace(x1_min, x1_max, int(N/10))
+            X2 = np.linspace(x2_min, x2_max, int(N/10))
+
+            X1, X2 = np.meshgrid(X1, X2)
+            Y = fun(np.column_stack((X1.ravel(), X2.ravel()))).reshape(X1.shape)
+
+            # Surface plot
+            surface_trace = go.Surface(x=X1, y=X2, z=Y, colorscale='jet', opacity=0.6, name='Function Surface')
+
+            # Create the figure and add the traces
+            fig = go.Figure(data=[scatter_trace, surface_trace])
+
+            # Set labels for each axis
+            fig.update_layout(scene=dict(xaxis_title='X1', yaxis_title='X2', zaxis_title='y'), height=650, width=800, 
+                              title='HDMR Scatter & Original Function Surface Plot')
+
+            return fig
+        
+        
         Y = fun(xs)
         yhat = evalute_hdmr(xs, np.mean(Y, axis=0), alpha)
 
         X1, X2 = zip(*xs)
         fig = plt.figure(figsize=(8, n*4))
         ax = fig.add_subplot(111, projection='3d')
-
+        ax.set_title("HDMR Scatter & Original Function Surface Plot")
         # Scatter plot
         
         # ax.scatter(X1, X2, Y, c='r', marker='o', alpha=0.6)
-        ax.scatter(X1, X2, yhat, c='b', marker='o', alpha=0.6)
+        ax.scatter(X1, X2, yhat, c='b', marker='o', alpha=0.6, s=2)
         x1_min, x1_max = np.array((np.min(X1), np.max(X1)))
         x2_min, x2_max = np.array((np.min(X2), np.max(X2)))
 
@@ -166,7 +204,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         x1, x2 = np.meshgrid(x1, x2)
         y = fun(np.column_stack((x1.ravel(), x2.ravel()))).reshape(x1.shape)
 
-        ax.plot_surface(x1, x2, y, cmap='jet', alpha=0.5)
+        ax.plot_surface(x1, x2, y, cmap='jet', alpha=0.6)
 
         # Limit the Y axis so scatter is easier to see.
         # ax.set_zlim(np.min(yhat), np.max(yhat))
@@ -175,7 +213,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         ax.set_xlabel('X1')
         ax.set_ylabel('X2')
         ax.set_zlabel('y')
-        plt.show()
+        return fig
 
 
     def calculate_distances(x0, arr):
@@ -260,8 +298,8 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             old_b = new_b
         a_ = new_a
         b_ = new_b
-        plot_results()
-        plot_with_function()
+        plt1 = plot_results()
+        plt2 = plot_with_function()
     else:
         a_ = a
         b_ = b
@@ -269,79 +307,99 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         print('XS: ', xs.shape)
         alpha = calculate_alpha_coeff(xs)
         print("Alpha: ", alpha)
-        plot_results()
         temp_status = []
         for i in range(n):
             status = minimize(one_dim_evaluate_hdmr, np.array(x0[i]), method='BFGS') 
             temp_status.append(status.x[0])
         result = OptimizeResult(x=temp_status, fun=fun(x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
         result.nfev = N
-        plot_with_function()
+        plt1 = plot_results()
+        plt2 = plot_with_function()
 
     return result
 
+def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
+    global N, n, function_name, m, a, b, random_init, is_adaptive, k, epsilon, clip
+    
+    N = N_
+    n = n_
+    function_name = function_name_
+    m = m_
+    a = a_
+    b = b_
+    random_init = random_init_
+    is_adaptive = is_adaptive_
 
-parser = argparse.ArgumentParser(
-                    prog='HDMR',
-                    description='Program applies the hdmr-opt method and plots the results.')
-parser.add_argument('--numSamples', type=int, help='Number of samples to calculate alpha coefficients.', required=True)
-parser.add_argument('--numVariables', type=int, help='Number of variable of the test function.', required=True)
-parser.add_argument('--function', help='Test function name.', required=True)
-parser.add_argument('--min', type=float, help='Lower range of the test function.', required=True)
-parser.add_argument('--max', type=float, help='Upper range of the test function.', required=True)
-parser.add_argument('--randomInit', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
-parser.add_argument('--legendreDegree', type=int, default=7, help='Number of legendre polynomial. Default is 7.')
-parser.add_argument('--adaptive', action='store_true', help='Uses iterative method when set.')
-parser.add_argument('--numClosestPoints', type=int, help='Number of closest points to x0. Default is 1000.', default=100)
-parser.add_argument('--epsilon', type=float, help='Epsilon value for convergence. Default is 0.1.', default=0.1)
-parser.add_argument('--clip', type=float, help='Clipping value for updating interval (a, b). Default is 0.9.', default=0.9)
-
-global_args = parser.parse_args()
-
-if __name__ == "__main__":
-
-    # N = 100 # Number of samples to calculate alpha coefficients
-    # n = 2 # Number of variable
-    # m = 7 # Degree of the Legendre polynomial
-    # a = -5 # Range of the function
-    # b = 5 # Range of the function
-    print('Args: ', global_args)
-
-    N = global_args.numSamples # Number of samples to calculate alpha coefficients
-    n = global_args.numVariables # Number of variable
-    test_function = getattr(f, global_args.function)
-    m = global_args.legendreDegree # Degree of the Legendre polynomial
-    a = global_args.min # Range of the function
-    b = global_args.max # Range of the function
-    is_adaptive = global_args.adaptive
     if is_adaptive:
-        k = global_args.numClosestPoints # Number of resampled points
-        clip = global_args.clip
-        epsilon = global_args.epsilon # Epsilon value for convergence
+        k = k_
+        epsilon = epsilon_
+        clip = clip_
         if not (0 < clip <= 1):
             raise ValueError("Clipping value should be in the interval of (0, 1]")
-        file_name = f"results/adaptive_{global_args.function}_a{a}_b{b}_N{N}_m{m}_k{k}_c{clip:.2f}" 
+        file_name = f"results/adaptive_{function_name}_a{a}_b{b}_N{N}_m{m}_k{k}_c{clip:.2f}" 
     else:
-        file_name = f"results/{global_args.function}_a{a}_b{b}_N{N}_m{m}" 
+        file_name = f"results/{function_name}_a{a}_b{b}_N{N}_m{m}" 
     
-    if not global_args.randomInit:
-        if global_args.function.split('_')[1] == '2d':
+    if not random_init:
+        if function_name.split('_')[1] == '2d':
             x0 = np.array([0.0, 0.0]) # Initial value of function for optimizing process
-        elif global_args.function.split('_')[1] == '10d':
+        elif function_name.split('_')[1] == '10d':
             x0 = np.zeros((10,))
     else:
         file_name += '_randomInit'
-        if global_args.function.split('_')[1] == '2d':
+        if function_name.split('_')[1] == '2d':
             x0 = np.random.rand(2) * (b - a) + a # Initial value of function for optimizing process
-        elif global_args.function.split('_')[1] == '10d':
+        elif function_name.split('_')[1] == '10d':
             x0 = np.random.rand(10) * (b - a) + a
 
+    
     # status_bfgs = minimize(test_function, x0, method="BFGS") # Applying direct optimization method to the function
     # print(f"BFGS status: {status_bfgs}")
-    status_hdmr = minimize(test_function, x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
+    status_hdmr = minimize(getattr(functions, function_name), x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
+
+    return status_hdmr, plt1, plt2, file_name
+
+plt1 = plt2 = None
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(
+                    prog='HDMR',
+                    description='Program applies the hdmr-opt method and plots the results.')
+    parser.add_argument('--numSamples', type=int, help='Number of samples to calculate alpha coefficients.', required=True)
+    parser.add_argument('--numVariables', type=int, help='Number of variable of the test function.', required=True)
+    parser.add_argument('--function', help='Test function name.', required=True)
+    parser.add_argument('--min', type=float, help='Lower range of the test function.', required=True)
+    parser.add_argument('--max', type=float, help='Upper range of the test function.', required=True)
+    parser.add_argument('--randomInit', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
+    parser.add_argument('--legendreDegree', type=int, default=7, help='Number of legendre polynomial. Default is 7.')
+    parser.add_argument('--adaptive', action='store_true', help='Uses iterative method when set.')
+    parser.add_argument('--numClosestPoints', type=int, help='Number of closest points to x0. Default is 1000.', default=100)
+    parser.add_argument('--epsilon', type=float, help='Epsilon value for convergence. Default is 0.1.', default=0.1)
+    parser.add_argument('--clip', type=float, help='Clipping value for updating interval (a, b). Default is 0.9.', default=0.9)
+
+    global_args = parser.parse_args()
+
+    print('Args: ', global_args)
+    N_ = global_args.numSamples # Number of samples to calculate alpha coefficients
+    n_ = global_args.numVariables # Number of variable
+    function_name_ = global_args.function
+    m_ = global_args.legendreDegree # Degree of the Legendre polynomial
+    a_ = global_args.min # Range of the function
+    b_ = global_args.max # Range of the function
+    is_adaptive_ = global_args.adaptive
+    random_init_ = global_args.randomInit
+    k_ = global_args.numClosestPoints
+    epsilon_ = global_args.epsilon
+    clip_ = global_args.clip
+
+    status_hdmr, _, _, file_name = main_function(N_, n_, function_name_, m_, a_, b_, random_init_, 
+                                                is_adaptive_, k_, epsilon_, clip_)
     print(f"hdmr_opt status: {status_hdmr}")
 
     with open(file_name + '.txt', 'w') as f:
         # f.write("BFGS Status\n" + str(status_bfgs) + "\n\n")
         f.write("HDMR Status\n" + str(status_hdmr))
     f.close()
+            
+    plt.show()

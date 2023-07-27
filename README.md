@@ -64,6 +64,19 @@ An example script (Runs adaptive hdmr): `python src/main.py --numSamples 1000 --
 
 If adaptive parameter is set, the output file will be additional parameters and will be starting with 'adaptive' key.
 
+# Web UI Update
+After you install all dependencies inside of the `requirements.txt` you can run the following code to run web ui on your browser.
+
+You should be inside of the main folder. (Should be seeing results, src folder etc.)
+1. Open the terminal in this folder.
+2. Run `streamlit run app`
+
+This basically runs the `app.py` which is the streamlit app folder. You can find the ui elements inside of this file.
+
+As default it runs the app on the `http://localhost:8501/`
+
+**NOTE:** 10d functions are currently disabled due to some errors on the presentation. They will be enabled with the next update.
+
 
 
 
