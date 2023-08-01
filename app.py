@@ -64,8 +64,8 @@ is_adaptive = st.sidebar.checkbox("Adaptive HDMR")
 
 if is_adaptive:
     num_closest_points = st.sidebar.number_input("Number of closest points:", 1, N, 100)
-    epsilon = st.sidebar.number_input("Epsilon:", value=0.1, min_value=0.0, step=0.1)
-    clip = st.sidebar.number_input("Clip:", 0.05, 1.0, 0.9, 0.05)
+    epsilon = st.sidebar.number_input("Epsilon:", value=0.5, min_value=0.0, step=0.1)
+    clip = st.sidebar.number_input("Clip:", 0.05, 1.0, 0.95, 0.05)
 
 if st.sidebar.button("Calculate HDMR"):
 

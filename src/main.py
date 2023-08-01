@@ -63,7 +63,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                  gtol=1e-5, maxiter=None,
                  disp=False, return_all=False, finite_diff_rel_step=None,
                  **unknown_options):
-    global plt1, plt2
+    global plt1, plt2, a, b, xs
 
     def Pn(m, x):
         if m == 0:
@@ -110,10 +110,17 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return f
 
     def plot_results():
+        global a, b
         f = np.zeros((N,n))
         y = fun(xs)
-        for idx in range(n):
-            f[:,[idx]] = np.mean(y) + one_dim_evaluate_hdmr_for_test(xs[:,[idx]], idx)  
+        if not is_adaptive:
+            for idx in range(n):
+                f[:,[idx]] = np.mean(y) + one_dim_evaluate_hdmr_for_test(xs[:,[idx]], idx)
+        else:
+            a = np.min(a)
+            b = np.max(b)
+            for idx in range(n):
+                f[:,[idx]] = np.mean(y) + one_dim_evaluate_hdmr_for_test(xs[:,[idx]], idx) 
 
         columns_xf = [f'x{id+1}' for id in range(n)] + [f'f{id+1}' for id in range(n)]
         xf = np.concatenate([xs,f],axis=1)
@@ -239,70 +246,74 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         result.nfev = N
         results.append(result)
 
-        old_x0 = np.array(x0)
-        new_x0 = np.array(result.x)
-        new_a = -np.inf
-        new_b = np.inf
-        old_a = [a for _ in range(n)]
-        old_b = [b for _ in range(n)]
+        if np.sqrt(np.sum((x0 - np.array(result.x)) ** 2)) < epsilon:
+            print("Convergence occured at the first iteration!")
+        else:
+            old_x0 = x0
+            old_a = [a for _ in range(n)]
+            old_b = [b for _ in range(n)]
 
-        while True:
-            print(f"old x0 = {old_x0}")
-            print(f"new x0 = {new_x0}")
-
-            print("---------------------------------------------------------------------------------")
-            # convergence criteria
-            if np.sqrt(np.sum((old_x0 - new_x0) ** 2)) < epsilon:
-                print("Convergence occured!")
-                break
-
-            closest_points = find_closest_points(x0=new_x0, arr=xs, k=k)
-            new_a = np.min(closest_points, axis=0)
-            new_b = np.max(closest_points, axis=0)
-            
-            for i in range(n):
-                old_range = old_b[i] - old_a[i]
-                if new_b[i] - new_a[i] < clip * old_range:
-                    # if np.abs(new_a[i]) < 0.7 * np.abs(old_a[i]):
-                    #     new_a[i] = 0.7 * old_a[i]
-                    # if np.abs(new_b[i]) < 0.7 * np.abs(old_b[i]):
-                    #     new_b[i] = 0.7 * old_b[i]
-                    middle_point = (old_b[i] + old_a[i]) / 2
-                    new_range = clip * old_range
-                    new_a[i] = middle_point - (new_range / 2)
-                    new_b[i] = middle_point + (new_range / 2)
-
-            print("Old a: ", old_a)
-            print("Old b: ", old_b)
-            print("New a: ", new_a)
-            print("New b: ", new_b)
-
-            print("Creating new sample...", end=" ")
-            xs = (new_b - new_a)*np.random.random((N,n)) + new_a 
-            print("Done!")
-
-            # HDMR
-            alpha = calculate_alpha_coeff(xs)
-            # print("Alpha: ", alpha)
-            temp_status = []
-            for i in range(n):
-                status = minimize(one_dim_evaluate_hdmr, np.array(new_x0[i]), method='BFGS') 
-                temp_status.append(status.x[0])
-            result = OptimizeResult(x=temp_status, fun=fun(new_x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
-            result.nfev = N
-            results.append(result)
-
-            old_x0 = np.array(new_x0)
             new_x0 = np.array(result.x)
-            old_a = new_a
-            old_b = new_b
-        a_ = new_a
-        b_ = new_b
+            new_a = -np.inf
+            new_b = np.inf
+        
+            while True:
+                print(f"old x0 = {old_x0}")
+                print(f"new x0 = {new_x0}")
+
+                print("---------------------------------------------------------------------------------")
+                closest_points = find_closest_points(x0=new_x0, arr=xs, k=k)
+                new_a = np.min(closest_points, axis=0)
+                new_b = np.max(closest_points, axis=0)
+
+                
+                for i in range(n):
+                    old_range = old_b[i] - old_a[i]
+                    if new_b[i] - new_a[i] < clip * old_range:
+                        # if np.abs(new_a[i]) < 0.7 * np.abs(old_a[i]):
+                        #     new_a[i] = 0.7 * old_a[i]
+                        # if np.abs(new_b[i]) < 0.7 * np.abs(old_b[i]):
+                        #     new_b[i] = 0.7 * old_b[i]
+                        middle_point = (old_b[i] + old_a[i]) / 2
+                        new_range = clip * old_range
+                        new_a[i] = middle_point - (new_range / 2)
+                        new_b[i] = middle_point + (new_range / 2)
+
+                print("Old a: ", old_a)
+                print("Old b: ", old_b)
+                print("New a: ", new_a)
+                print("New b: ", new_b)
+
+                print("Creating new sample...", end=" ")
+                new_xs = (new_b - new_a)*np.random.random((N,n)) + new_a 
+                print("Done!")
+
+                # HDMR
+                alpha = calculate_alpha_coeff(new_xs)
+                # print("Alpha: ", alpha)
+                temp_status = []
+                for i in range(n):
+                    status = minimize(one_dim_evaluate_hdmr, np.array(new_x0[i]), method='BFGS') 
+                    temp_status.append(status.x[0])
+                result = OptimizeResult(x=temp_status, fun=fun(new_x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
+                result.nfev = N
+                results.append(result)
+
+                if np.sqrt(np.sum((old_x0 - new_x0) ** 2)) < epsilon:
+                    print("Convergence occured!")
+                    break
+                
+                old_x0 = np.array(new_x0)
+                xs = new_xs
+                new_x0 = np.array(result.x)
+                old_a = new_a
+                old_b = new_b
+            a = old_a
+            b = old_b
+            x0 = old_x0
         plt1 = plot_results()
         plt2 = plot_with_function()
     else:
-        a_ = a
-        b_ = b
         xs = (b-a)*np.random.random((N,n))+a # Generate sampling data
         print('XS: ', xs.shape)
         alpha = calculate_alpha_coeff(xs)

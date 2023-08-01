@@ -71,7 +71,7 @@ You should be inside of the main folder. (Should be seeing results, src folder e
 1. Open the terminal in this folder.
 2. Run `streamlit run app`
 
-This basically runs the `app.py` which is the streamlit app folder. You can find the ui elements inside of this file.
+This basically runs the `app.py` which is the streamlit app file. You can find the ui elements inside of this file.
 
 As default it runs the app on the `http://localhost:8501/`
 
