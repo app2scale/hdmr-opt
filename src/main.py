@@ -223,11 +223,11 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return fig
 
 
-    def calculate_distances(x0, arr):
-        return np.sqrt(np.sum((x0 - np.array(arr)) ** 2, axis=1))
+    def calculate_distances(x0_, arr):
+        return np.sqrt(np.sum((x0_ - np.array(arr)) ** 2, axis=1))
 
-    def find_closest_points(x0, arr, k):
-        distances = calculate_distances(x0, arr)
+    def find_closest_points(x0_, arr, k):
+        distances = calculate_distances(x0_, arr)
         indexes = np.argsort(distances)[:k]
         return arr[indexes]
 
@@ -262,7 +262,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                 print(f"new x0 = {new_x0}")
 
                 print("---------------------------------------------------------------------------------")
-                closest_points = find_closest_points(x0=new_x0, arr=xs, k=k)
+                closest_points = find_closest_points(x0_=new_x0, arr=xs, k=k)
                 new_a = np.min(closest_points, axis=0)
                 new_b = np.max(closest_points, axis=0)
 
@@ -279,10 +279,6 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                         new_a[i] = middle_point - (new_range / 2)
                         new_b[i] = middle_point + (new_range / 2)
 
-                print("Old a: ", old_a)
-                print("Old b: ", old_b)
-                print("New a: ", new_a)
-                print("New b: ", new_b)
 
                 print("Creating new sample...", end=" ")
                 new_xs = (new_b - new_a)*np.random.random((N,n)) + new_a 
@@ -297,11 +293,12 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                     temp_status.append(status.x[0])
                 result = OptimizeResult(x=temp_status, fun=fun(new_x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
                 result.nfev = N
-                results.append(result)
 
                 if np.sqrt(np.sum((old_x0 - new_x0) ** 2)) < epsilon:
                     print("Convergence occured!")
                     break
+                else:
+                    results.append(result)
                 
                 old_x0 = np.array(new_x0)
                 xs = new_xs
@@ -312,7 +309,11 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             b = old_b
             x0 = old_x0
         plt1 = plot_results()
-        plt2 = plot_with_function()
+        if n == 2:
+            plt2 = plot_with_function()
+        else:
+            plt2 = None
+        return results[-1]
     else:
         xs = (b-a)*np.random.random((N,n))+a # Generate sampling data
         print('XS: ', xs.shape)
@@ -325,9 +326,12 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         result = OptimizeResult(x=temp_status, fun=fun(x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
         result.nfev = N
         plt1 = plot_results()
-        plt2 = plot_with_function()
+        if n == 2:
+            plt2 = plot_with_function()
+        else:
+            plt2 = None
 
-    return result
+        return result
 
 def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
     global N, n, function_name, m, a, b, random_init, is_adaptive, k, epsilon, clip

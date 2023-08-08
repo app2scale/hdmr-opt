@@ -32,11 +32,11 @@ with st.container():
     st.title("HDMR Optimization")
     st.write(page_text)
 
-available_functions = ["testfunc_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
-                       "rosenbrock_2d", "ackley_2d"]
-
 # available_functions = ["testfunc_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
-#                        "rosenbrock_2d", "ackley_2d", "rosenbrock_10d", "griewank_10d", "rastrigin_10d"]
+#                        "rosenbrock_2d", "ackley_2d"]
+
+available_functions = ["testfunc_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
+                       "rosenbrock_2d", "ackley_2d", "rosenbrock_10d", "griewank_10d", "rastrigin_10d"]
 
 st.sidebar.header('User Inputs')
 
@@ -87,18 +87,21 @@ if st.sidebar.button("Calculate HDMR"):
 
     st.subheader("Plots")
     
-    if interactive_plot:
-        col3, col4 = st.columns(spec=[0.4, 0.6], gap='small')
-    else:
-        col3, col4 = st.columns(spec=2, gap='small')
-
-    with col3:
-        st.pyplot(plt1)
-    with col4:
+    if n == 2:
         if interactive_plot:
-            st.plotly_chart(plt2)
+            col3, col4 = st.columns(spec=[0.4, 0.6], gap='small')
         else:
-            st.pyplot(plt2) 
+            col3, col4 = st.columns(spec=2, gap='small')
+
+        with col3:
+            st.pyplot(plt1)
+        with col4:
+            if interactive_plot:
+                st.plotly_chart(plt2)
+            else:
+                st.pyplot(plt2)
+    else:
+        st.pyplot(plt1)
         
     
 
