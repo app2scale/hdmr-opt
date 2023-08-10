@@ -104,7 +104,15 @@ def rastrigin_10d(X):
     except:
         X = np.array([X])
     return (np.sum(X**2 - 10 * np.cos(2 * np.pi * X) + 10, axis=1)).reshape(-1, 1)
-    
+
+# 2d Rastrigin
+def rastrigin_2d(X):
+    try:
+        X.shape[1]
+    except:
+        X = np.array([X])
+    return (np.sum(X**2 - 10 * np.cos(2 * np.pi * X) + 10, axis=1)).reshape(-1, 1)
+
 # ------- END FUNCTIONS -------
 
 if __name__ == "__main__":
@@ -139,6 +147,9 @@ if __name__ == "__main__":
         x1_min = x2_min = -600
         x1_max = x2_max = 600
     elif f == rastrigin_10d:
+        x1_min = x2_min = -5.12
+        x1_max = x2_max = 5.12
+    elif f == rastrigin_2d:
         x1_min = x2_min = -5.12
         x1_max = x2_max = 5.12
     

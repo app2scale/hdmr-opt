@@ -35,7 +35,7 @@ with st.container():
 # available_functions = ["testfunc_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
 #                        "rosenbrock_2d", "ackley_2d"]
 
-available_functions = ["testfunc_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
+available_functions = ["testfunc_2d", "rastrigin_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
                        "rosenbrock_2d", "ackley_2d", "rosenbrock_10d", "griewank_10d", "rastrigin_10d"]
 
 st.sidebar.header('User Inputs')
