@@ -232,6 +232,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return arr[indexes]
 
     if is_adaptive:
+        iter_count = 1
         results = []
     
         xs = (b - a)*np.random.random((N,n)) + a # Generate sampling data
@@ -258,6 +259,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             new_b = np.inf
         
             while True:
+                iter_count += 1
                 print(f"old x0 = {old_x0}")
                 print(f"new x0 = {new_x0}")
 
@@ -313,7 +315,10 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             plt2 = plot_with_function()
         else:
             plt2 = None
-        return results[-1]
+        result = results[-1]
+        result["nfev"] = result["nfev"] * iter_count
+        result['n_iterations'] = iter_count
+        return result
     else:
         xs = (b-a)*np.random.random((N,n))+a # Generate sampling data
         print('XS: ', xs.shape)
@@ -330,7 +335,6 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             plt2 = plot_with_function()
         else:
             plt2 = None
-
         return result
 
 def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, is_adaptive_, k_=None, epsilon_=None, clip_=None):

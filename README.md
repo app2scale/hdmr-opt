@@ -2,6 +2,8 @@
 ## General Information
 This repository contains the codes to calculate global minimum points of the given functions. In this code, we use two method to optimize and compare. In hdmr-opt method, We get the one dimensional form of the given functions using HDMR. In other method, we directly apply BFGS method to the function.
 
+* **NOTE:** In order to run the code, create a new conda enviroment, or virtiual enviroment, with **python==3.9**. The code might not run due to some libary version discrepancies. However, it should run perfectly for **python==3.9**.
+
 ## Python Files
 
 ### Module: `functions.py`
@@ -69,13 +71,11 @@ After you install all dependencies inside of the `requirements.txt` you can run 
 
 You should be inside of the main folder. (Should be seeing results, src folder etc.)
 1. Open the terminal in this folder.
-2. Run `streamlit run app`
+2. Run `streamlit run app.py`
 
 This basically runs the `app.py` which is the streamlit app file. You can find the ui elements inside of this file.
 
 As default it runs the app on the `http://localhost:8501/`
-
-**NOTE:** 10d functions are currently disabled due to some errors on the presentation. They will be enabled with the next update.
 
 
 
