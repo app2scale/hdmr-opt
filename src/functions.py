@@ -152,6 +152,9 @@ if __name__ == "__main__":
     elif f == rastrigin_2d:
         x1_min = x2_min = -5.12
         x1_max = x2_max = 5.12
+    elif f == testfunc_2d:
+        x1_min = x2_min = -5
+        x1_max = x2_max = 5
     
 
     N = 100

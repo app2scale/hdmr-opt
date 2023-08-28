@@ -3,6 +3,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import pandas as pd
+import time
 try:
     import src.functions as functions
 except:
@@ -337,7 +338,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             plt2 = None
         return result
 
-def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
+def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, x0_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
     global N, n, function_name, m, a, b, random_init, is_adaptive, k, epsilon, clip
     
     N = N_
@@ -359,11 +360,8 @@ def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, is_adaptive_
     else:
         file_name = f"results/{function_name}_a{a}_b{b}_N{N}_m{m}" 
     
-    if not random_init:
-        if function_name.split('_')[1] == '2d':
-            x0 = np.array([0.0, 0.0]) # Initial value of function for optimizing process
-        elif function_name.split('_')[1] == '10d':
-            x0 = np.zeros((10,))
+    if not random_init:    
+        x0 = np.fromstring(x0_,dtype=float,sep=',')
     else:
         file_name += '_randomInit'
         if function_name.split('_')[1] == '2d':
@@ -374,9 +372,11 @@ def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, is_adaptive_
     
     # status_bfgs = minimize(test_function, x0, method="BFGS") # Applying direct optimization method to the function
     # print(f"BFGS status: {status_bfgs}")
+    start=time.time()
     status_hdmr = minimize(getattr(functions, function_name), x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
-
-    return status_hdmr, plt1, plt2, file_name
+    end=time.time()
+    runtime=end-start
+    return status_hdmr,runtime, plt1, plt2, file_name
 
 plt1 = plt2 = None
 
@@ -412,8 +412,9 @@ if __name__ == "__main__":
     epsilon_ = global_args.epsilon
     clip_ = global_args.clip
 
-    status_hdmr, _, _, file_name = main_function(N_, n_, function_name_, m_, a_, b_, random_init_, 
+    status_hdmr, runtime, _, _, file_name = main_function(N_, n_, function_name_, m_, a_, b_, random_init_, 
                                                 is_adaptive_, k_, epsilon_, clip_)
+    print(f"{runtime} seconds")
     print(f"hdmr_opt status: {status_hdmr}")
 
     with open(file_name + '.txt', 'w') as f:

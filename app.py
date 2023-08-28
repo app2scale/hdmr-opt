@@ -58,7 +58,9 @@ with col2:
 
 
 random_init = st.sidebar.checkbox("Random Initialization")
-st.sidebar.caption("Default is 0 initialization")
+if not random_init:
+    default_x0 = utils.get_function_x0(function_name=function_name.split('_')[0])
+    x0 = st.sidebar.text_input("required format: x1,x2,...,xn",str(default_x0))
 
 is_adaptive = st.sidebar.checkbox("Adaptive HDMR")
 
@@ -74,13 +76,14 @@ if st.sidebar.button("Calculate HDMR"):
 
     main.is_streamlit = interactive_plot
     if is_adaptive:
-        status_hdmr, plt1, plt2, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
-                                        random_init, is_adaptive, num_closest_points, epsilon, clip)
+        status_hdmr, runtime, plt1, plt2, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
+                                        random_init, x0, is_adaptive, num_closest_points, epsilon, clip)
     else:
-        status_hdmr, plt1, plt2, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
-                                        random_init, is_adaptive)
+        status_hdmr, runtime, plt1, plt2, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
+                                        random_init, x0, is_adaptive)
     st.subheader("Results")
     st.write(f"hdmr_opt status Success: {status_hdmr.success} - X: {status_hdmr.x}")
+    st.write("Runtime: {runtime} seconds")
 
     with st.expander("Click to see the full result", expanded=False):
         st.write(status_hdmr)
