@@ -64,7 +64,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                  gtol=1e-5, maxiter=None,
                  disp=False, return_all=False, finite_diff_rel_step=None,
                  **unknown_options):
-    global plt1, plt2, a, b, xs
+    global plt1, plt2, plt3, a, b, xs
 
     def Pn(m, x):
         if m == 0:
@@ -153,6 +153,26 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         plt.subplots_adjust(hspace=0.6, wspace=0.3)
         return fig
     
+    def plot_alpha_squared(alpha):
+        m, n = alpha.shape
+
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        for i in range(n):
+            ax.plot(range(m), alpha[:, i] ** 2, label=f'X {i+1}', linewidth=2)
+
+        ax.set_xlabel('Degree of Legendre Polynomial', fontsize=12)
+        ax.set_ylabel('Square of Alpha Coefficients', fontsize=12)
+        ax.set_title('Square of Alpha Coefficients', fontsize=14)
+        ax.legend(fontsize=10)
+        ax.grid(True, linestyle='--', alpha=0.7)
+
+        ax.tick_params(axis='both', labelsize=10)
+
+        plt.tight_layout()
+
+        return fig
+        
     def plot_with_function():
         global is_streamlit
         if is_streamlit == True:
@@ -312,6 +332,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             b = old_b
             x0 = old_x0
         plt1 = plot_results()
+        plt3 = plot_alpha_squared(alpha)
         if n == 2:
             plt2 = plot_with_function()
         else:
@@ -376,9 +397,9 @@ def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, x0_, is_adap
     status_hdmr = minimize(getattr(functions, function_name), x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
     end=time.time()
     runtime=end-start
-    return status_hdmr,runtime, plt1, plt2, file_name
+    return status_hdmr,runtime, plt1, plt2, plt3, file_name
 
-plt1 = plt2 = None
+plt1 = plt2 = plt3 = None
 
 if __name__ == "__main__":
 
@@ -412,7 +433,7 @@ if __name__ == "__main__":
     epsilon_ = global_args.epsilon
     clip_ = global_args.clip
 
-    status_hdmr, runtime, _, _, file_name = main_function(N_, n_, function_name_, m_, a_, b_, random_init_, 
+    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, m_, a_, b_, random_init_, 
                                                 is_adaptive_, k_, epsilon_, clip_)
     print(f"{runtime} seconds")
     print(f"hdmr_opt status: {status_hdmr}")

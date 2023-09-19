@@ -76,10 +76,10 @@ if st.sidebar.button("Calculate HDMR"):
 
     main.is_streamlit = interactive_plot
     if is_adaptive:
-        status_hdmr, runtime, plt1, plt2, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
+        status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
                                         random_init, x0, is_adaptive, num_closest_points, epsilon, clip)
     else:
-        status_hdmr, runtime, plt1, plt2, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
+        status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
                                         random_init, x0, is_adaptive)
     st.subheader("Results")
     st.write(f"hdmr_opt status Success: {status_hdmr.success} - X: {status_hdmr.x}")
@@ -103,6 +103,8 @@ if st.sidebar.button("Calculate HDMR"):
                 st.plotly_chart(plt2)
             else:
                 st.pyplot(plt2)
+        with col3:
+            st.pyplot(plt3)  
     else:
         st.pyplot(plt1)
         
