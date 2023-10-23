@@ -38,6 +38,8 @@ with st.container():
 available_functions = ["testfunc_2d", "rastrigin_2d", "camel3_2d", "camel16_2d", "treccani_2d", "goldstein_2d", "branin_2d", 
                        "rosenbrock_2d", "ackley_2d", "rosenbrock_10d", "griewank_10d", "rastrigin_10d"]
 
+basis_functions = ["Legendre", "Cosine"]
+
 st.sidebar.header('User Inputs')
 
 interactive_plot = st.sidebar.checkbox("Interactive Plot")
@@ -46,6 +48,7 @@ N = st.sidebar.slider("Number of samples:", 100, 10000, 1000, 100)
 
 # n = st.sidebar.slider("Number of variables: ", 1, 10, 2, 1)
 function_name = st.sidebar.selectbox("Test function:", available_functions)
+basis_funtion = st.sidebar.selectbox("Legendre Basis", basis_functions)
 legendreDegree = st.sidebar.slider("Legendre Degree:", 1, 20, 7, 1)
 
 st.sidebar.write("Function interval: ")
@@ -61,6 +64,8 @@ random_init = st.sidebar.checkbox("Random Initialization")
 if not random_init:
     default_x0 = utils.get_function_x0(function_name=function_name.split('_')[0])
     x0 = st.sidebar.text_input("required format: x1,x2,...,xn",str(default_x0))
+else:
+    x0 = None
 
 is_adaptive = st.sidebar.checkbox("Adaptive HDMR")
 
@@ -76,11 +81,11 @@ if st.sidebar.button("Calculate HDMR"):
 
     main.is_streamlit = interactive_plot
     if is_adaptive:
-        status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
-                                        random_init, x0, is_adaptive, num_closest_points, epsilon, clip)
+        status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, basis_funtion, legendreDegree, 
+                                        interval[0], interval[1], random_init, x0, is_adaptive, num_closest_points, epsilon, clip)
     else:
-        status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, legendreDegree, interval[0], interval[1], 
-                                        random_init, x0, is_adaptive)
+        status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, basis_funtion, legendreDegree,
+                                        interval[0], interval[1], random_init, x0, is_adaptive)
     st.subheader("Results")
     st.write(f"hdmr_opt status Success: {status_hdmr.success} - X: {status_hdmr.x}")
     st.write("Runtime: {runtime} seconds")

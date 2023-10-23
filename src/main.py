@@ -60,22 +60,30 @@ def test_func(x):
     y = np.sum(x**2, axis=axis, keepdims=True)
     return y 
 
-def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
-                 gtol=1e-5, maxiter=None,
-                 disp=False, return_all=False, finite_diff_rel_step=None,
-                 **unknown_options):
-    global plt1, plt2, plt3, a, b, xs
-
-    def Pn(m, x):
+## ------------------ BASIS FUNCTIONS START ------------------ ##
+def Pn(m, x):
         if m == 0:
             return np.ones_like(x)
         elif m == 1:
             return x
         else:
             return (2*m-1)*x*Pn(m-1, x)/m - (m-1)*Pn(m-2, x)/m
-    
-    def L(a,b,m,x):
+        
+def Legendre(a,b,m,x):
         return np.sqrt((2*m+1)/(b-a))*Pn(m, 2*(x-b)/(b-a)+1)
+
+def Cosine(a,b,m,x):
+    square_root_term = np.sqrt(1 / (b-a) * 8 * math.pi * m / (math.sin(4 * math.pi * m) + 4 * math.pi * m))
+    outer_term = np.cos(2 * math.pi * m * (x - a) / (b - a))
+    return square_root_term * outer_term
+
+## ------------------ BASIS FUNCTIONS END ------------------ ##
+
+def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
+                 gtol=1e-5, maxiter=None,
+                 disp=False, return_all=False, finite_diff_rel_step=None,
+                 **unknown_options):
+    global plt1, plt2, plt3, a, b, xs
 
     def calculate_alpha_coeff(xs):
         N, n = xs.shape
@@ -84,7 +92,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         f0 = np.mean(y)
         for r in range(m): # Iterate degree of the Legendre polynomial
             for i in range(n): # Iterate number of variable
-                alpha[r, i] = (b - a) * np.mean((y-f0) * L(a, b, r+1, np.array(xs[:, [i]])))
+                alpha[r, i] = (b - a) * np.mean((y-f0) * BasisFunction(a, b, r+1, np.array(xs[:, [i]])))
         return alpha
     
     def evalute_hdmr(x, f0, alpha):
@@ -93,21 +101,21 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         y = f0 * np.ones((N,1))
         for r in range(m):  
             for i in range(n):  
-                y = y + alpha[r, i] * L(a, b, r+1, np.array(x[:, [i]])) # Meta-model
+                y = y + alpha[r, i] * BasisFunction(a, b, r+1, np.array(x[:, [i]])) # Meta-model
         return y
 
     def one_dim_evaluate_hdmr(x):
         m, _ = alpha.shape
         f = 0
         for r in range(m):
-            f = f + alpha[r,i] * L(a, b, r+1, x) # One dimensional functions
+            f = f + alpha[r,i] * BasisFunction(a, b, r+1, x) # One dimensional functions
         return f
     
     def one_dim_evaluate_hdmr_for_test(x, idx_var):
         m, _ = alpha.shape
         f = np.zeros((N,1))
         for r in range(m):
-            f = f + alpha[r,idx_var] * L(a, b, r+1, x)
+            f = f + alpha[r,idx_var] * BasisFunction(a, b, r+1, x)
         return f
 
     def plot_results():
@@ -359,17 +367,26 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             plt2 = None
         return result
 
-def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, x0_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
-    global N, n, function_name, m, a, b, random_init, is_adaptive, k, epsilon, clip
+def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, x0_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
+    global N, n, function_name, basis_function, BasisFunction, m, a, b, random_init, is_adaptive, k, epsilon, clip
+
+    if basis_function_ not in ["Legendre", "Cosine"]:
+        raise ValueError("basis_function should be Cosine or Legendre.")
     
     N = N_
     n = n_
     function_name = function_name_
+    basis_function = basis_function_
     m = m_
     a = a_
     b = b_
     random_init = random_init_
     is_adaptive = is_adaptive_
+
+    if basis_function == "Legendre":
+        BasisFunction = Legendre
+    elif basis_function == "Cosine":
+        BasisFunction = Cosine
 
     if is_adaptive:
         k = k_
@@ -387,9 +404,10 @@ def main_function(N_, n_, function_name_, m_, a_, b_, random_init_, x0_, is_adap
         file_name += '_randomInit'
         if function_name.split('_')[1] == '2d':
             x0 = np.random.rand(2) * (b - a) + a # Initial value of function for optimizing process
+            x0_ = x0
         elif function_name.split('_')[1] == '10d':
             x0 = np.random.rand(10) * (b - a) + a
-
+            x0_ = x0
     
     # status_bfgs = minimize(test_function, x0, method="BFGS") # Applying direct optimization method to the function
     # print(f"BFGS status: {status_bfgs}")
@@ -412,6 +430,7 @@ if __name__ == "__main__":
     parser.add_argument('--min', type=float, help='Lower range of the test function.', required=True)
     parser.add_argument('--max', type=float, help='Upper range of the test function.', required=True)
     parser.add_argument('--randomInit', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
+    parser.add_argument('--basisFunction', type=int, default="Cosine", help='Basis function that will be used in HDMR. Legendre or Cosine. Default is Cosine.')
     parser.add_argument('--legendreDegree', type=int, default=7, help='Number of legendre polynomial. Default is 7.')
     parser.add_argument('--adaptive', action='store_true', help='Uses iterative method when set.')
     parser.add_argument('--numClosestPoints', type=int, help='Number of closest points to x0. Default is 1000.', default=100)
@@ -424,6 +443,7 @@ if __name__ == "__main__":
     N_ = global_args.numSamples # Number of samples to calculate alpha coefficients
     n_ = global_args.numVariables # Number of variable
     function_name_ = global_args.function
+    basis_function_ = global_args.basis_function
     m_ = global_args.legendreDegree # Degree of the Legendre polynomial
     a_ = global_args.min # Range of the function
     b_ = global_args.max # Range of the function
@@ -433,7 +453,7 @@ if __name__ == "__main__":
     epsilon_ = global_args.epsilon
     clip_ = global_args.clip
 
-    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, m_, a_, b_, random_init_, 
+    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, 
                                                 is_adaptive_, k_, epsilon_, clip_)
     print(f"{runtime} seconds")
     print(f"hdmr_opt status: {status_hdmr}")
