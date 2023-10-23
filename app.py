@@ -88,7 +88,7 @@ if st.sidebar.button("Calculate HDMR"):
                                         interval[0], interval[1], random_init, x0, is_adaptive)
     st.subheader("Results")
     st.write(f"hdmr_opt status Success: {status_hdmr.success} - X: {status_hdmr.x}")
-    st.write("Runtime: {runtime} seconds")
+    st.write(f"Runtime: {runtime:.5f} seconds")
 
     with st.expander("Click to see the full result", expanded=False):
         st.write(status_hdmr)
