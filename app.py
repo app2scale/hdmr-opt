@@ -48,8 +48,8 @@ N = st.sidebar.slider("Number of samples:", 100, 10000, 1000, 100)
 
 # n = st.sidebar.slider("Number of variables: ", 1, 10, 2, 1)
 function_name = st.sidebar.selectbox("Test function:", available_functions)
-basis_funtion = st.sidebar.selectbox("Legendre Basis", basis_functions)
-legendreDegree = st.sidebar.slider("Legendre Degree:", 1, 20, 7, 1)
+basis_funtion = st.sidebar.selectbox("Basis Function:", basis_functions)
+legendreDegree = st.sidebar.slider("Number of Basis:", 1, 20, 7, 1)
 
 st.sidebar.write("Function interval: ")
 col1, col2 = st.sidebar.columns(2)
