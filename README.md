@@ -1,3 +1,14 @@
+---
+title: Hdmr Opt
+emoji: 🚀
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.28.1
+app_file: app.py
+pinned: false
+---
+
 # hdmr-opt
 ## General Information
 This repository contains the codes to calculate global minimum points of the given functions. In this code, we use two method to optimize and compare. In hdmr-opt method, We get the one dimensional form of the given functions using HDMR. In other method, we directly apply BFGS method to the function.
