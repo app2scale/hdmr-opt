@@ -16,6 +16,7 @@ Test functions are available in https://www.sfu.ca/~ssurjano/optimization.html
 """
 
 is_streamlit = False
+is_interactive = False
 
 
 def rastrigin(x):
@@ -182,8 +183,8 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return fig
         
     def plot_with_function():
-        global is_streamlit
-        if is_streamlit == True:
+        global is_interactive
+        if is_interactive == True:
             import plotly.graph_objects as go
             Y = fun(xs)
             yhat = evalute_hdmr(xs, np.mean(Y, axis=0), alpha)
@@ -368,7 +369,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         return result
 
 def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, x0_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
-    global N, n, function_name, basis_function, BasisFunction, m, a, b, random_init, is_adaptive, k, epsilon, clip
+    global N, n, function_name, basis_function, BasisFunction, m, a, b, x0, random_init, is_adaptive, k, epsilon, clip, is_streamlit
 
     if basis_function_ not in ["Legendre", "Cosine"]:
         raise ValueError("basis_function should be Cosine or Legendre.")
@@ -387,7 +388,7 @@ def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_in
         BasisFunction = Legendre
     elif basis_function == "Cosine":
         BasisFunction = Cosine
-
+    print(f"is_adaptive: {is_adaptive}")
     if is_adaptive:
         k = k_
         epsilon = epsilon_
@@ -398,8 +399,17 @@ def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_in
     else:
         file_name = f"results/{function_name}_a{a}_b{b}_N{N}_m{m}" 
     
-    if not random_init:    
-        x0 = np.fromstring(x0_,dtype=float,sep=',')
+    if not random_init:
+        if is_streamlit:
+            x0 = np.fromstring(x0_,dtype=float,sep=',')
+        elif x0_:
+            print(",,,,,,,,,,,,,,", x0_)
+            x0 = np.array(x0_)
+        else:
+            if function_name.split('_')[1] == '2d':
+                x0 = np.zeros(2)
+            elif function_name.split('_')[1] == '2d':
+                x0 = np.zeros(10)
     else:
         file_name += '_randomInit'
         if function_name.split('_')[1] == '2d':
@@ -429,8 +439,9 @@ if __name__ == "__main__":
     parser.add_argument('--function', help='Test function name.', required=True)
     parser.add_argument('--min', type=float, help='Lower range of the test function.', required=True)
     parser.add_argument('--max', type=float, help='Upper range of the test function.', required=True)
+    parser.add_argument('--x0', nargs='+', type=float, help='Starting point x0.', required=False)
     parser.add_argument('--randomInit', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
-    parser.add_argument('--basisFunction', type=int, default="Cosine", help='Basis function that will be used in HDMR. Legendre or Cosine. Default is Cosine.')
+    parser.add_argument('--basisFunction', type=str, default="Cosine", help='Basis function that will be used in HDMR. Legendre or Cosine. Default is Cosine.')
     parser.add_argument('--legendreDegree', type=int, default=7, help='Number of legendre polynomial. Default is 7.')
     parser.add_argument('--adaptive', action='store_true', help='Uses iterative method when set.')
     parser.add_argument('--numClosestPoints', type=int, help='Number of closest points to x0. Default is 1000.', default=100)
@@ -443,7 +454,7 @@ if __name__ == "__main__":
     N_ = global_args.numSamples # Number of samples to calculate alpha coefficients
     n_ = global_args.numVariables # Number of variable
     function_name_ = global_args.function
-    basis_function_ = global_args.basis_function
+    basis_function_ = global_args.basisFunction
     m_ = global_args.legendreDegree # Degree of the Legendre polynomial
     a_ = global_args.min # Range of the function
     b_ = global_args.max # Range of the function
@@ -452,9 +463,10 @@ if __name__ == "__main__":
     k_ = global_args.numClosestPoints
     epsilon_ = global_args.epsilon
     clip_ = global_args.clip
+    x0_ = global_args.x0
 
-    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, 
-                                                is_adaptive_, k_, epsilon_, clip_)
+    print("clip_: ", clip_)
+    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, x0_=x0_, is_adaptive_=is_adaptive_, k_=k_, epsilon_=epsilon_, clip_=clip_)
     print(f"{runtime} seconds")
     print(f"hdmr_opt status: {status_hdmr}")
 

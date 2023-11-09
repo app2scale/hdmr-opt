@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import src.main as main
 import app_utils as utils
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 st.set_page_config(
     page_title="HDMR-Opt",
     page_icon=":tada:",
@@ -79,7 +81,8 @@ if st.sidebar.button("Calculate HDMR"):
     n = utils.get_dims(function_name)
     print("n is: ", n)
 
-    main.is_streamlit = interactive_plot
+    main.is_interactive = interactive_plot
+    main.is_streamlit = True
     if is_adaptive:
         status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, basis_funtion, legendreDegree, 
                                         interval[0], interval[1], random_init, x0, is_adaptive, num_closest_points, epsilon, clip)

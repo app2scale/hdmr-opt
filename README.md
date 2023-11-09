@@ -75,6 +75,8 @@ An example script (default version, not adaptive hdmr): `python src/main.py --nu
 
 An example script (Runs adaptive hdmr): `python src/main.py --numSamples 1000 --numVariables 2 --function camel16_2d --min -5 --max 5 --adaptive --epsilon 0.2`
 
+**UPDATE (11.09.23)**: You can now also use `--x0 2.5 1.5` this x0 variable is added to command line so you can define x0 from command line if you want.
+
 If adaptive parameter is set, the output file will be additional parameters and will be starting with 'adaptive' key.
 
 # Web UI Update
