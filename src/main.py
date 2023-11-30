@@ -4,6 +4,8 @@ import math
 import matplotlib.pyplot as plt
 import pandas as pd
 import time
+import json
+
 try:
     import src.functions as functions
 except:
@@ -84,7 +86,7 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                  gtol=1e-5, maxiter=None,
                  disp=False, return_all=False, finite_diff_rel_step=None,
                  **unknown_options):
-    global plt1, plt2, plt3, a, b, xs
+    global plt1, plt2, plt3, a, b, xs, number_of_runs
 
     def calculate_alpha_coeff(xs):
         N, n = xs.shape
@@ -266,9 +268,9 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
         results = []
     
         xs = (b - a)*np.random.random((N,n)) + a # Generate sampling data
-        print('XS: ', xs.shape)
+        # print('XS: ', xs.shape)
         alpha = calculate_alpha_coeff(xs)
-        print("Alpha: ", alpha)
+        # print("Alpha: ", alpha)
         temp_status = []
         for i in range(n):
             status = minimize(one_dim_evaluate_hdmr, np.array(x0[i]), method='BFGS') 
@@ -340,36 +342,38 @@ def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
             a = old_a
             b = old_b
             x0 = old_x0
-        plt1 = plot_results()
-        plt3 = plot_alpha_squared(alpha)
-        if n == 2:
-            plt2 = plot_with_function()
-        else:
-            plt2 = None
+        if number_of_runs == 1:
+            plt1 = plot_results()
+            plt3 = plot_alpha_squared(alpha)
+            if n == 2:
+                plt2 = plot_with_function()
+            else:
+                plt2 = None
         result = results[-1]
         result["nfev"] = result["nfev"] * iter_count
         result['n_iterations'] = iter_count
         return result
     else:
         xs = (b-a)*np.random.random((N,n))+a # Generate sampling data
-        print('XS: ', xs.shape)
+        # print('XS: ', xs.shape)
         alpha = calculate_alpha_coeff(xs)
-        print("Alpha: ", alpha)
+        # print("Alpha: ", alpha)
         temp_status = []
         for i in range(n):
             status = minimize(one_dim_evaluate_hdmr, np.array(x0[i]), method='BFGS') 
             temp_status.append(status.x[0])
         result = OptimizeResult(x=temp_status, fun=fun(x0, *args), success=True, message=" ", nfev=1, njev=0, nhev=0)
         result.nfev = N
-        plt1 = plot_results()
-        if n == 2:
-            plt2 = plot_with_function()
-        else:
-            plt2 = None
+        if number_of_runs == 1:
+            plt1 = plot_results()
+            if n == 2:
+                plt2 = plot_with_function()
+            else:
+                plt2 = None
         return result
 
-def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, x0_, is_adaptive_, k_=None, epsilon_=None, clip_=None):
-    global N, n, function_name, basis_function, BasisFunction, m, a, b, x0, random_init, is_adaptive, k, epsilon, clip, is_streamlit
+def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, x0_, is_adaptive_, k_=None, epsilon_=None, clip_=None, number_of_runs_=1):
+    global N, n, function_name, basis_function, BasisFunction, m, a, b, x0, random_init, is_adaptive, k, epsilon, clip, is_streamlit, number_of_runs
 
     if basis_function_ not in ["Legendre", "Cosine"]:
         raise ValueError("basis_function should be Cosine or Legendre.")
@@ -383,6 +387,7 @@ def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_in
     b = b_
     random_init = random_init_
     is_adaptive = is_adaptive_
+    number_of_runs = number_of_runs_
 
     if basis_function == "Legendre":
         BasisFunction = Legendre
@@ -399,33 +404,45 @@ def main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_in
     else:
         file_name = f"results/{function_name}_a{a}_b{b}_N{N}_m{m}" 
     
-    if not random_init:
-        if is_streamlit:
-            x0 = np.fromstring(x0_,dtype=float,sep=',')
-        elif x0_:
-            print(",,,,,,,,,,,,,,", x0_)
-            x0 = np.array(x0_)
-        else:
-            if function_name.split('_')[1] == '2d':
-                x0 = np.zeros(2)
-            elif function_name.split('_')[1] == '2d':
-                x0 = np.zeros(10)
-    else:
-        file_name += '_randomInit'
-        if function_name.split('_')[1] == '2d':
-            x0 = np.random.rand(2) * (b - a) + a # Initial value of function for optimizing process
-            x0_ = x0
-        elif function_name.split('_')[1] == '10d':
-            x0 = np.random.rand(10) * (b - a) + a
-            x0_ = x0
     
     # status_bfgs = minimize(test_function, x0, method="BFGS") # Applying direct optimization method to the function
     # print(f"BFGS status: {status_bfgs}")
+    status_hdmr = None
+
     start=time.time()
-    status_hdmr = minimize(getattr(functions, function_name), x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
+
+    
+    status_hdmr = []
+    for i in range(number_of_runs):
+        a = a_
+        b = b_
+        if not random_init:
+            if is_streamlit:
+                x0 = np.fromstring(x0_, dtype=float,sep=',')
+            elif x0_:
+                # print(",,,,,,,,,,,,,,", x0_)
+                x0 = np.array(x0_)
+            else:
+                if function_name.split('_')[1] == '2d':
+                    x0 = np.zeros(2)
+                elif function_name.split('_')[1] == '10d':
+                    x0 = np.zeros(10)
+        else:
+            file_name += '_randomInit'
+            if function_name.split('_')[1] == '2d':
+                x0 = np.random.rand(2) * (b - a) + a # Initial value of function for optimizing process
+            elif function_name.split('_')[1] == '10d':
+                x0 = np.random.rand(10) * (b - a) + a
+            
+        result = minimize(getattr(functions, function_name), x0, args=(), method=hdmr_opt) # Applying hdmr-opt method to the function
+        # print("result", result)
+        status_hdmr.append(result)
+
     end=time.time()
-    runtime=end-start
-    return status_hdmr,runtime, plt1, plt2, plt3, file_name
+    runtime = end-start
+    return status_hdmr, runtime, plt1, plt2, plt3, file_name
+
+number_of_runs = None
 
 plt1 = plt2 = plt3 = None
 
@@ -437,8 +454,8 @@ if __name__ == "__main__":
     parser.add_argument('--numSamples', type=int, help='Number of samples to calculate alpha coefficients.', required=True)
     parser.add_argument('--numVariables', type=int, help='Number of variable of the test function.', required=True)
     parser.add_argument('--function', help='Test function name.', required=True)
-    parser.add_argument('--min', type=float, help='Lower range of the test function.', required=True)
-    parser.add_argument('--max', type=float, help='Upper range of the test function.', required=True)
+    parser.add_argument('--min', type=float, help='Lower range of the test function.', required=False, default=None)
+    parser.add_argument('--max', type=float, help='Upper range of the test function.', required=False, default=None)
     parser.add_argument('--x0', nargs='+', type=float, help='Starting point x0.', required=False)
     parser.add_argument('--randomInit', action='store_true', help='Initializes x0 as random numbers in the range of xs. Default is initializing as 0.')
     parser.add_argument('--basisFunction', type=str, default="Cosine", help='Basis function that will be used in HDMR. Legendre or Cosine. Default is Cosine.')
@@ -447,6 +464,7 @@ if __name__ == "__main__":
     parser.add_argument('--numClosestPoints', type=int, help='Number of closest points to x0. Default is 1000.', default=100)
     parser.add_argument('--epsilon', type=float, help='Epsilon value for convergence. Default is 0.1.', default=0.1)
     parser.add_argument('--clip', type=float, help='Clipping value for updating interval (a, b). Default is 0.9.', default=0.9)
+    parser.add_argument('--numberOfRuns', type=int, help='Number of test runs to calculate average error.', default=1)
 
     global_args = parser.parse_args()
 
@@ -456,23 +474,70 @@ if __name__ == "__main__":
     function_name_ = global_args.function
     basis_function_ = global_args.basisFunction
     m_ = global_args.legendreDegree # Degree of the Legendre polynomial
+    
     a_ = global_args.min # Range of the function
     b_ = global_args.max # Range of the function
+        
+    if not (a_ and b_):
+        with open('src/function_ranges.json', 'r') as file:
+            function_ranges = json.load(file)[function_name_]
+        a_, b_ = function_ranges
+    
     is_adaptive_ = global_args.adaptive
     random_init_ = global_args.randomInit
     k_ = global_args.numClosestPoints
     epsilon_ = global_args.epsilon
     clip_ = global_args.clip
     x0_ = global_args.x0
+    number_of_runs_ = global_args.numberOfRuns
 
-    print("clip_: ", clip_)
-    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, random_init_, x0_=x0_, is_adaptive_=is_adaptive_, k_=k_, epsilon_=epsilon_, clip_=clip_)
+    # print("clip_: ", clip_)
+    status_hdmr, runtime, _, _, _, file_name = main_function(N_, n_, function_name_, basis_function_, m_, a_, b_, 
+        random_init_, x0_=x0_, is_adaptive_=is_adaptive_, k_=k_, epsilon_=epsilon_, clip_=clip_, number_of_runs_=number_of_runs_)
     print(f"{runtime} seconds")
     print(f"hdmr_opt status: {status_hdmr}")
 
+    
     with open(file_name + '.txt', 'w') as f:
         # f.write("BFGS Status\n" + str(status_bfgs) + "\n\n")
         f.write("HDMR Status\n" + str(status_hdmr))
     f.close()
-            
-    plt.show()
+
+    if number_of_runs == 1:
+        plt.show()
+    else:
+        global x0
+        # Calculate average relative error ->
+        function_range = np.abs(a_ - b_)
+        print(f"Function interval: ({a_}, {b_}), range: {function_range} ")
+
+        sum_of_distances = 0.0
+        sum_of_relative_distances = 0.0
+
+        with open('src/optimum_points.json', 'r') as file:
+            all_optimum_points = json.load(file)
+
+        optimum_points = all_optimum_points[function_name]
+        optimum_points = np.array(optimum_points).reshape(-1, 2)
+        # print("Optimum points:", optimum_points)
+        
+        for i in range(number_of_runs):
+            x_i = status_hdmr[i].x
+            print(f"Run {i+1}   x = {x_i}")
+
+            # Calculate the distance and the relative distance (divided by range of the function for relative distance)
+            distances = np.linalg.norm(optimum_points - x_i, axis=1)
+            # print("Distances:", distances)
+            distance = np.min(np.min(distances))
+            relative_distance = distance / function_range
+
+            # *** We might have to consider outliars here, sometimes very big numbers occur (rarely)
+
+            sum_of_distances += distance
+            sum_of_relative_distances += relative_distance
+        
+        print(f"\nSum of distances from optimum points\n{optimum_points}\nis: {sum_of_distances}")
+        print(f"Average error: {sum_of_distances / number_of_runs}\n")
+
+        print(f"Sum of relative distances from optimum points\n{optimum_points}\nis: {sum_of_relative_distances}")
+        print(f"Average relative error: {sum_of_relative_distances / number_of_runs}")

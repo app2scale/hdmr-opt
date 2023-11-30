@@ -46,12 +46,12 @@ The output files are
 You can enter the script `python src/main.py --help`:
 
 ```
-usage: HDMR [-h] --numSamples NUMSAMPLES --numVariables NUMVARIABLES --function FUNCTION --min MIN --max MAX [--randomInit] [--legendreDegree LEGENDREDEGREE]
-            [--adaptive] [--numClosestPoints NUMCLOSESTPOINTS] [--epsilon EPSILON] [--clip CLIP]
+usage: HDMR [-h] --numSamples NUMSAMPLES --numVariables NUMVARIABLES --function FUNCTION --min MIN --max MAX [--x0 X0 [X0 ...]] [--randomInit] [--basisFunction BASISFUNCTION]
+            [--legendreDegree LEGENDREDEGREE] [--adaptive] [--numClosestPoints NUMCLOSESTPOINTS] [--epsilon EPSILON] [--clip CLIP] [--numberOfRuns NUMBEROFRUNS]
 
 Program applies the hdmr-opt method and plots the results.
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   --numSamples NUMSAMPLES
                         Number of samples to calculate alpha coefficients.
@@ -60,14 +60,19 @@ optional arguments:
   --function FUNCTION   Test function name.
   --min MIN             Lower range of the test function.
   --max MAX             Upper range of the test function.
+  --x0 X0 [X0 ...]      Starting point x0.
   --randomInit          Initializes x0 as random numbers in the range of xs. Default is initializing as 0.
+  --basisFunction BASISFUNCTION
+                        Basis function that will be used in HDMR. Legendre or Cosine. Default is Cosine.
   --legendreDegree LEGENDREDEGREE
                         Number of legendre polynomial. Default is 7.
   --adaptive            Uses iterative method when set.
   --numClosestPoints NUMCLOSESTPOINTS
-                        Number of closest points to x0. Default is 100.
+                        Number of closest points to x0. Default is 1000.
   --epsilon EPSILON     Epsilon value for convergence. Default is 0.1.
   --clip CLIP           Clipping value for updating interval (a, b). Default is 0.9.
+  --numberOfRuns NUMBEROFRUNS
+                        Number of test runs to calculate average error.
 ```
 
 
@@ -78,6 +83,8 @@ An example script (Runs adaptive hdmr): `python src/main.py --numSamples 1000 --
 **UPDATE (11.09.23)**: You can now also use `--x0 2.5 1.5` this x0 variable is added to command line so you can define x0 from command line if you want.
 
 If adaptive parameter is set, the output file will be additional parameters and will be starting with 'adaptive' key.
+
+**UPDATE (30.11.23)**: You can now use `--numberOfRuns` parameter to test the code with many trials and calculate the average error and average normalized error. Provide an integer here to have your code running any number of times. There are still issues with `--adaptive` parameter. While using this parameter with `--adaptive` be careful. Some extreme numbers may lead very high errors.
 
 # Web UI Update
 After you install all dependencies inside of the `requirements.txt` you can run the following code to run web ui on your browser.

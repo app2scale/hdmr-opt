@@ -1,0 +1,12 @@
+{
+    "rastrigin_2d": [-5.12, 5.12],
+    "testfunc_2d": [-5, 5],
+    "camel3_2d": [-5, 5],
+    "camel16_2d": [-5, 5],
+    "treccani_2d": [-5, 5],
+    "goldstein_2d": [-2, 2],
+    "branin_2d": [-5, 15],
+    "rosenbrock_2d": [-2.048, 2.048],
+    "ackley_2d": [-30, 30]
+  }
+  

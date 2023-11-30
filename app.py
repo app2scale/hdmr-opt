@@ -89,6 +89,7 @@ if st.sidebar.button("Calculate HDMR"):
     else:
         status_hdmr, runtime, plt1, plt2, plt3, file_name = main.main_function(N, n, function_name, basis_funtion, legendreDegree,
                                         interval[0], interval[1], random_init, x0, is_adaptive)
+    status_hdmr = status_hdmr[0]
     st.subheader("Results")
     st.write(f"hdmr_opt status Success: {status_hdmr.success} - X: {status_hdmr.x}")
     st.write(f"Runtime: {runtime:.5f} seconds")
