@@ -4,3 +4,5 @@ pandas==1.4.4
 plotly==5.9.0
 scipy==1.9.1
 streamlit==1.24.1
+xgboost==1.7.3
+scikit-learn==1.2.2
