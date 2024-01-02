@@ -28,7 +28,7 @@ def create_features(df: pd.DataFrame, label: Optional[str] = None) -> Tuple[pd.D
     df['year'] = df.index.year
     df['dayofyear'] = df.index.dayofyear
     df['dayofmonth'] = df.index.day
-    df['weekofyear'] = df.index.isocalendar().week.astype('int')
+    df['weekofyear'] = df.index.weekofyear.astype('int')
 
     df['prev_1_day_lag'] = df['transactions'].shift(1)
     df['prev_2_day_lag'] = df['transactions'].shift(2)
