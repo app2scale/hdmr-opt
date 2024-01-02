@@ -32,7 +32,7 @@ Example script: `python src/functions.py camel3_2d`
 
 Contains optimize_helper function which uses the xgboost library to do regression on transactions.csv
 
-optimize_helper is used to optimize the number of transactions on future dates and return Mean Absolute Percentage Error. You only need to specify learning rate and the subsample parameters.
+optimize_helper is used to optimize the predicted number of transactions on future dates and return Mean Absolute Percentage Error. You only need to specify learning rate and the subsample parameters.
 
 ### Module: `main.py`
 
