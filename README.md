@@ -28,6 +28,12 @@ You can run functions.py as: `python src/functions.py <funtion_name>`
 
 Example script: `python src/functions.py camel3_2d`
 
+### Module: `functions_forecast.py`
+
+Contains optimize_helper function which uses the xgboost library to do regression on transactions.csv
+
+optimize_helper is used to optimize the number of transactions on future dates and return Mean Absolute Percentage Error. You only need to specify learning rate and the subsample parameters.
+
 ### Module: `main.py`
 
 `main.py` computes the global minimum points of given function with parameters. The outputs are status reports and HDMR plots. You can also use adaptive hdmr by setting adaptive parameter.
