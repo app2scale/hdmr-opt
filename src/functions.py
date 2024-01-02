@@ -1,6 +1,10 @@
 import numpy as np
+from functions_forecast import optimize_helper
 
 # ------- BEGIN FUNCTIONS -------
+# xgboost
+def xgb_opt(X):
+    return np.apply_along_axis(lambda row: optimize_helper(row[0],row[1]), 1, X)
 
 # 2d Camel3
 def testfunc_2d(x):
