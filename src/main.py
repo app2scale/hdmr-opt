@@ -1,86 +1,18 @@
 from scipy.optimize import minimize, OptimizeResult
 import numpy as np
-import math
 import matplotlib.pyplot as plt
 import pandas as pd
 import time
 import json
-
+from src.basis_functions import Legendre, Cosine
 try:
     import src.functions as functions
 except:
     import functions    
 import argparse
 
-"""
-Test functions are available in https://www.sfu.ca/~ssurjano/optimization.html
-
-"""
-
 is_streamlit = False
 is_interactive = False
-
-
-def rastrigin(x):
-    if len(x.shape) == 2:
-        N, n = x.shape
-        axis = 1
-    else:
-        n = len(x)
-        axis = 0
-    y = np.sum(x**2 -10*np.cos(2*math.pi*x), axis=axis, keepdims=True)
-    return y + 10*n
-
-def schwefel(x):
-    if len(x.shape) == 2:
-        N, n = x.shape
-        axis = 1
-    else:
-        n = len(x)
-        axis = 0
-    y = 418.9829*n - np.sum(x*np.sin(np.sqrt(np.abs(x))), axis=axis, keepdims=True)
-    return y
-
-
-def griewank(x):
-    if len(x.shape) == 2:
-        N, n = x.shape
-        axis = 1
-    else:
-        n = len(x)
-        axis = 0
-    y = np.sum((x**2)/4000, axis=axis, keepdims=True) - np.prod(np.cos(x / np.sqrt(np.arange(1, n+1))), axis=axis, keepdims=True) + 1
-    return y
-
-
-def test_func(x):
-    if len(x.shape) == 2:
-        N, n = x.shape
-        axis = 1
-    else:
-        n = len(x)
-        axis = 0
-    y = np.sum(x**2, axis=axis, keepdims=True)
-    return y 
-
-## ------------------ BASIS FUNCTIONS START ------------------ ##
-def Pn(m, x):
-        if m == 0:
-            return np.ones_like(x)
-        elif m == 1:
-            return x
-        else:
-            return (2*m-1)*x*Pn(m-1, x)/m - (m-1)*Pn(m-2, x)/m
-        
-def Legendre(a,b,m,x):
-        return np.sqrt((2*m+1)/(b-a))*Pn(m, 2*(x-b)/(b-a)+1)
-
-def Cosine(a,b,m,x):
-    square_root_term = np.sqrt(1 / (b-a) * 8 * math.pi * m / (math.sin(4 * math.pi * m) + 4 * math.pi * m))
-    outer_term = np.cos(2 * math.pi * m * (x - a) / (b - a))
-    return square_root_term * outer_term
-
-## ------------------ BASIS FUNCTIONS END ------------------ ##
 
 def hdmr_opt(fun, x0, args=(), jac=None, callback=None,
                  gtol=1e-5, maxiter=None,

@@ -3,3 +3,31 @@ __pycache__
 deneme.py
 results/*.png
 results/*.txt
+
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+
+# Logs
+*.log
+
+# Data and results
+# results/
+# transactions.csv
+
+# System files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Environment files
+*.env
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/

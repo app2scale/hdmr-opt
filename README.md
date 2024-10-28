@@ -9,11 +9,11 @@ app_file: app.py
 pinned: false
 ---
 
-# hdmr-opt
-## General Information
-This repository contains the codes to calculate global minimum points of the given functions. In this code, we use two method to optimize and compare. In hdmr-opt method, We get the one dimensional form of the given functions using HDMR. In other method, we directly apply BFGS method to the function.
+# HDMR Optimization
 
-* **NOTE:** In order to run the code, create a new conda enviroment, or virtiual enviroment, with **python==3.9**. The code might not run due to some libary version discrepancies. However, it should run perfectly for **python==3.9**.
+🚀 **HDMR Optimization** is a repository that provides code to compute the global minimum points of specified functions using High Dimensional Model Representation (HDMR). It employs two optimization techniques: **HDMR-based optimization** and the traditional **BFGS** (Broyden–Fletcher–Goldfarb–Shanno) method. The HDMR-based approach extracts the one-dimensional form of a given function, whereas the BFGS method directly optimizes the target function.
+
+**Note**: The code is compatible with **Python 3.9**. It is recommended to set up a dedicated Conda or virtual environment to avoid compatibility issues due to library versions.
 
 ## Python Files
 
