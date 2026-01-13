@@ -1,12 +1,14 @@
 {
-    "rastrigin_2d": [-5.12, 5.12],
-    "testfunc_2d": [-5, 5],
-    "camel3_2d": [-5, 5],
-    "camel16_2d": [-5, 5],
-    "treccani_2d": [-5, 5],
-    "goldstein_2d": [-2, 2],
-    "branin_2d": [-5, 15],
-    "rosenbrock_2d": [-2.048, 2.048],
-    "ackley_2d": [-30, 30]
-  }
-  
+  "testfunc_2d": [-5.0, 5.0],
+  "rastrigin_2d": [-5.12, 5.12],
+  "rastrigin_10d": [-5.12, 5.12],
+  "camel3_2d": [-5.0, 5.0],
+  "camel16_2d": [-5.0, 5.0],
+  "treccani_2d": [-5.0, 5.0],
+  "goldstein_2d": [-2.0, 2.0],
+  "branin_2d": [-5.0, 15.0],
+  "rosenbrock_2d": [-2.048, 2.048],
+  "rosenbrock_10d": [-5.0, 10.0],
+  "ackley_2d": [-30.0, 30.0],
+  "griewank_10d": [-600.0, 600.0]
+}

@@ -1,8 +1,57 @@
-matplotlib==3.5.2
-numpy==1.21.5
-pandas==1.4.4
-plotly==5.9.0
-scipy==1.9.1
-streamlit==1.24.1
-xgboost==1.7.3
-scikit-learn==1.2.2
+# HDMR Hyperparameter Optimization - Production Dependencies
+# Python 3.9+
+
+# Core Scientific Computing
+numpy>=1.24.0,<2.0.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.14.0
+seaborn>=0.12.0
+
+# Machine Learning - Gradient Boosting
+xgboost>=2.0.0
+lightgbm>=4.0.0
+scikit-learn>=1.3.0
+
+# Statistical Forecasting
+statsmodels>=0.14.0
+
+# Deep Learning (Optional - uncomment if using N-BEATS)
+# torch>=2.0.0
+# pytorch-lightning>=2.0.0
+
+# Web Interface
+streamlit>=1.28.0
+
+# Development Tools (Optional)
+# Code Formatting
+# black>=23.0.0
+# isort>=5.12.0
+
+# Linting
+# flake8>=6.0.0
+# pylint>=3.0.0
+# mypy>=1.5.0
+
+# Testing
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# pytest-mock>=3.11.0
+
+# Documentation
+# sphinx>=7.0.0
+# sphinx-rtd-theme>=1.3.0
+# sphinx-autodoc-typehints>=1.24.0
+
+# Optimization Benchmarking (Optional)
+# optuna>=3.3.0
+# scikit-optimize>=0.9.0
+# hyperopt>=0.2.7
+
+# Utilities
+python-dotenv>=1.0.0  # For environment configuration
+tqdm>=4.65.0  # Progress bars for long-running optimizations
+joblib>=1.3.0  # Parallel processing support
