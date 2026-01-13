@@ -1,33 +1,46 @@
-src/__pycache__/
-__pycache__
-deneme.py
-results/*.png
-results/*.txt
-
-# Byte-compiled files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
+# Python virtual environments
+hdmr-env/
 venv/
 env/
+.venv/
+hdmr-env/
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+virtualenv/
+pipenv/
+.Python
 
-# Logs
+# Results and outputs
+results/
 *.log
+*.png
 
-# Data and results
-# results/
-# transactions.csv
-
-# System files
-.DS_Store
-.idea/
-.vscode/
-*.swp
-
-# Environment files
-*.env
-
-# Jupyter Notebooks checkpoints
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
 .ipynb_checkpoints/
+*.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+Untitled*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

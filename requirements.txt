@@ -1,57 +1,53 @@
 # HDMR Hyperparameter Optimization - Production Dependencies
-# Python 3.9+
+# Target runtime: Linux (CentOS 7), Python 3.10 (compatible with Python 3.9+)
 
-# Core Scientific Computing
-numpy>=1.24.0,<2.0.0
-scipy>=1.10.0
-pandas>=2.0.0
+# ---------------------------------------------------------------------------
+# Core Scientific Computing (Pinned for ABI compatibility)
+# ---------------------------------------------------------------------------
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.2.3
 
+# ---------------------------------------------------------------------------
 # Visualization
-matplotlib>=3.7.0
-plotly>=5.14.0
-seaborn>=0.12.0
+# ---------------------------------------------------------------------------
+matplotlib==3.10.0
+plotly==6.0.0
+seaborn==0.13.2
 
-# Machine Learning - Gradient Boosting
-xgboost>=2.0.0
-lightgbm>=4.0.0
-scikit-learn>=1.3.0
+# ---------------------------------------------------------------------------
+# Machine Learning - Gradient Boosting / ML
+# ---------------------------------------------------------------------------
+xgboost==3.0.5
+lightgbm==3.3.5
+scikit-learn==1.3.2
 
+# ---------------------------------------------------------------------------
 # Statistical Forecasting
-statsmodels>=0.14.0
+# ---------------------------------------------------------------------------
+statsmodels==0.14.4
 
-# Deep Learning (Optional - uncomment if using N-BEATS)
-# torch>=2.0.0
-# pytorch-lightning>=2.0.0
+# ---------------------------------------------------------------------------
+# Arrow (Explicit pin to avoid NumPy 2 / ABI issues via transitive deps)
+# ---------------------------------------------------------------------------
+pyarrow==14.0.2
 
+# ---------------------------------------------------------------------------
 # Web Interface
-streamlit>=1.28.0
+# ---------------------------------------------------------------------------
+streamlit==1.41.1
 
-# Development Tools (Optional)
-# Code Formatting
-# black>=23.0.0
-# isort>=5.12.0
-
-# Linting
-# flake8>=6.0.0
-# pylint>=3.0.0
-# mypy>=1.5.0
-
-# Testing
-# pytest>=7.4.0
-# pytest-cov>=4.1.0
-# pytest-mock>=3.11.0
-
-# Documentation
-# sphinx>=7.0.0
-# sphinx-rtd-theme>=1.3.0
-# sphinx-autodoc-typehints>=1.24.0
-
-# Optimization Benchmarking (Optional)
-# optuna>=3.3.0
-# scikit-optimize>=0.9.0
-# hyperopt>=0.2.7
-
+# ---------------------------------------------------------------------------
 # Utilities
-python-dotenv>=1.0.0  # For environment configuration
-tqdm>=4.65.0  # Progress bars for long-running optimizations
-joblib>=1.3.0  # Parallel processing support
+# ---------------------------------------------------------------------------
+python-dotenv==1.0.1
+tqdm==4.67.1
+joblib==1.5.3
+threadpoolctl==3.6.0
+
+# ---------------------------------------------------------------------------
+# Optional: Deep Learning (uncomment if using N-BEATS)
+# ---------------------------------------------------------------------------
+# torch==2.2.2
+# pytorch-lightning==2.2.4
+
