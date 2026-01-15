@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  hdmr:
+    image: hdmr-opt:latest
+    container_name: hdmr_comparison_fixed
+    runtime: nvidia
+    
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONUNBUFFERED=1
+      - OMP_NUM_THREADS=8
+    
+    cpus: "16.0"
+    mem_limit: 32g
+    
+    volumes:
+      - ./results:/workspace/results
+      - ./src/data:/workspace/src/data
+      - ./docker_logs:/workspace/logs
+    
+    command: >
+      bash -c "
+      echo '=========================================' &&
+      echo 'FIXED: HDMR with proper seed handling' &&
+      echo '=========================================' &&
+      python compare_optimizers.py --model xgboost --hdmr-samples 200 --seeds 3 --trials 20 2>&1 | tee logs/comparison_fixed_\$(date +%Y%m%d_%H%M%S).log
+      "
+    
+    restart: unless-stopped
