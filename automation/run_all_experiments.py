@@ -23,6 +23,11 @@ Author: HDMR Research Team
 Date: 2026-01-13
 """
 
+# Path fix for reorganized structure
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import argparse
 import os
 import subprocess
