@@ -226,3 +226,53 @@ MIT License - see LICENSE file
 ---
 
 **Developed by APP2SCALE Team**
+
+### v3.0.0 (2026-01-13) - Production Ready
+
+**Core Engine Improvements:**
+- Robust x0 parsing (supports broadcasting, pattern repeat)
+- Always returns OptimizeResult (never None)
+- Fixed surrogate evaluation (correct 1D optimization per dimension)
+- Numerical stability hardening (NaN/Inf guards, soft bounds)
+- Safe visualization (never crashes optimization)
+
+**Forecasting Module:**
+- Strict MM/DD/YYYY date parsing with auto-detection fallback
+- Better error messages for date parsing failures
+- Safer defaults (no mutable default arguments)
+- BaseForecaster class with backward compatibility
+
+**Automation:**
+- Added benchmark_2d.sh for 2D function testing
+- Added forecast_pipeline.py for forecasting optimization
+- Added high_dim_test.py for 10D function testing
+- All scripts use python -m for import safety
+
+**Documentation:**
+- Complete README overhaul
+- Added usage examples for all scripts
+- Documented production deployment best practices
+
+### v2.0.0 (2024-11-30)
+
+**Features:**
+- Added --numberOfRuns parameter for statistical analysis
+- Improved basis functions module with factory pattern
+- Enhanced numerical stability
+
+**Infrastructure:**
+- Better error handling and logging
+- Improved test coverage
+
+### v1.0.0 (2023-09-11)
+
+**Initial Release:**
+- Core HDMR + BFGS implementation
+- Streamlit web interface
+- Command-line interface
+- Basic benchmark functions
+- Added --x0 parameter for custom starting points
+
+---
+
+**Developed by APP2SCALE Team**
