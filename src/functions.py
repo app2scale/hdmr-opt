@@ -1,35 +1,50 @@
 """
 Benchmark Test Functions for Global Optimization
+=================================================
 
 This module provides a comprehensive collection of benchmark test functions
-commonly used in optimization literature. These functions are used to evaluate
-the performance of optimization algorithms like HDMR.
+commonly used in optimization literature (1980-2026). These functions are used
+to evaluate the performance of optimization algorithms like HDMR.
 
 Function Categories:
 -------------------
-1. 2D Functions: Simple test cases for visualization and debugging
-2. Multi-modal Functions: Functions with multiple local minima
-3. High-dimensional Functions: For testing scalability (10D)
+1. 2D Functions: Simple test cases for visualization and debugging (9 functions)
+2. Classical 10D Functions: Traditional high-dimensional benchmarks (3 functions)
+3. Modern Scalable Functions: Contemporary benchmarks supporting arbitrary dimensions (8 functions)
+
+Total: 20 unique functions × multiple dimensions = comprehensive test suite
 
 Each function is implemented with:
 - Proper vectorization for efficient computation
 - Comprehensive docstrings with mathematical formulation
 - Known global minimum information
 - Input domain specifications
+- Literature references
+
+Dimension Support:
+-----------------
+- Fixed: 2D functions (visualization and algorithm verification)
+- Scalable: All other functions support 10D, 20D, 30D, 50D, 100D, etc.
 
 References:
 ----------
 - Surjanovic, S. & Bingham, D. (2013). Virtual Library of Simulation 
   Experiments: Test Functions and Datasets. 
   Retrieved from http://www.sfu.ca/~ssurjano/
+- Jamil, M., & Yang, X. S. (2013). A literature survey of benchmark functions 
+  for global optimisation problems. International Journal of Mathematical 
+  Modelling and Numerical Optimisation, 4(2), 150-194.
+- CEC 2017 Competition on Real-Parameter Single Objective Optimization
+- Hansen, N., et al. (2021). COCO: A platform for comparing continuous 
+  optimizers in a black-box setting. Optimization Methods and Software, 36(1).
 
 Author: HDMR Optimization Research Group
-Date: 2024
-Version: 2.0.0
+Date: 2025-02-16
+Version: 3.0.0
 """
 
 import sys
-from typing import Tuple, Optional, Callable
+from typing import Tuple, Optional, Callable, Dict, List
 import numpy as np
 from numpy.typing import NDArray
 import matplotlib.pyplot as plt
@@ -53,6 +68,14 @@ def _ensure_2d(X: NDArray[np.float64]) -> NDArray[np.float64]:
     -------
     NDArray[np.float64]
         Reshaped array of shape (N, d).
+    
+    Examples
+    --------
+    >>> _ensure_2d(np.array([1, 2, 3]))
+    array([[1, 2, 3]])
+    >>> _ensure_2d(np.array([[1, 2], [3, 4]]))
+    array([[1, 2],
+           [3, 4]])
     """
     if X.ndim == 1:
         return X.reshape(1, -1)
@@ -60,7 +83,7 @@ def _ensure_2d(X: NDArray[np.float64]) -> NDArray[np.float64]:
 
 
 # ============================================================================
-# 2D BENCHMARK FUNCTIONS
+# 2D BENCHMARK FUNCTIONS (VISUALIZATION & DEBUGGING)
 # ============================================================================
 
 def testfunc_2d(x: NDArray[np.float64]) -> NDArray[np.float64]:
@@ -399,7 +422,7 @@ def ackley_2d(X: NDArray[np.float64]) -> NDArray[np.float64]:
 
 
 # ============================================================================
-# 10D BENCHMARK FUNCTIONS
+# CLASSICAL HIGH-DIMENSIONAL FUNCTIONS (10D)
 # ============================================================================
 
 def rosenbrock_10d(X: NDArray[np.float64]) -> NDArray[np.float64]:
@@ -501,12 +524,372 @@ def rastrigin_10d(X: NDArray[np.float64]) -> NDArray[np.float64]:
 
 
 # ============================================================================
+# MODERN SCALABLE BENCHMARK FUNCTIONS (2020-2026)
+# ============================================================================
+
+def schwefel(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Schwefel function - Highly deceptive multi-modal function.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = 418.9829d - Σᵢ xᵢ sin(√|xᵢ|)
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-500, 500]
+    - Global minimum: f(420.9687, ..., 420.9687) = 0
+    - Highly multi-modal and deceptive
+    - Global optimum is geometrically distant from next best local optima
+    - One of the most difficult benchmark functions
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Schwefel function is deceptive in that the global minimum is 
+    geometrically distant, over the parameter space, from the next 
+    best local minima. Therefore, search algorithms are potentially 
+    prone to convergence in the wrong direction.
+    
+    Used extensively in CEC 2017, 2020, 2022 competitions.
+    
+    References
+    ----------
+    Schwefel, H. P. (1981). Numerical optimization of computer models. 
+    John Wiley & Sons.
+    """
+    X = _ensure_2d(X)
+    d = X.shape[1]
+    return (418.9829 * d - np.sum(X * np.sin(np.sqrt(np.abs(X))), axis=1)).reshape(-1, 1)
+
+
+def levy(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Levy function - Multi-modal function with many local minima.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = sin²(πw₁) + Σᵢ₌₁ᵈ⁻¹[(wᵢ-1)²(1+10sin²(πwᵢ+1))] + (wᵈ-1)²(1+sin²(2πwᵈ))
+    where wᵢ = 1 + (xᵢ-1)/4
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-10, 10]
+    - Global minimum: f(1, 1, ..., 1) = 0
+    - Multi-modal with many local minima
+    - Scalable to any dimension
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Levy function is a difficult optimization problem with many 
+    local minima. Commonly used in recent optimization literature (2020+).
+    
+    References
+    ----------
+    Levy, A. V., & Montalvo, A. (1985). The tunneling algorithm for the 
+    global minimization of functions. SIAM Journal on Scientific and 
+    Statistical Computing, 6(1), 15-29.
+    """
+    X = _ensure_2d(X)
+    
+    # Transform to w
+    w = 1 + (X - 1) / 4
+    
+    # Compute terms
+    term1 = np.sin(np.pi * w[:, 0])**2
+    
+    term2 = np.sum(
+        (w[:, :-1] - 1)**2 * (1 + 10 * np.sin(np.pi * w[:, :-1] + 1)**2),
+        axis=1
+    )
+    
+    term3 = (w[:, -1] - 1)**2 * (1 + np.sin(2 * np.pi * w[:, -1])**2)
+    
+    return (term1 + term2 + term3).reshape(-1, 1)
+
+
+def zakharov(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Zakharov function - Unimodal plate-shaped function.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = Σᵢ xᵢ² + (Σᵢ 0.5i·xᵢ)² + (Σᵢ 0.5i·xᵢ)⁴
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-5, 10] (or [-10, 10])
+    - Global minimum: f(0, 0, ..., 0) = 0
+    - Unimodal (single minimum)
+    - Plate-shaped, asymmetric
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Zakharov function has no local minima except the global minimum.
+    Useful for testing convergence properties of optimization algorithms.
+    
+    References
+    ----------
+    Zakharov, V. D. (1975). A method of searching for a global extremum.
+    USSR Computational Mathematics and Mathematical Physics, 15(3), 37-44.
+    """
+    X = _ensure_2d(X)
+    d = X.shape[1]
+    
+    # Create coefficient vector [0.5, 1.0, 1.5, 2.0, ...]
+    coeffs = 0.5 * np.arange(1, d + 1)
+    
+    # Compute terms
+    term1 = np.sum(X**2, axis=1)
+    sum_term = np.sum(X * coeffs, axis=1)
+    term2 = sum_term**2
+    term3 = sum_term**4
+    
+    return (term1 + term2 + term3).reshape(-1, 1)
+
+
+def sphere(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Sphere function - Simple unimodal baseline function.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = Σᵢ xᵢ²
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-5.12, 5.12] (or unbounded)
+    - Global minimum: f(0, 0, ..., 0) = 0
+    - Convex, unimodal
+    - Easiest test function (baseline)
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Sphere function is the simplest benchmark function and serves
+    as a baseline for comparing optimization algorithms. Any reasonable
+    optimizer should solve this easily.
+    
+    Universal baseline in all optimization literature.
+    """
+    X = _ensure_2d(X)
+    return np.sum(X**2, axis=1).reshape(-1, 1)
+
+
+def sum_of_different_powers(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Sum of Different Powers function - Unimodal with varying steepness.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = Σᵢ |xᵢ|^(i+1)
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-1, 1]
+    - Global minimum: f(0, 0, ..., 0) = 0
+    - Unimodal
+    - Different steepness in different directions
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    This function has different powers for each dimension, creating
+    varying steepness. Useful for testing algorithm behavior with
+    non-uniform landscapes.
+    """
+    X = _ensure_2d(X)
+    d = X.shape[1]
+    
+    # Powers: [2, 3, 4, 5, ..., d+1]
+    powers = np.arange(2, d + 2)
+    
+    return np.sum(np.abs(X)**powers, axis=1).reshape(-1, 1)
+
+
+def styblinski_tang(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Styblinski-Tang function - Multiple global optima.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = 0.5 Σᵢ (xᵢ⁴ - 16xᵢ² + 5xᵢ)
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-5, 5]
+    - Global minimum: f(-2.903534, ..., -2.903534) = -39.16599d
+    - Multiple local minima
+    - All dimensions contribute equally
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Styblinski-Tang function is multi-modal and has a large number
+    of local minima. Commonly used in CEC competitions.
+    """
+    X = _ensure_2d(X)
+    return (0.5 * np.sum(X**4 - 16 * X**2 + 5 * X, axis=1)).reshape(-1, 1)
+
+
+def dixon_price(X: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    Dixon-Price function - Unimodal with steep ridges.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = (x₁-1)² + Σᵢ₌₂ᵈ i(2xᵢ² - xᵢ₋₁)²
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [-10, 10]
+    - Global minimum: f(2^(-2^(i-1)/2^i) for i=1..d) = 0
+    - Unimodal but with steep ridges
+    - Becomes more difficult with increasing dimension
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Dixon-Price function is continuous, differentiable, non-separable,
+    and scalable. The global optimum lies in a steep ridge.
+    """
+    X = _ensure_2d(X)
+    d = X.shape[1]
+    
+    term1 = (X[:, 0] - 1)**2
+    
+    # Vectorized computation for i=2 to d
+    i = np.arange(2, d + 1)
+    term2 = np.sum(i * (2 * X[:, 1:]**2 - X[:, :-1])**2, axis=1)
+    
+    return (term1 + term2).reshape(-1, 1)
+
+
+def michalewicz(X: NDArray[np.float64], m: int = 10) -> NDArray[np.float64]:
+    """
+    Michalewicz function - Multi-modal with steep ridges and valleys.
+    
+    Mathematical Form:
+    -----------------
+    f(x) = -Σᵢ sin(xᵢ) sin²ᵐ(i·xᵢ²/π)
+    
+    Properties:
+    ----------
+    - Domain: xᵢ ∈ [0, π]
+    - Global minimum: depends on d and m
+      - d=2: f(2.20, 1.57) ≈ -1.8013
+      - d=5: ≈ -4.687658
+      - d=10: ≈ -9.66015
+    - Highly multi-modal
+    - Steepness controlled by m (default m=10)
+    
+    Parameters
+    ----------
+    X : NDArray[np.float64]
+        Input of shape (N, d) or (d,).
+    m : int
+        Steepness parameter (default: 10).
+    
+    Returns
+    -------
+    NDArray[np.float64]
+        Function values of shape (N, 1).
+    
+    Notes
+    -----
+    The Michalewicz function has d! local minima. The parameter m defines
+    the steepness of the valleys/ridges. Larger m leads to more difficult
+    searches. Recommended m = 10.
+    
+    Popular in recent optimization literature (2020+).
+    """
+    X = _ensure_2d(X)
+    d = X.shape[1]
+    
+    # Create index array
+    i = np.arange(1, d + 1)
+    
+    # Compute function
+    result = -np.sum(
+        np.sin(X) * np.sin((i * X**2) / np.pi)**(2 * m),
+        axis=1
+    )
+    
+    return result.reshape(-1, 1)
+
+
+# ============================================================================
 # FUNCTION REGISTRY AND UTILITIES
 # ============================================================================
 
 # Global registry of all benchmark functions
-BENCHMARK_FUNCTIONS = {
-    # 2D Functions
+BENCHMARK_FUNCTIONS: Dict[str, Callable] = {
+    # 2D Functions (9 functions)
     'testfunc_2d': testfunc_2d,
     'rastrigin_2d': rastrigin_2d,
     'camel3_2d': camel3_2d,
@@ -516,14 +899,25 @@ BENCHMARK_FUNCTIONS = {
     'branin_2d': branin_2d,
     'rosenbrock_2d': rosenbrock_2d,
     'ackley_2d': ackley_2d,
-    # 10D Functions
+    
+    # Classical 10D Functions (3 functions)
     'rosenbrock_10d': rosenbrock_10d,
     'griewank_10d': griewank_10d,
     'rastrigin_10d': rastrigin_10d,
+    
+    # Modern Scalable Functions (8 functions)
+    'schwefel': schwefel,
+    'levy': levy,
+    'zakharov': zakharov,
+    'sphere': sphere,
+    'sum_of_different_powers': sum_of_different_powers,
+    'styblinski_tang': styblinski_tang,
+    'dixon_price': dixon_price,
+    'michalewicz': michalewicz,
 }
 
 
-def get_function_info(function_name: str) -> dict:
+def get_function_info(function_name: str) -> Dict[str, any]:
     """
     Get information about a benchmark function.
     
@@ -546,6 +940,14 @@ def get_function_info(function_name: str) -> dict:
     ------
     ValueError
         If function_name is not in BENCHMARK_FUNCTIONS.
+    
+    Examples
+    --------
+    >>> info = get_function_info('rastrigin_2d')
+    >>> print(info['dimension'])
+    2
+    >>> print(info['global_minimum'])
+    0.0
     """
     if function_name not in BENCHMARK_FUNCTIONS:
         raise ValueError(f"Function '{function_name}' not found. "
@@ -553,10 +955,15 @@ def get_function_info(function_name: str) -> dict:
     
     # Extract dimension from function name
     dim_str = function_name.split('_')[-1]
-    dimension = int(dim_str[:-1])  # Remove 'd' suffix
+    if dim_str.endswith('d') and dim_str[:-1].isdigit():
+        dimension = int(dim_str[:-1])
+    else:
+        # Modern scalable functions - default to 10D
+        dimension = 10
     
-    # Function-specific metadata (simplified - extend as needed)
+    # Function-specific metadata
     metadata = {
+        # 2D Functions
         'testfunc_2d': {'domain': (-5, 5), 'min': 0, 'minimizer': [0, 0]},
         'rastrigin_2d': {'domain': (-5.12, 5.12), 'min': 0, 'minimizer': [0, 0]},
         'camel3_2d': {'domain': (-5, 5), 'min': 0, 'minimizer': [0, 0]},
@@ -568,9 +975,25 @@ def get_function_info(function_name: str) -> dict:
                       'minimizer': [-np.pi, 12.275]},
         'rosenbrock_2d': {'domain': (-2.048, 2.048), 'min': 0, 'minimizer': [1, 1]},
         'ackley_2d': {'domain': (-30, 30), 'min': 0, 'minimizer': [0, 0]},
+        
+        # Classical 10D
         'rosenbrock_10d': {'domain': (-5, 10), 'min': 0, 'minimizer': [1] * 10},
         'griewank_10d': {'domain': (-600, 600), 'min': 0, 'minimizer': [100] * 10},
         'rastrigin_10d': {'domain': (-5.12, 5.12), 'min': 0, 'minimizer': [0] * 10},
+        
+        # Modern Scalable (defaults for dimension=10)
+        'schwefel': {'domain': (-500, 500), 'min': 0, 'minimizer': [420.9687] * dimension},
+        'levy': {'domain': (-10, 10), 'min': 0, 'minimizer': [1] * dimension},
+        'zakharov': {'domain': (-5, 10), 'min': 0, 'minimizer': [0] * dimension},
+        'sphere': {'domain': (-5.12, 5.12), 'min': 0, 'minimizer': [0] * dimension},
+        'sum_of_different_powers': {'domain': (-1, 1), 'min': 0, 'minimizer': [0] * dimension},
+        'styblinski_tang': {'domain': (-5, 5), 'min': -39.16599 * dimension, 
+                           'minimizer': [-2.903534] * dimension},
+        'dixon_price': {'domain': (-10, 10), 'min': 0, 
+                       'minimizer': [2**(-((2**i - 2) / 2**i)) for i in range(1, dimension + 1)]},
+        'michalewicz': {'domain': (0, np.pi), 
+                       'min': {2: -1.8013, 5: -4.687658, 10: -9.66015}.get(dimension, -dimension),
+                       'minimizer': [None] * dimension},
     }
     
     info = metadata.get(function_name, {'domain': (-5, 5), 'min': 0, 'minimizer': [0] * dimension})
@@ -582,6 +1005,45 @@ def get_function_info(function_name: str) -> dict:
         'global_minimum': info['min'],
         'global_minimizer': info['minimizer']
     }
+
+
+def list_functions(category: Optional[str] = None) -> List[str]:
+    """
+    List available benchmark functions, optionally filtered by category.
+    
+    Parameters
+    ----------
+    category : str, optional
+        Filter by category: '2d', '10d', 'modern', or None for all.
+    
+    Returns
+    -------
+    List[str]
+        List of function names.
+    
+    Examples
+    --------
+    >>> list_functions('2d')
+    ['testfunc_2d', 'rastrigin_2d', ...]
+    >>> list_functions('modern')
+    ['schwefel', 'levy', 'zakharov', ...]
+    """
+    if category is None:
+        return list(BENCHMARK_FUNCTIONS.keys())
+    
+    category = category.lower()
+    
+    if category == '2d':
+        return [name for name in BENCHMARK_FUNCTIONS if name.endswith('_2d')]
+    elif category == '10d':
+        return [name for name in BENCHMARK_FUNCTIONS if name.endswith('_10d')]
+    elif category == 'modern':
+        modern = ['schwefel', 'levy', 'zakharov', 'sphere', 
+                 'sum_of_different_powers', 'styblinski_tang', 
+                 'dixon_price', 'michalewicz']
+        return [name for name in modern if name in BENCHMARK_FUNCTIONS]
+    else:
+        raise ValueError(f"Unknown category: {category}. Use '2d', '10d', 'modern', or None.")
 
 
 # ============================================================================
@@ -604,6 +1066,11 @@ def visualize_2d_function(
         Number of points in each dimension (default: 100).
     save_path : str, optional
         Path to save the figure (if None, displays instead).
+    
+    Examples
+    --------
+    >>> visualize_2d_function('rastrigin_2d')
+    >>> visualize_2d_function('rosenbrock_2d', save_path='rosenbrock.png')
     """
     if not function_name.endswith('_2d'):
         raise ValueError(f"Function '{function_name}' is not a 2D function")
@@ -650,8 +1117,9 @@ def visualize_2d_function(
     
     # Mark global minimum
     minimizer = info['global_minimizer']
-    ax2.plot(minimizer[0], minimizer[1], 'r*', markersize=15, label='Global Min')
-    ax2.legend()
+    if minimizer[0] is not None:
+        ax2.plot(minimizer[0], minimizer[1], 'r*', markersize=15, label='Global Min')
+        ax2.legend()
     
     plt.tight_layout()
     
@@ -663,33 +1131,77 @@ def visualize_2d_function(
 
 
 # ============================================================================
-# MAIN EXECUTION
+# MAIN EXECUTION (CLI)
 # ============================================================================
 
 if __name__ == "__main__":
     """
-    Command-line interface for visualizing benchmark functions.
+    Command-line interface for benchmark functions.
     
     Usage:
-        python functions.py <function_name>
+        python functions.py                    # List all functions
+        python functions.py --list [category]  # List by category
+        python functions.py [function_name]    # Visualize or test function
     
-    Example:
+    Examples:
+        python functions.py --list modern
         python functions.py rastrigin_2d
+        python functions.py schwefel
     """
-    if len(sys.argv) != 2:
-        print("Usage: python functions.py [function_name]")
-        print(f"\nAvailable functions:")
-        for fname in sorted(BENCHMARK_FUNCTIONS.keys()):
-            info = get_function_info(fname)
-            print(f"  - {fname:20s} (dim={info['dimension']}, "
-                  f"f*={info['global_minimum']})")
-        sys.exit(1)
+    import argparse
     
-    function_name = sys.argv[1]
+    parser = argparse.ArgumentParser(
+        description='HDMR Benchmark Functions',
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        'function', nargs='?', default=None,
+        help='Function name to test/visualize'
+    )
+    parser.add_argument(
+        '--list', type=str, default=None, const='all', nargs='?',
+        help='List functions (all, 2d, 10d, modern)'
+    )
+    parser.add_argument(
+        '--dimension', type=int, default=10,
+        help='Dimension for scalable functions (default: 10)'
+    )
+    
+    args = parser.parse_args()
+    
+    # List functions
+    if args.list is not None:
+        category = None if args.list == 'all' else args.list
+        functions_list = list_functions(category)
+        
+        print("\n" + "=" * 70)
+        print(f"BENCHMARK FUNCTIONS{' - ' + category.upper() if category else ''}")
+        print("=" * 70)
+        
+        for fname in sorted(functions_list):
+            try:
+                info = get_function_info(fname)
+                print(f"  - {fname:25s} (dim={info['dimension']:3d}, "
+                      f"f*={info['global_minimum']:>12.6f})")
+            except:
+                print(f"  - {fname:25s}")
+        
+        print("=" * 70)
+        print(f"Total: {len(functions_list)} functions")
+        print("=" * 70 + "\n")
+        sys.exit(0)
+    
+    # Test/visualize specific function
+    if args.function is None:
+        print("Usage: python functions.py [function_name] or --list [category]")
+        print("Run 'python functions.py --list' to see available functions")
+        sys.exit(0)
+    
+    function_name = args.function
     
     if function_name not in BENCHMARK_FUNCTIONS:
         print(f"Error: Function '{function_name}' not found.")
-        print(f"Available: {list(BENCHMARK_FUNCTIONS.keys())}")
+        print(f"Run 'python functions.py --list' to see available functions")
         sys.exit(1)
     
     # Display function information
@@ -705,11 +1217,12 @@ if __name__ == "__main__":
     
     # Visualize if 2D
     if function_name.endswith('_2d'):
+        print("Generating visualization...")
         visualize_2d_function(function_name)
     else:
-        print(f"Visualization not available for {info['dimension']}D functions")
-        print("Evaluating at origin:")
+        # Test at origin
+        print(f"Testing function at origin (dimension={info['dimension']})...")
         func = info['function']
         x_origin = np.zeros(info['dimension'])
         f_origin = func(x_origin)
-        print(f"f(0, 0, ..., 0) = {f_origin[0, 0]:.6f}")
+        print(f"f(0, 0, ..., 0) = {f_origin[0, 0]:.6f}\n")

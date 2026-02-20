@@ -1,14 +1,22 @@
 {
   "testfunc_2d": [-5.0, 5.0],
   "rastrigin_2d": [-5.12, 5.12],
-  "rastrigin_10d": [-5.12, 5.12],
   "camel3_2d": [-5.0, 5.0],
   "camel16_2d": [-5.0, 5.0],
   "treccani_2d": [-5.0, 5.0],
   "goldstein_2d": [-2.0, 2.0],
   "branin_2d": [-5.0, 15.0],
   "rosenbrock_2d": [-2.048, 2.048],
-  "rosenbrock_10d": [-5.0, 10.0],
   "ackley_2d": [-30.0, 30.0],
-  "griewank_10d": [-600.0, 600.0]
+  "rosenbrock_10d": [-5.0, 10.0],
+  "griewank_10d": [-600.0, 600.0],
+  "rastrigin_10d": [-5.12, 5.12],
+  "schwefel": [-500.0, 500.0],
+  "levy": [-10.0, 10.0],
+  "zakharov": [-5.0, 10.0],
+  "sphere": [-5.12, 5.12],
+  "sum_of_different_powers": [-1.0, 1.0],
+  "styblinski_tang": [-5.0, 5.0],
+  "dixon_price": [-10.0, 10.0],
+  "michalewicz": [0.0, 3.141592653589793]
 }

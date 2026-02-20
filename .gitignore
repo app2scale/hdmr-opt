@@ -44,3 +44,6 @@ Untitled*.ipynb
 # OS
 .DS_Store
 Thumbs.db
+
+# Generated publication outputs
+publication_results/
