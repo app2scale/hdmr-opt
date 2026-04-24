@@ -44,8 +44,8 @@ case "$STUDY" in
 
     "benchmark")
         # Run core mathematical functions from Table XIV
-        python main.py --study benchmark --function Rastrigin --numVariables 10 --adaptive --maxiter 10 --seed "$SEED"
-        python main.py --study benchmark --function Ackley --numVariables 10 --adaptive --maxiter 10 --seed "$SEED"
+        python main.py --study benchmark --function rastrigin_10d --numVariables 10 --adaptive --maxiter 10 --seed "$SEED" --numSamples "$HDMR_SAMPLES"
+        python main.py --study benchmark --function griewank_10d --numVariables 10 --adaptive --maxiter 10 --seed "$SEED" --numSamples "$HDMR_SAMPLES"
         ;;
 
     "tabular")

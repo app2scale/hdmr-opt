@@ -58,6 +58,12 @@ from numpy.typing import NDArray
 import matplotlib.pyplot as plt
 from scipy.optimize import OptimizeResult, minimize
 
+# Fix for 'src' module discovery when running from the parent directory
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
+if _HERE.name == "src":
+    sys.path.insert(0, str(_HERE.parent))
+
 from src.basis_functions import Legendre, Cosine
 import src.functions as functions
 
@@ -1042,8 +1048,28 @@ Example (compare v3 vs v4):
     print("=" * 70)
 
     # Code Ocean standard: Save all outputs to /results
-    output_base = "/results/" + file_name
-    os.makedirs("/results", exist_ok=True)
+    # Fallback logic for local testing with different permission levels
+    results_dir = "/results"
+    
+    # Check if /results is writable
+    if not (os.access(results_dir, os.W_OK) if os.path.exists(results_dir) else os.access("/", os.W_OK)):
+        # Fallback 1: Current directory ./results
+        results_dir = "./results"
+        try:
+            os.makedirs(results_dir, exist_ok=True)
+            # Test if actually writable
+            test_file = os.path.join(results_dir, ".write_test")
+            with open(test_file, "w") as f: f.write("test")
+            os.remove(test_file)
+        except (PermissionError, OSError):
+            # Fallback 2: System temp directory
+            import tempfile
+            results_dir = os.path.join(tempfile.gettempdir(), "hdmr_results")
+            os.makedirs(results_dir, exist_ok=True)
+    
+    os.makedirs(results_dir, exist_ok=True)
+    # Use basename to avoid double 'results/' nesting
+    output_base = os.path.join(results_dir, os.path.basename(file_name))
     
     with open(output_base + ".txt", "w") as f:
         f.write("HDMR v4 OPTIMIZATION RESULTS\n" + "=" * 70 + "\n\n")

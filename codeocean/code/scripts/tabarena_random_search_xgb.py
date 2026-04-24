@@ -164,7 +164,11 @@ def sample_params(n: int, seed: int) -> List[Dict[str, Any]]:
 # =============================================================================
 
 # Code Ocean Paths
+# Output directory: /results is standard for Code Ocean
+# Fallback to local ./results if /results is not writable
 RESULTS_DIR = Path('/results')
+if not os.access("/", os.W_OK) and not RESULTS_DIR.exists():
+    RESULTS_DIR = Path('./results')
 LOG_DIR     = RESULTS_DIR / "logs"
 TAB_RESULTS = RESULTS_DIR / "tabarena"
 

@@ -210,7 +210,35 @@ def decode_params(x: NDArray) -> Dict[str, Any]:
 
 # Code Ocean Paths
 DATA_DIR    = Path('/data')
+# Output directory: /results is standard for Code Ocean
+# Fallback logic for local testing with different permission levels
 RESULTS_DIR = Path('/results')
+
+def get_writable_results_dir(default_path: Path) -> Path:
+    # 1. Try default (/results)
+    try:
+        default_path.mkdir(parents=True, exist_ok=True)
+        test_file = default_path / ".write_test"
+        test_file.touch()
+        test_file.unlink()
+        return default_path
+    except (PermissionError, OSError):
+        # 2. Try local ./results
+        local_path = Path('./results')
+        try:
+            local_path.mkdir(parents=True, exist_ok=True)
+            test_file = local_path / ".write_test"
+            test_file.touch()
+            test_file.unlink()
+            return local_path
+        except (PermissionError, OSError):
+            # 3. Try system temp
+            import tempfile
+            temp_path = Path(tempfile.gettempdir()) / "hdmr_results"
+            temp_path.mkdir(parents=True, exist_ok=True)
+            return temp_path
+
+RESULTS_DIR = get_writable_results_dir(RESULTS_DIR)
 LOG_DIR     = RESULTS_DIR / "logs"
 TAB_RESULTS = RESULTS_DIR / "tabarena"
 
