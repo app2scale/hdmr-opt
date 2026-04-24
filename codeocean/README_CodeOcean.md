@@ -4,27 +4,25 @@ This Compute Capsule contains the implementation and benchmark scripts for **HDM
 
 ## Directory Structure
 
-- `/code`: Contains the core optimization library (`src/`) and the main benchmark script (`main.py`).
-- `/data`: (Read-Only) Standard location for input datasets. If using OpenML datasets, the code will download them automatically; however, local datasets can be linked here.
-- `/results`: (Writable) All logs, CSV result files, and plots are saved here.
+- `/code`: Contains the universal entry point (`main.py`), the core library (`src/`), and specialized benchmarks (`scripts/`).
+- `/data`: (Read-Only) Contains industrial datasets (Payten, Medianova).
+- `/results`: (Writable) All logs and CSV result files are persisted here.
 
 ## How to Run
 
-Click the **Run** button. By default, it executes a "Smoke Test" for the **Tabular Benchmark**.
+Click the **Run** button. By default, the `run.sh` entry point executes the **Universal Dispatcher** (`main.py`) in the selected mode.
 
 ### Study Modes
 
-You can switch between different studies using the `STUDY` environment variable:
+You can switch between research studies using the `STUDY` environment variable:
 
-1.  **`tabular`** (Default): Runs the TabArena benchmark (OpenML datasets).
-    - Uses `main.py`.
-    - Key params: `DATASETS`, `N_FOLDS`, `HDMR_SAMPLES`.
-2.  **`forecasting`**: Runs the industrial forecasting study (Payten & Medianova).
-    - Uses `scripts/forecast_hpo.py`.
-    - Key params: `HORIZON`, `N_FOLDS`, `HDMR_SAMPLES`.
-3.  **`benchmark`**: Runs mathematical test functions (Table XIV in the paper).
-    - Uses `src/main.py`.
-    - Example: Rastrigin, Ackley, Rosenbrock.
+1.  **`tabular`** (Default): Executes the TabArena benchmark (OpenML datasets).
+    - Runs: `python main.py --study tabular`
+2.  **`forecasting`**: Executes the industrial time-series forecasting study.
+    - Runs: `python main.py --study forecasting`
+3.  **`benchmark`**: Executes mathematical optimization test functions (e.g., Rastrigin, Ackley).
+    - Runs: `python main.py --study benchmark`
+
 
 ### Customizing the Run
 

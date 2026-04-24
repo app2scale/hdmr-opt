@@ -1,49 +1,66 @@
 #!/bin/bash
-# HDMR-opt: Code Ocean Entry Point Script
-set -e
+# =============================================================================
+# HDMR-opt: Code Ocean Master Entry Point
+# =============================================================================
+# Author: HDMR Research Group
+# Purpose: Orchestrates experiments via the universal main.py dispatcher.
+# =============================================================================
 
-echo "=========================================================="
-echo "      HDMR-opt: High Dimensional Model Representation     "
-echo "=========================================================="
-echo ""
+set -euo pipefail
 
-# Ensure output directories exist
-mkdir -p /results/logs
-mkdir -p /results/tabarena
-mkdir -p /results/forecasting
-mkdir -p /results/benchmarks
+# Ensure we are in the code directory
+cd "$(dirname "$0")"
 
-# Study modes: tabular | forecasting | benchmark
-STUDY=${STUDY:-tabular}
-# Global seed for reproducibility
+# -----------------------------------------------------------------------------
+# Default Environment Variables
+# -----------------------------------------------------------------------------
+export STUDY=${STUDY:-tabular}
 export SEED=${SEED:-42}
+export N_FOLDS=${N_FOLDS:-2}
+export HDMR_SAMPLES=${HDMR_SAMPLES:-200}
 
-echo "Using SEED: $SEED"
+# -----------------------------------------------------------------------------
+# Directory Setup
+# -----------------------------------------------------------------------------
+echo "[INFO] Initializing environment..."
+mkdir -p /results/logs /results/tabarena /results/forecasting /results/benchmarks
 
-if [ "$STUDY" == "forecasting" ]; then
-    echo "Running Industrial Forecasting Study (Payten & Medianova)..."
-    export HORIZON=7
-    export N_FOLDS=2
-    export HDMR_SAMPLES=20
-    python scripts/forecast_hpo.py --dataset both --models xgb,lgb --methods hdmr
-    
-elif [ "$STUDY" == "benchmark" ]; then
-    echo "Running Mathematical Benchmark Functions (Table XIV)..."
-    echo "Testing Rastrigin-10D..."
-    python src/main.py --function Rastrigin --numVariables 10 --adaptive --maxiter 10 --numClosestPoints 50 --seed $SEED
-    echo "Testing Ackley-10D..."
-    python src/main.py --function Ackley --numVariables 10 --adaptive --maxiter 10 --numClosestPoints 50 --seed $SEED
+echo "----------------------------------------------------------"
+echo "  HDMR-opt Execution Started: $(date)"
+echo "  Study Mode : $STUDY"
+echo "  Global Seed: $SEED"
+echo "----------------------------------------------------------"
 
-else
-    echo "Running Tabular Benchmark (TabArena)..."
-    export DATASETS="46954,46917"
-    export N_FOLDS=2
-    export HDMR_SAMPLES=50
-    python main.py
-fi
+# -----------------------------------------------------------------------------
+# Main Dispatcher Call
+# -----------------------------------------------------------------------------
+# We use the universal main.py to handle different study modes.
+# Additional arguments can be passed through environment variables.
+
+case "$STUDY" in
+    "forecasting")
+        python main.py --study forecasting --dataset both --models xgb,lgb --methods hdmr
+        ;;
+
+    "benchmark")
+        # Run core mathematical functions from Table XIV
+        python main.py --study benchmark --function Rastrigin --numVariables 10 --adaptive --maxiter 10 --seed "$SEED"
+        python main.py --study benchmark --function Ackley --numVariables 10 --adaptive --maxiter 10 --seed "$SEED"
+        ;;
+
+    "tabular")
+        python main.py --study tabular
+        ;;
+
+    *)
+        echo "[ERROR] Unknown STUDY mode: $STUDY"
+        exit 1
+        ;;
+esac
 
 echo ""
-echo "=========================================================="
-echo "✓ Task Completed!"
-echo "Outputs are saved in /results/"
-echo "=========================================================="
+echo "----------------------------------------------------------"
+echo "✓ SUCCESS: All tasks completed successfully."
+echo "Results Location: /results/"
+echo "End Time: $(date)"
+echo "----------------------------------------------------------"
