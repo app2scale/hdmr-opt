@@ -26,21 +26,35 @@ HDMR-opt is an advanced optimization engine that leverages **High Dimensional Mo
 ```
 hdmr-opt/
 ├── codeocean/             # Professional Code Ocean Compute Capsule
-│   ├── code/              # Capsule entry points and standardized scripts
+│   ├── code/              # Capsule entry points (main.py, run.sh, scripts/)
 │   ├── data/              # Industrial datasets (Payten, Medianova)
 │   └── README_CodeOcean.md# Platform-specific instructions
 │
-├── src/                   # Core HDMR Library
-│   ├── main.py            # HDMR Optimizer Engine (v4.0)
-│   ├── basis_functions.py # Orthogonal basis implementations
-│   ├── functions.py       # Mathematical benchmark functions
-│   └── functions_forecast.py # Time-series forecasting wrappers
+├── src/                   # Core HDMR Library (v4.0)
+│   ├── main.py            # Optimizer engine
+│   ├── basis_functions.py # Basis implementations
+│   ├── functions.py       # Math test functions
+│   └── functions_forecast.py # Forecasting logic
 │
-├── experiments/           # Local experiment scripts
-├── analysis/              # Visualization and report generation
-├── app.py                 # Streamlit web interface
-└── requirements.txt       # Global dependencies
+├── experiments/           # Research experiments
+│   ├── compare_optimizers.py
+│   ├── sensitivity_analysis.py
+│   └── benchmark_forecasting.py
+│
+├── analysis/              # Visualization tools
+│   ├── analyze_results_v2.py
+│   └── create_final_visualization.py
+│
+├── scripts/               # Benchmarking & Automation
+│   ├── tabarena_hdmr_lgb.py
+│   ├── forecast_hpo.py
+│   └── run_all_experiments.py
+│
+├── data/                  # Local datasets (CSV/ARFF)
+├── app.py                 # Streamlit interface
+└── requirements.txt       # Dependencies
 ```
+
 
 ---
 
