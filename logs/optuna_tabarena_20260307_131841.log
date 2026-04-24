@@ -1,0 +1,90 @@
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Optuna (TPE) Baseline  |  XGBoost HPO Benchmark
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Run ID   : 20260307_131841
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_tabarena_20260307_131841.log
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Configuration:
+2026-03-07 13:18:41 | INFO     | tpe.benchmark |   dataset   = openml:46954
+2026-03-07 13:18:41 | INFO     | tpe.benchmark |   trials    = 20  folds=2  seed=42
+2026-03-07 13:18:41 | INFO     | tpe.benchmark |   space     = TabArena Table C.3 (10D)
+2026-03-07 13:18:41 | INFO     | tpe.benchmark |   n_est     = 10000  early_stop=50
+2026-03-07 13:18:41 | INFO     | tpe.benchmark |   sampler   = TPE (Tree-structured Parzen Estimator)
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Loading: 'openml:46954'
+2026-03-07 13:18:41 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Fetching OpenML dataset 46954 …
+2026-03-07 13:18:41 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-07 13:18:41 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | OpenML 46954: QSAR_fish_toxicity | 907 x 6
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Dataset: QSAR_fish_toxicity | 907 x 6 | target mean=4.1 std=1.5
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | --- Starting 2-Fold Outer CV ---
+2026-03-07 13:18:41 | INFO     | tpe.benchmark | Fold 1/2 | train=453  test=454
+2026-03-07 13:18:42 | DEBUG    | tpe.benchmark | trial 000 | val_rmse=0.53587 | lr=0.0075 depth=5 grow=lossguide
+2026-03-07 13:18:43 | DEBUG    | tpe.benchmark | trial 001 | val_rmse=0.53736 | lr=0.0059 depth=9 grow=depthwise
+2026-03-07 13:18:43 | DEBUG    | tpe.benchmark | trial 002 | val_rmse=0.54226 | lr=0.0190 depth=7 grow=lossguide
+2026-03-07 13:18:43 | DEBUG    | tpe.benchmark | trial 003 | val_rmse=0.53062 | lr=0.0761 depth=10 grow=lossguide
+2026-03-07 13:18:44 | DEBUG    | tpe.benchmark | trial 004 | val_rmse=0.53586 | lr=0.0734 depth=4 grow=depthwise
+2026-03-07 13:18:44 | DEBUG    | tpe.benchmark | trial 005 | val_rmse=0.53465 | lr=0.0413 depth=7 grow=lossguide
+2026-03-07 13:18:44 | DEBUG    | tpe.benchmark | trial 006 | val_rmse=0.54084 | lr=0.0127 depth=5 grow=lossguide
+2026-03-07 13:18:45 | DEBUG    | tpe.benchmark | trial 007 | val_rmse=0.56023 | lr=0.0091 depth=7 grow=lossguide
+2026-03-07 13:18:45 | DEBUG    | tpe.benchmark | trial 008 | val_rmse=0.56604 | lr=0.0678 depth=9 grow=lossguide
+2026-03-07 13:18:45 | DEBUG    | tpe.benchmark | trial 009 | val_rmse=0.53361 | lr=0.0217 depth=4 grow=depthwise
+2026-03-07 13:18:46 | DEBUG    | tpe.benchmark | trial 010 | val_rmse=0.54243 | lr=0.0404 depth=10 grow=depthwise
+2026-03-07 13:18:46 | DEBUG    | tpe.benchmark | trial 011 | val_rmse=0.53511 | lr=0.0279 depth=4 grow=depthwise
+2026-03-07 13:18:46 | DEBUG    | tpe.benchmark | trial 012 | val_rmse=0.53271 | lr=0.0211 depth=5 grow=depthwise
+2026-03-07 13:18:46 | DEBUG    | tpe.benchmark | trial 013 | val_rmse=0.53582 | lr=0.0889 depth=5 grow=depthwise
+2026-03-07 13:18:47 | DEBUG    | tpe.benchmark | trial 014 | val_rmse=0.53826 | lr=0.0132 depth=6 grow=lossguide
+2026-03-07 13:18:47 | DEBUG    | tpe.benchmark | trial 015 | val_rmse=0.53867 | lr=0.0441 depth=6 grow=depthwise
+2026-03-07 13:18:47 | DEBUG    | tpe.benchmark | trial 016 | val_rmse=0.54193 | lr=0.0285 depth=8 grow=depthwise
+2026-03-07 13:18:48 | DEBUG    | tpe.benchmark | trial 017 | val_rmse=0.53341 | lr=0.0150 depth=5 grow=lossguide
+2026-03-07 13:18:48 | DEBUG    | tpe.benchmark | trial 018 | val_rmse=0.53591 | lr=0.0548 depth=10 grow=depthwise
+2026-03-07 13:18:48 | DEBUG    | tpe.benchmark | trial 019 | val_rmse=0.54076 | lr=0.0289 depth=6 grow=lossguide
+2026-03-07 13:18:48 | INFO     | tpe.benchmark |   Best params: lr=0.0761  depth=10  mcw=0.08768  ra=2.06  rl=4.325  grow=lossguide  leaves=204
+2026-03-07 13:18:49 | INFO     | tpe.benchmark |   Final model used 102 trees
+2026-03-07 13:18:49 | INFO     | tpe.benchmark |   Fold 1 DONE | test_rmse=0.9353 | best_val=0.5306 | trials=20 | 7.4s | ETA: 0:00:07
+2026-03-07 13:18:49 | INFO     | tpe.benchmark | Fold 2/2 | train=454  test=453
+2026-03-07 13:18:49 | DEBUG    | tpe.benchmark | trial 000 | val_rmse=0.66939 | lr=0.0465 depth=5 grow=depthwise
+2026-03-07 13:18:49 | DEBUG    | tpe.benchmark | trial 001 | val_rmse=0.66349 | lr=0.0070 depth=4 grow=depthwise
+2026-03-07 13:18:50 | DEBUG    | tpe.benchmark | trial 002 | val_rmse=0.67633 | lr=0.0108 depth=7 grow=lossguide
+2026-03-07 13:18:50 | DEBUG    | tpe.benchmark | trial 003 | val_rmse=0.68723 | lr=0.0973 depth=8 grow=lossguide
+2026-03-07 13:18:51 | DEBUG    | tpe.benchmark | trial 004 | val_rmse=0.68500 | lr=0.0404 depth=10 grow=depthwise
+2026-03-07 13:18:51 | DEBUG    | tpe.benchmark | trial 005 | val_rmse=0.66379 | lr=0.0082 depth=4 grow=lossguide
+2026-03-07 13:18:51 | DEBUG    | tpe.benchmark | trial 006 | val_rmse=0.66157 | lr=0.0745 depth=4 grow=lossguide
+2026-03-07 13:18:52 | DEBUG    | tpe.benchmark | trial 007 | val_rmse=0.68336 | lr=0.0455 depth=8 grow=lossguide
+2026-03-07 13:18:53 | DEBUG    | tpe.benchmark | trial 008 | val_rmse=0.69806 | lr=0.0226 depth=8 grow=lossguide
+2026-03-07 13:18:53 | DEBUG    | tpe.benchmark | trial 009 | val_rmse=0.66151 | lr=0.0140 depth=7 grow=depthwise
+2026-03-07 13:18:53 | DEBUG    | tpe.benchmark | trial 010 | val_rmse=0.66985 | lr=0.0162 depth=6 grow=depthwise
+2026-03-07 13:18:53 | DEBUG    | tpe.benchmark | trial 011 | val_rmse=0.68372 | lr=0.0919 depth=5 grow=depthwise
+2026-03-07 13:18:54 | DEBUG    | tpe.benchmark | trial 012 | val_rmse=0.67385 | lr=0.0209 depth=6 grow=lossguide
+2026-03-07 13:18:54 | DEBUG    | tpe.benchmark | trial 013 | val_rmse=0.66374 | lr=0.0311 depth=5 grow=depthwise
+2026-03-07 13:18:55 | DEBUG    | tpe.benchmark | trial 014 | val_rmse=0.66261 | lr=0.0112 depth=4 grow=lossguide
+2026-03-07 13:18:55 | DEBUG    | tpe.benchmark | trial 015 | val_rmse=0.68877 | lr=0.0664 depth=10 grow=depthwise
+2026-03-07 13:18:55 | DEBUG    | tpe.benchmark | trial 016 | val_rmse=0.67021 | lr=0.0154 depth=7 grow=depthwise
+2026-03-07 13:18:56 | DEBUG    | tpe.benchmark | trial 017 | val_rmse=0.66264 | lr=0.0278 depth=5 grow=lossguide
+2026-03-07 13:18:57 | DEBUG    | tpe.benchmark | trial 018 | val_rmse=0.66758 | lr=0.0055 depth=7 grow=depthwise
+2026-03-07 13:18:57 | DEBUG    | tpe.benchmark | trial 019 | val_rmse=0.66381 | lr=0.0640 depth=4 grow=lossguide
+2026-03-07 13:18:57 | INFO     | tpe.benchmark |   Best params: lr=0.0140  depth=7  mcw=0.004719  ra=2.095  rl=1.595  grow=depthwise  leaves=21
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   Final model used 623 trees
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   Fold 2 DONE | test_rmse=0.8757 | best_val=0.6615 | trials=20 | 8.8s | ETA: done
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | RESULTS SUMMARY
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Dataset           : QSAR_fish_toxicity
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Method            : Optuna TPE
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Optuna RMSE       : 0.9055 +/- 0.0298
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Total evaluations : 40  (avg 20/fold)
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Total wall time   : 0:00:16  (0.3 min)
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | 
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | TabArena budget   : 200/fold x 2 folds = 400 evals
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | 
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | PER-FOLD DETAIL
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   Fold   test_rmse     best_val_rmse   trials   sec     
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   ----------------------------------------------------
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   1      0.9353        0.5306          20       7.4     
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   2      0.8757        0.6615          20       8.8     
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | 
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | CONVERGENCE (avg best val_rmse at trial N):
+2026-03-07 13:18:58 | INFO     | tpe.benchmark |   trial  10 : 0.59607
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | 
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_xgb_20260307_131841.csv
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:18:58 | INFO     | tpe.benchmark | Experiment complete.

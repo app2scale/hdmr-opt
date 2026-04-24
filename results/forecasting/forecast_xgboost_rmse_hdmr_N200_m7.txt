@@ -1,0 +1,32 @@
+HDMR FORECASTING OPTIMIZATION RESULTS
+================================================================================
+
+Algorithm:         XGBOOST
+Metric:            RMSE
+Samples:           200
+Basis Function:    Cosine (degree 7)
+Adaptive:          False
+Split Date:        2020-01-01
+CSV Date Format:   MM/DD/YYYY (strict)
+
+Optimization Time: 161.29 seconds
+Iterations:        1
+Function Evals:    200
+
+Optimal Hyperparameters:
+--------------------------------------------------------------------------------
+  learning_rate        = 0.1505
+  max_depth            = 6
+  subsample            = 0.75
+  colsample_bytree     = 0.75
+  min_child_weight     = 6
+  gamma                = 2.5
+
+Test Set Performance:
+--------------------------------------------------------------------------------
+  MSE      = 4.728361
+  RMSE     = 2.174479
+  MAE      = 1.561528
+  MAPE     = 10.359864
+  SMAPE    = 5.404090
+  MASE     = 1.422645

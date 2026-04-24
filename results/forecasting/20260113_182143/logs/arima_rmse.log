@@ -1,0 +1,41 @@
+COMMAND:
+python -m src.forecast_example --algorithm arima --metric rmse --samples 1000 --basis Cosine --degree 7 --split 2020-01-01 --seed 42 --adaptive --maxiter 25 --numClosestPoints 100 --epsilon 0.1 --clip 0.9
+
+STDOUT:
+================================================================================
+HDMR-BASED FORECASTING HYPERPARAMETER OPTIMIZATION
+================================================================================
+
+1. Configuration
+--------------------------------------------------------------------------------
+   Algorithm:        ARIMA
+   Metric:           RMSE
+   Data Path:        /mnt/disk1/erdemy/app2scale/hdmr-opt/src/data/transactions.csv
+   Split Date:       2020-01-01
+   HDMR Samples:     1000
+   Basis Function:   Cosine (degree 7)
+   Adaptive:         True
+   Max Iterations:   25
+   k (closest):      100
+   Epsilon:          0.1
+   Clip:             0.9
+   Plots enabled:    True
+   Date format:      MM/DD/YYYY (strict)
+
+2. Loading & Validating Data
+--------------------------------------------------------------------------------
+   ✗ CSV validation failed: time data "2015-10-01" doesn't match format "%m/%d/%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+   Hint: Ensure date column is strictly MM/DD/YYYY (e.g., 10/1/2015).
+
+✗ Optimization failed. Check logs above.
+
+
+STDERR:
+/mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/xgboost/core.py:377: FutureWarning: Your system has an old version of glibc (< 2.28). We will stop supporting Linux distros with glibc older than 2.28 after **May 31, 2025**. Please upgrade to a recent Linux distro (with glibc >= 2.28) to use future versions of XGBoost.
+Note: You have installed the 'manylinux2014' variant of XGBoost. Certain features such as GPU algorithms or federated learning are not available. To use these features, please upgrade to a recent Linux distro with glibc 2.28+, and install the 'manylinux_2_28' variant.
+  warnings.warn(
+/mnt/disk1/erdemy/app2scale/hdmr-opt/src/functions_forecast.py:61: UserWarning: PyTorch not available. Install with: pip install torch
+  warnings.warn("PyTorch not available. Install with: pip install torch")

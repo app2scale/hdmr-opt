@@ -1,0 +1,171 @@
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | ======================================================================
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | Optuna TPE Baseline  |  XGBoost HPO  |  All 18 Datasets  v2.0
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | Run ID   : 20260307_180429
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_tabarena_20260307_180429.log
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | ======================================================================
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | Configuration:
+2026-03-07 18:04:29 | INFO     | tpe.benchmark |   sampler=TPE  trials=200/fold  outer_folds=8  seed=42
+2026-03-07 18:04:29 | INFO     | tpe.benchmark |   task_filter=all  datasets=[46954, 46917, 46931, 46904, 46907, 46942, 46934, 46961, 46928, 46923, 46952, 46927, 46938, 46940, 46930, 46956, 46963, 46918] (18 total)
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | 
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:04:29 | INFO     | tpe.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:04:29 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | Loading: QSAR_fish_toxicity  (DID=46954, task=regression) ...
+2026-03-07 18:04:29 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-07 18:04:29 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-07 18:04:29 | INFO     | tpe.benchmark |   QSAR_fish_toxicity | 907 x 6 | y mean=4.065  std=1.456
+2026-03-07 18:04:29 | INFO     | tpe.benchmark | 
+2026-03-07 18:04:29 | INFO     | tpe.benchmark |   ┌─ QSAR_fish_toxicity  [Optuna-TPE-200]
+2026-03-07 18:04:29 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 18:05:34 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=0.9338 | best_val=0.6334 | trials=200 | 65.0s | ETA: 0:07:34
+2026-03-07 18:06:45 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=0.9033 | best_val=0.5201 | trials=200 | 71.0s | ETA: 0:06:47
+2026-03-07 18:07:56 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=0.8425 | best_val=0.4527 | trials=200 | 71.1s | ETA: 0:05:45
+2026-03-07 18:08:54 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=0.9899 | best_val=0.5511 | trials=200 | 58.1s | ETA: 0:04:26
+2026-03-07 18:10:01 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=0.7709 | best_val=0.5531 | trials=200 | 66.6s | ETA: 0:03:15
+2026-03-07 18:10:33 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=0.8516 | best_val=0.5832 | trials=200 | 32.4s | ETA: 0:01:44
+2026-03-07 18:11:22 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=0.9191 | best_val=0.6425 | trials=200 | 48.6s | ETA: 0:00:49
+2026-03-07 18:12:21 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=0.9745 | best_val=0.5162 | trials=200 | 58.8s | ETA: done
+2026-03-07 18:12:21 | INFO     | tpe.benchmark |   └─ [Optuna] QSAR_fish_toxicity | RMSE=0.8982±0.0684 | 7.9 min
+2026-03-07 18:12:21 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (8 rows)
+2026-03-07 18:12:21 | INFO     | tpe.benchmark | 
+2026-03-07 18:12:21 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:12:21 | INFO     | tpe.benchmark |   DATASET: concrete_compressive_strength  (DID=46917)
+2026-03-07 18:12:21 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:12:21 | INFO     | tpe.benchmark | Loading: concrete_compressive_strength  (DID=46917, task=regression) ...
+2026-03-07 18:12:21 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-07 18:12:21 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-07 18:12:21 | INFO     | tpe.benchmark |   concrete_compressive_strength | 1030 x 8 | y mean=35.818  std=16.698
+2026-03-07 18:12:21 | INFO     | tpe.benchmark | 
+2026-03-07 18:12:21 | INFO     | tpe.benchmark |   ┌─ concrete_compressive_strength  [Optuna-TPE-200]
+2026-03-07 18:12:21 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 18:16:26 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=3.8148 | best_val=0.2250 | trials=200 | 245.7s | ETA: 0:28:39
+2026-03-07 18:22:01 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=3.3851 | best_val=0.2676 | trials=200 | 334.7s | ETA: 0:29:01
+2026-03-07 18:26:16 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=5.1703 | best_val=0.2335 | trials=200 | 254.8s | ETA: 0:23:12
+2026-03-07 18:31:59 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=3.6607 | best_val=0.2432 | trials=200 | 343.0s | ETA: 0:20:43
+2026-03-07 18:35:35 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=4.3180 | best_val=0.3252 | trials=200 | 216.2s | ETA: 0:13:33
+2026-03-07 18:38:34 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=3.7517 | best_val=0.2613 | trials=200 | 178.5s | ETA: 0:08:11
+2026-03-07 18:42:16 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=3.9259 | best_val=0.2985 | trials=200 | 221.9s | ETA: 0:03:25
+2026-03-07 18:46:08 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=4.3754 | best_val=0.2225 | trials=200 | 232.4s | ETA: done
+2026-03-07 18:46:08 | INFO     | tpe.benchmark |   └─ [Optuna] concrete_compressive_strength | RMSE=4.0502±0.5228 | 33.8 min
+2026-03-07 18:46:08 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (16 rows)
+2026-03-07 18:46:08 | INFO     | tpe.benchmark | 
+2026-03-07 18:46:08 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:46:08 | INFO     | tpe.benchmark |   DATASET: healthcare_insurance_expenses  (DID=46931)
+2026-03-07 18:46:08 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:46:08 | INFO     | tpe.benchmark | Loading: healthcare_insurance_expenses  (DID=46931, task=regression) ...
+2026-03-07 18:46:08 | INFO     | openml.datasets.dataset | pickle write healthcare_insurance_expenses
+2026-03-07 18:46:08 | DEBUG    | openml.datasets.dataset | Saved dataset 46931: healthcare_insurance_expenses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46931/dataset_46931.pkl.py3
+2026-03-07 18:46:08 | INFO     | tpe.benchmark |   healthcare_insurance_expenses | 1338 x 6 | y mean=13270.422  std=12105.485
+2026-03-07 18:46:08 | INFO     | tpe.benchmark | 
+2026-03-07 18:46:08 | INFO     | tpe.benchmark |   ┌─ healthcare_insurance_expenses  [Optuna-TPE-200]
+2026-03-07 18:46:08 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 18:46:39 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=4079.5130 | best_val=0.4013 | trials=200 | 30.6s | ETA: 0:03:34
+2026-03-07 18:47:28 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=3509.1869 | best_val=0.3693 | trials=200 | 49.1s | ETA: 0:03:59
+2026-03-07 18:48:17 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=4088.0609 | best_val=0.4037 | trials=200 | 49.6s | ETA: 0:03:35
+2026-03-07 18:49:28 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=5408.0296 | best_val=0.3046 | trials=200 | 70.7s | ETA: 0:03:45
+2026-03-07 18:50:26 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=4560.2108 | best_val=0.3543 | trials=200 | 58.0s | ETA: 0:02:58
+2026-03-07 18:51:20 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=4640.5946 | best_val=0.3852 | trials=200 | 54.3s | ETA: 0:02:02
+2026-03-07 18:52:54 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=5318.6392 | best_val=0.3542 | trials=200 | 93.8s | ETA: 0:01:08
+2026-03-07 18:53:41 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=4081.1460 | best_val=0.4103 | trials=200 | 47.3s | ETA: done
+2026-03-07 18:53:41 | INFO     | tpe.benchmark |   └─ [Optuna] healthcare_insurance_expenses | RMSE=4460.6726±613.3269 | 7.6 min
+2026-03-07 18:53:41 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (24 rows)
+2026-03-07 18:53:41 | INFO     | tpe.benchmark | 
+2026-03-07 18:53:41 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:53:41 | INFO     | tpe.benchmark |   DATASET: airfoil_self_noise  (DID=46904)
+2026-03-07 18:53:41 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:53:41 | INFO     | tpe.benchmark | Loading: airfoil_self_noise  (DID=46904, task=regression) ...
+2026-03-07 18:53:41 | INFO     | openml.datasets.dataset | pickle write airfoil_self_noise
+2026-03-07 18:53:41 | DEBUG    | openml.datasets.dataset | Saved dataset 46904: airfoil_self_noise to file /home/erdemy/.cache/openml/org/openml/www/datasets/46904/dataset_46904.pkl.py3
+2026-03-07 18:53:41 | INFO     | tpe.benchmark |   airfoil_self_noise | 1503 x 5 | y mean=124.836  std=6.896
+2026-03-07 18:53:41 | INFO     | tpe.benchmark | 
+2026-03-07 18:53:41 | INFO     | tpe.benchmark |   ┌─ airfoil_self_noise  [Optuna-TPE-200]
+2026-03-07 18:53:41 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 19:03:45 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=1.6988 | best_val=0.1967 | trials=200 | 603.3s | ETA: 1:10:23
+2026-03-07 19:18:11 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=1.3634 | best_val=0.1754 | trials=200 | 866.2s | ETA: 1:13:28
+2026-03-07 19:25:09 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=1.4439 | best_val=0.2161 | trials=200 | 418.4s | ETA: 0:52:26
+2026-03-07 19:37:31 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=1.0025 | best_val=0.1745 | trials=200 | 741.7s | ETA: 0:45:01
+2026-03-07 19:54:52 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=1.5605 | best_val=0.1917 | trials=200 | 1041.3s | ETA: 0:36:41
+2026-03-07 20:01:29 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=1.1938 | best_val=0.2105 | trials=200 | 397.1s | ETA: 0:24:13
+2026-03-07 20:21:44 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=1.3230 | best_val=0.2007 | trials=200 | 1214.8s | ETA: 0:14:44
+2026-03-07 20:31:53 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=1.2522 | best_val=0.1913 | trials=200 | 609.4s | ETA: done
+2026-03-07 20:31:53 | INFO     | tpe.benchmark |   └─ [Optuna] airfoil_self_noise | RMSE=1.3548±0.2032 | 98.2 min
+2026-03-07 20:31:53 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (32 rows)
+2026-03-07 20:31:53 | INFO     | tpe.benchmark | 
+2026-03-07 20:31:53 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 20:31:53 | INFO     | tpe.benchmark |   DATASET: Fiat500_used  (DID=46907)
+2026-03-07 20:31:53 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 20:31:53 | INFO     | tpe.benchmark | Loading: Fiat500_used  (DID=46907, task=regression) ...
+2026-03-07 20:31:53 | INFO     | openml.datasets.dataset | pickle write Another-Dataset-on-used-Fiat-500
+2026-03-07 20:31:53 | DEBUG    | openml.datasets.dataset | Saved dataset 46907: Another-Dataset-on-used-Fiat-500 to file /home/erdemy/.cache/openml/org/openml/www/datasets/46907/dataset_46907.pkl.py3
+2026-03-07 20:31:53 | INFO     | tpe.benchmark |   Fiat500_used | 1538 x 7 | y mean=8576.004  std=1939.328
+2026-03-07 20:31:53 | INFO     | tpe.benchmark | 
+2026-03-07 20:31:53 | INFO     | tpe.benchmark |   ┌─ Fiat500_used  [Optuna-TPE-200]
+2026-03-07 20:31:53 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 20:33:53 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=837.7397 | best_val=0.3628 | trials=200 | 119.2s | ETA: 0:13:54
+2026-03-07 20:36:41 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=702.9504 | best_val=0.3771 | trials=200 | 168.5s | ETA: 0:14:23
+2026-03-07 20:38:45 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=728.2048 | best_val=0.3756 | trials=200 | 123.9s | ETA: 0:11:26
+2026-03-07 20:40:55 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=769.9877 | best_val=0.3911 | trials=200 | 130.1s | ETA: 0:09:23
+2026-03-07 20:43:28 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=820.2969 | best_val=0.3806 | trials=200 | 153.1s | ETA: 0:06:47
+2026-03-07 20:44:25 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=652.4782 | best_val=0.3883 | trials=200 | 56.5s | ETA: 0:03:46
+2026-03-07 20:46:05 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=720.6252 | best_val=0.3666 | trials=200 | 99.9s | ETA: 0:01:43
+2026-03-07 20:48:29 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=710.2735 | best_val=0.3680 | trials=200 | 144.6s | ETA: done
+2026-03-07 20:48:29 | INFO     | tpe.benchmark |   └─ [Optuna] Fiat500_used | RMSE=742.8195±58.3815 | 16.6 min
+2026-03-07 20:48:29 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (40 rows)
+2026-03-07 20:48:29 | INFO     | tpe.benchmark | 
+2026-03-07 20:48:29 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 20:48:29 | INFO     | tpe.benchmark |   DATASET: miami_housing  (DID=46942)
+2026-03-07 20:48:29 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 20:48:29 | INFO     | tpe.benchmark | Loading: miami_housing  (DID=46942, task=regression) ...
+2026-03-07 20:48:29 | INFO     | openml.datasets.dataset | pickle write miami_housing
+2026-03-07 20:48:29 | DEBUG    | openml.datasets.dataset | Saved dataset 46942: miami_housing to file /home/erdemy/.cache/openml/org/openml/www/datasets/46942/dataset_46942.pkl.py3
+2026-03-07 20:48:29 | INFO     | tpe.benchmark |   miami_housing | 13776 x 15 | y mean=400746.450  std=317856.998
+2026-03-07 20:48:29 | INFO     | tpe.benchmark | 
+2026-03-07 20:48:29 | INFO     | tpe.benchmark |   ┌─ miami_housing  [Optuna-TPE-200]
+2026-03-07 20:48:29 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 21:04:14 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=82877.2190 | best_val=0.2471 | trials=200 | 945.2s | ETA: 1:50:16
+2026-03-07 21:25:21 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=83410.0547 | best_val=0.2558 | trials=200 | 1266.5s | ETA: 1:50:35
+2026-03-07 21:44:54 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=75968.7695 | best_val=0.2463 | trials=200 | 1172.8s | ETA: 1:34:00
+2026-03-07 22:02:34 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=77373.7470 | best_val=0.2581 | trials=200 | 1059.8s | ETA: 1:17:45
+2026-03-07 22:24:01 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=77055.7262 | best_val=0.2755 | trials=200 | 1287.7s | ETA: 0:58:40
+2026-03-07 22:34:09 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=87648.7430 | best_val=0.2501 | trials=200 | 607.4s | ETA: 0:32:49
+2026-03-07 22:43:00 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=81156.3999 | best_val=0.2462 | trials=200 | 531.1s | ETA: 0:13:28
+2026-03-07 22:55:48 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=86970.7666 | best_val=0.2450 | trials=200 | 768.2s | ETA: done
+2026-03-07 22:55:48 | INFO     | tpe.benchmark |   └─ [Optuna] miami_housing | RMSE=81557.6782±4194.4138 | 127.3 min
+2026-03-07 22:55:48 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (48 rows)
+2026-03-07 22:55:48 | INFO     | tpe.benchmark | 
+2026-03-07 22:55:48 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 22:55:48 | INFO     | tpe.benchmark |   DATASET: houses  (DID=46934)
+2026-03-07 22:55:48 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 22:55:48 | INFO     | tpe.benchmark | Loading: houses  (DID=46934, task=regression) ...
+2026-03-07 22:55:48 | INFO     | openml.datasets.dataset | pickle write houses
+2026-03-07 22:55:48 | DEBUG    | openml.datasets.dataset | Saved dataset 46934: houses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46934/dataset_46934.pkl.py3
+2026-03-07 22:55:48 | INFO     | tpe.benchmark |   houses | 20640 x 8 | y mean=12.085  std=0.569
+2026-03-07 22:55:48 | INFO     | tpe.benchmark | 
+2026-03-07 22:55:48 | INFO     | tpe.benchmark |   ┌─ houses  [Optuna-TPE-200]
+2026-03-07 22:55:48 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 23:31:24 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=0.2039 | best_val=0.3744 | trials=200 | 2135.8s | ETA: 4:09:10
+2026-03-08 00:29:01 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=0.2154 | best_val=0.3882 | trials=200 | 3457.7s | ETA: 4:39:40
+2026-03-08 01:21:57 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=0.2164 | best_val=0.3668 | trials=200 | 3175.5s | ETA: 4:03:34
+2026-03-08 02:03:58 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=0.2133 | best_val=0.3852 | trials=200 | 2521.6s | ETA: 3:23:26
+2026-03-08 02:56:05 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=0.2214 | best_val=0.3964 | trials=200 | 3126.1s | ETA: 2:27:03
+2026-03-08 03:39:13 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=0.2156 | best_val=0.3566 | trials=200 | 2588.7s | ETA: 1:31:30
+2026-03-08 04:36:18 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=0.2213 | best_val=0.3872 | trials=200 | 3424.4s | ETA: 0:50:46
+2026-03-08 05:21:43 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=0.2050 | best_val=0.3726 | trials=200 | 2725.0s | ETA: done
+2026-03-08 05:21:43 | INFO     | tpe.benchmark |   └─ [Optuna] houses | RMSE=0.2140±0.0061 | 385.9 min
+2026-03-08 05:21:43 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260307_180429.csv  (56 rows)
+2026-03-08 05:21:43 | INFO     | tpe.benchmark | 
+2026-03-08 05:21:43 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-08 05:21:43 | INFO     | tpe.benchmark |   DATASET: superconductivity  (DID=46961)
+2026-03-08 05:21:43 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-08 05:21:43 | INFO     | tpe.benchmark | Loading: superconductivity  (DID=46961, task=regression) ...
+2026-03-08 05:21:43 | INFO     | openml.datasets.dataset | pickle write superconductivity
+2026-03-08 05:21:43 | DEBUG    | openml.datasets.dataset | Saved dataset 46961: superconductivity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46961/dataset_46961.pkl.py3
+2026-03-08 05:21:43 | INFO     | tpe.benchmark |   superconductivity | 21263 x 81 | y mean=34.421  std=34.254
+2026-03-08 05:21:43 | INFO     | tpe.benchmark | 
+2026-03-08 05:21:43 | INFO     | tpe.benchmark |   ┌─ superconductivity  [Optuna-TPE-200]
+2026-03-08 05:21:43 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-08 09:27:09 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=9.1892 | best_val=0.2514 | trials=200 | 14726.5s | ETA: 1 day, 4:38:05
+2026-03-08 12:15:23 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=9.5596 | best_val=0.2742 | trials=200 | 10093.6s | ETA: 20:41:00
+2026-03-08 16:39:48 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=8.7410 | best_val=0.2700 | trials=200 | 15865.6s | ETA: 18:50:09
+2026-03-08 19:55:43 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=8.7247 | best_val=0.2690 | trials=200 | 11754.6s | ETA: 13:58:04

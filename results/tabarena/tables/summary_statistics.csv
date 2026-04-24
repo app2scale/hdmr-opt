@@ -1,0 +1,13 @@
+dataset_id,dataset_name,n_samples,n_features,method,method_key,rmse_mean,rmse_std,rmse_min,rmse_max,rmse_median,n_folds,eff_dim_k,eff_dim_n,eff_dim_ratio,top1_param,top1_si,top2_param,top2_si,top3_param,top3_si
+44959,Concrete,1030,8,HDMR,hdmr,4.1032,0.5358,3.1928,5.0943,3.988,8,1,10,0.1,reg_alpha,0.8083,subsample,0.0565,max_leaves,0.0254
+44959,Concrete,1030,8,Random Search,rs,4.1135,0.4795,3.2883,4.8697,4.0339,8,,,,,,,,,
+44959,Concrete,1030,8,Adaptive HDMR,adaptive,4.1711,0.5253,3.2618,4.9806,4.0597,8,2,10,0.2,reg_alpha,0.7681,subsample,0.0781,max_leaves,0.0464
+44959,Concrete,1030,8,Optuna (TPE),optuna,4.0231,0.5788,2.9715,4.9603,3.9154,8,,,,,,,,,
+43919,Airfoil,1503,5,HDMR,hdmr,1.4032,0.236,1.1863,1.9894,1.3281,8,2,10,0.2,reg_alpha,0.7955,colsample_bynode,0.0571,colsample_bylevel,0.0312
+43919,Airfoil,1503,5,Random Search,rs,1.383,0.1755,1.1842,1.6762,1.3319,8,,,,,,,,,
+43919,Airfoil,1503,5,Adaptive HDMR,adaptive,1.3412,0.149,1.1863,1.7014,1.2922,8,1,10,0.1,reg_alpha,0.8042,max_depth,0.0386,colsample_bynode,0.0324
+43919,Airfoil,1503,5,Optuna (TPE),optuna,1.2856,0.105,1.1802,1.5252,1.267,8,,,,,,,,,
+44970,QSAR Fish,908,6,HDMR,hdmr,0.8876,0.0786,0.7738,1.0254,0.8902,8,6,10,0.6,reg_alpha,0.3269,subsample,0.2019,max_depth,0.0934
+44970,QSAR Fish,908,6,Random Search,rs,0.8739,0.0763,0.7414,1.0071,0.8691,8,,,,,,,,,
+44970,QSAR Fish,908,6,Adaptive HDMR,adaptive,0.8805,0.0773,0.7831,1.0254,0.8637,8,5,10,0.5,reg_alpha,0.3293,subsample,0.2046,max_leaves,0.1133
+44970,QSAR Fish,908,6,Optuna (TPE),optuna,0.8726,0.0658,0.764,0.9849,0.8739,8,,,,,,,,,

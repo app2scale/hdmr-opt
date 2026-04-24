@@ -1,0 +1,148 @@
+================================================================================
+HDMR BENCHMARK — STATISTICAL ANALYSIS REPORT
+Generated: 2026-02-17 10:35:58
+================================================================================
+
+1. EXPERIMENT OVERVIEW
+--------------------------------------------------------------------------------
+  Total experiments:  3200
+  Successful runs:    3200 (100.0%)
+  Functions tested:   16
+  Basis functions:    ['Legendre', 'Cosine']
+  Orders:             [1, 2, 3, 5, 7]
+  Modes:              ['standard', 'adaptive']
+  Runs per config:    10
+  Samples per run:    1000
+  Total wall time:    3224.8s (0.90h)
+
+
+2. DESCRIPTIVE STATISTICS PER FUNCTION
+--------------------------------------------------------------------------------
+  Function                           Median         Mean          Std          Min   Success%
+  ------------------------------------------------------------------------------------------
+  rastrigin_2d                   1.0059e+00   7.6008e+00   1.4554e+01   1.4211e-14     100.0%
+  rosenbrock_2d                  1.0000e+00   1.0644e+00   1.0390e+00   6.1872e-04     100.0%
+  ackley_2d                      1.5392e-01   4.6730e+00   7.5955e+00   4.3776e-07     100.0%
+  branin_2d                      1.2425e+01   1.3593e+01   1.1279e+01   2.2484e-02     100.0%
+  camel16_2d                     1.0316e+00   3.3827e+02   1.3911e+03   2.0736e-03     100.0%
+  rosenbrock_10d                 1.6750e+04   1.2615e+05   2.3547e+05   9.6762e+01     100.0%
+  rastrigin_10d                  3.8583e+01   5.9954e+01   6.6067e+01   1.2875e-11     100.0%
+  griewank_10d                   2.3383e+01   6.2600e+01   1.3564e+02   1.0281e+00     100.0%
+  schwefel                       3.0928e+03   3.3494e+03   1.2930e+03   6.7267e+02     100.0%
+  levy                           3.7515e+00   3.5285e+01   1.0945e+02   1.1198e-01     100.0%
+  zakharov                       7.0804e+06   5.1613e+07   9.5670e+07   1.3500e+01     100.0%
+  sphere                         8.0114e-01   1.7334e+01   5.6792e+01   5.1191e-14     100.0%
+  styblinski_tang                9.1721e+01   1.8930e+02   2.9722e+02   3.0469e+00     100.0%
+  dixon_price                    5.6580e+02   1.1940e+05   4.4384e+05   1.0000e+00     100.0%
+  michalewicz                    6.2773e+00   5.6858e+00   2.2652e+00   4.7836e-01     100.0%
+  sum_of_different_powers        2.1004e-03   5.4603e-01   2.1728e+00   2.8627e-17     100.0%
+
+
+3. BASIS FUNCTION COMPARISON (Legendre vs Cosine)
+--------------------------------------------------------------------------------
+  Function                          Leg Med      Cos Med    p-value   Sig       Effect       Winner
+  -----------------------------------------------------------------------------------------------
+  rastrigin_2d                   2.8303e+00   4.3817e-11     0.0000   ***       medium       Cosine
+  rosenbrock_2d                  3.2530e-01   1.0000e+00     0.0003   ***        small     Legendre
+  ackley_2d                      2.9096e+00   4.0455e-05     0.0000   ***       medium       Cosine
+  branin_2d                      4.1355e+00   1.6369e+01     0.0000   ***       medium     Legendre
+  camel16_2d                     1.0250e+00   2.8132e+00     0.0001   ***        small     Legendre
+  rosenbrock_10d                 1.0097e+04   2.2655e+04     0.0000   ***   negligible     Legendre
+  rastrigin_10d                  6.2362e+01   3.1876e+01     0.0001   ***       medium       Cosine
+  griewank_10d                   3.1422e+00   2.5999e+01     0.0000   ***   negligible     Legendre
+  schwefel                       2.7972e+03   3.3538e+03     0.3695    ns   negligible     Legendre
+  levy                           1.9258e+00   4.2465e+00     0.4938    ns        small     Legendre
+  zakharov                       1.7977e+06   8.7965e+06     0.1777    ns       medium     Legendre
+  sphere                         5.9821e-01   8.9879e-01     0.0178     *        small     Legendre
+  styblinski_tang                7.2070e+01   1.0734e+02     0.8125    ns        small     Legendre
+  dixon_price                    3.3429e+02   9.3433e+02     0.0074    **        small     Legendre
+  michalewicz                    6.6484e+00   6.0262e+00     0.8797    ns   negligible       Cosine
+  sum_of_different_powers        6.8742e-04   3.3018e-03     0.0085    **        small     Legendre
+
+  Legendre wins: 12/16, Cosine wins: 4/16, Significant: 11/16
+
+
+4. MODE COMPARISON (Standard vs Adaptive)
+--------------------------------------------------------------------------------
+  Function                          Std Med      Adp Med    p-value   Sig       Effect       Winner
+  -----------------------------------------------------------------------------------------------
+  rastrigin_2d                   5.0190e+00   5.2538e-02     0.0000   ***        large     adaptive
+  rosenbrock_2d                  1.1668e+00   2.6941e-01     0.0000   ***        large     adaptive
+  ackley_2d                      3.2819e+00   4.4060e-03     0.0000   ***        large     adaptive
+  branin_2d                      1.8289e+01   3.9283e+00     0.0000   ***        large     adaptive
+  camel16_2d                     1.0510e+01   1.0316e+00     0.0000   ***        small     adaptive
+  rosenbrock_10d                 1.0765e+05   9.6235e+03     0.0000   ***        large     adaptive
+  rastrigin_10d                  8.2926e+01   2.2497e+01     0.0000   ***        large     adaptive
+  griewank_10d                   3.3551e+01   1.8664e+01     0.0000   ***       medium     adaptive
+  schwefel                       4.2676e+03   2.4546e+03     0.0000   ***        large     adaptive
+  levy                           1.6882e+01   1.2141e+00     0.0000   ***       medium     adaptive
+  zakharov                       4.4392e+07   1.0255e+06     0.0000   ***        large     adaptive
+  sphere                         3.2404e+00   1.0987e-01     0.0000   ***       medium     adaptive
+  styblinski_tang                1.5852e+02   6.2784e+01     0.0000   ***        large     adaptive
+  dixon_price                    2.9654e+04   7.3775e+01     0.0000   ***       medium     adaptive
+  michalewicz                    7.1009e+00   3.9156e+00     0.0000   ***        large     adaptive
+  sum_of_different_powers        5.7341e-02   2.0261e-04     0.0000   ***       medium     adaptive
+
+  Standard wins: 0/16, Adaptive wins: 16/16, Significant: 16/16
+
+
+5. POLYNOMIAL ORDER EFFECT (Kruskal-Wallis)
+--------------------------------------------------------------------------------
+  Function                           H-stat    p-value   Sig   Best Order
+  ---------------------------------------------------------------------------
+  rastrigin_2d                      21.3748     0.0003   ***            3
+  rosenbrock_2d                      1.3600     0.8511    ns            2
+  ackley_2d                          6.7360     0.1505    ns            3
+  branin_2d                         13.8705     0.0077    **            3
+  camel16_2d                         1.0022     0.9095    ns            1
+  rosenbrock_10d                     8.1858     0.0850    ns            2
+  rastrigin_10d                      2.9149     0.5722    ns            1
+  griewank_10d                      39.5705     0.0000   ***            2
+  schwefel                          10.3678     0.0347     *            7
+  levy                              29.6842     0.0000   ***            2
+  zakharov                           8.7002     0.0690    ns            7
+  sphere                            18.1825     0.0011    **            3
+  styblinski_tang                    6.9620     0.1379    ns            5
+  dixon_price                        7.5988     0.1074    ns            3
+  michalewicz                       21.6945     0.0002   ***            7
+  sum_of_different_powers            9.2228     0.0558    ns            2
+
+  Order 3 is optimal most frequently. Significant in 7/16 cases.
+
+
+6. BEST CONFIGURATION PER FUNCTION
+--------------------------------------------------------------------------------
+  Function                         Best Gap        Basis    Order         Mode     Time
+  -------------------------------------------------------------------------------------
+  rastrigin_2d                   1.4211e-14       Cosine        7     adaptive    0.04s
+  rosenbrock_2d                  6.1872e-04     Legendre        1     adaptive    1.10s
+  ackley_2d                      4.3776e-07       Cosine        2     adaptive    0.15s
+  branin_2d                      2.2484e-02     Legendre        7     adaptive    0.61s
+  camel16_2d                     2.0736e-03     Legendre        7     adaptive    0.21s
+  rosenbrock_10d                 9.6762e+01     Legendre        2     adaptive    1.21s
+  rastrigin_10d                  1.2875e-11       Cosine        1     standard    0.02s
+  griewank_10d                   1.0281e+00     Legendre        2     adaptive    1.05s
+  schwefel                       6.7267e+02     Legendre        2     adaptive    5.58s
+  levy                           1.1198e-01     Legendre        2     adaptive    0.50s
+  zakharov                       1.3500e+01     Legendre        5     adaptive    3.82s
+  sphere                         5.1191e-14       Cosine        1     standard    0.02s
+  styblinski_tang                3.0469e+00     Legendre        2     adaptive    7.35s
+  dixon_price                    1.0000e+00       Cosine        1     standard    0.03s
+  michalewicz                    4.7836e-01     Legendre        7     adaptive    2.65s
+  sum_of_different_powers        2.8627e-17       Cosine        1     standard    0.02s
+
+
+7. KEY FINDINGS
+--------------------------------------------------------------------------------
+  [Basis] Legendre wins on 12/16 functions. Statistically significant: 11 cases.
+  [Mode]  Adaptive wins on 16/16 functions. Statistically significant: 16 cases.
+  [Order] Order 3 is most frequently optimal. Significant order effect: 7/16 functions.
+
+  Caveats:
+  - p-values without effect sizes may be misleading — check Cohen's d.
+  - Only 10 runs per config. Consider 30+ for robust statistics.
+  - Bonferroni correction recommended for multiple comparisons in publication.
+
+================================================================================
+END OF REPORT
+================================================================================

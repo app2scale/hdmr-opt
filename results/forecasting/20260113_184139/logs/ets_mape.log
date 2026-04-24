@@ -1,0 +1,91 @@
+COMMAND:
+python -m src.forecast_example --algorithm ets --metric mape --samples 200 --basis Cosine --degree 7 --split 2020-01-01 --seed 42
+
+STDOUT:
+================================================================================
+HDMR-BASED FORECASTING HYPERPARAMETER OPTIMIZATION
+================================================================================
+
+1. Configuration
+--------------------------------------------------------------------------------
+   Algorithm:        ETS
+   Metric:           MAPE
+   Data Path:        /mnt/disk1/erdemy/app2scale/hdmr-opt/src/data/transactions.csv
+   Split Date:       2020-01-01
+   HDMR Samples:     200
+   Basis Function:   Cosine (degree 7)
+   Adaptive:         False
+   Plots enabled:    True
+   Date format:      MM/DD/YYYY (strict)
+
+2. Loading & Validating Data
+--------------------------------------------------------------------------------
+   ✓ Date parsing: auto-detected (2015-10-01 → 2021-06-30)
+   ✓ CSV rows:          2100
+   ✓ Date range:        2015-10-01 → 2021-06-30
+   ✓ Date format:       MM/DD/YYYY (strict)
+   ✓ Transactions dtype: float64
+   ✓ Train samples (after features): 1525
+   ✓ Test samples  (after features): 547
+   ✓ Feature count:                 32
+
+3. Hyperparameter Space
+--------------------------------------------------------------------------------
+   Number of hyperparameters: 1
+   seasonal_periods     [  1.000000,  52.000000]
+
+4. Creating Optimization Objective
+--------------------------------------------------------------------------------
+   Objective: Minimize MAPE over ℝ^1
+
+5. Running HDMR Optimization
+--------------------------------------------------------------------------------
+   Initial point x0: [26.5]
+   Optimization started...
+
+6. Optimization Results
+--------------------------------------------------------------------------------
+   Runtime:          157.86 seconds
+   Success:          True
+   Iterations:       1
+   Function evals:   200
+   Best MAPE:       13.828890
+
+   Optimal Hyperparameters (raw):
+      seasonal_periods     = 26.500000
+
+   Optimal Hyperparameters (casted):
+      seasonal_periods     = 26
+
+7. Final Model Evaluation
+--------------------------------------------------------------------------------
+   Test Set Metrics:
+      MSE      = 6.992475
+      RMSE     = 2.644329
+      MAE      = 2.022032
+      MAPE     = 13.828890
+      SMAPE    = 7.164447
+      MASE     = 1.842191
+
+   ✓ Results saved to: results/forecasting/forecast_ets_mape_hdmr_N200_m7.txt
+
+8. Saving Visualizations
+--------------------------------------------------------------------------------
+   ✓ Results plot saved to: results/forecasting/forecast_ets_mape_hdmr_results.png
+   ✓ Alpha plot saved to: results/forecasting/forecast_ets_mape_hdmr_alpha.png
+   ✓ Prediction plot saved to: results/forecasting/forecast_ets_mape_predictions.png
+
+================================================================================
+
+✓ Optimization completed successfully!
+✓ Best MAPE: 13.828890
+✓ Optimization time: 157.86 seconds
+✓ Results saved under results/forecasting/
+
+
+STDERR:
+/mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/xgboost/core.py:377: FutureWarning: Your system has an old version of glibc (< 2.28). We will stop supporting Linux distros with glibc older than 2.28 after **May 31, 2025**. Please upgrade to a recent Linux distro (with glibc >= 2.28) to use future versions of XGBoost.
+Note: You have installed the 'manylinux2014' variant of XGBoost. Certain features such as GPU algorithms or federated learning are not available. To use these features, please upgrade to a recent Linux distro with glibc 2.28+, and install the 'manylinux_2_28' variant.
+  warnings.warn(
+/mnt/disk1/erdemy/app2scale/hdmr-opt/src/functions_forecast.py:61: UserWarning: PyTorch not available. Install with: pip install torch
+  warnings.warn("PyTorch not available. Install with: pip install torch")

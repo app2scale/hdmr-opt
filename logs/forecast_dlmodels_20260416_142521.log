@@ -1,0 +1,18 @@
+nohup: ignoring input
+/mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/xgboost/core.py:377: FutureWarning: Your system has an old version of glibc (< 2.28). We will stop supporting Linux distros with glibc older than 2.28 after **May 31, 2025**. Please upgrade to a recent Linux distro (with glibc >= 2.28) to use future versions of XGBoost.
+Note: You have installed the 'manylinux2014' variant of XGBoost. Certain features such as GPU algorithms or federated learning are not available. To use these features, please upgrade to a recent Linux distro with glibc 2.28+, and install the 'manylinux_2_28' variant.
+  warnings.warn(
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast | GPU: NVIDIA GeForce RTX 2080
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast | ======================================================================
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast | FORECAST HPO  run_id=20260416_142524
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast |   Datasets  : ['payten', 'medianova']
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast |   Models    : ['ARIMA', 'GRU', 'N-BEATS']
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast |   Methods   : ['HDMR-200', 'A-HDMR-200', 'A-HDMR-600', 'RS-200', 'Optuna-200']
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast |   HORIZON=30  N_FOLDS=3  HDMR_SAMPLES=200  OPTUNA_TRIALS=200  RS_SAMPLES=200  SEED=42
+2026-04-16 14:25:29,487 | INFO     | hdmr.forecast | ======================================================================
+2026-04-16 14:25:29,499 | INFO     | hdmr.forecast | Loaded 'Payten (Transactions)': 2100 rows, target='transactions', special_days=86 entries
+2026-04-16 14:25:29,538 | INFO     | hdmr.forecast | 
+[Payten (Transactions)]  2070 rows after engineering  16 features  3 folds
+2026-04-16 14:25:29,539 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][HDMR-200] fold 1/3  (train=1370  test=30)
+2026-04-16 14:41:40,866 | INFO     | hdmr.forecast |   └─ MAPE=9.97%  RMSE=1.1222  MAE=0.7804  best_val=1.2430  evals=201  971.3s  ETA: 11:52:18
+2026-04-16 14:41:40,869 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][HDMR-200] fold 2/3  (train=1705  test=30)

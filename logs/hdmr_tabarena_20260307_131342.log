@@ -1,0 +1,111 @@
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | ============================================================
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | HDMR vs. TabArena  |  XGBoost HPO Benchmark
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | Run ID   : 20260307_131342
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_tabarena_20260307_131342.log
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | ============================================================
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | Configuration:
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark |   dataset    = openml:46904
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark |   basis      = Legendre  degree=3  samples=20
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark |   adaptive   = False  maxiter=15  k=50  eps=0.010  clip=0.90
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark |   folds      = 2  seed=42  dims=10  n_est=10000  es=50
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark |   space      = TabArena Table C.3 (10D, grow_policy + max_leaves)
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | Loading: 'openml:46904'
+2026-03-07 13:13:42 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 13:13:42 | INFO     | openml.datasets.dataset | pickle write airfoil_self_noise
+2026-03-07 13:13:42 | DEBUG    | openml.datasets.dataset | Saved dataset 46904: airfoil_self_noise to file /home/erdemy/.cache/openml/org/openml/www/datasets/46904/dataset_46904.pkl.py3
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | Dataset: OpenML-46904 (airfoil_self_noise) | 1503 x 4 | target mean=124.8 std=6.9
+2026-03-07 13:13:42 | INFO     | hdmr.benchmark | --- Runtime Estimation (probe fit) ---
+2026-03-07 13:13:43 | INFO     | hdmr.benchmark |   Probe    : 0.565s on 751 rows
+2026-03-07 13:13:43 | INFO     | hdmr.benchmark |   Scale    : x1.0  ->  ~0.565s per XGBoost eval
+2026-03-07 13:13:43 | INFO     | hdmr.benchmark |   Budget   : 20 samples x 1 iters x 2 folds = 40 total evals
+2026-03-07 13:13:43 | INFO     | hdmr.benchmark |   Estimate : 0:00:22  (0.4 min)
+2026-03-07 13:13:43 | INFO     | hdmr.benchmark | --- Starting 2-Fold Outer CV ---
+2026-03-07 13:13:43 | INFO     | hdmr.benchmark | Fold 1/2 | train=751  test=752
+2026-03-07 13:13:46 | DEBUG    | hdmr.benchmark | eval #001 | val_rmse=0.39303 | lr=0.0071 trees=9999 depth=7
+2026-03-07 13:13:49 | DEBUG    | hdmr.benchmark | eval #002 | val_rmse=0.31376 | lr=0.0163 trees=5126 depth=8
+2026-03-07 13:13:49 | DEBUG    | hdmr.benchmark | eval #003 | val_rmse=0.28507 | lr=0.0636 trees=1188 depth=10
+2026-03-07 13:13:53 | DEBUG    | hdmr.benchmark | eval #004 | val_rmse=0.37582 | lr=0.0051 trees=9994 depth=7
+2026-03-07 13:13:54 | DEBUG    | hdmr.benchmark | eval #005 | val_rmse=0.36720 | lr=0.0869 trees=1115 depth=6
+2026-03-07 13:13:55 | DEBUG    | hdmr.benchmark | eval #006 | val_rmse=0.33963 | lr=0.0453 trees=2499 depth=6
+2026-03-07 13:13:57 | DEBUG    | hdmr.benchmark | eval #007 | val_rmse=0.28871 | lr=0.0093 trees=5079 depth=5
+2026-03-07 13:13:58 | DEBUG    | hdmr.benchmark | eval #008 | val_rmse=0.43298 | lr=0.0291 trees=2444 depth=5
+2026-03-07 13:13:59 | DEBUG    | hdmr.benchmark | eval #009 | val_rmse=0.28980 | lr=0.0297 trees=938 depth=10
+2026-03-07 13:14:00 | DEBUG    | hdmr.benchmark | eval #010 | val_rmse=0.40040 | lr=0.0678 trees=2265 depth=9
+2026-03-07 13:14:03 | DEBUG    | hdmr.benchmark | eval #011 | val_rmse=0.37604 | lr=0.0068 trees=9801 depth=6
+2026-03-07 13:14:04 | DEBUG    | hdmr.benchmark | eval #012 | val_rmse=0.31539 | lr=0.0262 trees=2444 depth=9
+2026-03-07 13:14:06 | DEBUG    | hdmr.benchmark | eval #013 | val_rmse=0.42093 | lr=0.0345 trees=4044 depth=5
+2026-03-07 13:14:10 | DEBUG    | hdmr.benchmark | eval #014 | val_rmse=0.31043 | lr=0.0060 trees=7489 depth=8
+2026-03-07 13:14:12 | DEBUG    | hdmr.benchmark | eval #015 | val_rmse=0.36103 | lr=0.0155 trees=5511 depth=4
+2026-03-07 13:14:13 | DEBUG    | hdmr.benchmark | eval #016 | val_rmse=0.37656 | lr=0.0615 trees=2212 depth=6
+2026-03-07 13:14:14 | DEBUG    | hdmr.benchmark | eval #017 | val_rmse=0.40893 | lr=0.0867 trees=1213 depth=5
+2026-03-07 13:14:14 | DEBUG    | hdmr.benchmark | eval #018 | val_rmse=0.39431 | lr=0.0214 trees=2267 depth=5
+2026-03-07 13:14:15 | DEBUG    | hdmr.benchmark | eval #019 | val_rmse=0.33697 | lr=0.0919 trees=1856 depth=7
+2026-03-07 13:14:16 | DEBUG    | hdmr.benchmark | eval #020 | val_rmse=0.38642 | lr=0.0303 trees=1597 depth=5
+2026-03-07 13:14:34 | DEBUG    | hdmr.benchmark | eval #021 | val_rmse=0.28515 | lr=0.0105 trees=7187 depth=10
+2026-03-07 13:14:34 | INFO     | hdmr.benchmark |   Best params: lr=0.0105  depth=10  mcw=0.008669  ra=0.0001  rl=4.102  grow=lossguide  leaves=115
+2026-03-07 13:14:41 | INFO     | hdmr.benchmark |   Final model used 2341 trees
+2026-03-07 13:14:41 | INFO     | hdmr.benchmark |   Fold 1 DONE | test_rmse=1.8804 | best_val=0.2851 | evals=21 | 58.6s | ETA: 0:00:58
+2026-03-07 13:14:41 | INFO     | hdmr.benchmark | Fold 2/2 | train=752  test=751
+2026-03-07 13:14:42 | DEBUG    | hdmr.benchmark | eval #001 | val_rmse=0.36132 | lr=0.0610 trees=1337 depth=4
+2026-03-07 13:14:42 | DEBUG    | hdmr.benchmark | eval #002 | val_rmse=0.41899 | lr=0.0888 trees=1214 depth=6
+2026-03-07 13:14:43 | DEBUG    | hdmr.benchmark | eval #003 | val_rmse=0.42289 | lr=0.0337 trees=2268 depth=5
+2026-03-07 13:14:46 | DEBUG    | hdmr.benchmark | eval #004 | val_rmse=0.38371 | lr=0.0084 trees=6585 depth=4
+2026-03-07 13:14:46 | DEBUG    | hdmr.benchmark | eval #005 | val_rmse=0.37171 | lr=0.0421 trees=1837 depth=4
+2026-03-07 13:14:47 | DEBUG    | hdmr.benchmark | eval #006 | val_rmse=0.39455 | lr=0.0196 trees=1896 depth=6
+2026-03-07 13:14:50 | DEBUG    | hdmr.benchmark | eval #007 | val_rmse=0.32808 | lr=0.0126 trees=7342 depth=6
+2026-03-07 13:14:51 | DEBUG    | hdmr.benchmark | eval #008 | val_rmse=0.34878 | lr=0.0645 trees=1042 depth=7
+2026-03-07 13:14:52 | DEBUG    | hdmr.benchmark | eval #009 | val_rmse=0.30041 | lr=0.0466 trees=3322 depth=4
+2026-03-07 13:14:55 | DEBUG    | hdmr.benchmark | eval #010 | val_rmse=0.29951 | lr=0.0226 trees=5933 depth=8
+2026-03-07 13:14:59 | DEBUG    | hdmr.benchmark | eval #011 | val_rmse=0.39118 | lr=0.0067 trees=9249 depth=5
+2026-03-07 13:15:01 | DEBUG    | hdmr.benchmark | eval #012 | val_rmse=0.27487 | lr=0.0128 trees=4744 depth=6
+2026-03-07 13:15:03 | DEBUG    | hdmr.benchmark | eval #013 | val_rmse=0.38737 | lr=0.0181 trees=3245 depth=5
+2026-03-07 13:15:03 | DEBUG    | hdmr.benchmark | eval #014 | val_rmse=0.34508 | lr=0.0944 trees=1645 depth=6
+2026-03-07 13:15:04 | DEBUG    | hdmr.benchmark | eval #015 | val_rmse=0.38735 | lr=0.0199 trees=3286 depth=9
+2026-03-07 13:15:08 | DEBUG    | hdmr.benchmark | eval #016 | val_rmse=0.32178 | lr=0.0084 trees=6068 depth=7
+2026-03-07 13:15:09 | DEBUG    | hdmr.benchmark | eval #017 | val_rmse=0.34939 | lr=0.0198 trees=2099 depth=7
+2026-03-07 13:15:09 | DEBUG    | hdmr.benchmark | eval #018 | val_rmse=0.40598 | lr=0.0415 trees=825 depth=7
+2026-03-07 13:15:10 | DEBUG    | hdmr.benchmark | eval #019 | val_rmse=0.43082 | lr=0.0491 trees=1485 depth=5
+2026-03-07 13:15:12 | DEBUG    | hdmr.benchmark | eval #020 | val_rmse=0.36175 | lr=0.0093 trees=5106 depth=4
+2026-03-07 13:15:13 | DEBUG    | hdmr.benchmark | eval #021 | val_rmse=0.37511 | lr=0.0113 trees=1553 depth=8
+2026-03-07 13:15:13 | INFO     | hdmr.benchmark |   Best params: lr=0.0113  depth=8  mcw=0.002285  ra=2.901  rl=3.948  grow=lossguide  leaves=331
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   Final model used 2072 trees
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   Fold 2 DONE | test_rmse=2.4539 | best_val=0.2749 | evals=21 | 32.9s | ETA: done
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | ============================================================
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | RESULTS SUMMARY
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | ============================================================
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Dataset           : OpenML-46904 (airfoil_self_noise)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | HDMR RMSE         : 2.1671 +/- 0.2868
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Total evaluations : 42  (avg 21/fold)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Total wall time   : 0:01:31  (1.5 min)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | 
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | TabArena budget   : 200/fold x 2 folds = 400 evals
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | HDMR eval budget  : 42  (10.5% of TabArena)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | 
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | TabArena baseline : not set  (set TABARENA_RMSE env var to compare)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | 
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | PER-FOLD DETAIL
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   Fold   test_rmse     best_val_rmse   evals    sec     
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   ----------------------------------------------------
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   1      1.8804        0.2851          21       58.6    
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   2      2.4539        0.2749          21       32.9    
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | 
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | HYPERPARAMETER SENSITIVITY  (mean across 2 folds)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   Parameter                   S_i   Rank  Bar
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   ----------------------------------------------------------
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   reg_alpha                0.4496      1  █████████████████
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   max_depth                0.0988      2  ███
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   max_leaves               0.0948      3  ███
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   subsample                0.0866      4  ███
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   colsample_bylevel        0.0792      5  ███
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   grow_policy              0.0491      6  █
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   reg_lambda               0.0486      7  █
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   min_child_weight         0.0367      8  █
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   colsample_bynode         0.0317      9  █
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark |   learning_rate            0.0247     10  
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | 
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Top-5/10 parameters account for >=80% of total variance
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Effective search dimensionality: 5 (out of 10)
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | 
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_xgb_20260307_131342.csv
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | ============================================================
+2026-03-07 13:15:14 | INFO     | hdmr.benchmark | Experiment complete.

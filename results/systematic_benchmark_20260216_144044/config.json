@@ -1,0 +1,23 @@
+{
+  "functions": [
+    "rastrigin_2d",
+    "rosenbrock_2d"
+  ],
+  "basis_functions": [
+    "Cosine"
+  ],
+  "orders": [
+    3,
+    7
+  ],
+  "modes": [
+    "standard"
+  ],
+  "num_samples": 500,
+  "num_runs": 3,
+  "seed_start": 42,
+  "adaptive_maxiter": 15,
+  "adaptive_k": 50,
+  "adaptive_epsilon": 0.1,
+  "adaptive_clip": 0.9
+}

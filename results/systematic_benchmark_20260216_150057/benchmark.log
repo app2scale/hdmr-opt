@@ -1,0 +1,32 @@
+2026-02-16 15:00:57,814 | INFO     | Output directory: results/systematic_benchmark_20260216_150057
+2026-02-16 15:00:57,814 | INFO     | Running in QUICK mode (reduced configurations)
+2026-02-16 15:00:57,814 | INFO     | Total experiments: 12
+2026-02-16 15:00:57,814 | INFO     | Starting benchmark suite: 12 experiments
+2026-02-16 15:00:57,814 | INFO     | Configuration: {'functions': ['rastrigin_2d', 'rosenbrock_2d'], 'basis_functions': ['Cosine'], 'orders': [3, 7], 'modes': ['standard'], 'num_samples': 500, 'num_runs': 3, 'seed_start': 42, 'adaptive_maxiter': 15, 'adaptive_k': 50, 'adaptive_epsilon': 0.1, 'adaptive_clip': 0.9}
+2026-02-16 15:00:57,936 | INFO     | Benchmark completed: 12 experiments
+2026-02-16 15:00:57,937 | INFO     | Successful runs: 12 / 12
+2026-02-16 15:00:57,937 | INFO     | 
+Benchmark completed in 0.1s
+2026-02-16 15:00:57,937 | INFO     | Computing summary statistics...
+2026-02-16 15:00:57,953 | INFO     | Saved raw results: results/systematic_benchmark_20260216_150057/raw_results.csv
+2026-02-16 15:00:57,953 | INFO     | Saved summary statistics: results/systematic_benchmark_20260216_150057/summary_statistics.csv
+2026-02-16 15:00:57,954 | INFO     | Saved configuration: results/systematic_benchmark_20260216_150057/config.json
+2026-02-16 15:00:57,954 | INFO     | 
+================================================================================
+2026-02-16 15:00:57,954 | INFO     | BENCHMARK SUMMARY
+2026-02-16 15:00:57,954 | INFO     | ================================================================================
+2026-02-16 15:00:57,954 | INFO     | Total experiments: 12
+2026-02-16 15:00:57,954 | INFO     | Successful: 12 (100.0%)
+2026-02-16 15:00:57,954 | INFO     | Total runtime: 0.1s
+2026-02-16 15:00:57,954 | INFO     | 
+Best configuration per function:
+2026-02-16 15:00:57,957 | INFO     |   rastrigin_2d:
+2026-02-16 15:00:57,957 | INFO     |     Config: Cosine, order=3, standard
+2026-02-16 15:00:57,957 | INFO     |     Mean f(x*): 11.241014 (±19.470007)
+2026-02-16 15:00:57,957 | INFO     |     Optimality gap: 1.124101e+01
+2026-02-16 15:00:57,959 | INFO     |   rosenbrock_2d:
+2026-02-16 15:00:57,959 | INFO     |     Config: Cosine, order=3, standard
+2026-02-16 15:00:57,959 | INFO     |     Mean f(x*): 1.806242 (±1.129457)
+2026-02-16 15:00:57,959 | INFO     |     Optimality gap: 1.806242e+00
+2026-02-16 15:00:57,959 | INFO     | 
+✓ All results saved to: results/systematic_benchmark_20260216_150057

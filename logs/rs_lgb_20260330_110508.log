@@ -1,0 +1,98 @@
+nohup: ignoring input
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ======================================================================
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Random Search (Sobol)  |  LightGBM HPO  |  16 Datasets  v1.0
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Run ID   : 20260330_110509
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/rs_lgb_tabarena_20260330_110509.log
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ======================================================================
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Configuration:
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   sampler=Sobol-RS  samples=200/fold  outer_folds=8  seed=42
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   search_space=TabArena C.3 LightGBM (12D)
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   task_filter=all  datasets=[46954, 46917, 46931, 46904, 46907, 46934, 46928, 46923, 46949, 46952, 46927, 46938, 46940, 46930, 46956, 46918] (16 total)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46954: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: concrete_compressive_strength  (DID=46917)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46917: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: healthcare_insurance_expenses  (DID=46931)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46931: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: airfoil_self_noise  (DID=46904)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46904: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: Fiat500_used  (DID=46907)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46907: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: houses  (DID=46934)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46934: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: Food_Delivery_Time  (DID=46928)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46928: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: diamonds  (DID=46923)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46923: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: physiochemical_protein  (DID=46949)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46949: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: qsar-biodeg  (DID=46952)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46952: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: Fitness_Club  (DID=46927)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46927: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: Is-this-a-good-customer  (DID=46938)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46938: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: Marketing_Campaign  (DID=46940)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46940: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: hazelnut-contaminant-detection  (DID=46930)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46930: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: seismic-bumps  (DID=46956)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46956: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | INFO     | rs.benchmark |   DATASET: credit-g  (DID=46918)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:05:09 | ERROR    | rs.benchmark | Load failed DID=46918: pip install openml — SKIPPING
+2026-03-30 11:05:09 | INFO     | rs.benchmark | 
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ======================================================================
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ALL EXPERIMENTS COMPLETE
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Datasets completed : 0 / 16
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Failed             : 16  ['load:QSAR_fish_toxicity', 'load:concrete_compressive_strength', 'load:healthcare_insurance_expenses', 'load:airfoil_self_noise', 'load:Fiat500_used', 'load:houses', 'load:Food_Delivery_Time', 'load:diamonds', 'load:physiochemical_protein', 'load:qsar-biodeg', 'load:Fitness_Club', 'load:Is-this-a-good-customer', 'load:Marketing_Campaign', 'load:hazelnut-contaminant-detection', 'load:seismic-bumps', 'load:credit-g']
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Total wall time    : 0:00:00  (0.0 hr)
+2026-03-30 11:05:09 | INFO     | rs.benchmark | Results            : None
+2026-03-30 11:05:09 | INFO     | rs.benchmark | ======================================================================

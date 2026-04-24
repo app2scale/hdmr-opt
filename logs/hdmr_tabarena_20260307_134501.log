@@ -1,0 +1,290 @@
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | HDMR vs Adaptive HDMR  |  XGBoost HPO  |  All 18 Datasets  v7.0
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | Run ID   : 20260307_134501
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_tabarena_20260307_134501.log
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | Configuration:
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   basis=Legendre  degree=3  samples=200
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   k=50  eps=0.010  clip=0.90
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   outer_folds=8  seed=42  search_space=TabArena C.3 (10D)
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   task_filter=all  datasets=[46954, 46917, 46931, 46904, 46907, 46942, 46934, 46961, 46928, 46923, 46952, 46927, 46938, 46940, 46930, 46956, 46963, 46918] (18 total)
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | 
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | Methods:
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   1) HDMR-200     — standard,   200 evals/fold
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   2) A-HDMR-200   — adaptive,   T=2×100 = 200 evals/fold (equal budget)
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   3) A-HDMR-600   — adaptive,   T=3×200 = 600 evals/fold (full budget)
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | 
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 13:45:01 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | Loading: QSAR_fish_toxicity  (DID=46954, task=regression) ...
+2026-03-07 13:45:01 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-07 13:45:01 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   QSAR_fish_toxicity | 907 x 6 | y mean=4.065  std=1.456
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark | 
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [HDMR-200]
+2026-03-07 13:45:01 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-07 13:46:36 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=0.9541 | best_val=0.6415 | evals=201 | 94.8s | ETA: 0:11:03
+2026-03-07 13:47:46 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=0.8971 | best_val=0.5204 | evals=201 | 69.8s | ETA: 0:08:13
+2026-03-07 13:49:17 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=0.8415 | best_val=0.4721 | evals=201 | 90.6s | ETA: 0:07:05
+2026-03-07 13:51:10 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=0.9606 | best_val=0.5613 | evals=201 | 113.9s | ETA: 0:06:05
+2026-03-07 13:52:42 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=0.7534 | best_val=0.5609 | evals=201 | 91.7s | ETA: 0:04:56
+2026-03-07 13:54:17 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=0.8355 | best_val=0.5903 | evals=201 | 94.6s | ETA: 0:03:20
+2026-03-07 13:56:27 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=0.9222 | best_val=0.6406 | evals=201 | 129.8s | ETA: 0:01:45
+2026-03-07 13:59:10 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=0.9492 | best_val=0.5167 | evals=201 | 163.3s | ETA: done
+2026-03-07 13:59:10 | INFO     | hdmr.benchmark |   └─ [HDMR-200] QSAR_fish_toxicity | RMSE=0.8892±0.0686 | eff_dim=6/10 | 14.1 min
+2026-03-07 13:59:10 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (8 rows)
+2026-03-07 13:59:10 | INFO     | hdmr.benchmark | 
+2026-03-07 13:59:10 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [A-HDMR-200]
+2026-03-07 13:59:10 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-07 14:00:44 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=0.9177 | best_val=0.6457 | evals=202 | 94.4s | ETA: 0:11:00
+2026-03-07 14:01:58 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=0.8848 | best_val=0.5204 | evals=202 | 74.2s | ETA: 0:08:25
+2026-03-07 14:03:25 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=0.8291 | best_val=0.4685 | evals=202 | 86.2s | ETA: 0:07:04
+2026-03-07 14:05:23 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=1.0488 | best_val=0.5613 | evals=202 | 118.4s | ETA: 0:06:11
+2026-03-07 14:06:54 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=0.7548 | best_val=0.5609 | evals=202 | 90.6s | ETA: 0:04:55
+2026-03-07 14:08:27 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=0.8395 | best_val=0.5864 | evals=202 | 93.4s | ETA: 0:03:21
+2026-03-07 14:10:32 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=0.9145 | best_val=0.6477 | evals=202 | 124.9s | ETA: 0:01:42
+2026-03-07 14:13:21 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=0.9470 | best_val=0.5167 | evals=202 | 168.8s | ETA: done
+2026-03-07 14:13:21 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] QSAR_fish_toxicity | RMSE=0.8920±0.0824 | eff_dim=7/10 | 14.2 min
+2026-03-07 14:13:21 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (16 rows)
+2026-03-07 14:13:21 | INFO     | hdmr.benchmark | 
+2026-03-07 14:13:21 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [A-HDMR-600]
+2026-03-07 14:13:21 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-07 14:18:12 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=0.9541 | best_val=0.6412 | evals=603 | 290.9s | ETA: 0:33:56
+2026-03-07 14:21:39 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=0.9005 | best_val=0.5204 | evals=603 | 206.9s | ETA: 0:24:53
+2026-03-07 14:26:29 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=0.8207 | best_val=0.4622 | evals=603 | 290.4s | ETA: 0:21:53
+2026-03-07 14:32:00 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=0.9639 | best_val=0.5600 | evals=603 | 330.7s | ETA: 0:18:23
+2026-03-07 14:37:02 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=0.7709 | best_val=0.5587 | evals=603 | 302.6s | ETA: 0:15:23
+2026-03-07 14:41:54 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=0.8355 | best_val=0.5903 | evals=603 | 291.7s | ETA: 0:10:16
+2026-03-07 14:48:43 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=0.9222 | best_val=0.6406 | evals=603 | 408.4s | ETA: 0:05:34
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=0.9448 | best_val=0.5167 | evals=603 | 455.5s | ETA: done
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] QSAR_fish_toxicity | RMSE=0.8891±0.0668 | eff_dim=5/10 | 43.0 min
+2026-03-07 14:56:18 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (24 rows)
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark | 
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark |   DATASET: concrete_compressive_strength  (DID=46917)
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark | Loading: concrete_compressive_strength  (DID=46917, task=regression) ...
+2026-03-07 14:56:18 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-07 14:56:18 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark |   concrete_compressive_strength | 1030 x 8 | y mean=35.818  std=16.698
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark | 
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark |   ┌─ concrete_compressive_strength  [HDMR-200]
+2026-03-07 14:56:18 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-07 15:04:42 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=4.0121 | best_val=0.2287 | evals=201 | 503.5s | ETA: 0:58:44
+2026-03-07 15:11:16 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=3.5037 | best_val=0.2765 | evals=201 | 394.7s | ETA: 0:44:54
+2026-03-07 15:17:43 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=4.9217 | best_val=0.2377 | evals=201 | 386.4s | ETA: 0:35:41
+2026-03-07 15:27:27 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=3.6357 | best_val=0.2428 | evals=201 | 583.8s | ETA: 0:30:19
+2026-03-07 15:32:15 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=4.3284 | best_val=0.3267 | evals=201 | 288.5s | ETA: 0:20:58
+2026-03-07 15:38:38 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=3.8830 | best_val=0.2720 | evals=201 | 382.6s | ETA: 0:13:56
+2026-03-07 15:46:10 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=3.8781 | best_val=0.3051 | evals=201 | 452.7s | ETA: 0:06:14
+2026-03-07 15:54:44 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=4.5972 | best_val=0.2326 | evals=201 | 513.9s | ETA: done
+2026-03-07 15:54:44 | INFO     | hdmr.benchmark |   └─ [HDMR-200] concrete_compressive_strength | RMSE=4.0950±0.4541 | eff_dim=2/10 | 58.4 min
+2026-03-07 15:54:44 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (32 rows)
+2026-03-07 15:54:44 | INFO     | hdmr.benchmark | 
+2026-03-07 15:54:44 | INFO     | hdmr.benchmark |   ┌─ concrete_compressive_strength  [A-HDMR-200]
+2026-03-07 15:54:44 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-07 16:02:51 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=3.6049 | best_val=0.2287 | evals=202 | 486.5s | ETA: 0:56:45
+2026-03-07 16:09:34 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=3.4674 | best_val=0.2765 | evals=202 | 403.8s | ETA: 0:44:30
+2026-03-07 16:15:56 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=4.8526 | best_val=0.2376 | evals=202 | 381.1s | ETA: 0:35:18
+2026-03-07 16:25:46 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=3.4779 | best_val=0.2428 | evals=202 | 590.9s | ETA: 0:30:34
+2026-03-07 16:30:29 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=4.4011 | best_val=0.3267 | evals=202 | 282.2s | ETA: 0:20:54
+2026-03-07 16:36:53 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=3.7605 | best_val=0.2729 | evals=202 | 384.1s | ETA: 0:13:58
+2026-03-07 16:44:32 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=4.0618 | best_val=0.3051 | evals=202 | 459.6s | ETA: 0:06:15
+2026-03-07 16:53:12 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=4.5185 | best_val=0.2308 | evals=202 | 519.9s | ETA: done
+2026-03-07 16:53:12 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] concrete_compressive_strength | RMSE=4.0181±0.4909 | eff_dim=4/10 | 58.5 min
+2026-03-07 16:53:12 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (40 rows)
+2026-03-07 16:53:12 | INFO     | hdmr.benchmark | 
+2026-03-07 16:53:12 | INFO     | hdmr.benchmark |   ┌─ concrete_compressive_strength  [A-HDMR-600]
+2026-03-07 16:53:12 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-07 17:19:21 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=3.8178 | best_val=0.2283 | evals=603 | 1568.3s | ETA: 3:02:57
+2026-03-07 17:37:57 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=3.3505 | best_val=0.2756 | evals=603 | 1116.1s | ETA: 2:14:13
+2026-03-07 17:56:23 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=4.9485 | best_val=0.2377 | evals=603 | 1106.7s | ETA: 1:45:18
+2026-03-07 18:20:02 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=3.7044 | best_val=0.2428 | evals=603 | 1418.4s | ETA: 1:20:54
+2026-03-07 18:34:22 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=4.5052 | best_val=0.3241 | evals=603 | 859.8s | ETA: 0:56:24
+2026-03-07 18:51:31 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=3.8830 | best_val=0.2720 | evals=603 | 1029.3s | ETA: 0:36:44
+2026-03-07 19:12:29 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=3.8781 | best_val=0.3051 | evals=603 | 1258.5s | ETA: 0:17:29
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=4.5972 | best_val=0.2279 | evals=603 | 1284.3s | ETA: done
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] concrete_compressive_strength | RMSE=4.0856±0.5030 | eff_dim=2/10 | 160.7 min
+2026-03-07 19:33:54 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (48 rows)
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark | 
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark |   DATASET: healthcare_insurance_expenses  (DID=46931)
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark | Loading: healthcare_insurance_expenses  (DID=46931, task=regression) ...
+2026-03-07 19:33:54 | INFO     | openml.datasets.dataset | pickle write healthcare_insurance_expenses
+2026-03-07 19:33:54 | DEBUG    | openml.datasets.dataset | Saved dataset 46931: healthcare_insurance_expenses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46931/dataset_46931.pkl.py3
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark |   healthcare_insurance_expenses | 1338 x 6 | y mean=13270.422  std=12105.485
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark | 
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark |   ┌─ healthcare_insurance_expenses  [HDMR-200]
+2026-03-07 19:33:54 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-07 19:35:23 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=4132.4187 | best_val=0.4067 | evals=201 | 88.8s | ETA: 0:10:21
+2026-03-07 19:37:02 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=3533.7577 | best_val=0.3716 | evals=201 | 99.8s | ETA: 0:09:25
+2026-03-07 19:38:32 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=4170.7660 | best_val=0.4084 | evals=201 | 89.2s | ETA: 0:07:43
+2026-03-07 19:40:31 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=5422.0768 | best_val=0.3050 | evals=201 | 119.7s | ETA: 0:06:51
+2026-03-07 19:41:41 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=4584.8801 | best_val=0.3557 | evals=201 | 69.5s | ETA: 0:04:38
+2026-03-07 19:43:03 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=4657.6962 | best_val=0.3846 | evals=201 | 82.3s | ETA: 0:03:01
+2026-03-07 19:44:35 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=5393.1358 | best_val=0.3556 | evals=201 | 91.8s | ETA: 0:01:21
+2026-03-07 19:46:14 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=4128.9066 | best_val=0.4151 | evals=201 | 99.1s | ETA: done
+2026-03-07 19:46:14 | INFO     | hdmr.benchmark |   └─ [HDMR-200] healthcare_insurance_expenses | RMSE=4502.9548±611.8380 | eff_dim=5/10 | 12.3 min
+2026-03-07 19:46:14 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (56 rows)
+2026-03-07 19:46:14 | INFO     | hdmr.benchmark | 
+2026-03-07 19:46:14 | INFO     | hdmr.benchmark |   ┌─ healthcare_insurance_expenses  [A-HDMR-200]
+2026-03-07 19:46:14 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-07 19:47:46 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=4107.5760 | best_val=0.4066 | evals=202 | 91.9s | ETA: 0:10:43
+2026-03-07 19:49:24 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=3519.1416 | best_val=0.3731 | evals=202 | 98.3s | ETA: 0:09:30
+2026-03-07 19:51:00 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=4122.8416 | best_val=0.4084 | evals=202 | 95.9s | ETA: 0:07:56
+2026-03-07 19:52:53 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=5456.7960 | best_val=0.3050 | evals=202 | 112.9s | ETA: 0:06:49
+2026-03-07 19:54:04 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=4545.1746 | best_val=0.3557 | evals=202 | 71.4s | ETA: 0:04:40
+2026-03-07 19:55:29 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=4660.0524 | best_val=0.3871 | evals=202 | 84.6s | ETA: 0:02:59
+2026-03-07 19:57:08 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=5380.7746 | best_val=0.3549 | evals=202 | 99.0s | ETA: 0:01:24
+2026-03-07 19:58:47 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=4138.7130 | best_val=0.4163 | evals=202 | 99.4s | ETA: done
+2026-03-07 19:58:47 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] healthcare_insurance_expenses | RMSE=4491.3837±623.2117 | eff_dim=6/10 | 12.6 min
+2026-03-07 19:58:47 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (64 rows)
+2026-03-07 19:58:47 | INFO     | hdmr.benchmark | 
+2026-03-07 19:58:47 | INFO     | hdmr.benchmark |   ┌─ healthcare_insurance_expenses  [A-HDMR-600]
+2026-03-07 19:58:47 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-07 20:03:25 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=4067.4180 | best_val=0.4067 | evals=603 | 277.8s | ETA: 0:32:24
+2026-03-07 20:08:19 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=3533.7577 | best_val=0.3714 | evals=603 | 294.0s | ETA: 0:28:35
+2026-03-07 20:13:01 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=4170.7660 | best_val=0.4084 | evals=603 | 282.1s | ETA: 0:23:43
+2026-03-07 20:18:09 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=5422.0768 | best_val=0.3050 | evals=603 | 307.5s | ETA: 0:19:38
+2026-03-07 20:21:40 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=4584.8801 | best_val=0.3557 | evals=603 | 210.8s | ETA: 0:13:20
+2026-03-07 20:25:55 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=4657.6962 | best_val=0.3846 | evals=603 | 255.0s | ETA: 0:08:35
+2026-03-07 20:30:28 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=5388.9305 | best_val=0.3553 | evals=603 | 273.0s | ETA: 0:04:06
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=4128.9066 | best_val=0.4151 | evals=603 | 280.2s | ETA: done
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] healthcare_insurance_expenses | RMSE=4494.3040±616.3494 | eff_dim=6/10 | 36.3 min
+2026-03-07 20:35:08 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (72 rows)
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark | 
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark |   DATASET: airfoil_self_noise  (DID=46904)
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark | Loading: airfoil_self_noise  (DID=46904, task=regression) ...
+2026-03-07 20:35:08 | INFO     | openml.datasets.dataset | pickle write airfoil_self_noise
+2026-03-07 20:35:08 | DEBUG    | openml.datasets.dataset | Saved dataset 46904: airfoil_self_noise to file /home/erdemy/.cache/openml/org/openml/www/datasets/46904/dataset_46904.pkl.py3
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark |   airfoil_self_noise | 1503 x 5 | y mean=124.836  std=6.896
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark | 
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark |   ┌─ airfoil_self_noise  [HDMR-200]
+2026-03-07 20:35:08 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-07 20:42:38 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=1.9739 | best_val=0.2151 | evals=201 | 449.7s | ETA: 0:52:27
+2026-03-07 20:49:47 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=1.2791 | best_val=0.1825 | evals=201 | 428.9s | ETA: 0:43:55
+2026-03-07 20:56:18 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=1.4172 | best_val=0.2142 | evals=201 | 391.0s | ETA: 0:35:16
+2026-03-07 21:04:02 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=1.0213 | best_val=0.1979 | evals=201 | 464.5s | ETA: 0:28:32
+2026-03-07 21:10:11 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=1.7200 | best_val=0.1973 | evals=201 | 368.7s | ETA: 0:20:24
+2026-03-07 21:17:52 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=1.3568 | best_val=0.2148 | evals=201 | 461.3s | ETA: 0:14:22
+2026-03-07 21:26:19 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=1.5063 | best_val=0.2110 | evals=201 | 506.6s | ETA: 0:07:25
+2026-03-07 21:33:08 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=1.4573 | best_val=0.1952 | evals=201 | 409.3s | ETA: done
+2026-03-07 21:33:08 | INFO     | hdmr.benchmark |   └─ [HDMR-200] airfoil_self_noise | RMSE=1.4665±0.2672 | eff_dim=2/10 | 58.0 min
+2026-03-07 21:33:08 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (80 rows)
+2026-03-07 21:33:08 | INFO     | hdmr.benchmark | 
+2026-03-07 21:33:08 | INFO     | hdmr.benchmark |   ┌─ airfoil_self_noise  [A-HDMR-200]
+2026-03-07 21:33:08 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-07 21:41:06 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=1.6800 | best_val=0.2104 | evals=202 | 478.0s | ETA: 0:55:46
+2026-03-07 21:48:02 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=1.2979 | best_val=0.1784 | evals=202 | 415.8s | ETA: 0:44:41
+2026-03-07 21:54:24 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=1.4045 | best_val=0.2235 | evals=202 | 382.3s | ETA: 0:35:26
+2026-03-07 22:01:15 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=1.0022 | best_val=0.1868 | evals=202 | 410.3s | ETA: 0:26:51
+2026-03-07 22:08:21 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=1.6217 | best_val=0.1952 | evals=202 | 426.8s | ETA: 0:20:19
+2026-03-07 22:16:55 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=1.2017 | best_val=0.2119 | evals=202 | 513.5s | ETA: 0:15:00
+2026-03-07 22:25:02 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=1.4062 | best_val=0.2087 | evals=202 | 487.6s | ETA: 0:07:55
+2026-03-07 22:32:17 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=1.5329 | best_val=0.1952 | evals=202 | 434.0s | ETA: done
+2026-03-07 22:32:17 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] airfoil_self_noise | RMSE=1.3934±0.2100 | eff_dim=3/10 | 59.1 min
+2026-03-07 22:32:17 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (88 rows)
+2026-03-07 22:32:17 | INFO     | hdmr.benchmark | 
+2026-03-07 22:32:17 | INFO     | hdmr.benchmark |   ┌─ airfoil_self_noise  [A-HDMR-600]
+2026-03-07 22:32:17 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-07 22:55:36 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=1.7528 | best_val=0.2090 | evals=603 | 1399.5s | ETA: 2:43:16
+2026-03-07 23:16:49 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=1.2791 | best_val=0.1825 | evals=603 | 1272.7s | ETA: 2:13:36
+2026-03-07 23:35:17 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=1.4172 | best_val=0.2142 | evals=603 | 1108.0s | ETA: 1:45:00
+2026-03-07 23:55:11 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=1.0213 | best_val=0.1979 | evals=603 | 1194.1s | ETA: 1:19:26
+2026-03-08 00:17:28 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=1.6795 | best_val=0.1941 | evals=603 | 1337.2s | ETA: 1:00:39
+2026-03-08 00:41:13 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=1.3568 | best_val=0.2148 | evals=603 | 1424.8s | ETA: 0:43:57
+2026-03-08 01:04:44 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=1.5063 | best_val=0.2110 | evals=603 | 1411.2s | ETA: 0:23:11
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=1.4573 | best_val=0.1952 | evals=603 | 1129.4s | ETA: done
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] airfoil_self_noise | RMSE=1.4338±0.2145 | eff_dim=2/10 | 171.3 min
+2026-03-08 01:23:33 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (96 rows)
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark | 
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark |   DATASET: Fiat500_used  (DID=46907)
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark | Loading: Fiat500_used  (DID=46907, task=regression) ...
+2026-03-08 01:23:33 | INFO     | openml.datasets.dataset | pickle write Another-Dataset-on-used-Fiat-500
+2026-03-08 01:23:33 | DEBUG    | openml.datasets.dataset | Saved dataset 46907: Another-Dataset-on-used-Fiat-500 to file /home/erdemy/.cache/openml/org/openml/www/datasets/46907/dataset_46907.pkl.py3
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark |   Fiat500_used | 1538 x 7 | y mean=8576.004  std=1939.328
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark | 
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark |   ┌─ Fiat500_used  [HDMR-200]
+2026-03-08 01:23:33 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-08 01:26:09 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=842.3053 | best_val=0.3651 | evals=201 | 155.1s | ETA: 0:18:05
+2026-03-08 01:28:20 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=706.9645 | best_val=0.3798 | evals=201 | 131.9s | ETA: 0:14:21
+2026-03-08 01:31:33 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=740.9676 | best_val=0.3817 | evals=201 | 193.0s | ETA: 0:13:20
+2026-03-08 01:33:45 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=765.4246 | best_val=0.3999 | evals=201 | 131.0s | ETA: 0:10:07
+2026-03-08 01:36:00 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=817.4529 | best_val=0.3782 | evals=201 | 135.8s | ETA: 0:07:39
+2026-03-08 01:37:48 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=669.3321 | best_val=0.3927 | evals=201 | 107.4s | ETA: 0:04:09
+2026-03-08 01:39:44 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=710.4122 | best_val=0.3685 | evals=201 | 116.3s | ETA: 0:01:59
+2026-03-08 01:41:24 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=721.6803 | best_val=0.3759 | evals=201 | 99.8s | ETA: done
+2026-03-08 01:41:24 | INFO     | hdmr.benchmark |   └─ [HDMR-200] Fiat500_used | RMSE=746.8174±54.8147 | eff_dim=6/10 | 17.8 min
+2026-03-08 01:41:24 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (104 rows)
+2026-03-08 01:41:24 | INFO     | hdmr.benchmark | 
+2026-03-08 01:41:24 | INFO     | hdmr.benchmark |   ┌─ Fiat500_used  [A-HDMR-200]
+2026-03-08 01:41:24 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-08 01:43:43 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=834.9070 | best_val=0.3637 | evals=202 | 139.2s | ETA: 0:16:14
+2026-03-08 01:45:43 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=714.3484 | best_val=0.3794 | evals=202 | 120.3s | ETA: 0:12:58
+2026-03-08 01:48:58 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=740.5178 | best_val=0.3785 | evals=202 | 194.4s | ETA: 0:12:36
+2026-03-08 01:51:06 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=765.9265 | best_val=0.3961 | evals=202 | 128.7s | ETA: 0:09:51
+2026-03-08 01:53:24 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=820.1531 | best_val=0.3782 | evals=202 | 137.7s | ETA: 0:07:40
+2026-03-08 01:55:10 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=658.0121 | best_val=0.3927 | evals=202 | 105.6s | ETA: 0:04:07
+2026-03-08 01:57:11 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=721.8179 | best_val=0.3704 | evals=202 | 121.5s | ETA: 0:02:01
+2026-03-08 01:58:51 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=749.1127 | best_val=0.3759 | evals=202 | 100.1s | ETA: done
+2026-03-08 01:58:51 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] Fiat500_used | RMSE=750.5994±53.6181 | eff_dim=6/10 | 17.5 min
+2026-03-08 01:58:51 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (112 rows)
+2026-03-08 01:58:51 | INFO     | hdmr.benchmark | 
+2026-03-08 01:58:51 | INFO     | hdmr.benchmark |   ┌─ Fiat500_used  [A-HDMR-600]
+2026-03-08 01:58:51 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-08 02:06:09 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=838.4405 | best_val=0.3645 | evals=603 | 437.5s | ETA: 0:51:02
+2026-03-08 02:12:55 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=704.5967 | best_val=0.3798 | evals=603 | 405.7s | ETA: 0:42:09
+2026-03-08 02:22:06 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=731.4697 | best_val=0.3805 | evals=603 | 551.7s | ETA: 0:38:44
+2026-03-08 02:27:45 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=765.4246 | best_val=0.3976 | evals=603 | 338.3s | ETA: 0:28:47
+2026-03-08 02:34:59 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=835.5125 | best_val=0.3782 | evals=603 | 434.4s | ETA: 0:22:04
+2026-03-08 02:40:11 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=661.2920 | best_val=0.3927 | evals=603 | 312.0s | ETA: 0:12:03
+2026-03-08 02:46:28 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=735.4002 | best_val=0.3643 | evals=603 | 376.8s | ETA: 0:06:14
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=714.7898 | best_val=0.3747 | evals=603 | 314.1s | ETA: done
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] Fiat500_used | RMSE=748.3657±58.1781 | eff_dim=6/10 | 52.8 min
+2026-03-08 02:51:42 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (120 rows)
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark | 
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark |   DATASET: miami_housing  (DID=46942)
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark | Loading: miami_housing  (DID=46942, task=regression) ...
+2026-03-08 02:51:42 | INFO     | openml.datasets.dataset | pickle write miami_housing
+2026-03-08 02:51:42 | DEBUG    | openml.datasets.dataset | Saved dataset 46942: miami_housing to file /home/erdemy/.cache/openml/org/openml/www/datasets/46942/dataset_46942.pkl.py3
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark |   miami_housing | 13776 x 15 | y mean=400746.450  std=317856.998
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark | 
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark |   ┌─ miami_housing  [HDMR-200]
+2026-03-08 02:51:42 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-08 03:17:53 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=88436.7696 | best_val=0.2476 | evals=201 | 1570.9s | ETA: 3:03:16
+2026-03-08 03:39:33 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=81811.5816 | best_val=0.2587 | evals=201 | 1299.9s | ETA: 2:23:32
+2026-03-08 04:04:17 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=77261.4866 | best_val=0.2502 | evals=201 | 1484.6s | ETA: 2:00:59
+2026-03-08 04:28:25 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=77069.9033 | best_val=0.2617 | evals=201 | 1447.6s | ETA: 1:34:02
+2026-03-08 04:48:18 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=80380.1854 | best_val=0.2810 | evals=201 | 1192.7s | ETA: 1:08:44
+2026-03-08 05:13:31 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=86124.9473 | best_val=0.2534 | evals=201 | 1513.1s | ETA: 0:46:08
+2026-03-08 05:35:42 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=83327.9707 | best_val=0.2506 | evals=201 | 1330.9s | ETA: 0:22:25
+2026-03-08 06:06:44 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=89346.0969 | best_val=0.2556 | evals=201 | 1862.3s | ETA: done
+2026-03-08 06:06:44 | INFO     | hdmr.benchmark |   └─ [HDMR-200] miami_housing | RMSE=82969.8677±4416.8620 | eff_dim=5/10 | 195.0 min
+2026-03-08 06:06:44 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (128 rows)
+2026-03-08 06:06:44 | INFO     | hdmr.benchmark | 
+2026-03-08 06:06:44 | INFO     | hdmr.benchmark |   ┌─ miami_housing  [A-HDMR-200]
+2026-03-08 06:06:44 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-08 06:33:45 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=88061.1727 | best_val=0.2480 | evals=202 | 1620.9s | ETA: 3:09:06
+2026-03-08 06:56:00 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=81802.5071 | best_val=0.2566 | evals=202 | 1335.6s | ETA: 2:27:49
+2026-03-08 07:23:23 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=76851.5080 | best_val=0.2502 | evals=202 | 1642.9s | ETA: 2:07:45
+2026-03-08 07:47:38 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=75212.3132 | best_val=0.2631 | evals=202 | 1454.4s | ETA: 1:38:30
+2026-03-08 08:07:24 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=77257.8301 | best_val=0.2806 | evals=202 | 1186.3s | ETA: 1:11:23
+2026-03-08 08:32:12 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=86970.5297 | best_val=0.2536 | evals=202 | 1487.7s | ETA: 0:45:52
+2026-03-08 08:54:29 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=81221.8326 | best_val=0.2507 | evals=202 | 1336.9s | ETA: 0:22:16
+2026-03-08 09:24:51 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=88931.0212 | best_val=0.2581 | evals=202 | 1822.6s | ETA: done
+2026-03-08 09:24:51 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] miami_housing | RMSE=82038.5893±5064.3794 | eff_dim=5/10 | 198.1 min
+2026-03-08 09:24:51 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260307_134501.csv  (136 rows)
+2026-03-08 09:24:51 | INFO     | hdmr.benchmark | 
+2026-03-08 09:24:51 | INFO     | hdmr.benchmark |   ┌─ miami_housing  [A-HDMR-600]
+2026-03-08 09:24:51 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-08 10:57:15 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=85144.8290 | best_val=0.2476 | evals=603 | 5543.8s | ETA: 10:46:46
+2026-03-08 12:01:37 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=81811.5816 | best_val=0.2587 | evals=603 | 3862.3s | ETA: 7:50:18

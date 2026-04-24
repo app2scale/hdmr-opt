@@ -1,0 +1,21 @@
+{
+  "data_path": "src/data/transactions.csv",
+  "split_date": "2020-01-01",
+  "models": [
+    "xgboost",
+    "lightgbm"
+  ],
+  "num_seeds": 3,
+  "base_seed": 42,
+  "hdmr_config": {
+    "N": 200,
+    "m": 5,
+    "basis": "Cosine",
+    "adaptive": false,
+    "maxiter": 25,
+    "k": 100,
+    "epsilon": 0.1,
+    "clip": 0.9
+  },
+  "timestamp": "20260114_115252"
+}

@@ -1,0 +1,2 @@
+run_id,dataset,model,method,fold,mape,rmse,mae,best_val,duration_sec,n_evals,param_p,param_d,param_q,param_P,param_Q
+20260416_142524,payten,ARIMA,HDMR-200,1,9.9667,1.1222,0.7804,1.2429653871464634,971.33,201,0,0,4,0,2

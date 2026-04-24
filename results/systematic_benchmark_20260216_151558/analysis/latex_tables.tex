@@ -1,0 +1,89 @@
+% HDMR Benchmark — Auto-generated LaTeX Tables
+% 2026-02-17 10:35:58
+
+\begin{table}[htbp]
+\centering
+\caption{HDMR Benchmark: Descriptive Statistics (Optimality Gap)}
+\label{tab:descriptive}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Function & Median & Mean & Std & Best \\
+\midrule
+rastrigin\_2d & 1.006e+00 & 7.601e+00 & 1.455e+01 & 1.421e-14 \\
+rosenbrock\_2d & 1.000e+00 & 1.064e+00 & 1.039e+00 & 6.187e-04 \\
+ackley\_2d & 1.539e-01 & 4.673e+00 & 7.595e+00 & 4.378e-07 \\
+branin\_2d & 1.243e+01 & 1.359e+01 & 1.128e+01 & 2.248e-02 \\
+camel16\_2d & 1.032e+00 & 3.383e+02 & 1.391e+03 & 2.074e-03 \\
+rosenbrock\_10d & 1.675e+04 & 1.262e+05 & 2.355e+05 & 9.676e+01 \\
+rastrigin\_10d & 3.858e+01 & 5.995e+01 & 6.607e+01 & 1.288e-11 \\
+griewank\_10d & 2.338e+01 & 6.260e+01 & 1.356e+02 & 1.028e+00 \\
+schwefel & 3.093e+03 & 3.349e+03 & 1.293e+03 & 6.727e+02 \\
+levy & 3.751e+00 & 3.528e+01 & 1.095e+02 & 1.120e-01 \\
+zakharov & 7.080e+06 & 5.161e+07 & 9.567e+07 & 1.350e+01 \\
+sphere & 8.011e-01 & 1.733e+01 & 5.679e+01 & 5.119e-14 \\
+styblinski\_tang & 9.172e+01 & 1.893e+02 & 2.972e+02 & 3.047e+00 \\
+dixon\_price & 5.658e+02 & 1.194e+05 & 4.438e+05 & 1.000e+00 \\
+michalewicz & 6.277e+00 & 5.686e+00 & 2.265e+00 & 4.784e-01 \\
+sum\_of\_different\_powers & 2.100e-03 & 5.460e-01 & 2.173e+00 & 2.863e-17 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Basis Comparison: Legendre vs Cosine (Wilcoxon Test)}
+\label{tab:basis}
+\small
+\begin{tabular}{lrrrllr}
+\toprule
+Function & Leg.\ Med. & Cos.\ Med. & $p$ & Sig. & Effect & Winner \\
+\midrule
+rastrigin\_2d & 2.830e+00 & 4.382e-11 & 0.0000 & *** & medium & Cosine \\
+rosenbrock\_2d & 3.253e-01 & 1.000e+00 & 0.0003 & *** & small & Legendre \\
+ackley\_2d & 2.910e+00 & 4.046e-05 & 0.0000 & *** & medium & Cosine \\
+branin\_2d & 4.135e+00 & 1.637e+01 & 0.0000 & *** & medium & Legendre \\
+camel16\_2d & 1.025e+00 & 2.813e+00 & 0.0001 & *** & small & Legendre \\
+rosenbrock\_10d & 1.010e+04 & 2.265e+04 & 0.0000 & *** & negligible & Legendre \\
+rastrigin\_10d & 6.236e+01 & 3.188e+01 & 0.0001 & *** & medium & Cosine \\
+griewank\_10d & 3.142e+00 & 2.600e+01 & 0.0000 & *** & negligible & Legendre \\
+schwefel & 2.797e+03 & 3.354e+03 & 0.3695 & ns & negligible & Legendre \\
+levy & 1.926e+00 & 4.246e+00 & 0.4938 & ns & small & Legendre \\
+zakharov & 1.798e+06 & 8.796e+06 & 0.1777 & ns & medium & Legendre \\
+sphere & 5.982e-01 & 8.988e-01 & 0.0178 & * & small & Legendre \\
+styblinski\_tang & 7.207e+01 & 1.073e+02 & 0.8125 & ns & small & Legendre \\
+dixon\_price & 3.343e+02 & 9.343e+02 & 0.0074 & ** & small & Legendre \\
+michalewicz & 6.648e+00 & 6.026e+00 & 0.8797 & ns & negligible & Cosine \\
+sum\_of\_different\_powers & 6.874e-04 & 3.302e-03 & 0.0085 & ** & small & Legendre \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Mode Comparison: Standard vs Adaptive HDMR (Wilcoxon Test)}
+\label{tab:mode}
+\small
+\begin{tabular}{lrrrllr}
+\toprule
+Function & Std.\ Med. & Adp.\ Med. & $p$ & Sig. & Effect & Winner \\
+\midrule
+rastrigin\_2d & 5.019e+00 & 5.254e-02 & 0.0000 & *** & large & adaptive \\
+rosenbrock\_2d & 1.167e+00 & 2.694e-01 & 0.0000 & *** & large & adaptive \\
+ackley\_2d & 3.282e+00 & 4.406e-03 & 0.0000 & *** & large & adaptive \\
+branin\_2d & 1.829e+01 & 3.928e+00 & 0.0000 & *** & large & adaptive \\
+camel16\_2d & 1.051e+01 & 1.032e+00 & 0.0000 & *** & small & adaptive \\
+rosenbrock\_10d & 1.076e+05 & 9.623e+03 & 0.0000 & *** & large & adaptive \\
+rastrigin\_10d & 8.293e+01 & 2.250e+01 & 0.0000 & *** & large & adaptive \\
+griewank\_10d & 3.355e+01 & 1.866e+01 & 0.0000 & *** & medium & adaptive \\
+schwefel & 4.268e+03 & 2.455e+03 & 0.0000 & *** & large & adaptive \\
+levy & 1.688e+01 & 1.214e+00 & 0.0000 & *** & medium & adaptive \\
+zakharov & 4.439e+07 & 1.025e+06 & 0.0000 & *** & large & adaptive \\
+sphere & 3.240e+00 & 1.099e-01 & 0.0000 & *** & medium & adaptive \\
+styblinski\_tang & 1.585e+02 & 6.278e+01 & 0.0000 & *** & large & adaptive \\
+dixon\_price & 2.965e+04 & 7.378e+01 & 0.0000 & *** & medium & adaptive \\
+michalewicz & 7.101e+00 & 3.916e+00 & 0.0000 & *** & large & adaptive \\
+sum\_of\_different\_powers & 5.734e-02 & 2.026e-04 & 0.0000 & *** & medium & adaptive \\
+\bottomrule
+\end{tabular}
+\end{table}

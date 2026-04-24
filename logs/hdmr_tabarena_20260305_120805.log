@@ -1,0 +1,227 @@
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | ============================================================
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | HDMR vs. TabArena  |  XGBoost HPO Benchmark
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | Run ID   : 20260305_120805
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_tabarena_20260305_120805.log
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | ============================================================
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | Configuration:
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark |   dataset    = openml:44959
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark |   basis      = Legendre  degree=3  samples=50
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark |   adaptive   = False  maxiter=15  k=50  eps=0.010  clip=0.90
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark |   folds      = 3  seed=42  dims=10  n_est=10000  es=50
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark |   space      = TabArena Table C.3 (10D, grow_policy + max_leaves)
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | Loading: 'openml:44959'
+2026-03-05 12:08:05 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-05 12:08:05 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-05 12:08:05 | DEBUG    | openml.datasets.dataset | Saved dataset 44959: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/44959/dataset_44959.pkl.py3
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | Dataset: OpenML-44959 (concrete_compressive_strength) | 1030 x 8 | target mean=35.8 std=16.7
+2026-03-05 12:08:05 | INFO     | hdmr.benchmark | --- Runtime Estimation (probe fit) ---
+2026-03-05 12:08:06 | INFO     | hdmr.benchmark |   Probe    : 0.567s on 686 rows
+2026-03-05 12:08:06 | INFO     | hdmr.benchmark |   Scale    : x1.0  ->  ~0.567s per XGBoost eval
+2026-03-05 12:08:06 | INFO     | hdmr.benchmark |   Budget   : 50 samples x 1 iters x 3 folds = 150 total evals
+2026-03-05 12:08:06 | INFO     | hdmr.benchmark |   Estimate : 0:01:25  (1.4 min)
+2026-03-05 12:08:06 | INFO     | hdmr.benchmark | --- Starting 3-Fold Outer CV ---
+2026-03-05 12:08:06 | INFO     | hdmr.benchmark | Fold 1/3 | train=686  test=344
+2026-03-05 12:08:11 | DEBUG    | hdmr.benchmark | eval #001 | val_rmse=0.29969 | lr=0.0071 trees=9980 depth=7
+2026-03-05 12:08:13 | DEBUG    | hdmr.benchmark | eval #002 | val_rmse=0.29485 | lr=0.0163 trees=1929 depth=8
+2026-03-05 12:08:13 | DEBUG    | hdmr.benchmark | eval #003 | val_rmse=0.27420 | lr=0.0636 trees=490 depth=10
+2026-03-05 12:08:18 | DEBUG    | hdmr.benchmark | eval #004 | val_rmse=0.31689 | lr=0.0051 trees=9992 depth=7
+2026-03-05 12:08:19 | DEBUG    | hdmr.benchmark | eval #005 | val_rmse=0.30511 | lr=0.0869 trees=2087 depth=6
+2026-03-05 12:08:20 | DEBUG    | hdmr.benchmark | eval #006 | val_rmse=0.29712 | lr=0.0453 trees=1490 depth=6
+2026-03-05 12:08:22 | DEBUG    | hdmr.benchmark | eval #007 | val_rmse=0.27122 | lr=0.0093 trees=3014 depth=5
+2026-03-05 12:08:24 | DEBUG    | hdmr.benchmark | eval #008 | val_rmse=0.32286 | lr=0.0291 trees=3912 depth=5
+2026-03-05 12:08:25 | DEBUG    | hdmr.benchmark | eval #009 | val_rmse=0.26890 | lr=0.0297 trees=481 depth=10
+2026-03-05 12:08:25 | DEBUG    | hdmr.benchmark | eval #010 | val_rmse=0.31771 | lr=0.0678 trees=1620 depth=9
+2026-03-05 12:08:30 | DEBUG    | hdmr.benchmark | eval #011 | val_rmse=0.31827 | lr=0.0068 trees=8326 depth=6
+2026-03-05 12:08:31 | DEBUG    | hdmr.benchmark | eval #012 | val_rmse=0.27849 | lr=0.0262 trees=2103 depth=9
+2026-03-05 12:08:33 | DEBUG    | hdmr.benchmark | eval #013 | val_rmse=0.32457 | lr=0.0345 trees=4823 depth=5
+2026-03-05 12:08:39 | DEBUG    | hdmr.benchmark | eval #014 | val_rmse=0.27687 | lr=0.0060 trees=5825 depth=8
+2026-03-05 12:08:41 | DEBUG    | hdmr.benchmark | eval #015 | val_rmse=0.29006 | lr=0.0155 trees=3748 depth=4
+2026-03-05 12:08:42 | DEBUG    | hdmr.benchmark | eval #016 | val_rmse=0.30127 | lr=0.0615 trees=1220 depth=6
+2026-03-05 12:08:42 | DEBUG    | hdmr.benchmark | eval #017 | val_rmse=0.33983 | lr=0.0867 trees=587 depth=5
+2026-03-05 12:08:43 | DEBUG    | hdmr.benchmark | eval #018 | val_rmse=0.30980 | lr=0.0214 trees=937 depth=5
+2026-03-05 12:08:43 | DEBUG    | hdmr.benchmark | eval #019 | val_rmse=0.26922 | lr=0.0919 trees=981 depth=7
+2026-03-05 12:08:44 | DEBUG    | hdmr.benchmark | eval #020 | val_rmse=0.32114 | lr=0.0303 trees=2228 depth=5
+2026-03-05 12:08:45 | DEBUG    | hdmr.benchmark | eval #021 | val_rmse=0.28136 | lr=0.0968 trees=261 depth=9
+2026-03-05 12:08:45 | DEBUG    | hdmr.benchmark | eval #022 | val_rmse=0.28592 | lr=0.0398 trees=1309 depth=6
+2026-03-05 12:08:48 | DEBUG    | hdmr.benchmark | eval #023 | val_rmse=0.27983 | lr=0.0092 trees=2149 depth=7
+2026-03-05 12:08:49 | DEBUG    | hdmr.benchmark | eval #024 | val_rmse=0.32618 | lr=0.0241 trees=2669 depth=7
+2026-03-05 12:08:53 | DEBUG    | hdmr.benchmark | eval #025 | val_rmse=0.32577 | lr=0.0051 trees=9998 depth=4
+2026-03-05 12:08:54 | DEBUG    | hdmr.benchmark | eval #026 | val_rmse=0.31131 | lr=0.0411 trees=2990 depth=8
+2026-03-05 12:08:56 | DEBUG    | hdmr.benchmark | eval #027 | val_rmse=0.28716 | lr=0.0185 trees=4621 depth=7
+2026-03-05 12:08:59 | DEBUG    | hdmr.benchmark | eval #028 | val_rmse=0.31103 | lr=0.0113 trees=8869 depth=6
+2026-03-05 12:09:00 | DEBUG    | hdmr.benchmark | eval #029 | val_rmse=0.29439 | lr=0.0568 trees=1387 depth=9
+2026-03-05 12:09:02 | DEBUG    | hdmr.benchmark | eval #030 | val_rmse=0.26994 | lr=0.0101 trees=1810 depth=6
+2026-03-05 12:09:03 | DEBUG    | hdmr.benchmark | eval #031 | val_rmse=0.32212 | lr=0.0263 trees=3278 depth=6
+2026-03-05 12:09:04 | DEBUG    | hdmr.benchmark | eval #032 | val_rmse=0.29480 | lr=0.0492 trees=1315 depth=8
+2026-03-05 12:09:06 | DEBUG    | hdmr.benchmark | eval #033 | val_rmse=0.32120 | lr=0.0217 trees=5866 depth=8
+2026-03-05 12:09:06 | DEBUG    | hdmr.benchmark | eval #034 | val_rmse=0.29512 | lr=0.0480 trees=2456 depth=5
+2026-03-05 12:09:07 | DEBUG    | hdmr.benchmark | eval #035 | val_rmse=0.27885 | lr=0.0312 trees=988 depth=5
+2026-03-05 12:09:08 | DEBUG    | hdmr.benchmark | eval #036 | val_rmse=0.26583 | lr=0.0220 trees=2152 depth=5
+2026-03-05 12:09:09 | DEBUG    | hdmr.benchmark | eval #037 | val_rmse=0.27475 | lr=0.0824 trees=389 depth=4
+2026-03-05 12:09:12 | DEBUG    | hdmr.benchmark | eval #038 | val_rmse=0.29833 | lr=0.0084 trees=4608 depth=8
+2026-03-05 12:09:13 | DEBUG    | hdmr.benchmark | eval #039 | val_rmse=0.26722 | lr=0.0159 trees=2896 depth=5
+2026-03-05 12:09:15 | DEBUG    | hdmr.benchmark | eval #040 | val_rmse=0.29143 | lr=0.0176 trees=2179 depth=5
+2026-03-05 12:09:19 | DEBUG    | hdmr.benchmark | eval #041 | val_rmse=0.31677 | lr=0.0082 trees=9352 depth=9
+2026-03-05 12:09:20 | DEBUG    | hdmr.benchmark | eval #042 | val_rmse=0.28441 | lr=0.0163 trees=2248 depth=4
+2026-03-05 12:09:22 | DEBUG    | hdmr.benchmark | eval #043 | val_rmse=0.30671 | lr=0.0149 trees=5671 depth=5
+2026-03-05 12:09:24 | DEBUG    | hdmr.benchmark | eval #044 | val_rmse=0.31795 | lr=0.0274 trees=2964 depth=6
+2026-03-05 12:09:25 | DEBUG    | hdmr.benchmark | eval #045 | val_rmse=0.28467 | lr=0.0191 trees=3695 depth=5
+2026-03-05 12:09:28 | DEBUG    | hdmr.benchmark | eval #046 | val_rmse=0.30266 | lr=0.0071 trees=6907 depth=4
+2026-03-05 12:09:29 | DEBUG    | hdmr.benchmark | eval #047 | val_rmse=0.31201 | lr=0.0563 trees=1470 depth=8
+2026-03-05 12:09:31 | DEBUG    | hdmr.benchmark | eval #048 | val_rmse=0.29235 | lr=0.0103 trees=5847 depth=7
+2026-03-05 12:09:31 | DEBUG    | hdmr.benchmark | eval #049 | val_rmse=0.34994 | lr=0.0546 trees=767 depth=7
+2026-03-05 12:09:35 | DEBUG    | hdmr.benchmark | eval #050 | val_rmse=0.29120 | lr=0.0063 trees=6948 depth=6
+2026-03-05 12:09:37 | DEBUG    | hdmr.benchmark | eval #051 | val_rmse=0.28249 | lr=0.0117 trees=4448 depth=5
+2026-03-05 12:09:37 | INFO     | hdmr.benchmark |   Best params: lr=0.0117  depth=5  mcw=0.07071  ra=2.049  rl=2.5  grow=lossguide  leaves=140
+2026-03-05 12:09:41 | INFO     | hdmr.benchmark |   Final model used 7638 trees
+2026-03-05 12:09:41 | INFO     | hdmr.benchmark |   Fold 1 DONE | test_rmse=4.5944 | best_val=0.2658 | evals=51 | 95.2s | ETA: 0:03:10
+2026-03-05 12:09:41 | INFO     | hdmr.benchmark | Fold 2/3 | train=687  test=343
+2026-03-05 12:09:41 | DEBUG    | hdmr.benchmark | eval #001 | val_rmse=0.28381 | lr=0.0610 trees=880 depth=4
+2026-03-05 12:09:42 | DEBUG    | hdmr.benchmark | eval #002 | val_rmse=0.31677 | lr=0.0888 trees=1071 depth=6
+2026-03-05 12:09:42 | DEBUG    | hdmr.benchmark | eval #003 | val_rmse=0.33018 | lr=0.0337 trees=1176 depth=5
+2026-03-05 12:09:45 | DEBUG    | hdmr.benchmark | eval #004 | val_rmse=0.31497 | lr=0.0084 trees=4977 depth=4
+2026-03-05 12:09:45 | DEBUG    | hdmr.benchmark | eval #005 | val_rmse=0.31178 | lr=0.0421 trees=866 depth=4
+2026-03-05 12:09:47 | DEBUG    | hdmr.benchmark | eval #006 | val_rmse=0.32433 | lr=0.0196 trees=2662 depth=6
+2026-03-05 12:09:50 | DEBUG    | hdmr.benchmark | eval #007 | val_rmse=0.26029 | lr=0.0126 trees=5750 depth=6
+2026-03-05 12:09:51 | DEBUG    | hdmr.benchmark | eval #008 | val_rmse=0.30946 | lr=0.0645 trees=604 depth=7
+2026-03-05 12:09:52 | DEBUG    | hdmr.benchmark | eval #009 | val_rmse=0.25531 | lr=0.0466 trees=2170 depth=4
+2026-03-05 12:09:55 | DEBUG    | hdmr.benchmark | eval #010 | val_rmse=0.27025 | lr=0.0226 trees=1722 depth=8
+2026-03-05 12:09:58 | DEBUG    | hdmr.benchmark | eval #011 | val_rmse=0.30986 | lr=0.0067 trees=6678 depth=5
+2026-03-05 12:10:01 | DEBUG    | hdmr.benchmark | eval #012 | val_rmse=0.24424 | lr=0.0128 trees=3316 depth=6
+2026-03-05 12:10:03 | DEBUG    | hdmr.benchmark | eval #013 | val_rmse=0.30174 | lr=0.0181 trees=3247 depth=5
+2026-03-05 12:10:03 | DEBUG    | hdmr.benchmark | eval #014 | val_rmse=0.28828 | lr=0.0944 trees=874 depth=6
+2026-03-05 12:10:04 | DEBUG    | hdmr.benchmark | eval #015 | val_rmse=0.32261 | lr=0.0199 trees=2097 depth=9
+2026-03-05 12:10:09 | DEBUG    | hdmr.benchmark | eval #016 | val_rmse=0.28889 | lr=0.0084 trees=9020 depth=7
+2026-03-05 12:10:10 | DEBUG    | hdmr.benchmark | eval #017 | val_rmse=0.29577 | lr=0.0198 trees=3730 depth=7
+2026-03-05 12:10:11 | DEBUG    | hdmr.benchmark | eval #018 | val_rmse=0.32640 | lr=0.0415 trees=1278 depth=7
+2026-03-05 12:10:12 | DEBUG    | hdmr.benchmark | eval #019 | val_rmse=0.32049 | lr=0.0491 trees=1788 depth=5
+2026-03-05 12:10:13 | DEBUG    | hdmr.benchmark | eval #020 | val_rmse=0.30804 | lr=0.0093 trees=3929 depth=4
+2026-03-05 12:10:16 | DEBUG    | hdmr.benchmark | eval #021 | val_rmse=0.30623 | lr=0.0074 trees=6155 depth=5
+2026-03-05 12:10:17 | DEBUG    | hdmr.benchmark | eval #022 | val_rmse=0.31652 | lr=0.0147 trees=3275 depth=6
+2026-03-05 12:10:18 | DEBUG    | hdmr.benchmark | eval #023 | val_rmse=0.28463 | lr=0.0781 trees=1743 depth=7
+2026-03-05 12:10:20 | DEBUG    | hdmr.benchmark | eval #024 | val_rmse=0.28806 | lr=0.0226 trees=2456 depth=10
+2026-03-05 12:10:21 | DEBUG    | hdmr.benchmark | eval #025 | val_rmse=0.30990 | lr=0.0177 trees=2135 depth=7
+2026-03-05 12:10:22 | DEBUG    | hdmr.benchmark | eval #026 | val_rmse=0.32059 | lr=0.0302 trees=1052 depth=6
+2026-03-05 12:10:25 | DEBUG    | hdmr.benchmark | eval #027 | val_rmse=0.28837 | lr=0.0079 trees=6416 depth=6
+2026-03-05 12:10:25 | DEBUG    | hdmr.benchmark | eval #028 | val_rmse=0.28592 | lr=0.0373 trees=624 depth=5
+2026-03-05 12:10:27 | DEBUG    | hdmr.benchmark | eval #029 | val_rmse=0.26534 | lr=0.0285 trees=3259 depth=5
+2026-03-05 12:10:30 | DEBUG    | hdmr.benchmark | eval #030 | val_rmse=0.25615 | lr=0.0117 trees=4805 depth=5
+2026-03-05 12:10:31 | DEBUG    | hdmr.benchmark | eval #031 | val_rmse=0.32881 | lr=0.0213 trees=1170 depth=9
+2026-03-05 12:10:31 | DEBUG    | hdmr.benchmark | eval #032 | val_rmse=0.26717 | lr=0.0781 trees=498 depth=7
+2026-03-05 12:10:35 | DEBUG    | hdmr.benchmark | eval #033 | val_rmse=0.26990 | lr=0.0124 trees=4598 depth=7
+2026-03-05 12:10:40 | DEBUG    | hdmr.benchmark | eval #034 | val_rmse=0.28555 | lr=0.0057 trees=9995 depth=5
+2026-03-05 12:10:41 | DEBUG    | hdmr.benchmark | eval #035 | val_rmse=0.32527 | lr=0.0175 trees=1715 depth=8
+2026-03-05 12:10:42 | DEBUG    | hdmr.benchmark | eval #036 | val_rmse=0.27675 | lr=0.0676 trees=2097 depth=6
+2026-03-05 12:10:46 | DEBUG    | hdmr.benchmark | eval #037 | val_rmse=0.30397 | lr=0.0097 trees=4962 depth=8
+2026-03-05 12:10:47 | DEBUG    | hdmr.benchmark | eval #038 | val_rmse=0.30471 | lr=0.0163 trees=3739 depth=4
+2026-03-05 12:10:48 | DEBUG    | hdmr.benchmark | eval #039 | val_rmse=0.29150 | lr=0.0425 trees=1267 depth=8
+2026-03-05 12:10:49 | DEBUG    | hdmr.benchmark | eval #040 | val_rmse=0.27579 | lr=0.0913 trees=255 depth=8
+2026-03-05 12:10:52 | DEBUG    | hdmr.benchmark | eval #041 | val_rmse=0.25520 | lr=0.0100 trees=6199 depth=7
+2026-03-05 12:10:53 | DEBUG    | hdmr.benchmark | eval #042 | val_rmse=0.28359 | lr=0.0868 trees=2076 depth=7
+2026-03-05 12:10:54 | DEBUG    | hdmr.benchmark | eval #043 | val_rmse=0.32516 | lr=0.0454 trees=1128 depth=8
+2026-03-05 12:10:55 | DEBUG    | hdmr.benchmark | eval #044 | val_rmse=0.31204 | lr=0.0343 trees=1300 depth=7
+2026-03-05 12:10:58 | DEBUG    | hdmr.benchmark | eval #045 | val_rmse=0.27555 | lr=0.0165 trees=2854 depth=9
+2026-03-05 12:10:59 | DEBUG    | hdmr.benchmark | eval #046 | val_rmse=0.28812 | lr=0.0437 trees=1570 depth=6
+2026-03-05 12:11:02 | DEBUG    | hdmr.benchmark | eval #047 | val_rmse=0.30489 | lr=0.0081 trees=5051 depth=8
+2026-03-05 12:11:03 | DEBUG    | hdmr.benchmark | eval #048 | val_rmse=0.27850 | lr=0.0650 trees=1886 depth=5
+2026-03-05 12:11:03 | DEBUG    | hdmr.benchmark | eval #049 | val_rmse=0.31866 | lr=0.0397 trees=1062 depth=8
+2026-03-05 12:11:06 | DEBUG    | hdmr.benchmark | eval #050 | val_rmse=0.30929 | lr=0.0065 trees=7760 depth=4
+2026-03-05 12:11:09 | DEBUG    | hdmr.benchmark | eval #051 | val_rmse=0.25457 | lr=0.0098 trees=3387 depth=5
+2026-03-05 12:11:09 | INFO     | hdmr.benchmark |   Best params: lr=0.0098  depth=5  mcw=0.004711  ra=0.0001  rl=4.017  grow=lossguide  leaves=382
+2026-03-05 12:11:13 | INFO     | hdmr.benchmark |   Final model used 4037 trees
+2026-03-05 12:11:13 | INFO     | hdmr.benchmark |   Fold 2 DONE | test_rmse=4.5904 | best_val=0.2442 | evals=51 | 91.8s | ETA: 0:01:33
+2026-03-05 12:11:13 | INFO     | hdmr.benchmark | Fold 3/3 | train=687  test=343
+2026-03-05 12:11:13 | DEBUG    | hdmr.benchmark | eval #001 | val_rmse=0.26894 | lr=0.0968 trees=95 depth=7
+2026-03-05 12:11:13 | DEBUG    | hdmr.benchmark | eval #002 | val_rmse=0.27171 | lr=0.0650 trees=793 depth=7
+2026-03-05 12:11:14 | DEBUG    | hdmr.benchmark | eval #003 | val_rmse=0.26940 | lr=0.0230 trees=2103 depth=4
+2026-03-05 12:11:15 | DEBUG    | hdmr.benchmark | eval #004 | val_rmse=0.26675 | lr=0.0415 trees=580 depth=4
+2026-03-05 12:11:15 | DEBUG    | hdmr.benchmark | eval #005 | val_rmse=0.26308 | lr=0.0441 trees=1585 depth=5
+2026-03-05 12:11:17 | DEBUG    | hdmr.benchmark | eval #006 | val_rmse=0.27758 | lr=0.0087 trees=4541 depth=5
+2026-03-05 12:11:18 | DEBUG    | hdmr.benchmark | eval #007 | val_rmse=0.26880 | lr=0.0189 trees=767 depth=5
+2026-03-05 12:11:19 | DEBUG    | hdmr.benchmark | eval #008 | val_rmse=0.27189 | lr=0.0218 trees=2298 depth=10
+2026-03-05 12:11:22 | DEBUG    | hdmr.benchmark | eval #009 | val_rmse=0.26531 | lr=0.0061 trees=5230 depth=6
+2026-03-05 12:11:23 | DEBUG    | hdmr.benchmark | eval #010 | val_rmse=0.26335 | lr=0.0389 trees=1229 depth=4
+2026-03-05 12:11:24 | DEBUG    | hdmr.benchmark | eval #011 | val_rmse=0.27007 | lr=0.0240 trees=2699 depth=5
+2026-03-05 12:11:24 | DEBUG    | hdmr.benchmark | eval #012 | val_rmse=0.25419 | lr=0.0907 trees=348 depth=6
+2026-03-05 12:11:27 | DEBUG    | hdmr.benchmark | eval #013 | val_rmse=0.26032 | lr=0.0062 trees=6015 depth=5
+2026-03-05 12:11:27 | DEBUG    | hdmr.benchmark | eval #014 | val_rmse=0.27352 | lr=0.0900 trees=173 depth=7
+2026-03-05 12:11:28 | DEBUG    | hdmr.benchmark | eval #015 | val_rmse=0.27096 | lr=0.0160 trees=1166 depth=8
+2026-03-05 12:11:29 | DEBUG    | hdmr.benchmark | eval #016 | val_rmse=0.26851 | lr=0.0176 trees=1385 depth=4
+2026-03-05 12:11:29 | DEBUG    | hdmr.benchmark | eval #017 | val_rmse=0.25790 | lr=0.0588 trees=280 depth=5
+2026-03-05 12:11:30 | DEBUG    | hdmr.benchmark | eval #018 | val_rmse=0.26083 | lr=0.0259 trees=510 depth=8
+2026-03-05 12:11:30 | DEBUG    | hdmr.benchmark | eval #019 | val_rmse=0.26305 | lr=0.0958 trees=291 depth=7
+2026-03-05 12:11:32 | DEBUG    | hdmr.benchmark | eval #020 | val_rmse=0.26411 | lr=0.0059 trees=2696 depth=4
+2026-03-05 12:11:32 | DEBUG    | hdmr.benchmark | eval #021 | val_rmse=0.26826 | lr=0.0391 trees=1040 depth=7
+2026-03-05 12:11:33 | DEBUG    | hdmr.benchmark | eval #022 | val_rmse=0.26697 | lr=0.0548 trees=515 depth=6
+2026-03-05 12:11:34 | DEBUG    | hdmr.benchmark | eval #023 | val_rmse=0.26436 | lr=0.0167 trees=919 depth=8
+2026-03-05 12:11:34 | DEBUG    | hdmr.benchmark | eval #024 | val_rmse=0.27422 | lr=0.0874 trees=571 depth=8
+2026-03-05 12:11:35 | DEBUG    | hdmr.benchmark | eval #025 | val_rmse=0.26801 | lr=0.0441 trees=595 depth=5
+2026-03-05 12:11:36 | DEBUG    | hdmr.benchmark | eval #026 | val_rmse=0.27068 | lr=0.0166 trees=1973 depth=5
+2026-03-05 12:11:37 | DEBUG    | hdmr.benchmark | eval #027 | val_rmse=0.26801 | lr=0.0117 trees=2496 depth=4
+2026-03-05 12:11:37 | DEBUG    | hdmr.benchmark | eval #028 | val_rmse=0.26135 | lr=0.0573 trees=312 depth=5
+2026-03-05 12:11:39 | DEBUG    | hdmr.benchmark | eval #029 | val_rmse=0.25592 | lr=0.0125 trees=2206 depth=9
+2026-03-05 12:11:39 | DEBUG    | hdmr.benchmark | eval #030 | val_rmse=0.27414 | lr=0.0871 trees=312 depth=9
+2026-03-05 12:11:41 | DEBUG    | hdmr.benchmark | eval #031 | val_rmse=0.26558 | lr=0.0134 trees=905 depth=7
+2026-03-05 12:11:42 | DEBUG    | hdmr.benchmark | eval #032 | val_rmse=0.25623 | lr=0.0087 trees=1844 depth=7
+2026-03-05 12:11:43 | DEBUG    | hdmr.benchmark | eval #033 | val_rmse=0.26427 | lr=0.0859 trees=1143 depth=4
+2026-03-05 12:11:43 | DEBUG    | hdmr.benchmark | eval #034 | val_rmse=0.26888 | lr=0.0271 trees=351 depth=9
+2026-03-05 12:11:44 | DEBUG    | hdmr.benchmark | eval #035 | val_rmse=0.27255 | lr=0.0746 trees=381 depth=5
+2026-03-05 12:11:45 | DEBUG    | hdmr.benchmark | eval #036 | val_rmse=0.26166 | lr=0.0079 trees=1990 depth=4
+2026-03-05 12:11:46 | DEBUG    | hdmr.benchmark | eval #037 | val_rmse=0.26668 | lr=0.0287 trees=1555 depth=7
+2026-03-05 12:11:46 | DEBUG    | hdmr.benchmark | eval #038 | val_rmse=0.26423 | lr=0.0791 trees=1023 depth=6
+2026-03-05 12:11:47 | DEBUG    | hdmr.benchmark | eval #039 | val_rmse=0.25952 | lr=0.0399 trees=293 depth=8
+2026-03-05 12:11:49 | DEBUG    | hdmr.benchmark | eval #040 | val_rmse=0.26400 | lr=0.0167 trees=2718 depth=8
+2026-03-05 12:11:49 | DEBUG    | hdmr.benchmark | eval #041 | val_rmse=0.26963 | lr=0.0514 trees=285 depth=5
+2026-03-05 12:11:51 | DEBUG    | hdmr.benchmark | eval #042 | val_rmse=0.26889 | lr=0.0080 trees=1284 depth=6
+2026-03-05 12:11:52 | DEBUG    | hdmr.benchmark | eval #043 | val_rmse=0.25681 | lr=0.0369 trees=692 depth=9
+2026-03-05 12:11:53 | DEBUG    | hdmr.benchmark | eval #044 | val_rmse=0.26232 | lr=0.0134 trees=2083 depth=6
+2026-03-05 12:11:55 | DEBUG    | hdmr.benchmark | eval #045 | val_rmse=0.26576 | lr=0.0096 trees=3660 depth=5
+2026-03-05 12:11:56 | DEBUG    | hdmr.benchmark | eval #046 | val_rmse=0.27670 | lr=0.0850 trees=780 depth=4
+2026-03-05 12:11:59 | DEBUG    | hdmr.benchmark | eval #047 | val_rmse=0.26582 | lr=0.0080 trees=6036 depth=9
+2026-03-05 12:12:01 | DEBUG    | hdmr.benchmark | eval #048 | val_rmse=0.26974 | lr=0.0065 trees=3331 depth=7
+2026-03-05 12:12:03 | DEBUG    | hdmr.benchmark | eval #049 | val_rmse=0.26931 | lr=0.0145 trees=3219 depth=5
+2026-03-05 12:12:04 | DEBUG    | hdmr.benchmark | eval #050 | val_rmse=0.26434 | lr=0.0280 trees=503 depth=7
+2026-03-05 12:12:05 | DEBUG    | hdmr.benchmark | eval #051 | val_rmse=0.25324 | lr=0.0350 trees=487 depth=7
+2026-03-05 12:12:05 | INFO     | hdmr.benchmark |   Best params: lr=0.0350  depth=7  mcw=0.03928  ra=2.24  rl=0.7227  grow=lossguide  leaves=35
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   Final model used 947 trees
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   Fold 3 DONE | test_rmse=4.5107 | best_val=0.2532 | evals=51 | 53.5s | ETA: done
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | ============================================================
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | RESULTS SUMMARY
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | ============================================================
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Dataset           : OpenML-44959 (concrete_compressive_strength)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | HDMR RMSE         : 4.5652 +/- 0.0386
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Total evaluations : 153  (avg 51/fold)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Total wall time   : 0:04:00  (4.0 min)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | 
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | TabArena budget   : 200/fold x 3 folds = 600 evals
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | HDMR eval budget  : 153  (25.5% of TabArena)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | 
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | TabArena baseline : not set  (set TABARENA_RMSE env var to compare)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | 
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | PER-FOLD DETAIL
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   Fold   test_rmse     best_val_rmse   evals    sec     
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   ----------------------------------------------------
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   1      4.5944        0.2658          51       95.2    
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   2      4.5904        0.2442          51       91.8    
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   3      4.5107        0.2532          51       53.5    
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | 
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | HYPERPARAMETER SENSITIVITY  (mean across 3 folds)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   Parameter                   S_i   Rank  Bar
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   ----------------------------------------------------------
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   reg_alpha                0.4715      1  ██████████████████
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   colsample_bynode         0.1099      2  ████
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   min_child_weight         0.0780      3  ███
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   max_leaves               0.0705      4  ██
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   learning_rate            0.0645      5  ██
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   reg_lambda               0.0555      6  ██
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   subsample                0.0499      7  █
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   colsample_bylevel        0.0410      8  █
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   max_depth                0.0305      9  █
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark |   grow_policy              0.0286     10  █
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | 
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Top-6/10 parameters account for >=80% of total variance
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Effective search dimensionality: 6 (out of 10)
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | 
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_xgb_20260305_120805.csv
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | ============================================================
+2026-03-05 12:12:06 | INFO     | hdmr.benchmark | Experiment complete.

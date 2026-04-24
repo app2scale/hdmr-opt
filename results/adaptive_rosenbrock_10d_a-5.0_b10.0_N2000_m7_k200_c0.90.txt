@@ -1,0 +1,30 @@
+HDMR OPTIMIZATION RESULTS
+======================================================================
+
+Run 1:
+ message: HDMR adaptive optimization completed (maxiter=30)
+ success: True
+     fun: 673.9962780832853
+       x: [-4.583e-01  1.104e+00 -3.479e-01  9.177e-01  1.178e+00
+            7.540e-01 -5.177e-01  1.110e-01  9.397e-01  4.416e-01]
+     nit: 30
+    nfev: 60000
+
+Run 2:
+ message: HDMR adaptive optimization completed (maxiter=30)
+ success: True
+     fun: 673.9962780832853
+       x: [-4.583e-01  1.104e+00 -3.479e-01  9.177e-01  1.178e+00
+            7.540e-01 -5.177e-01  1.110e-01  9.397e-01  4.416e-01]
+     nit: 30
+    nfev: 60000
+
+Run 3:
+ message: HDMR adaptive optimization completed (maxiter=30)
+ success: True
+     fun: 673.9962780832853
+       x: [-4.583e-01  1.104e+00 -3.479e-01  9.177e-01  1.178e+00
+            7.540e-01 -5.177e-01  1.110e-01  9.397e-01  4.416e-01]
+     nit: 30
+    nfev: 60000
+

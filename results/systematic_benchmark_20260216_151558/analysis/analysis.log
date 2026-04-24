@@ -1,0 +1,70 @@
+2026-02-17 10:33:19,884 | INFO     | ======================================================================
+2026-02-17 10:33:19,884 | INFO     | HDMR BENCHMARK ANALYZER  v2.0
+2026-02-17 10:33:19,884 | INFO     | ======================================================================
+2026-02-17 10:33:19,884 | INFO     | Input : results/systematic_benchmark_20260216_151558
+2026-02-17 10:33:19,884 | INFO     | Output: results/systematic_benchmark_20260216_151558/analysis
+2026-02-17 10:33:19,884 | INFO     | 
+[1/5] Loading data...
+2026-02-17 10:33:19,901 | INFO     |   3200 experiments | 16 functions | 100.0% success
+2026-02-17 10:33:19,902 | INFO     | 
+[2/5] Statistical tests...
+2026-02-17 10:33:20,111 | INFO     |   Basis: 16 | Mode: 16 | Order: 16
+2026-02-17 10:33:20,111 | INFO     | 
+[3/5] Generating report...
+2026-02-17 10:33:20,201 | INFO     |   ✓ statistical_report.txt
+2026-02-17 10:33:20,201 | INFO     | 
+[4/5] Generating figures...
+2026-02-17 10:33:22,476 | INFO     |   ✓ fig1_overview
+2026-02-17 10:33:37,848 | INFO     |   ✓ fig2_basis
+2026-02-17 10:33:53,672 | INFO     |   ✓ fig3_mode
+2026-02-17 10:34:09,856 | INFO     |   ✓ fig4_order
+2026-02-17 10:34:18,141 | INFO     |   ✓ fig5_heatmap
+2026-02-17 10:34:20,998 | INFO     |   ✓ fig6_runtime
+2026-02-17 10:34:23,545 | INFO     |   ✓ fig7_significance
+2026-02-17 10:34:25,031 | INFO     |   ✓ fig8_best_config
+2026-02-17 10:34:25,031 | INFO     | 
+[5/5] Summary
+2026-02-17 10:34:25,031 | INFO     | --------------------------------------------------
+2026-02-17 10:34:25,032 | INFO     |   Basis  → Legendre 12W, Cosine 4W | Sig: 11/16
+2026-02-17 10:34:25,033 | INFO     |   Mode   → Standard 0W, Adaptive 16W | Sig: 16/16
+2026-02-17 10:34:25,034 | INFO     |   Order  → Best order = 3 | Sig: 7/16
+2026-02-17 10:34:25,034 | INFO     | 
+✓ Analysis complete!
+2026-02-17 10:34:25,034 | INFO     |   Report : results/systematic_benchmark_20260216_151558/analysis/statistical_report.txt
+2026-02-17 10:34:25,034 | INFO     |   Figures: results/systematic_benchmark_20260216_151558/analysis/figures/ (8 plots × PNG+PDF)
+2026-02-17 10:35:57,853 | INFO     | ======================================================================
+2026-02-17 10:35:57,853 | INFO     | HDMR BENCHMARK ANALYZER  v2.0
+2026-02-17 10:35:57,853 | INFO     | ======================================================================
+2026-02-17 10:35:57,853 | INFO     | Input : results/systematic_benchmark_20260216_151558
+2026-02-17 10:35:57,853 | INFO     | Output: results/systematic_benchmark_20260216_151558/analysis
+2026-02-17 10:35:57,853 | INFO     | 
+[1/5] Loading data...
+2026-02-17 10:35:57,871 | INFO     |   3200 experiments | 16 functions | 100.0% success
+2026-02-17 10:35:57,871 | INFO     | 
+[2/5] Statistical tests...
+2026-02-17 10:35:58,068 | INFO     |   Basis: 16 | Mode: 16 | Order: 16
+2026-02-17 10:35:58,068 | INFO     | 
+[3/5] Generating report...
+2026-02-17 10:35:58,156 | INFO     |   ✓ statistical_report.txt
+2026-02-17 10:35:58,186 | INFO     |   ✓ latex_tables.tex
+2026-02-17 10:35:58,186 | INFO     | 
+[4/5] Generating figures...
+2026-02-17 10:36:00,593 | INFO     |   ✓ fig1_overview
+2026-02-17 10:36:17,284 | INFO     |   ✓ fig2_basis
+2026-02-17 10:36:33,954 | INFO     |   ✓ fig3_mode
+2026-02-17 10:36:51,314 | INFO     |   ✓ fig4_order
+2026-02-17 10:36:59,735 | INFO     |   ✓ fig5_heatmap
+2026-02-17 10:37:02,593 | INFO     |   ✓ fig6_runtime
+2026-02-17 10:37:05,265 | INFO     |   ✓ fig7_significance
+2026-02-17 10:37:06,819 | INFO     |   ✓ fig8_best_config
+2026-02-17 10:37:06,819 | INFO     | 
+[5/5] Summary
+2026-02-17 10:37:06,819 | INFO     | --------------------------------------------------
+2026-02-17 10:37:06,820 | INFO     |   Basis  → Legendre 12W, Cosine 4W | Sig: 11/16
+2026-02-17 10:37:06,821 | INFO     |   Mode   → Standard 0W, Adaptive 16W | Sig: 16/16
+2026-02-17 10:37:06,822 | INFO     |   Order  → Best order = 3 | Sig: 7/16
+2026-02-17 10:37:06,822 | INFO     | 
+✓ Analysis complete!
+2026-02-17 10:37:06,822 | INFO     |   Report : results/systematic_benchmark_20260216_151558/analysis/statistical_report.txt
+2026-02-17 10:37:06,822 | INFO     |   Figures: results/systematic_benchmark_20260216_151558/analysis/figures/ (8 plots × PNG+PDF)
+2026-02-17 10:37:06,822 | INFO     |   LaTeX  : results/systematic_benchmark_20260216_151558/analysis/latex_tables.tex

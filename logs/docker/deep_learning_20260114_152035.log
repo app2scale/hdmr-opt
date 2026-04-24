@@ -1,0 +1,8 @@
+usage: benchmark_forecasting.py [-h] [--models MODELS [MODELS ...]]
+                                [--data DATA] [--split SPLIT] [--seeds SEEDS]
+                                [--base-seed BASE_SEED] [--samples SAMPLES]
+                                [--degree DEGREE] [--basis {Legendre,Cosine}]
+                                [--adaptive] [--maxiter MAXITER] [--k K]
+                                [--epsilon EPSILON] [--clip CLIP]
+                                [--output-dir OUTPUT_DIR] [--quiet]
+benchmark_forecasting.py: error: unrecognized arguments: --checkpoint-every 1

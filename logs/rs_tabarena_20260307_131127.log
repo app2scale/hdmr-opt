@@ -1,0 +1,90 @@
+2026-03-07 13:11:27 | INFO     | rs.benchmark | ============================================================
+2026-03-07 13:11:27 | INFO     | rs.benchmark | Random Search Baseline  |  XGBoost HPO Benchmark
+2026-03-07 13:11:27 | INFO     | rs.benchmark | Run ID   : 20260307_131127
+2026-03-07 13:11:27 | INFO     | rs.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/rs_tabarena_20260307_131127.log
+2026-03-07 13:11:27 | INFO     | rs.benchmark | ============================================================
+2026-03-07 13:11:27 | INFO     | rs.benchmark | Configuration:
+2026-03-07 13:11:27 | INFO     | rs.benchmark |   dataset   = openml:46917
+2026-03-07 13:11:27 | INFO     | rs.benchmark |   samples   = 20  folds=2  seed=42
+2026-03-07 13:11:27 | INFO     | rs.benchmark |   space     = TabArena Table C.3 (10D)
+2026-03-07 13:11:27 | INFO     | rs.benchmark |   n_est     = 10000  early_stop=50
+2026-03-07 13:11:27 | INFO     | rs.benchmark |   method    = Pure random search (i.i.d. uniform)
+2026-03-07 13:11:27 | INFO     | rs.benchmark | Loading: 'openml:46917'
+2026-03-07 13:11:28 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 13:11:28 | INFO     | rs.benchmark | Fetching OpenML dataset 46917 …
+2026-03-07 13:11:28 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-07 13:11:28 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-07 13:11:28 | INFO     | rs.benchmark | OpenML 46917: concrete_compressive_strength | 1030 x 8
+2026-03-07 13:11:28 | INFO     | rs.benchmark | Dataset: concrete_compressive_strength | 1030 x 8 | target mean=35.8 std=16.7
+2026-03-07 13:11:28 | INFO     | rs.benchmark | --- Starting 2-Fold Outer CV ---
+2026-03-07 13:11:28 | INFO     | rs.benchmark | Fold 1/2 | train=515  test=515
+2026-03-07 13:11:28 | DEBUG    | rs.benchmark | rs #001 | val_rmse=0.40430 | lr=0.0770 depth=8 grow=lossguide
+2026-03-07 13:11:29 | DEBUG    | rs.benchmark | rs #002 | val_rmse=0.32860 | lr=0.0308 depth=4 grow=depthwise
+2026-03-07 13:11:30 | DEBUG    | rs.benchmark | rs #003 | val_rmse=0.38622 | lr=0.0538 depth=8 grow=lossguide
+2026-03-07 13:11:31 | DEBUG    | rs.benchmark | rs #004 | val_rmse=0.39536 | lr=0.0124 depth=9 grow=lossguide
+2026-03-07 13:11:32 | DEBUG    | rs.benchmark | rs #005 | val_rmse=0.35883 | lr=0.0662 depth=5 grow=lossguide
+2026-03-07 13:11:32 | DEBUG    | rs.benchmark | rs #006 | val_rmse=0.30437 | lr=0.0621 depth=4 grow=depthwise
+2026-03-07 13:11:33 | DEBUG    | rs.benchmark | rs #007 | val_rmse=0.36323 | lr=0.0307 depth=6 grow=lossguide
+2026-03-07 13:11:34 | DEBUG    | rs.benchmark | rs #008 | val_rmse=0.34440 | lr=0.0908 depth=5 grow=lossguide
+2026-03-07 13:11:35 | DEBUG    | rs.benchmark | rs #009 | val_rmse=0.33250 | lr=0.0908 depth=7 grow=lossguide
+2026-03-07 13:11:36 | DEBUG    | rs.benchmark | rs #010 | val_rmse=0.38555 | lr=0.0109 depth=5 grow=depthwise
+2026-03-07 13:11:37 | DEBUG    | rs.benchmark | rs #011 | val_rmse=0.38724 | lr=0.0072 depth=4 grow=depthwise
+2026-03-07 13:11:40 | DEBUG    | rs.benchmark | rs #012 | val_rmse=0.32929 | lr=0.0121 depth=5 grow=depthwise
+2026-03-07 13:11:41 | DEBUG    | rs.benchmark | rs #013 | val_rmse=0.32857 | lr=0.0661 depth=6 grow=depthwise
+2026-03-07 13:11:42 | DEBUG    | rs.benchmark | rs #014 | val_rmse=0.34735 | lr=0.0237 depth=4 grow=lossguide
+2026-03-07 13:11:43 | DEBUG    | rs.benchmark | rs #015 | val_rmse=0.37782 | lr=0.0275 depth=7 grow=depthwise
+2026-03-07 13:11:44 | DEBUG    | rs.benchmark | rs #016 | val_rmse=0.33677 | lr=0.0379 depth=9 grow=lossguide
+2026-03-07 13:11:48 | DEBUG    | rs.benchmark | rs #017 | val_rmse=0.35942 | lr=0.0087 depth=6 grow=lossguide
+2026-03-07 13:11:50 | DEBUG    | rs.benchmark | rs #018 | val_rmse=0.39488 | lr=0.0074 depth=5 grow=lossguide
+2026-03-07 13:11:50 | DEBUG    | rs.benchmark | rs #019 | val_rmse=0.36006 | lr=0.0624 depth=5 grow=lossguide
+2026-03-07 13:11:51 | DEBUG    | rs.benchmark | rs #020 | val_rmse=0.35224 | lr=0.0787 depth=7 grow=lossguide
+2026-03-07 13:11:51 | INFO     | rs.benchmark |   Best params: lr=0.0621  depth=4  mcw=0.0278  ra=0.6597  rl=3.512  grow=depthwise  leaves=34
+2026-03-07 13:11:51 | INFO     | rs.benchmark |   Final model used 410 trees
+2026-03-07 13:11:51 | INFO     | rs.benchmark |   Fold 1 DONE | test_rmse=4.8891 | best_val=0.3044 | evals=20 | 23.6s | ETA: 0:00:23
+2026-03-07 13:11:51 | INFO     | rs.benchmark | Fold 2/2 | train=515  test=515
+2026-03-07 13:11:52 | DEBUG    | rs.benchmark | rs #001 | val_rmse=0.29503 | lr=0.0387 depth=5 grow=lossguide
+2026-03-07 13:11:52 | DEBUG    | rs.benchmark | rs #002 | val_rmse=0.31945 | lr=0.0601 depth=6 grow=depthwise
+2026-03-07 13:11:55 | DEBUG    | rs.benchmark | rs #003 | val_rmse=0.31168 | lr=0.0071 depth=6 grow=lossguide
+2026-03-07 13:11:56 | DEBUG    | rs.benchmark | rs #004 | val_rmse=0.30747 | lr=0.0609 depth=4 grow=lossguide
+2026-03-07 13:11:59 | DEBUG    | rs.benchmark | rs #005 | val_rmse=0.31445 | lr=0.0080 depth=6 grow=depthwise
+2026-03-07 13:12:00 | DEBUG    | rs.benchmark | rs #006 | val_rmse=0.29625 | lr=0.0244 depth=9 grow=depthwise
+2026-03-07 13:12:02 | DEBUG    | rs.benchmark | rs #007 | val_rmse=0.29718 | lr=0.0075 depth=5 grow=depthwise
+2026-03-07 13:12:03 | DEBUG    | rs.benchmark | rs #008 | val_rmse=0.31266 | lr=0.0222 depth=4 grow=depthwise
+2026-03-07 13:12:05 | DEBUG    | rs.benchmark | rs #009 | val_rmse=0.31167 | lr=0.0139 depth=8 grow=lossguide
+2026-03-07 13:12:07 | DEBUG    | rs.benchmark | rs #010 | val_rmse=0.29615 | lr=0.0076 depth=4 grow=depthwise
+2026-03-07 13:12:08 | DEBUG    | rs.benchmark | rs #011 | val_rmse=0.29803 | lr=0.0656 depth=7 grow=lossguide
+2026-03-07 13:12:11 | DEBUG    | rs.benchmark | rs #012 | val_rmse=0.30299 | lr=0.0060 depth=8 grow=depthwise
+2026-03-07 13:12:12 | DEBUG    | rs.benchmark | rs #013 | val_rmse=0.30458 | lr=0.0066 depth=4 grow=lossguide
+2026-03-07 13:12:15 | DEBUG    | rs.benchmark | rs #014 | val_rmse=0.29963 | lr=0.0139 depth=8 grow=depthwise
+2026-03-07 13:12:15 | DEBUG    | rs.benchmark | rs #015 | val_rmse=0.28687 | lr=0.0662 depth=9 grow=depthwise
+2026-03-07 13:12:16 | DEBUG    | rs.benchmark | rs #016 | val_rmse=0.30127 | lr=0.0646 depth=8 grow=lossguide
+2026-03-07 13:12:16 | DEBUG    | rs.benchmark | rs #017 | val_rmse=0.30760 | lr=0.0817 depth=6 grow=lossguide
+2026-03-07 13:12:17 | DEBUG    | rs.benchmark | rs #018 | val_rmse=0.31230 | lr=0.0788 depth=4 grow=lossguide
+2026-03-07 13:12:19 | DEBUG    | rs.benchmark | rs #019 | val_rmse=0.31377 | lr=0.0080 depth=5 grow=depthwise
+2026-03-07 13:12:20 | DEBUG    | rs.benchmark | rs #020 | val_rmse=0.30574 | lr=0.0640 depth=8 grow=lossguide
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   Best params: lr=0.0662  depth=9  mcw=1.487  ra=1.416  rl=0.6156  grow=depthwise  leaves=11
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   Final model used 514 trees
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   Fold 2 DONE | test_rmse=5.0314 | best_val=0.2869 | evals=20 | 29.1s | ETA: done
+2026-03-07 13:12:20 | INFO     | rs.benchmark | ============================================================
+2026-03-07 13:12:20 | INFO     | rs.benchmark | RESULTS SUMMARY
+2026-03-07 13:12:20 | INFO     | rs.benchmark | ============================================================
+2026-03-07 13:12:20 | INFO     | rs.benchmark | Dataset           : concrete_compressive_strength
+2026-03-07 13:12:20 | INFO     | rs.benchmark | Method            : Random Search
+2026-03-07 13:12:20 | INFO     | rs.benchmark | RS RMSE           : 4.9602 +/- 0.0711
+2026-03-07 13:12:20 | INFO     | rs.benchmark | Total evaluations : 40  (avg 20/fold)
+2026-03-07 13:12:20 | INFO     | rs.benchmark | Total wall time   : 0:00:52  (0.9 min)
+2026-03-07 13:12:20 | INFO     | rs.benchmark | 
+2026-03-07 13:12:20 | INFO     | rs.benchmark | TabArena budget   : 200/fold x 2 folds = 400 evals
+2026-03-07 13:12:20 | INFO     | rs.benchmark | 
+2026-03-07 13:12:20 | INFO     | rs.benchmark | PER-FOLD DETAIL
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   Fold   test_rmse     best_val_rmse   evals    sec     
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   ----------------------------------------------------
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   1      4.8891        0.3044          20       23.6    
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   2      5.0314        0.2869          20       29.1    
+2026-03-07 13:12:20 | INFO     | rs.benchmark | 
+2026-03-07 13:12:20 | INFO     | rs.benchmark | CONVERGENCE (avg best val_rmse at eval N):
+2026-03-07 13:12:20 | INFO     | rs.benchmark |   eval  10 : 0.29970
+2026-03-07 13:12:20 | INFO     | rs.benchmark | 
+2026-03-07 13:12:20 | INFO     | rs.benchmark | Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_xgb_20260307_131127.csv
+2026-03-07 13:12:20 | INFO     | rs.benchmark | ============================================================
+2026-03-07 13:12:20 | INFO     | rs.benchmark | Experiment complete.

@@ -1,0 +1,18 @@
+nohup: ignoring input
+[0;34m
+===================================================
+  TabArena XGBoost HPO Benchmark  -  Full Runner  
+  HDMR-200 | A-HDMR-200 | RS-200 | Optuna-200    
+===================================================
+[0m
+[0;36m[13:27:51][0m METHOD       = [1;33mall[0m
+[0;36m[13:27:51][0m DATASETS     = [1;33m10 datasets[0m (regression)
+[0;36m[13:27:51][0m MAX_PARALLEL = 3  |  N_FOLDS = 8  |  SEED = 42
+[0;36m[13:27:51][0m INNER_CV     = 1  (1=80/20 holdout, >1 = K-fold CV)
+
+
+[0;34m=== HDMR-200 (Standard, 200 evals/fold) ===[0m
+[0;36m[13:27:51][0m Launch [1;33mhdmr200_QSAR_fish_toxicity[0m -> full_hdmr200_46954.log
+[0;36m[13:27:51][0m Launch [1;33mhdmr200_concrete_compressive_stre[0m -> full_hdmr200_46917.log
+[0;36m[13:27:51][0m Launch [1;33mhdmr200_healthcare_insurance_expe[0m -> full_hdmr200_46931.log
+[0;32m[13:41:10][OK][0m Completed: hdmr200_healthcare_insurance_expe

@@ -1,0 +1,18 @@
+nohup: ignoring input
+2026-04-15 00:45:27 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-04-15 00:45:27 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-04-15 00:54:21 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-04-15 01:19:24 | INFO     | openml.datasets.dataset | pickle write healthcare_insurance_expenses
+2026-04-15 01:25:04 | INFO     | openml.datasets.dataset | pickle write airfoil_self_noise
+2026-04-15 02:59:17 | INFO     | openml.datasets.dataset | pickle write Another-Dataset-on-used-Fiat-500
+2026-04-15 03:15:30 | INFO     | openml.datasets.dataset | pickle write houses
+2026-04-15 08:10:07 | INFO     | openml.datasets.dataset | pickle write Food_Delivery_Time
+2026-04-15 10:50:50 | INFO     | openml.datasets.dataset | pickle write diamonds
+2026-04-15 14:13:08 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-04-16 19:00:02 | INFO     | openml.datasets.dataset | pickle write qsar-biodeg
+2026-04-16 19:13:41 | INFO     | openml.datasets.dataset | pickle write Fitness_Club
+2026-04-16 19:17:32 | INFO     | openml.datasets.dataset | pickle write Is-this-a-good-customer
+2026-04-16 19:21:35 | INFO     | openml.datasets.dataset | pickle write Marketing_Campaign
+2026-04-16 19:34:27 | INFO     | openml.datasets.dataset | pickle write hazelnut-spread-contaminant-detection
+2026-04-16 20:12:14 | INFO     | openml.datasets.dataset | pickle write seismic-bumps
+2026-04-16 20:16:38 | INFO     | openml.datasets.dataset | pickle write credit-g

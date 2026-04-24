@@ -1,0 +1,160 @@
+% ============================================================
+% Forecasting HPO Comparison Table — all 10 model×dataset cells complete
+% Generated 2026-04-17
+% Requires: \usepackage{booktabs,multirow,makecell}
+% ============================================================
+
+\begin{table}[!p]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{0.88}
+\setlength{\tabcolsep}{4pt}
+\caption{Hyperparameter optimisation results for time-series forecasting.
+  Mean\,$\pm$\,std MAPE (\%) and mean RMSE / MAE across 3 walk-forward expanding-window folds
+  (horizon $H{=}30$ days).
+  Equal-budget methods each receive 200 function evaluations;
+  the extended-budget column (A-HDMR-600) uses 600.
+  \textbf{Bold} marks the best value in each row across all five methods.
+  $^{\S}$Payten N-BEATS with A-HDMR-600 exhibits surrogate over-exploration
+  (MAPE $32.6\%$, $\sigma{=}31.5\%$); values are reported but excluded from bold selection.}
+\label{tab:forecast_hpo}
+\begin{tabular}{ll l rrrr || r}
+\toprule
+& & &
+  \multicolumn{4}{c||}{Equal Budget (200 evals)} &
+  \multicolumn{1}{c}{Extended} \\
+\cmidrule(lr){4-7}
+Dataset & Model & Metric
+  & HDMR-200 & A-HDMR-200 & Optuna-200 & RS-200
+  & A-HDMR-600 \\
+\midrule
+%% ── PAYTEN ──────────────────────────────────────────────────────────────────
+\multirow{15}{*}{\textbf{Payten}}
+  & \multirow{3}{*}{XGBoost}
+    & MAPE (\%)
+      & $14.73 \pm 4.71$ & $12.97 \pm 4.89$ & $13.33 \pm 3.98$ & $17.05 \pm 3.61$
+      & $\mathbf{12.72 \pm 5.53}$ \\
+  & & RMSE
+      & $2.1665$ & $\mathbf{1.8634}$ & $1.9463$ & $2.4899$
+      & $1.9101$ \\
+  & & MAE
+      & $1.9955$ & $1.7109$ & $1.7624$ & $2.3308$
+      & $\mathbf{1.6885}$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{LightGBM}
+    & MAPE (\%)
+      & $17.87 \pm 5.92$ & $17.85 \pm 5.25$ & $\mathbf{11.61 \pm 4.49}$ & $13.53 \pm 6.33$
+      & $15.00 \pm 5.52$ \\
+  & & RMSE
+      & $2.6286$ & $2.6107$ & $\mathbf{1.7554}$ & $1.9375$
+      & $2.1582$ \\
+  & & MAE
+      & $2.4484$ & $2.4471$ & $\mathbf{1.5346}$ & $1.7574$
+      & $1.9919$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{N-BEATS}
+    & MAPE (\%)
+      & $17.56 \pm 10.89$ & $\mathbf{11.32 \pm 5.39}$ & $13.28 \pm 1.41$ & $17.82 \pm 5.82$
+      & $32.63 \pm 31.52^{\S}$ \\
+  & & RMSE
+      & $2.3368$ & $\mathbf{1.5663}$ & $1.9414$ & $2.6781$
+      & $3.6130^{\S}$ \\
+  & & MAE
+      & $2.0292$ & $\mathbf{1.3194}$ & $1.6978$ & $2.2744$
+      & $3.4058^{\S}$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{ARIMA}
+    & MAPE (\%)
+      & $7.29 \pm 4.28$ & $6.99 \pm 4.70$ & $\mathbf{6.76 \pm 4.60}$ & $7.37 \pm 4.47$
+      & $8.13 \pm 3.40$ \\
+  & & RMSE
+      & $1.0965$ & $1.0160$ & $\mathbf{0.9795}$ & $1.0676$
+      & $1.2344$ \\
+  & & MAE
+      & $0.8335$ & $0.7534$ & $\mathbf{0.7204}$ & $0.8166$
+      & $0.9488$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{GRU}
+    & MAPE (\%)
+      & $17.66 \pm 5.84$ & $\mathbf{14.45 \pm 6.39}$ & $14.62 \pm 5.23$ & $15.03 \pm 6.97$
+      & $14.94 \pm 5.16$ \\
+  & & RMSE
+      & $2.5074$ & $2.1916$ & $\mathbf{2.1648}$ & $2.2519$
+      & $2.2091$ \\
+  & & MAE
+      & $2.2470$ & $\mathbf{1.9246}$ & $1.9597$ & $2.0097$
+      & $1.9823$ \\
+\midrule
+%% ── MEDIANOVA ───────────────────────────────────────────────────────────────
+\multirow{15}{*}{\textbf{Medianova}}
+  & \multirow{3}{*}{XGBoost}
+    & MAPE (\%)
+      & $18.02 \pm 11.55$ & $17.94 \pm 12.02$ & $\mathbf{16.09 \pm 9.45}$ & $17.46 \pm 12.36$
+      & $16.32 \pm 10.14$ \\
+  & & RMSE
+      & $0.9301$ & $0.9249$ & $0.8595$ & $0.8887$
+      & $\mathbf{0.8539}$ \\
+  & & MAE
+      & $0.8518$ & $0.8446$ & $\mathbf{0.7753}$ & $0.8136$
+      & $0.7759$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{LightGBM}
+    & MAPE (\%)
+      & $13.11 \pm 7.40$ & $17.29 \pm 10.28$ & $\mathbf{11.75 \pm 6.02}$ & $15.52 \pm 9.02$
+      & $16.95 \pm 12.05$ \\
+  & & RMSE
+      & $0.7185$ & $0.9269$ & $\mathbf{0.6635}$ & $0.8592$
+      & $0.8644$ \\
+  & & MAE
+      & $0.6299$ & $0.8497$ & $\mathbf{0.5695}$ & $0.7761$
+      & $0.7873$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{N-BEATS}
+    & MAPE (\%)
+      & $11.98 \pm 4.96$ & $10.72 \pm 8.47$ & $15.74 \pm 16.03$ & $17.87 \pm 19.31$
+      & $\mathbf{9.26 \pm 6.26}$ \\
+  & & RMSE
+      & $0.7029$ & $0.6212$ & $0.8056$ & $0.8783$
+      & $\mathbf{0.5491}$ \\
+  & & MAE
+      & $0.5858$ & $0.4972$ & $0.6988$ & $0.7804$
+      & $\mathbf{0.4318}$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{ARIMA}
+    & MAPE (\%)
+      & $8.85 \pm 6.87$ & $7.15 \pm 3.98$ & $13.55 \pm 10.67$ & $19.64 \pm 20.17$
+      & $\mathbf{6.66 \pm 2.84}$ \\
+  & & RMSE
+      & $0.5198$ & $0.4388$ & $0.8624$ & $1.2355$
+      & $\mathbf{0.4215}$ \\
+  & & MAE
+      & $0.4091$ & $0.3381$ & $0.7104$ & $1.0405$
+      & $\mathbf{0.3222}$ \\
+\cmidrule{2-8}
+  & \multirow{3}{*}{GRU}
+    & MAPE (\%)
+      & $19.97 \pm 11.34$ & $21.98 \pm 11.68$ & $22.19 \pm 16.02$ & $24.13 \pm 15.91$
+      & $\mathbf{17.94 \pm 10.82}$ \\
+  & & RMSE
+      & $1.0278$ & $1.1388$ & $1.1195$ & $1.2136$
+      & $\mathbf{0.9556}$ \\
+  & & MAE
+      & $0.9461$ & $1.0455$ & $1.0262$ & $1.1369$
+      & $\mathbf{0.8438}$ \\
+\midrule
+%% ── COMBINED AVERAGE (all 10 model×dataset cells) ───────────────────────────
+\multicolumn{2}{l}{\textit{Combined avg.\ (10 cells)}}
+  & MAPE (\%)
+    & $14.70$ & $\mathbf{13.87}$ & $13.89$ & $16.54$
+    & $15.05$ \\
+\multicolumn{2}{l}{}
+  & RMSE
+    & $1.4635$ & $1.3299$ & $\mathbf{1.3098}$ & $1.5500$
+    & $1.4769$ \\
+\multicolumn{2}{l}{}
+  & MAE
+    & $1.2976$ & $1.1731$ & $\mathbf{1.1455}$ & $1.3736$
+    & $1.3178$ \\
+\bottomrule
+\end{tabular}
+\end{table}

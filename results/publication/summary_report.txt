@@ -1,0 +1,54 @@
+================================================================================
+HDMR OPTIMIZATION RESULTS - PUBLICATION SUMMARY
+================================================================================
+
+A) BENCHMARK OPTIMIZATION RESULTS
+--------------------------------------------------------------------------------
+           Function  Standard_Mean  Standard_Best  Adaptive_Mean  Adaptive_Best  Improvement_%
+        Ackley (2D)      -0.000000      -0.000000      -0.000000      -0.000000       0.000000
+        Branin (2D)      65.513162      65.513162       6.907537       6.907537      89.456261
+Six-Hump Camel (2D)       0.000000       0.000000       0.000000       0.000000       0.000000
+     Rastrigin (2D)       0.000000       0.000000       0.000000       0.000000       0.000000
+    Rosenbrock (2D)       1.000000       1.000000       1.000000       1.000000       0.000000
+
+B) FORECASTING OPTIMIZATION RESULTS
+--------------------------------------------------------------------------------
+   Model Optimization_Metric  Optimization_Time_s  Function_Evals      MAE      MAPE     RMSE       MSE
+   ARIMA                 MAE               412.76             200 3.054958 19.909270 3.808327 14.503356
+   ARIMA                MAPE               409.16             200 3.054958 19.909270 3.808327 14.503356
+   ARIMA                RMSE               406.66             200 3.054958 19.909270 3.808327 14.503356
+     ETS                 MAE               163.83             200 2.013056 13.771152 2.639323  6.966027
+     ETS                MAPE               157.86             200 2.022032 13.828890 2.644329  6.992475
+     ETS                RMSE               157.25             200 2.022032 13.828890 2.644329  6.992475
+LIGHTGBM                 MAE               646.63             200 1.899619 12.723548 2.542885  6.466264
+LIGHTGBM                MAPE               648.33             200 1.899619 12.723548 2.542885  6.466264
+LIGHTGBM                RMSE               649.67             200 1.899619 12.723548 2.542885  6.466264
+ XGBOOST                 MAE               171.98             200 1.561528 10.359864 2.174479  4.728361
+ XGBOOST                MAPE               145.04             200 1.570369 10.336508 2.192604  4.807514
+ XGBOOST                RMSE               161.29             200 1.561528 10.359864 2.174479  4.728361
+
+C) COMPARISON WITH OTHER METHODS
+--------------------------------------------------------------------------------
+       Method  Mean MAPE  Std MAPE  Best MAPE  Median Time (s)  Mean Evaluations
+hdmr_adaptive   8.987181  0.229467   8.697114       818.866143            5000.0
+       optuna   9.103597  0.061119   9.051515         9.899843              20.0
+random_search   9.225467  0.168457   9.007654        13.942298              20.0
+hdmr_standard   9.649561  0.545269   9.006204        44.204070             200.0
+      default   9.663572  0.000000   9.663572         0.200003               1.0
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+BENCHMARK IMPROVEMENTS (Adaptive over Standard):
+  Average Improvement: 17.89%
+  Best Improvement: 89.46%
+  Worst Improvement: 0.00%
+  Std Deviation: 40.01%
+  Number of Functions: 5
+
+FORECASTING PERFORMANCE:
+  Best MAE: 1.5615 (Model: XGBOOST)
+  Best MAPE: 10.3365% (Model: XGBOOST)
+  Best RMSE: 2.1745 (Model: XGBOOST)
+

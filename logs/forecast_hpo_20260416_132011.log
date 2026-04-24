@@ -1,0 +1,89 @@
+2026-04-16 13:20:14,933 | INFO     | hdmr.forecast | GPU: NVIDIA GeForce RTX 2080
+2026-04-16 13:20:14,933 | INFO     | hdmr.forecast | ======================================================================
+2026-04-16 13:20:14,933 | INFO     | hdmr.forecast | FORECAST HPO  run_id=20260416_132011
+2026-04-16 13:20:14,934 | INFO     | hdmr.forecast |   Datasets  : ['payten']
+2026-04-16 13:20:14,934 | INFO     | hdmr.forecast |   Models    : ['ARIMA', 'GRU', 'N-BEATS']
+2026-04-16 13:20:14,934 | INFO     | hdmr.forecast |   Methods   : ['HDMR-200', 'RS-200', 'Optuna-200']
+2026-04-16 13:20:14,934 | INFO     | hdmr.forecast |   HORIZON=7  N_FOLDS=2  HDMR_SAMPLES=20  OPTUNA_TRIALS=20  RS_SAMPLES=20  SEED=42
+2026-04-16 13:20:14,934 | INFO     | hdmr.forecast | ======================================================================
+2026-04-16 13:20:14,947 | INFO     | hdmr.forecast | Loaded 'Payten (Transactions)': 2100 rows, target='transactions', special_days=86 entries
+2026-04-16 13:20:14,988 | INFO     | hdmr.forecast | 
+[Payten (Transactions)]  2070 rows after engineering  16 features  2 folds
+2026-04-16 13:20:14,989 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][HDMR-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:20:15,780 | WARNING  | hdmr.forecast | ARIMA test eval failed: ARIMA.fit() got an unexpected keyword argument 'disp'
+2026-04-16 13:20:15,780 | INFO     | hdmr.forecast |   └─ MAPE=nan%  RMSE=nan  MAE=nan  best_val=1000000.0000  evals=21  0.8s  ETA: 0:00:13
+2026-04-16 13:20:15,784 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][HDMR-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:20:16,559 | WARNING  | hdmr.forecast | ARIMA test eval failed: ARIMA.fit() got an unexpected keyword argument 'disp'
+2026-04-16 13:20:16,559 | INFO     | hdmr.forecast |   └─ MAPE=nan%  RMSE=nan  MAE=nan  best_val=1000000.0000  evals=21  0.8s  ETA: 0:00:12
+2026-04-16 13:20:16,562 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][RS-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:20:16,598 | WARNING  | hdmr.forecast | ARIMA test eval failed: ARIMA.fit() got an unexpected keyword argument 'disp'
+2026-04-16 13:20:16,599 | INFO     | hdmr.forecast |   └─ MAPE=nan%  RMSE=nan  MAE=nan  best_val=1000000.0000  evals=20  0.0s  ETA: 0:00:08
+2026-04-16 13:20:16,601 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][RS-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:20:16,637 | WARNING  | hdmr.forecast | ARIMA test eval failed: ARIMA.fit() got an unexpected keyword argument 'disp'
+2026-04-16 13:20:16,637 | INFO     | hdmr.forecast |   └─ MAPE=nan%  RMSE=nan  MAE=nan  best_val=1000000.0000  evals=20  0.0s  ETA: 0:00:04
+2026-04-16 13:20:16,640 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][Optuna-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:20:16,818 | WARNING  | hdmr.forecast | ARIMA test eval failed: ARIMA.fit() got an unexpected keyword argument 'disp'
+2026-04-16 13:20:16,819 | INFO     | hdmr.forecast |   └─ MAPE=nan%  RMSE=nan  MAE=nan  best_val=1000000.0000  evals=20  0.2s  ETA: 0:00:01
+2026-04-16 13:20:16,821 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][Optuna-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:20:16,998 | WARNING  | hdmr.forecast | ARIMA test eval failed: ARIMA.fit() got an unexpected keyword argument 'disp'
+2026-04-16 13:20:16,998 | INFO     | hdmr.forecast |   └─ MAPE=nan%  RMSE=nan  MAE=nan  best_val=1000000.0000  evals=20  0.2s  ETA: 0:00:01
+2026-04-16 13:20:17,000 | INFO     | hdmr.forecast |   ┌─ [payten][GRU][HDMR-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:21:30,375 | INFO     | hdmr.forecast |   └─ MAPE=5.94%  RMSE=0.8855  MAE=0.7128  best_val=0.8779  evals=21  73.4s  ETA: 0:04:30
+2026-04-16 13:21:30,379 | INFO     | hdmr.forecast |   ┌─ [payten][GRU][HDMR-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:23:27,367 | INFO     | hdmr.forecast |   └─ MAPE=6.06%  RMSE=1.2081  MAE=0.9447  best_val=0.7489  evals=21  117.0s  ETA: 0:10:35
+2026-04-16 13:23:27,369 | INFO     | hdmr.forecast |   [payten][GRU][HDMR-200]  MAPE=6.00±0.06  RMSE=1.0468  MAE=0.8287
+2026-04-16 13:23:27,371 | INFO     | hdmr.forecast |   ┌─ [payten][GRU][RS-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:24:36,861 | INFO     | hdmr.forecast |   └─ MAPE=8.18%  RMSE=1.0141  MAE=0.9365  best_val=0.8573  evals=20  69.5s  ETA: 0:12:59
+2026-04-16 13:24:36,865 | INFO     | hdmr.forecast |   ┌─ [payten][GRU][RS-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:26:19,891 | INFO     | hdmr.forecast |   └─ MAPE=7.55%  RMSE=1.2541  MAE=1.1556  best_val=0.7242  evals=20  103.0s  ETA: 0:12:52
+2026-04-16 13:26:19,894 | INFO     | hdmr.forecast |   [payten][GRU][RS-200]  MAPE=7.86±0.31  RMSE=1.1341  MAE=1.0460
+2026-04-16 13:26:19,895 | INFO     | hdmr.forecast |   ┌─ [payten][GRU][Optuna-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:27:59,312 | INFO     | hdmr.forecast |   └─ MAPE=6.68%  RMSE=0.9760  MAE=0.8070  best_val=0.8526  evals=20  99.4s  ETA: 0:10:34
+2026-04-16 13:27:59,315 | INFO     | hdmr.forecast |   ┌─ [payten][GRU][Optuna-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:30:12,909 | INFO     | hdmr.forecast |   └─ MAPE=9.92%  RMSE=1.6498  MAE=1.5320  best_val=0.7124  evals=20  133.6s  ETA: 0:11:12
+2026-04-16 13:30:12,912 | INFO     | hdmr.forecast |   [payten][GRU][Optuna-200]  MAPE=8.30±1.62  RMSE=1.3129  MAE=1.1695
+2026-04-16 13:30:12,913 | INFO     | hdmr.forecast |   ┌─ [payten][N-BEATS][HDMR-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:32:01,092 | INFO     | hdmr.forecast |   └─ MAPE=14.10%  RMSE=1.8603  MAE=1.6308  best_val=0.6830  evals=21  108.2s  ETA: 0:09:28
+2026-04-16 13:32:01,096 | INFO     | hdmr.forecast |   ┌─ [payten][N-BEATS][HDMR-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:35:23,426 | INFO     | hdmr.forecast |   └─ MAPE=32.67%  RMSE=5.3310  MAE=5.1968  best_val=0.4724  evals=21  202.3s  ETA: 0:09:52
+2026-04-16 13:35:23,429 | INFO     | hdmr.forecast |   [payten][N-BEATS][HDMR-200]  MAPE=23.39±9.28  RMSE=3.5957  MAE=3.4138
+2026-04-16 13:35:23,430 | INFO     | hdmr.forecast |   ┌─ [payten][N-BEATS][RS-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:37:12,621 | INFO     | hdmr.forecast |   └─ MAPE=9.60%  RMSE=1.2642  MAE=1.1126  best_val=0.6661  evals=20  109.2s  ETA: 0:06:59
+2026-04-16 13:37:12,625 | INFO     | hdmr.forecast |   ┌─ [payten][N-BEATS][RS-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:39:36,962 | INFO     | hdmr.forecast |   └─ MAPE=13.06%  RMSE=2.0850  MAE=2.0456  best_val=0.4452  evals=20  144.3s  ETA: 0:05:03
+2026-04-16 13:39:36,965 | INFO     | hdmr.forecast |   [payten][N-BEATS][RS-200]  MAPE=11.33±1.73  RMSE=1.6746  MAE=1.5791
+2026-04-16 13:39:36,966 | INFO     | hdmr.forecast |   ┌─ [payten][N-BEATS][Optuna-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:41:44,408 | INFO     | hdmr.forecast |   └─ MAPE=12.85%  RMSE=1.6880  MAE=1.4813  best_val=0.6726  evals=20  127.4s  ETA: 0:02:06
+2026-04-16 13:41:44,412 | INFO     | hdmr.forecast |   ┌─ [payten][N-BEATS][Optuna-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:43:47,258 | INFO     | hdmr.forecast |   └─ MAPE=9.29%  RMSE=1.7474  MAE=1.4705  best_val=0.4576  evals=20  122.8s  ETA: done
+2026-04-16 13:43:47,261 | INFO     | hdmr.forecast |   [payten][N-BEATS][Optuna-200]  MAPE=11.07±1.78  RMSE=1.7177  MAE=1.4759
+2026-04-16 13:43:47,261 | INFO     | hdmr.forecast | 
+==========================================================================
+2026-04-16 13:43:47,261 | INFO     | hdmr.forecast | FORECASTING HPO RESULTS SUMMARY — Payten (Transactions)
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | ==========================================================================
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | Model        Metric        HDMR-200    A-HDMR-200    A-HDMR-600        RS-200    Optuna-200
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | -------------------------------------------------------------------------------------------
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | XGBoost      mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | XGBoost      rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | LightGBM     mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | LightGBM     rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,262 | INFO     | hdmr.forecast | N-BEATS      mape        23.39±9.28           N/A           N/A    11.33±1.73    11.07±1.78
+2026-04-16 13:43:47,263 | INFO     | hdmr.forecast | N-BEATS      rmse         3.60±1.74           N/A           N/A     1.67±0.41     1.72±0.03
+2026-04-16 13:43:47,263 | INFO     | hdmr.forecast | LSTM         mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,263 | INFO     | hdmr.forecast | LSTM         rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,263 | INFO     | hdmr.forecast | ARIMA        mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,263 | INFO     | hdmr.forecast | ARIMA        rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:43:47,263 | INFO     | hdmr.forecast | GRU          mape         6.00±0.06           N/A           N/A     7.86±0.31     8.30±1.62
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | GRU          rmse         1.05±0.16           N/A           N/A     1.13±0.12     1.31±0.34
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | Best MAPE: HDMR-200 with GRU = 5.94%
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | ==========================================================================
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | 
+============================================================
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | SENSITIVITY SUMMARY  (first-order Sobol indices, HDMR)
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | ============================================================
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | [GRU] Top sensitivity: hidden_size(0.35) > learning_rate(0.31) > n_layers(0.18)
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | [N-BEATS] Top sensitivity: batch_size(0.27) > theta_size(0.21) > hidden_size(0.20)
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | 
+All experiments complete.
+2026-04-16 13:43:47,264 | INFO     | hdmr.forecast | Results  : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/forecasting/forecast_results_20260416_132011.csv
+2026-04-16 13:43:47,265 | INFO     | hdmr.forecast | Log      : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/forecast_hpo_20260416_132011.log

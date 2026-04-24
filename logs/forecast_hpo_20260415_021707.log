@@ -1,0 +1,12 @@
+2026-04-15 02:17:08,244 | INFO     | hdmr.forecast | GPU: NVIDIA GeForce RTX 2080
+2026-04-15 02:17:08,244 | INFO     | hdmr.forecast | ======================================================================
+2026-04-15 02:17:08,244 | INFO     | hdmr.forecast | FORECAST HPO  run_id=20260415_021707
+2026-04-15 02:17:08,245 | INFO     | hdmr.forecast |   Datasets  : ['payten']
+2026-04-15 02:17:08,245 | INFO     | hdmr.forecast |   Models    : ['XGBoost']
+2026-04-15 02:17:08,245 | INFO     | hdmr.forecast |   Methods   : ['HDMR-200']
+2026-04-15 02:17:08,245 | INFO     | hdmr.forecast |   HORIZON=7  N_FOLDS=2  HDMR_SAMPLES=20  OPTUNA_TRIALS=20  RS_SAMPLES=20  SEED=42
+2026-04-15 02:17:08,245 | INFO     | hdmr.forecast | ======================================================================
+2026-04-15 02:17:08,258 | INFO     | hdmr.forecast | Loaded 'Payten (Transactions)': 2100 rows, target='transactions', special_days=86 entries
+2026-04-15 02:17:08,485 | INFO     | hdmr.forecast | 
+[Payten (Transactions)]  2070 rows after engineering  16 features  2 folds
+2026-04-15 02:17:08,486 | INFO     | hdmr.forecast |   ┌─ [payten][XGBoost][HDMR-200] fold 1/2  (train=1549  test=7)

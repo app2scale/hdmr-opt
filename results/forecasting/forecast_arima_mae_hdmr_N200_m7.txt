@@ -1,0 +1,29 @@
+HDMR FORECASTING OPTIMIZATION RESULTS
+================================================================================
+
+Algorithm:         ARIMA
+Metric:            MAE
+Samples:           200
+Basis Function:    Cosine (degree 7)
+Adaptive:          False
+Split Date:        2020-01-01
+CSV Date Format:   MM/DD/YYYY (strict)
+
+Optimization Time: 412.76 seconds
+Iterations:        1
+Function Evals:    200
+
+Optimal Hyperparameters:
+--------------------------------------------------------------------------------
+  p                    = 2
+  d                    = 1
+  q                    = 2
+
+Test Set Performance:
+--------------------------------------------------------------------------------
+  MSE      = 14.503356
+  RMSE     = 3.808327
+  MAE      = 3.054958
+  MAPE     = 19.909270
+  SMAPE    = 11.180930
+  MASE     = 2.783247

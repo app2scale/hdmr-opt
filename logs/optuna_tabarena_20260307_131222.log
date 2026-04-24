@@ -1,0 +1,90 @@
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Optuna (TPE) Baseline  |  XGBoost HPO Benchmark
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Run ID   : 20260307_131222
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_tabarena_20260307_131222.log
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Configuration:
+2026-03-07 13:12:22 | INFO     | tpe.benchmark |   dataset   = openml:46917
+2026-03-07 13:12:22 | INFO     | tpe.benchmark |   trials    = 20  folds=2  seed=42
+2026-03-07 13:12:22 | INFO     | tpe.benchmark |   space     = TabArena Table C.3 (10D)
+2026-03-07 13:12:22 | INFO     | tpe.benchmark |   n_est     = 10000  early_stop=50
+2026-03-07 13:12:22 | INFO     | tpe.benchmark |   sampler   = TPE (Tree-structured Parzen Estimator)
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Loading: 'openml:46917'
+2026-03-07 13:12:22 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Fetching OpenML dataset 46917 …
+2026-03-07 13:12:22 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-07 13:12:22 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | OpenML 46917: concrete_compressive_strength | 1030 x 8
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Dataset: concrete_compressive_strength | 1030 x 8 | target mean=35.8 std=16.7
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | --- Starting 2-Fold Outer CV ---
+2026-03-07 13:12:22 | INFO     | tpe.benchmark | Fold 1/2 | train=515  test=515
+2026-03-07 13:12:30 | DEBUG    | tpe.benchmark | trial 000 | val_rmse=0.32697 | lr=0.0075 depth=5 grow=lossguide
+2026-03-07 13:12:33 | DEBUG    | tpe.benchmark | trial 001 | val_rmse=0.38498 | lr=0.0059 depth=9 grow=depthwise
+2026-03-07 13:12:37 | DEBUG    | tpe.benchmark | trial 002 | val_rmse=0.34659 | lr=0.0190 depth=7 grow=lossguide
+2026-03-07 13:12:37 | DEBUG    | tpe.benchmark | trial 003 | val_rmse=0.35540 | lr=0.0761 depth=10 grow=lossguide
+2026-03-07 13:12:38 | DEBUG    | tpe.benchmark | trial 004 | val_rmse=0.38942 | lr=0.0734 depth=4 grow=depthwise
+2026-03-07 13:12:39 | DEBUG    | tpe.benchmark | trial 005 | val_rmse=0.34494 | lr=0.0413 depth=7 grow=lossguide
+2026-03-07 13:12:41 | DEBUG    | tpe.benchmark | trial 006 | val_rmse=0.38081 | lr=0.0127 depth=5 grow=lossguide
+2026-03-07 13:12:42 | DEBUG    | tpe.benchmark | trial 007 | val_rmse=0.36539 | lr=0.0091 depth=7 grow=lossguide
+2026-03-07 13:12:43 | DEBUG    | tpe.benchmark | trial 008 | val_rmse=0.38446 | lr=0.0678 depth=9 grow=lossguide
+2026-03-07 13:12:43 | DEBUG    | tpe.benchmark | trial 009 | val_rmse=0.38922 | lr=0.0217 depth=4 grow=depthwise
+2026-03-07 13:12:47 | DEBUG    | tpe.benchmark | trial 010 | val_rmse=0.31277 | lr=0.0051 depth=5 grow=depthwise
+2026-03-07 13:12:52 | DEBUG    | tpe.benchmark | trial 011 | val_rmse=0.30576 | lr=0.0053 depth=5 grow=depthwise
+2026-03-07 13:12:58 | DEBUG    | tpe.benchmark | trial 012 | val_rmse=0.32360 | lr=0.0051 depth=5 grow=depthwise
+2026-03-07 13:13:01 | DEBUG    | tpe.benchmark | trial 013 | val_rmse=0.33492 | lr=0.0121 depth=6 grow=depthwise
+2026-03-07 13:13:03 | DEBUG    | tpe.benchmark | trial 014 | val_rmse=0.32875 | lr=0.0096 depth=4 grow=depthwise
+2026-03-07 13:13:04 | DEBUG    | tpe.benchmark | trial 015 | val_rmse=0.32618 | lr=0.0359 depth=6 grow=depthwise
+2026-03-07 13:13:07 | DEBUG    | tpe.benchmark | trial 016 | val_rmse=0.36265 | lr=0.0051 depth=5 grow=depthwise
+2026-03-07 13:13:08 | DEBUG    | tpe.benchmark | trial 017 | val_rmse=0.35325 | lr=0.0150 depth=4 grow=depthwise
+2026-03-07 13:13:12 | DEBUG    | tpe.benchmark | trial 018 | val_rmse=0.32312 | lr=0.0073 depth=5 grow=depthwise
+2026-03-07 13:13:13 | DEBUG    | tpe.benchmark | trial 019 | val_rmse=0.34784 | lr=0.0318 depth=6 grow=depthwise
+2026-03-07 13:13:13 | INFO     | tpe.benchmark |   Best params: lr=0.0053  depth=5  mcw=0.001226  ra=0.03067  rl=4.948  grow=depthwise  leaves=10
+2026-03-07 13:13:18 | INFO     | tpe.benchmark |   Final model used 7296 trees
+2026-03-07 13:13:18 | INFO     | tpe.benchmark |   Fold 1 DONE | test_rmse=5.0329 | best_val=0.3058 | trials=20 | 55.6s | ETA: 0:00:55
+2026-03-07 13:13:18 | INFO     | tpe.benchmark | Fold 2/2 | train=515  test=515
+2026-03-07 13:13:18 | DEBUG    | tpe.benchmark | trial 000 | val_rmse=0.29827 | lr=0.0465 depth=5 grow=depthwise
+2026-03-07 13:13:21 | DEBUG    | tpe.benchmark | trial 001 | val_rmse=0.30264 | lr=0.0070 depth=4 grow=depthwise
+2026-03-07 13:13:23 | DEBUG    | tpe.benchmark | trial 002 | val_rmse=0.28783 | lr=0.0108 depth=7 grow=lossguide
+2026-03-07 13:13:23 | DEBUG    | tpe.benchmark | trial 003 | val_rmse=0.28344 | lr=0.0973 depth=8 grow=lossguide
+2026-03-07 13:13:24 | DEBUG    | tpe.benchmark | trial 004 | val_rmse=0.28598 | lr=0.0404 depth=10 grow=depthwise
+2026-03-07 13:13:26 | DEBUG    | tpe.benchmark | trial 005 | val_rmse=0.30452 | lr=0.0082 depth=4 grow=lossguide
+2026-03-07 13:13:27 | DEBUG    | tpe.benchmark | trial 006 | val_rmse=0.28504 | lr=0.0745 depth=4 grow=lossguide
+2026-03-07 13:13:28 | DEBUG    | tpe.benchmark | trial 007 | val_rmse=0.28592 | lr=0.0455 depth=8 grow=lossguide
+2026-03-07 13:13:30 | DEBUG    | tpe.benchmark | trial 008 | val_rmse=0.30161 | lr=0.0226 depth=8 grow=lossguide
+2026-03-07 13:13:32 | DEBUG    | tpe.benchmark | trial 009 | val_rmse=0.29867 | lr=0.0140 depth=7 grow=depthwise
+2026-03-07 13:13:32 | DEBUG    | tpe.benchmark | trial 010 | val_rmse=0.32843 | lr=0.0884 depth=10 grow=lossguide
+2026-03-07 13:13:33 | DEBUG    | tpe.benchmark | trial 011 | val_rmse=0.31516 | lr=0.0972 depth=5 grow=lossguide
+2026-03-07 13:13:33 | DEBUG    | tpe.benchmark | trial 012 | val_rmse=0.30180 | lr=0.0658 depth=5 grow=lossguide
+2026-03-07 13:13:34 | DEBUG    | tpe.benchmark | trial 013 | val_rmse=0.30786 | lr=0.0232 depth=6 grow=lossguide
+2026-03-07 13:13:35 | DEBUG    | tpe.benchmark | trial 014 | val_rmse=0.29580 | lr=0.0633 depth=4 grow=lossguide
+2026-03-07 13:13:36 | DEBUG    | tpe.benchmark | trial 015 | val_rmse=0.29839 | lr=0.0314 depth=6 grow=lossguide
+2026-03-07 13:13:36 | DEBUG    | tpe.benchmark | trial 016 | val_rmse=0.32918 | lr=0.0682 depth=8 grow=lossguide
+2026-03-07 13:13:37 | DEBUG    | tpe.benchmark | trial 017 | val_rmse=0.28968 | lr=0.0995 depth=9 grow=lossguide
+2026-03-07 13:13:38 | DEBUG    | tpe.benchmark | trial 018 | val_rmse=0.31694 | lr=0.0332 depth=7 grow=depthwise
+2026-03-07 13:13:39 | DEBUG    | tpe.benchmark | trial 019 | val_rmse=0.29605 | lr=0.0154 depth=5 grow=lossguide
+2026-03-07 13:13:39 | INFO     | tpe.benchmark |   Best params: lr=0.0973  depth=8  mcw=0.02489  ra=0.3626  rl=4.413  grow=lossguide  leaves=266
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   Final model used 163 trees
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   Fold 2 DONE | test_rmse=4.9466 | best_val=0.2834 | trials=20 | 22.4s | ETA: done
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | RESULTS SUMMARY
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Dataset           : concrete_compressive_strength
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Method            : Optuna TPE
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Optuna RMSE       : 4.9898 +/- 0.0432
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Total evaluations : 40  (avg 20/fold)
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Total wall time   : 0:01:17  (1.3 min)
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | 
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | TabArena budget   : 200/fold x 2 folds = 400 evals
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | 
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | PER-FOLD DETAIL
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   Fold   test_rmse     best_val_rmse   trials   sec     
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   ----------------------------------------------------
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   1      5.0329        0.3058          20       55.6    
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   2      4.9466        0.2834          20       22.4    
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | 
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | CONVERGENCE (avg best val_rmse at trial N):
+2026-03-07 13:13:40 | INFO     | tpe.benchmark |   trial  10 : 0.30520
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | 
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_xgb_20260307_131222.csv
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | ============================================================
+2026-03-07 13:13:40 | INFO     | tpe.benchmark | Experiment complete.

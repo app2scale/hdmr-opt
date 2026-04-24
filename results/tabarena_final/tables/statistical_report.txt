@@ -1,0 +1,177 @@
+======================================================================
+HDMR TABARENA BENCHMARK — STATISTICAL REPORT
+======================================================================
+Generated: 2026-04-15 00:58:09
+Datasets: 9 regression + 8 classification = 17 total
+Methods: HDMR-200, A-HDMR-200, A-HDMR-600, RS-200, Optuna-200
+
+======================================================================
+REGRESSION RESULTS — RMSE (lower=better)
+======================================================================
+Dataset                                    HDMR-200      A-HDMR-200      A-HDMR-600          RS-200      Optuna-200         TabArena
+------------------------------------------------------------------------------------------------------------------------------------
+QSAR_fish_toxicity                      0.8855±0.0675     0.8843±0.0729     0.8855±0.0747     0.8799±0.0588     0.8982±0.0731       0.8810±0.0430
+concrete_compressive_strength           4.2457±0.5230     4.1755±0.4956     4.1492±0.4035     4.1528±0.4281     4.0502±0.5589       4.2360±0.3730
+healthcare_insurance_expenses        4485.1027±656.8792  4471.7984±643.8662  4496.8254±676.4953  4511.7300±641.4634  4460.6726±655.6741    4523.3000±319.7000
+airfoil_self_noise                      1.4614±0.2583     1.3961±0.2293     1.3392±0.2005     1.4012±0.2309     1.3548±0.2172       1.4390±0.1040
+Fiat500_used                          752.9347±65.3413   755.8616±64.1084   746.3006±59.2566   749.5702±62.4794   742.8195±62.4125     741.4000±22.2000
+houses                                  0.2155±0.0064     0.2151±0.0064     0.2153±0.0065     0.2151±0.0073     0.2140±0.0066       0.2150±0.0020
+Food_Delivery_Time                      7.3736±0.0627     7.3693±0.0609     7.3719±0.0584     7.3712±0.0626     7.3708±0.0628       7.3970±0.0550
+diamonds                              530.6115±20.6884   527.0291±17.4892   529.3844±17.8368   528.7087±17.3838   527.8093±16.2527     530.1000±10.0000
+physiochemical_protein                  3.3966±0.0643     3.3699±0.0724     3.3599±0.0666     3.3588±0.0765     3.3409±0.0728       3.3900±0.0240
+
+WIN COUNTS (best method per dataset, n=9):
+         HDMR-200:  0 wins
+       A-HDMR-200:  2 wins
+       A-HDMR-600:  1 wins
+           RS-200:  1 wins
+       Optuna-200:  5 wins
+
+BEAT TABARENA COUNTS  (vs Default / Tuned / Tuned+Ens):
+         HDMR-200:  8 /  2 /  2  (out of 9)
+       A-HDMR-200:  7 /  6 /  6  (out of 9)
+       A-HDMR-600:  8 /  6 /  5  (out of 9)
+           RS-200:  8 /  7 /  5  (out of 9)
+       Optuna-200:  9 /  7 /  7  (out of 9)
+
+AVERAGE RANK (1=best):
+         HDMR-200: avg rank = 4.44
+       A-HDMR-200: avg rank = 2.78
+       A-HDMR-600: avg rank = 3.11
+           RS-200: avg rank = 2.89
+       Optuna-200: avg rank = 1.78
+
+----------------------------------------------------------------------
+FRIEDMAN TEST (REGRESSION)
+----------------------------------------------------------------------
+  chi2 = 13.1556,  p = 0.0105
+  *** Significant (p<0.05)
+
+----------------------------------------------------------------------
+WILCOXON SIGNED-RANK vs Optuna-200 (REGRESSION)
+----------------------------------------------------------------------
+  (Two-sided, paired over 8 folds)
+  Dataset                             Method              stat    p-val   Cohen_d   sig
+  --------------------------------------------------------------------------------
+  QSAR_fish_toxicity                  HDMR-200           13.00   0.5469    -0.117    ns
+  QSAR_fish_toxicity                  A-HDMR-200         11.00   0.3828    -0.122    ns
+  QSAR_fish_toxicity                  A-HDMR-600         13.00   0.5469    -0.274    ns
+  concrete_compressive_strength       HDMR-200           11.00   0.3828     0.347    ns
+  concrete_compressive_strength       A-HDMR-200         13.00   0.5469     0.197    ns
+  concrete_compressive_strength       A-HDMR-600         14.00   0.6406     0.165    ns
+  healthcare_insurance_expenses       HDMR-200           18.00   1.0000     0.026    ns
+  healthcare_insurance_expenses       A-HDMR-200         17.00   0.9453     0.013    ns
+  healthcare_insurance_expenses       A-HDMR-600         16.00   0.8438     0.038    ns
+  airfoil_self_noise                  HDMR-200           15.00   0.7422     0.249    ns
+  airfoil_self_noise                  A-HDMR-200         16.00   0.8438     0.148    ns
+  airfoil_self_noise                  A-HDMR-600         16.00   0.8438    -0.043    ns
+  Fiat500_used                        HDMR-200           16.00   0.8438     0.121    ns
+  Fiat500_used                        A-HDMR-200         15.00   0.7422     0.163    ns
+  Fiat500_used                        A-HDMR-600         18.00   1.0000     0.037    ns
+  houses                              HDMR-200           15.00   0.7422     0.199    ns
+  houses                              A-HDMR-200         15.00   0.7422     0.130    ns
+  houses                              A-HDMR-600         15.00   0.7422     0.119    ns
+  Food_Delivery_Time                  HDMR-200           17.00   0.9453     0.052    ns
+  Food_Delivery_Time                  A-HDMR-200         12.00   0.4609    -0.021    ns
+  Food_Delivery_Time                  A-HDMR-600         17.00   0.9453     0.012    ns
+  diamonds                            HDMR-200           15.00   0.7422     0.106    ns
+  diamonds                            A-HDMR-200         11.00   0.3828    -0.311    ns
+  diamonds                            A-HDMR-600         16.00   0.8438     0.069    ns
+  physiochemical_protein              HDMR-200           12.00   0.4609     0.534    ns
+  physiochemical_protein              A-HDMR-200         12.00   0.4609     0.247    ns
+  physiochemical_protein              A-HDMR-600         13.00   0.5469     0.184    ns
+
+======================================================================
+CLASSIFICATION RESULTS — AUC (higher=better)
+======================================================================
+Dataset                                    HDMR-200      A-HDMR-200      A-HDMR-600          RS-200      Optuna-200         TabArena
+------------------------------------------------------------------------------------------------------------------------------------
+qsar-biodeg                             0.9317±0.0167     0.9338±0.0141     0.9341±0.0123     0.9334±0.0126     0.9305±0.0137       0.9310±0.0120
+Fitness_Club                            0.8077±0.0469     0.8080±0.0463     0.8086±0.0463     0.8059±0.0453     0.8074±0.0464       0.8080±0.0150
+Is-this-a-good-customer                 0.7557±0.0571     0.7555±0.0607     0.7616±0.0540     0.7530±0.0536     0.7553±0.0607       0.7420±0.0230
+Marketing_Campaign                      0.8976±0.0267     0.8989±0.0285     0.9001±0.0276     0.8994±0.0242     0.8989±0.0254       0.9030±0.0160
+hazelnut-contaminant-detection          0.9766±0.0042     0.9767±0.0039     0.9774±0.0044     0.9792±0.0037     0.9778±0.0029       0.9750±0.0040
+seismic-bumps                           0.7673±0.0409     0.7735±0.0362     0.7669±0.0413     0.7694±0.0454     0.7620±0.0449       0.7680±0.0240
+website_phishing                        0.9788±0.0034     0.9782±0.0029     0.9778±0.0038     0.9777±0.0030     0.9770±0.0045       0.2510±0.0220
+credit-g                                0.7745±0.0380     0.7746±0.0272     0.7727±0.0371     0.7780±0.0295     0.7723±0.0307       0.7920±0.0210
+
+WIN COUNTS (best method per dataset, n=8):
+         HDMR-200:  1 wins
+       A-HDMR-200:  1 wins
+       A-HDMR-600:  4 wins
+           RS-200:  2 wins
+       Optuna-200:  0 wins
+
+BEAT TABARENA COUNTS  (vs Default / Tuned / Tuned+Ens):
+         HDMR-200:  7 /  4 /  4  (out of 8)
+       A-HDMR-200:  7 /  6 /  6  (out of 8)
+       A-HDMR-600:  7 /  5 /  5  (out of 8)
+           RS-200:  7 /  5 /  4  (out of 8)
+       Optuna-200:  7 /  3 /  3  (out of 8)
+
+AVERAGE RANK (1=best):
+         HDMR-200: avg rank = 3.25
+       A-HDMR-200: avg rank = 2.50
+       A-HDMR-600: avg rank = 2.25
+           RS-200: avg rank = 2.88
+       Optuna-200: avg rank = 4.12
+
+----------------------------------------------------------------------
+FRIEDMAN TEST (CLASSIFICATION)
+----------------------------------------------------------------------
+  chi2 = 6.9000,  p = 0.1413
+  Not significant (p>=0.05)
+
+----------------------------------------------------------------------
+WILCOXON SIGNED-RANK vs Optuna-200 (CLASSIFICATION)
+----------------------------------------------------------------------
+  (Two-sided, paired over 8 folds)
+  Dataset                             Method              stat    p-val   Cohen_d   sig
+  --------------------------------------------------------------------------------
+  qsar-biodeg                         HDMR-200           17.00   0.9453     0.076    ns
+  qsar-biodeg                         A-HDMR-200          8.00   0.1953     0.489    ns
+  qsar-biodeg                         A-HDMR-600         17.00   0.9453     0.267    ns
+  Fitness_Club                        HDMR-200           18.00   1.0000     0.005    ns
+  Fitness_Club                        A-HDMR-200         16.00   0.8438     0.013    ns
+  Fitness_Club                        A-HDMR-600         16.00   0.8438     0.017    ns
+  Is-this-a-good-customer             HDMR-200           17.00   0.9453     0.007    ns
+  Is-this-a-good-customer             A-HDMR-200         14.00   0.6406     0.008    ns
+  Is-this-a-good-customer             A-HDMR-600         15.00   0.7422     0.072    ns
+  Marketing_Campaign                  HDMR-200           18.00   1.0000    -0.054    ns
+  Marketing_Campaign                  A-HDMR-200         15.00   0.7422    -0.001    ns
+  Marketing_Campaign                  A-HDMR-600         18.00   1.0000     0.037    ns
+  hazelnut-contaminant-detection      HDMR-200           13.00   0.5469    -0.243    ns
+  hazelnut-contaminant-detection      A-HDMR-200         14.00   0.6406    -0.234    ns
+  hazelnut-contaminant-detection      A-HDMR-600         13.00   0.5469    -0.069    ns
+  seismic-bumps                       HDMR-200           15.00   0.7422     0.117    ns
+  seismic-bumps                       A-HDMR-200          8.00   0.1953     0.238    ns
+  seismic-bumps                       A-HDMR-600         14.00   0.6406     0.079    ns
+  website_phishing                    HDMR-200            9.00   0.2500     0.326    ns
+  website_phishing                    A-HDMR-200         11.00   0.3828     0.263    ns
+  website_phishing                    A-HDMR-600          6.00   0.1094     0.728    ns
+  credit-g                            HDMR-200           18.00   1.0000     0.084    ns
+  credit-g                            A-HDMR-200         17.00   0.9453     0.053    ns
+  credit-g                            A-HDMR-600         18.00   1.0000     0.009    ns
+
+======================================================================
+SUMMARY FOR PAPER
+======================================================================
+Key findings (fill in paper §6 Results and §7 Sensitivity Analysis):
+
+1. OPTIMIZATION PERFORMANCE:
+   - See per-task win counts and average ranks above.
+   - Compare beat_tabarena counts for competitiveness claim.
+
+2. SENSITIVITY ANALYSIS (PRIMARY CONTRIBUTION):
+   - See eff_dim values in fig2/fig3 and tab_sensitivity.tex
+   - Datasets with eff_dim <= 2: Concrete, Airfoil, Website_phishing
+     → 10D space dominated by 2 hyperparameters
+
+3. STATISTICAL SIGNIFICANCE:
+   - Use Friedman p-value for global claim.
+   - Use Wilcoxon + Cohen's d for pairwise claims.
+   - |d|>0.8 = large effect, 0.5-0.8 = medium, 0.2-0.5 = small.
+
+4. HOLDOUT BIAS NOTE (§5.4):
+   - Inner 80/20 holdout (not 8-fold inner CV) creates conservative
+     bias against HDMR surrogate quality. See ablation results.

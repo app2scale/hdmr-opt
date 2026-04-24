@@ -1,0 +1,387 @@
+2026-03-30 11:07:06 | INFO     | rs.benchmark | ======================================================================
+2026-03-30 11:07:06 | INFO     | rs.benchmark | Random Search (Sobol)  |  LightGBM HPO  |  16 Datasets  v1.0
+2026-03-30 11:07:06 | INFO     | rs.benchmark | Run ID   : 20260330_110706
+2026-03-30 11:07:06 | INFO     | rs.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/rs_lgb_tabarena_20260330_110706.log
+2026-03-30 11:07:06 | INFO     | rs.benchmark | ======================================================================
+2026-03-30 11:07:06 | INFO     | rs.benchmark | Configuration:
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   sampler=Sobol-RS  samples=200/fold  outer_folds=8  seed=42
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   search_space=TabArena C.3 LightGBM (12D)
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   task_filter=all  datasets=[46954, 46917, 46931, 46904, 46907, 46934, 46928, 46923, 46949, 46952, 46927, 46938, 46940, 46930, 46956, 46918] (16 total)
+2026-03-30 11:07:06 | INFO     | rs.benchmark | 
+2026-03-30 11:07:06 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-30 11:07:06 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:07:06 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-30 11:07:06 | INFO     | rs.benchmark | Loading: QSAR_fish_toxicity  (DID=46954, task=regression) ...
+2026-03-30 11:07:06 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-30 11:07:06 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   QSAR_fish_toxicity | 907 x 6 | y mean=4.065  std=1.456
+2026-03-30 11:07:06 | INFO     | rs.benchmark | 
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   ┌─ QSAR_fish_toxicity  [RS-200]
+2026-03-30 11:07:06 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 11:07:06 | DEBUG    | matplotlib | matplotlib data path: /mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/matplotlib/mpl-data
+2026-03-30 11:07:06 | DEBUG    | matplotlib | CONFIGDIR=/home/erdemy/.config/matplotlib
+2026-03-30 11:07:06 | DEBUG    | matplotlib | interactive is False
+2026-03-30 11:07:06 | DEBUG    | matplotlib | platform is linux
+2026-03-30 11:07:43 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=0.9002 | best_val=0.6527 | evals=200 | 37.3s | ETA: 0:04:22
+2026-03-30 11:08:13 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=0.8956 | best_val=0.5376 | evals=200 | 29.9s | ETA: 0:03:22
+2026-03-30 11:08:59 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=0.8230 | best_val=0.4701 | evals=200 | 46.3s | ETA: 0:03:09
+2026-03-30 11:09:45 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=0.9348 | best_val=0.5586 | evals=200 | 46.0s | ETA: 0:02:42
+2026-03-30 11:10:34 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=0.8002 | best_val=0.5564 | evals=200 | 49.0s | ETA: 0:02:21
+2026-03-30 11:11:08 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=0.8361 | best_val=0.5859 | evals=200 | 33.3s | ETA: 0:01:25
+2026-03-30 11:11:50 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=0.9037 | best_val=0.6388 | evals=200 | 41.9s | ETA: 0:00:41
+2026-03-30 11:12:36 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=0.9614 | best_val=0.5124 | evals=200 | 46.4s | ETA: done
+2026-03-30 11:12:36 | INFO     | rs.benchmark |   └─ [RS-200] QSAR_fish_toxicity | RMSE=0.8819±0.0529 | 5.5 min
+2026-03-30 11:12:36 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (8 rows)
+2026-03-30 11:12:36 | INFO     | rs.benchmark | 
+2026-03-30 11:12:36 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:12:36 | INFO     | rs.benchmark |   DATASET: concrete_compressive_strength  (DID=46917)
+2026-03-30 11:12:36 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:12:36 | INFO     | rs.benchmark | Loading: concrete_compressive_strength  (DID=46917, task=regression) ...
+2026-03-30 11:12:36 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-30 11:12:36 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-30 11:12:36 | INFO     | rs.benchmark |   concrete_compressive_strength | 1030 x 8 | y mean=35.818  std=16.698
+2026-03-30 11:12:36 | INFO     | rs.benchmark | 
+2026-03-30 11:12:36 | INFO     | rs.benchmark |   ┌─ concrete_compressive_strength  [RS-200]
+2026-03-30 11:12:36 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 11:16:30 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=4.0265 | best_val=0.2230 | evals=200 | 234.4s | ETA: 0:27:20
+2026-03-30 11:20:45 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=3.4388 | best_val=0.2667 | evals=200 | 254.5s | ETA: 0:24:26
+2026-03-30 11:24:16 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=4.9536 | best_val=0.2358 | evals=200 | 211.2s | ETA: 0:19:26
+2026-03-30 11:28:45 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=4.1705 | best_val=0.2443 | evals=200 | 269.4s | ETA: 0:16:20
+2026-03-30 11:31:17 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=4.2020 | best_val=0.3280 | evals=200 | 151.7s | ETA: 0:10:32
+2026-03-30 11:34:51 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=4.1331 | best_val=0.2634 | evals=200 | 213.9s | ETA: 0:07:03
+2026-03-30 11:38:56 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=4.2653 | best_val=0.3069 | evals=200 | 244.6s | ETA: 0:03:23
+2026-03-30 11:43:27 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=4.6542 | best_val=0.2311 | evals=200 | 271.5s | ETA: done
+2026-03-30 11:43:27 | INFO     | rs.benchmark |   └─ [RS-200] concrete_compressive_strength | RMSE=4.2305±0.4162 | 30.9 min
+2026-03-30 11:43:27 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (16 rows)
+2026-03-30 11:43:27 | INFO     | rs.benchmark | 
+2026-03-30 11:43:27 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:43:27 | INFO     | rs.benchmark |   DATASET: healthcare_insurance_expenses  (DID=46931)
+2026-03-30 11:43:27 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:43:27 | INFO     | rs.benchmark | Loading: healthcare_insurance_expenses  (DID=46931, task=regression) ...
+2026-03-30 11:43:27 | INFO     | openml.datasets.dataset | pickle write healthcare_insurance_expenses
+2026-03-30 11:43:27 | DEBUG    | openml.datasets.dataset | Saved dataset 46931: healthcare_insurance_expenses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46931/dataset_46931.pkl.py3
+2026-03-30 11:43:27 | INFO     | rs.benchmark |   healthcare_insurance_expenses | 1338 x 6 | y mean=13270.422  std=12105.485
+2026-03-30 11:43:27 | INFO     | rs.benchmark | 
+2026-03-30 11:43:27 | INFO     | rs.benchmark |   ┌─ healthcare_insurance_expenses  [RS-200]
+2026-03-30 11:43:27 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 11:44:20 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=4079.7520 | best_val=0.4043 | evals=200 | 53.1s | ETA: 0:06:11
+2026-03-30 11:45:14 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=3623.0720 | best_val=0.3756 | evals=200 | 54.1s | ETA: 0:05:21
+2026-03-30 11:46:05 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=4213.7480 | best_val=0.4005 | evals=200 | 50.7s | ETA: 0:04:23
+2026-03-30 11:47:15 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=5494.4428 | best_val=0.3107 | evals=200 | 69.9s | ETA: 0:03:53
+2026-03-30 11:48:02 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=4611.0398 | best_val=0.3541 | evals=200 | 47.1s | ETA: 0:02:47
+2026-03-30 11:48:53 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=4753.3032 | best_val=0.3859 | evals=200 | 50.7s | ETA: 0:01:51
+2026-03-30 11:50:04 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=5459.9274 | best_val=0.3501 | evals=200 | 70.9s | ETA: 0:00:56
+2026-03-30 11:50:49 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=4077.6181 | best_val=0.4155 | evals=200 | 45.2s | ETA: done
+2026-03-30 11:50:49 | INFO     | rs.benchmark |   └─ [RS-200] healthcare_insurance_expenses | RMSE=4539.1129±630.5344 | 7.4 min
+2026-03-30 11:50:49 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (24 rows)
+2026-03-30 11:50:49 | INFO     | rs.benchmark | 
+2026-03-30 11:50:49 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:50:49 | INFO     | rs.benchmark |   DATASET: airfoil_self_noise  (DID=46904)
+2026-03-30 11:50:49 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 11:50:49 | INFO     | rs.benchmark | Loading: airfoil_self_noise  (DID=46904, task=regression) ...
+2026-03-30 11:50:49 | INFO     | openml.datasets.dataset | pickle write airfoil_self_noise
+2026-03-30 11:50:49 | DEBUG    | openml.datasets.dataset | Saved dataset 46904: airfoil_self_noise to file /home/erdemy/.cache/openml/org/openml/www/datasets/46904/dataset_46904.pkl.py3
+2026-03-30 11:50:49 | INFO     | rs.benchmark |   airfoil_self_noise | 1503 x 5 | y mean=124.836  std=6.896
+2026-03-30 11:50:49 | INFO     | rs.benchmark | 
+2026-03-30 11:50:49 | INFO     | rs.benchmark |   ┌─ airfoil_self_noise  [RS-200]
+2026-03-30 11:50:49 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 11:56:46 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=1.9112 | best_val=0.2084 | evals=200 | 356.8s | ETA: 0:41:37
+2026-03-30 12:02:01 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=1.3076 | best_val=0.1756 | evals=200 | 315.4s | ETA: 0:33:36
+2026-03-30 12:06:08 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=1.5184 | best_val=0.2302 | evals=200 | 246.7s | ETA: 0:25:31
+2026-03-30 12:11:08 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=1.0373 | best_val=0.1956 | evals=200 | 300.3s | ETA: 0:19:09
+2026-03-30 12:16:24 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=1.5446 | best_val=0.1879 | evals=200 | 315.5s | ETA: 0:14:22
+2026-03-30 12:22:12 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=1.1719 | best_val=0.2120 | evals=200 | 348.4s | ETA: 0:10:42
+2026-03-30 12:28:26 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=1.2840 | best_val=0.2062 | evals=200 | 374.0s | ETA: 0:05:45
+2026-03-30 12:33:47 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=1.4957 | best_val=0.2210 | evals=200 | 320.6s | ETA: done
+2026-03-30 12:33:47 | INFO     | rs.benchmark |   └─ [RS-200] airfoil_self_noise | RMSE=1.4088±0.2526 | 43.0 min
+2026-03-30 12:33:47 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (32 rows)
+2026-03-30 12:33:47 | INFO     | rs.benchmark | 
+2026-03-30 12:33:47 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 12:33:47 | INFO     | rs.benchmark |   DATASET: Fiat500_used  (DID=46907)
+2026-03-30 12:33:47 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 12:33:47 | INFO     | rs.benchmark | Loading: Fiat500_used  (DID=46907, task=regression) ...
+2026-03-30 12:33:47 | INFO     | openml.datasets.dataset | pickle write Another-Dataset-on-used-Fiat-500
+2026-03-30 12:33:47 | DEBUG    | openml.datasets.dataset | Saved dataset 46907: Another-Dataset-on-used-Fiat-500 to file /home/erdemy/.cache/openml/org/openml/www/datasets/46907/dataset_46907.pkl.py3
+2026-03-30 12:33:47 | INFO     | rs.benchmark |   Fiat500_used | 1538 x 7 | y mean=8576.004  std=1939.328
+2026-03-30 12:33:47 | INFO     | rs.benchmark | 
+2026-03-30 12:33:47 | INFO     | rs.benchmark |   ┌─ Fiat500_used  [RS-200]
+2026-03-30 12:33:47 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 12:34:46 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=825.2276 | best_val=0.3612 | evals=200 | 59.1s | ETA: 0:06:53
+2026-03-30 12:36:00 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=714.0140 | best_val=0.3773 | evals=200 | 74.4s | ETA: 0:06:40
+2026-03-30 12:37:23 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=744.1003 | best_val=0.3768 | evals=200 | 83.1s | ETA: 0:06:00
+2026-03-30 12:38:31 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=767.8521 | best_val=0.3876 | evals=200 | 67.5s | ETA: 0:04:59
+2026-03-30 12:39:46 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=834.6741 | best_val=0.3816 | evals=200 | 75.3s | ETA: 0:03:45
+2026-03-30 12:40:39 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=645.3216 | best_val=0.3902 | evals=200 | 53.5s | ETA: 0:02:10
+2026-03-30 12:41:48 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=749.8468 | best_val=0.3647 | evals=200 | 68.7s | ETA: 0:01:05
+2026-03-30 12:42:31 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=719.0417 | best_val=0.3749 | evals=200 | 42.5s | ETA: done
+2026-03-30 12:42:31 | INFO     | rs.benchmark |   └─ [RS-200] Fiat500_used | RMSE=750.0098±57.4384 | 8.7 min
+2026-03-30 12:42:31 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (40 rows)
+2026-03-30 12:42:31 | INFO     | rs.benchmark | 
+2026-03-30 12:42:31 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 12:42:31 | INFO     | rs.benchmark |   DATASET: houses  (DID=46934)
+2026-03-30 12:42:31 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 12:42:31 | INFO     | rs.benchmark | Loading: houses  (DID=46934, task=regression) ...
+2026-03-30 12:42:31 | INFO     | openml.datasets.dataset | pickle write houses
+2026-03-30 12:42:31 | DEBUG    | openml.datasets.dataset | Saved dataset 46934: houses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46934/dataset_46934.pkl.py3
+2026-03-30 12:42:31 | INFO     | rs.benchmark |   houses | 20640 x 8 | y mean=12.085  std=0.569
+2026-03-30 12:42:31 | INFO     | rs.benchmark | 
+2026-03-30 12:42:31 | INFO     | rs.benchmark |   ┌─ houses  [RS-200]
+2026-03-30 12:42:31 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 13:06:26 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=0.2060 | best_val=0.3669 | evals=200 | 1435.7s | ETA: 2:47:29
+2026-03-30 13:29:40 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=0.2140 | best_val=0.3836 | evals=200 | 1393.9s | ETA: 2:21:28
+2026-03-30 13:55:23 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=0.2161 | best_val=0.3591 | evals=200 | 1542.2s | ETA: 2:01:26
+2026-03-30 14:21:09 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=0.2095 | best_val=0.3799 | evals=200 | 1546.9s | ETA: 1:39:37
+2026-03-30 14:47:13 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=0.2152 | best_val=0.3949 | evals=200 | 1563.3s | ETA: 1:17:32
+2026-03-30 15:15:03 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=0.2128 | best_val=0.3562 | evals=200 | 1670.1s | ETA: 0:53:06
+2026-03-30 15:36:31 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=0.2175 | best_val=0.3827 | evals=200 | 1287.8s | ETA: 0:25:07
+2026-03-30 16:01:40 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=0.2010 | best_val=0.3709 | evals=200 | 1509.3s | ETA: done
+2026-03-30 16:01:40 | INFO     | rs.benchmark |   └─ [RS-200] houses | RMSE=0.2115±0.0053 | 199.2 min
+2026-03-30 16:01:40 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (48 rows)
+2026-03-30 16:01:40 | INFO     | rs.benchmark | 
+2026-03-30 16:01:40 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 16:01:40 | INFO     | rs.benchmark |   DATASET: Food_Delivery_Time  (DID=46928)
+2026-03-30 16:01:40 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 16:01:40 | INFO     | rs.benchmark | Loading: Food_Delivery_Time  (DID=46928, task=regression) ...
+2026-03-30 16:01:40 | INFO     | openml.datasets.dataset | pickle write Food_Delivery_Time
+2026-03-30 16:01:40 | DEBUG    | openml.datasets.dataset | Saved dataset 46928: Food_Delivery_Time to file /home/erdemy/.cache/openml/org/openml/www/datasets/46928/dataset_46928.pkl.py3
+2026-03-30 16:01:40 | INFO     | rs.benchmark |   Food_Delivery_Time | 45451 x 9 | y mean=26.291  std=9.382
+2026-03-30 16:01:40 | INFO     | rs.benchmark | 
+2026-03-30 16:01:40 | INFO     | rs.benchmark |   ┌─ Food_Delivery_Time  [RS-200]
+2026-03-30 16:01:40 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 16:32:12 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=7.3891 | best_val=0.7877 | evals=200 | 1831.9s | ETA: 3:33:43
+2026-03-30 17:03:46 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=7.3287 | best_val=0.7899 | evals=200 | 1894.1s | ETA: 3:06:18
+2026-03-30 17:34:35 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=7.2657 | best_val=0.7887 | evals=200 | 1848.6s | ETA: 2:34:51
+2026-03-30 18:04:05 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=7.3046 | best_val=0.7824 | evals=200 | 1770.7s | ETA: 2:02:31
+2026-03-30 18:32:52 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=7.4201 | best_val=0.7777 | evals=200 | 1726.5s | ETA: 1:29:05
+2026-03-30 19:04:19 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=7.4444 | best_val=0.7779 | evals=200 | 1886.8s | ETA: 0:59:49
+2026-03-30 19:36:08 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=7.4351 | best_val=0.7949 | evals=200 | 1908.9s | ETA: 0:30:40
+2026-03-30 20:04:37 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=7.3683 | best_val=0.7832 | evals=200 | 1709.1s | ETA: done
+2026-03-30 20:04:37 | INFO     | rs.benchmark |   └─ [RS-200] Food_Delivery_Time | RMSE=7.3695±0.0607 | 242.9 min
+2026-03-30 20:04:37 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (56 rows)
+2026-03-30 20:04:37 | INFO     | rs.benchmark | 
+2026-03-30 20:04:37 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 20:04:37 | INFO     | rs.benchmark |   DATASET: diamonds  (DID=46923)
+2026-03-30 20:04:37 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-30 20:04:37 | INFO     | rs.benchmark | Loading: diamonds  (DID=46923, task=regression) ...
+2026-03-30 20:04:37 | INFO     | openml.datasets.dataset | pickle write diamonds
+2026-03-30 20:04:37 | DEBUG    | openml.datasets.dataset | Saved dataset 46923: diamonds to file /home/erdemy/.cache/openml/org/openml/www/datasets/46923/dataset_46923.pkl.py3
+2026-03-30 20:04:37 | INFO     | rs.benchmark |   diamonds | 53940 x 9 | y mean=3932.800  std=3989.403
+2026-03-30 20:04:37 | INFO     | rs.benchmark | 
+2026-03-30 20:04:37 | INFO     | rs.benchmark |   ┌─ diamonds  [RS-200]
+2026-03-30 20:04:37 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-30 20:43:34 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=503.2696 | best_val=0.1317 | evals=200 | 2337.7s | ETA: 4:32:43
+2026-03-30 21:18:02 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=509.0865 | best_val=0.1329 | evals=200 | 2067.4s | ETA: 3:40:15
+2026-03-30 21:53:26 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=531.9968 | best_val=0.1381 | evals=200 | 2124.7s | ETA: 3:01:22
+2026-03-30 22:28:29 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=506.6045 | best_val=0.1351 | evals=200 | 2102.1s | ETA: 2:19:52
+2026-03-30 23:06:02 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=541.9447 | best_val=0.1309 | evals=200 | 2253.1s | ETA: 1:47:59
+2026-03-30 23:43:23 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=556.4378 | best_val=0.1257 | evals=200 | 2241.8s | ETA: 1:13:17
+2026-03-31 00:20:27 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=515.1851 | best_val=0.1300 | evals=200 | 2224.0s | ETA: 0:37:19
+2026-03-31 00:54:43 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=534.0494 | best_val=0.1328 | evals=200 | 2055.8s | ETA: done
+2026-03-31 00:54:43 | INFO     | rs.benchmark |   └─ [RS-200] diamonds | RMSE=524.8218±17.9103 | 290.1 min
+2026-03-31 00:54:43 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (64 rows)
+2026-03-31 00:54:43 | INFO     | rs.benchmark | 
+2026-03-31 00:54:43 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 00:54:43 | INFO     | rs.benchmark |   DATASET: physiochemical_protein  (DID=46949)
+2026-03-31 00:54:43 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 00:54:43 | INFO     | rs.benchmark | Loading: physiochemical_protein  (DID=46949, task=regression) ...
+2026-03-31 00:54:43 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-03-31 00:54:43 | DEBUG    | openml.datasets.dataset | Saved dataset 46949: physiochemical_protein to file /home/erdemy/.cache/openml/org/openml/www/datasets/46949/dataset_46949.pkl.py3
+2026-03-31 00:54:43 | INFO     | rs.benchmark |   physiochemical_protein | 45730 x 9 | y mean=7.749  std=6.118
+2026-03-31 00:54:43 | INFO     | rs.benchmark | 
+2026-03-31 00:54:43 | INFO     | rs.benchmark |   ┌─ physiochemical_protein  [RS-200]
+2026-03-31 00:54:43 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  sobol_quasi_random
+2026-03-31 02:09:36 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | RMSE=3.3247 | best_val=0.5588 | evals=200 | 4493.2s | ETA: 8:44:12
+2026-03-31 03:27:42 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | RMSE=3.3945 | best_val=0.5656 | evals=200 | 4685.8s | ETA: 7:38:56
+2026-03-31 04:48:31 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | RMSE=3.2571 | best_val=0.5570 | evals=200 | 4849.0s | ETA: 6:29:39
+2026-03-31 06:08:10 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | RMSE=3.3536 | best_val=0.5460 | evals=200 | 4779.4s | ETA: 5:18:05
+2026-03-31 07:29:29 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | RMSE=3.4140 | best_val=0.5509 | evals=200 | 4878.6s | ETA: 4:01:46
+2026-03-31 08:49:34 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | RMSE=3.4354 | best_val=0.5492 | evals=200 | 4805.4s | ETA: 2:40:42
+2026-03-31 10:07:57 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | RMSE=3.3367 | best_val=0.5410 | evals=200 | 4702.7s | ETA: 1:19:55
+2026-03-31 11:23:03 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | RMSE=3.2838 | best_val=0.5602 | evals=200 | 4506.2s | ETA: done
+2026-03-31 11:23:03 | INFO     | rs.benchmark |   └─ [RS-200] physiochemical_protein | RMSE=3.3500±0.0583 | 628.3 min
+2026-03-31 11:23:03 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (72 rows)
+2026-03-31 11:23:03 | INFO     | rs.benchmark | 
+2026-03-31 11:23:03 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:23:03 | INFO     | rs.benchmark |   DATASET: qsar-biodeg  (DID=46952)
+2026-03-31 11:23:03 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:23:03 | INFO     | rs.benchmark | Loading: qsar-biodeg  (DID=46952, task=classification) ...
+2026-03-31 11:23:03 | INFO     | openml.datasets.dataset | pickle write qsar-biodeg
+2026-03-31 11:23:03 | DEBUG    | openml.datasets.dataset | Saved dataset 46952: qsar-biodeg to file /home/erdemy/.cache/openml/org/openml/www/datasets/46952/dataset_46952.pkl.py3
+2026-03-31 11:23:03 | INFO     | rs.benchmark |   qsar-biodeg | 1054 x 41 | classes=2
+2026-03-31 11:23:03 | INFO     | rs.benchmark | 
+2026-03-31 11:23:03 | INFO     | rs.benchmark |   ┌─ qsar-biodeg  [RS-200]
+2026-03-31 11:23:03 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 11:25:13 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.9392 | best_val=0.2079 | evals=200 | 129.6s | ETA: 0:15:07
+2026-03-31 11:26:25 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.9395 | best_val=0.3371 | evals=200 | 71.9s | ETA: 0:10:04
+2026-03-31 11:28:44 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.9241 | best_val=0.2387 | evals=200 | 138.6s | ETA: 0:09:26
+2026-03-31 11:30:02 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.9298 | best_val=0.2823 | evals=200 | 78.3s | ETA: 0:06:25
+2026-03-31 11:32:16 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.9254 | best_val=0.2155 | evals=200 | 134.4s | ETA: 0:05:51
+2026-03-31 11:33:54 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.9205 | best_val=0.2726 | evals=200 | 97.3s | ETA: 0:03:26
+2026-03-31 11:35:58 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.9525 | best_val=0.2655 | evals=200 | 124.3s | ETA: 0:01:58
+2026-03-31 11:37:26 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.9203 | best_val=0.3056 | evals=200 | 88.0s | ETA: done
+2026-03-31 11:37:26 | INFO     | rs.benchmark |   └─ [RS-200] qsar-biodeg | AUC=0.9314±0.0106 | 14.4 min
+2026-03-31 11:37:26 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (80 rows)
+2026-03-31 11:37:26 | INFO     | rs.benchmark | 
+2026-03-31 11:37:26 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:37:26 | INFO     | rs.benchmark |   DATASET: Fitness_Club  (DID=46927)
+2026-03-31 11:37:26 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:37:26 | INFO     | rs.benchmark | Loading: Fitness_Club  (DID=46927, task=classification) ...
+2026-03-31 11:37:26 | INFO     | openml.datasets.dataset | pickle write Fitness_Club
+2026-03-31 11:37:26 | DEBUG    | openml.datasets.dataset | Saved dataset 46927: Fitness_Club to file /home/erdemy/.cache/openml/org/openml/www/datasets/46927/dataset_46927.pkl.py3
+2026-03-31 11:37:26 | INFO     | rs.benchmark |   Fitness_Club | 1500 x 6 | classes=2
+2026-03-31 11:37:26 | INFO     | rs.benchmark | 
+2026-03-31 11:37:26 | INFO     | rs.benchmark |   ┌─ Fitness_Club  [RS-200]
+2026-03-31 11:37:26 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 11:37:48 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.8612 | best_val=0.4867 | evals=200 | 21.9s | ETA: 0:02:33
+2026-03-31 11:38:22 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.8109 | best_val=0.4436 | evals=200 | 34.4s | ETA: 0:02:48
+2026-03-31 11:38:40 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.7339 | best_val=0.4718 | evals=200 | 18.2s | ETA: 0:02:04
+2026-03-31 11:39:08 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.8888 | best_val=0.4653 | evals=200 | 27.2s | ETA: 0:01:46
+2026-03-31 11:39:29 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.7689 | best_val=0.4571 | evals=200 | 21.4s | ETA: 0:01:06
+2026-03-31 11:39:56 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.8319 | best_val=0.4867 | evals=200 | 26.6s | ETA: 0:00:50
+2026-03-31 11:40:35 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.8098 | best_val=0.4659 | evals=200 | 39.2s | ETA: 0:00:29
+2026-03-31 11:41:23 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.8082 | best_val=0.4174 | evals=200 | 48.1s | ETA: done
+2026-03-31 11:41:23 | INFO     | rs.benchmark |   └─ [RS-200] Fitness_Club | AUC=0.8142±0.0456 | 4.0 min
+2026-03-31 11:41:23 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (88 rows)
+2026-03-31 11:41:23 | INFO     | rs.benchmark | 
+2026-03-31 11:41:23 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:41:23 | INFO     | rs.benchmark |   DATASET: Is-this-a-good-customer  (DID=46938)
+2026-03-31 11:41:23 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:41:23 | INFO     | rs.benchmark | Loading: Is-this-a-good-customer  (DID=46938, task=classification) ...
+2026-03-31 11:41:23 | INFO     | openml.datasets.dataset | pickle write Is-this-a-good-customer
+2026-03-31 11:41:23 | DEBUG    | openml.datasets.dataset | Saved dataset 46938: Is-this-a-good-customer to file /home/erdemy/.cache/openml/org/openml/www/datasets/46938/dataset_46938.pkl.py3
+2026-03-31 11:41:23 | INFO     | rs.benchmark |   Is-this-a-good-customer | 1723 x 13 | classes=2
+2026-03-31 11:41:23 | INFO     | rs.benchmark | 
+2026-03-31 11:41:23 | INFO     | rs.benchmark |   ┌─ Is-this-a-good-customer  [RS-200]
+2026-03-31 11:41:23 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 11:41:51 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.6672 | best_val=0.3160 | evals=200 | 27.8s | ETA: 0:03:14
+2026-03-31 11:42:22 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.8021 | best_val=0.3209 | evals=200 | 31.2s | ETA: 0:02:56
+2026-03-31 11:42:44 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.7286 | best_val=0.3034 | evals=200 | 21.5s | ETA: 0:02:14
+2026-03-31 11:43:04 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.8628 | best_val=0.3546 | evals=200 | 20.6s | ETA: 0:01:37
+2026-03-31 11:43:21 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.7009 | best_val=0.3159 | evals=200 | 17.0s | ETA: 0:00:59
+2026-03-31 11:44:02 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.7489 | best_val=0.3014 | evals=200 | 40.6s | ETA: 0:00:52
+2026-03-31 11:44:41 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.7071 | best_val=0.2532 | evals=200 | 39.6s | ETA: 0:00:32
+2026-03-31 11:44:58 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.7171 | best_val=0.3338 | evals=200 | 16.4s | ETA: done
+2026-03-31 11:44:58 | INFO     | rs.benchmark |   └─ [RS-200] Is-this-a-good-customer | AUC=0.7418±0.0587 | 3.6 min
+2026-03-31 11:44:58 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (96 rows)
+2026-03-31 11:44:58 | INFO     | rs.benchmark | 
+2026-03-31 11:44:58 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:44:58 | INFO     | rs.benchmark |   DATASET: Marketing_Campaign  (DID=46940)
+2026-03-31 11:44:58 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 11:44:58 | INFO     | rs.benchmark | Loading: Marketing_Campaign  (DID=46940, task=classification) ...
+2026-03-31 11:44:58 | INFO     | openml.datasets.dataset | pickle write Marketing_Campaign
+2026-03-31 11:44:58 | DEBUG    | openml.datasets.dataset | Saved dataset 46940: Marketing_Campaign to file /home/erdemy/.cache/openml/org/openml/www/datasets/46940/dataset_46940.pkl.py3
+2026-03-31 11:44:58 | INFO     | rs.benchmark |   Marketing_Campaign | 2240 x 25 | classes=2
+2026-03-31 11:44:58 | INFO     | rs.benchmark | 
+2026-03-31 11:44:58 | INFO     | rs.benchmark |   ┌─ Marketing_Campaign  [RS-200]
+2026-03-31 11:44:58 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 11:46:44 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.9112 | best_val=0.2341 | evals=200 | 106.3s | ETA: 0:12:23
+2026-03-31 11:48:36 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.9332 | best_val=0.2464 | evals=200 | 112.3s | ETA: 0:10:55
+2026-03-31 11:50:23 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.9067 | best_val=0.2366 | evals=200 | 106.7s | ETA: 0:09:02
+2026-03-31 11:52:19 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.8610 | best_val=0.2421 | evals=200 | 115.9s | ETA: 0:07:26
+2026-03-31 11:54:40 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.9336 | best_val=0.2519 | evals=200 | 140.8s | ETA: 0:06:03
+2026-03-31 11:56:48 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.8816 | best_val=0.2090 | evals=200 | 128.0s | ETA: 0:04:16
+2026-03-31 11:58:50 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.8981 | best_val=0.2642 | evals=200 | 121.9s | ETA: 0:02:10
+2026-03-31 12:00:58 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.9350 | best_val=0.2315 | evals=200 | 128.5s | ETA: done
+2026-03-31 12:00:58 | INFO     | rs.benchmark |   └─ [RS-200] Marketing_Campaign | AUC=0.9075±0.0251 | 16.0 min
+2026-03-31 12:00:58 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (104 rows)
+2026-03-31 12:00:58 | INFO     | rs.benchmark | 
+2026-03-31 12:00:58 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 12:00:58 | INFO     | rs.benchmark |   DATASET: hazelnut-contaminant-detection  (DID=46930)
+2026-03-31 12:00:58 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 12:00:58 | INFO     | rs.benchmark | Loading: hazelnut-contaminant-detection  (DID=46930, task=classification) ...
+2026-03-31 12:00:58 | INFO     | openml.datasets.dataset | pickle write hazelnut-spread-contaminant-detection
+2026-03-31 12:00:58 | DEBUG    | openml.datasets.dataset | Saved dataset 46930: hazelnut-spread-contaminant-detection to file /home/erdemy/.cache/openml/org/openml/www/datasets/46930/dataset_46930.pkl.py3
+2026-03-31 12:00:58 | INFO     | rs.benchmark |   hazelnut-contaminant-detection | 2400 x 30 | classes=2
+2026-03-31 12:00:58 | INFO     | rs.benchmark | 
+2026-03-31 12:00:58 | INFO     | rs.benchmark |   ┌─ hazelnut-contaminant-detection  [RS-200]
+2026-03-31 12:00:58 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 12:08:32 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.9821 | best_val=0.1865 | evals=200 | 453.4s | ETA: 0:52:53
+2026-03-31 12:15:13 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.9760 | best_val=0.1771 | evals=200 | 401.7s | ETA: 0:42:45
+2026-03-31 12:20:52 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.9781 | best_val=0.2262 | evals=200 | 338.5s | ETA: 0:33:09
+2026-03-31 12:28:30 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.9790 | best_val=0.1943 | evals=200 | 457.8s | ETA: 0:26:37
+2026-03-31 12:33:38 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.9799 | best_val=0.2138 | evals=200 | 308.4s | ETA: 0:18:24
+2026-03-31 12:43:23 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.9856 | best_val=0.1191 | evals=200 | 585.4s | ETA: 0:15:01
+2026-03-31 12:50:48 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.9785 | best_val=0.1782 | evals=200 | 444.2s | ETA: 0:07:26
+2026-03-31 12:57:02 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.9789 | best_val=0.2154 | evals=200 | 374.6s | ETA: done
+2026-03-31 12:57:02 | INFO     | rs.benchmark |   └─ [RS-200] hazelnut-contaminant-detection | AUC=0.9798±0.0027 | 56.1 min
+2026-03-31 12:57:02 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (112 rows)
+2026-03-31 12:57:02 | INFO     | rs.benchmark | 
+2026-03-31 12:57:02 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 12:57:02 | INFO     | rs.benchmark |   DATASET: seismic-bumps  (DID=46956)
+2026-03-31 12:57:02 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 12:57:02 | INFO     | rs.benchmark | Loading: seismic-bumps  (DID=46956, task=classification) ...
+2026-03-31 12:57:02 | INFO     | openml.datasets.dataset | pickle write seismic-bumps
+2026-03-31 12:57:02 | DEBUG    | openml.datasets.dataset | Saved dataset 46956: seismic-bumps to file /home/erdemy/.cache/openml/org/openml/www/datasets/46956/dataset_46956.pkl.py3
+2026-03-31 12:57:02 | INFO     | rs.benchmark |   seismic-bumps | 2584 x 15 | classes=2
+2026-03-31 12:57:02 | INFO     | rs.benchmark | 
+2026-03-31 12:57:02 | INFO     | rs.benchmark |   ┌─ seismic-bumps  [RS-200]
+2026-03-31 12:57:02 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 12:57:37 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.7198 | best_val=0.1853 | evals=200 | 34.5s | ETA: 0:04:01
+2026-03-31 12:58:10 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.7722 | best_val=0.1877 | evals=200 | 33.2s | ETA: 0:03:23
+2026-03-31 12:58:41 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.7770 | best_val=0.2334 | evals=200 | 30.8s | ETA: 0:02:44
+2026-03-31 12:59:28 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.8355 | best_val=0.1960 | evals=200 | 47.3s | ETA: 0:02:28
+2026-03-31 13:00:05 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.8051 | best_val=0.1985 | evals=200 | 37.5s | ETA: 0:01:55
+2026-03-31 13:00:40 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.8023 | best_val=0.2326 | evals=200 | 34.7s | ETA: 0:01:19
+2026-03-31 13:01:00 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.7457 | best_val=0.2150 | evals=200 | 19.5s | ETA: 0:00:30
+2026-03-31 13:01:30 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.7023 | best_val=0.1670 | evals=200 | 30.0s | ETA: done
+2026-03-31 13:01:30 | INFO     | rs.benchmark |   └─ [RS-200] seismic-bumps | AUC=0.7700±0.0423 | 4.5 min
+2026-03-31 13:01:30 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (120 rows)
+2026-03-31 13:01:30 | INFO     | rs.benchmark | 
+2026-03-31 13:01:30 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 13:01:30 | INFO     | rs.benchmark |   DATASET: credit-g  (DID=46918)
+2026-03-31 13:01:30 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-31 13:01:30 | INFO     | rs.benchmark | Loading: credit-g  (DID=46918, task=classification) ...
+2026-03-31 13:01:30 | INFO     | openml.datasets.dataset | pickle write credit-g
+2026-03-31 13:01:30 | DEBUG    | openml.datasets.dataset | Saved dataset 46918: credit-g to file /home/erdemy/.cache/openml/org/openml/www/datasets/46918/dataset_46918.pkl.py3
+2026-03-31 13:01:30 | INFO     | rs.benchmark |   credit-g | 1000 x 20 | classes=2
+2026-03-31 13:01:30 | INFO     | rs.benchmark | 
+2026-03-31 13:01:30 | INFO     | rs.benchmark |   ┌─ credit-g  [RS-200]
+2026-03-31 13:01:30 | INFO     | rs.benchmark |   │  task=classification  samples=200/fold  sobol_quasi_random
+2026-03-31 13:02:19 | INFO     | rs.benchmark |   │  [RS-200] Fold 1/8 | AUC=0.7520 | best_val=0.4305 | evals=200 | 49.6s | ETA: 0:05:47
+2026-03-31 13:02:44 | INFO     | rs.benchmark |   │  [RS-200] Fold 2/8 | AUC=0.7916 | best_val=0.5481 | evals=200 | 25.2s | ETA: 0:03:44
+2026-03-31 13:03:25 | INFO     | rs.benchmark |   │  [RS-200] Fold 3/8 | AUC=0.7553 | best_val=0.5146 | evals=200 | 40.3s | ETA: 0:03:11
+2026-03-31 13:03:55 | INFO     | rs.benchmark |   │  [RS-200] Fold 4/8 | AUC=0.7235 | best_val=0.4692 | evals=200 | 29.8s | ETA: 0:02:07
+2026-03-31 13:05:05 | INFO     | rs.benchmark |   │  [RS-200] Fold 5/8 | AUC=0.7451 | best_val=0.4754 | evals=200 | 70.7s | ETA: 0:02:20
+2026-03-31 13:05:54 | INFO     | rs.benchmark |   │  [RS-200] Fold 6/8 | AUC=0.8305 | best_val=0.4680 | evals=200 | 48.7s | ETA: 0:01:39
+2026-03-31 13:06:38 | INFO     | rs.benchmark |   │  [RS-200] Fold 7/8 | AUC=0.7853 | best_val=0.4579 | evals=200 | 43.8s | ETA: 0:00:54
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   │  [RS-200] Fold 8/8 | AUC=0.7681 | best_val=0.4541 | evals=200 | 46.8s | ETA: done
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   └─ [RS-200] credit-g | AUC=0.7689±0.0310 | 5.9 min
+2026-03-31 13:07:25 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (128 rows)
+2026-03-31 13:07:25 | INFO     | rs.benchmark | 
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ====================================================================================================
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   REGRESSION  ─  RS-200 vs TabArena LightGBM Baselines  |  RMSE ↓
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ====================================================================================================
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Dataset                                 RS-200              LGB-Default       LGB-Tuned         LGB-Ens         
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   ──────────────────────────────────────────────────────────────────────────────────────────
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Fiat500_used                            750.0098±57.4384  746.0000±22.4000  740.4000±24.6000  729.4000±22.7000  +(+1.3%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Food_Delivery_Time                      7.3695±0.0607  7.6160±0.0530  7.3780±0.0540  7.3740±0.0530  ≈(-0.1%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   QSAR_fish_toxicity                      0.8819±0.0529  0.8940±0.0430  0.8890±0.0450  0.8830±0.0440  ≈(-0.8%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   airfoil_self_noise                      1.4088±0.2526  1.5540±0.0930  1.4800±0.1080  1.4510±0.1080  -(-4.8%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   concrete_compressive_strength           4.2305±0.4162  4.4840±0.3880  4.2350±0.3950  4.2120±0.3960  ≈(-0.1%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   diamonds                                524.8218±17.9103  532.1000±9.1000  524.9000±9.7000  519.0000±9.4000  ≈(-0.0%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   healthcare_insurance_expenses           4539.1129±630.5344  4610.4000±313.8000  4525.1000±329.2000  4511.9000±325.5000  +(+0.3%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   houses                                  0.2115±0.0053  0.2170±0.0020  0.2120±0.0020  0.2110±0.0020  ≈(-0.2%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   physiochemical_protein                  3.3500±0.0583  3.4770±0.0260  3.3810±0.0270  3.3840±0.0270  ≈(-0.9%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark | 
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ====================================================================================================
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   CLASSIFICATION  ─  RS-200 vs TabArena LightGBM Baselines  |  AUC ↑
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ====================================================================================================
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Dataset                                 RS-200              LGB-Default       LGB-Tuned         LGB-Ens         
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   ──────────────────────────────────────────────────────────────────────────────────────────
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Fitness_Club                            0.8142±0.0456  0.7950±0.0150  0.8150±0.0150  0.8140±0.0150  +(-0.1%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Is-this-a-good-customer                 0.7418±0.0587  0.7240±0.0200  0.7410±0.0220  0.7460±0.0200  ≈(+0.1%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   Marketing_Campaign                      0.9075±0.0251  0.9010±0.0140  0.9110±0.0150  0.9110±0.0140  +(-0.4%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   credit-g                                0.7689±0.0310  0.7710±0.0190  0.7920±0.0200  0.7960±0.0200  +(-2.9%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   hazelnut-contaminant-detection          0.9798±0.0027  0.9730±0.0050  0.9780±0.0040  0.9780±0.0040  ≈(+0.2%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   qsar-biodeg                             0.9314±0.0106  0.9270±0.0120  0.9330±0.0120  0.9330±0.0120  +(-0.2%)
+2026-03-31 13:07:25 | INFO     | rs.benchmark |   seismic-bumps                           0.7700±0.0423  0.7520±0.0270  0.7700±0.0270  0.7710±0.0260  +(-0.0%)
+2026-03-31 13:07:25 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv  (128 rows)
+2026-03-31 13:07:25 | INFO     | rs.benchmark | 
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ======================================================================
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ALL EXPERIMENTS COMPLETE
+2026-03-31 13:07:25 | INFO     | rs.benchmark | Datasets completed : 16 / 16
+2026-03-31 13:07:25 | INFO     | rs.benchmark | Failed             : 0  
+2026-03-31 13:07:25 | INFO     | rs.benchmark | Total wall time    : 1 day, 2:00:19  (26.0 hr)
+2026-03-31 13:07:25 | INFO     | rs.benchmark | Results            : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_all16_20260330_110706.csv
+2026-03-31 13:07:25 | INFO     | rs.benchmark | ======================================================================

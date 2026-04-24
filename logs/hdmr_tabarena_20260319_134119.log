@@ -1,0 +1,28 @@
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | HDMR vs Adaptive HDMR  |  XGBoost HPO  |  All 18 Datasets  v7.0
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | Run ID   : 20260319_134119
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_tabarena_20260319_134119.log
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | Configuration:
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   basis=Legendre  degree=3  samples=200
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   k=50  eps=0.010  clip=0.90
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   outer_folds=8  seed=42  search_space=TabArena C.3 (10D)
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   task_filter=all  datasets=[46954, 46917, 46931, 46904, 46907, 46942, 46949, 46934, 46961, 46928, 46923, 46952, 46927, 46938, 46940, 46930, 46956, 46963, 46918] (19 total)
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | 
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | Methods:
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   1) HDMR-200     — standard,   200 evals/fold
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   2) A-HDMR-200   — adaptive,   T=2×100 = 200 evals/fold (equal budget)
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   3) A-HDMR-600   — adaptive,   T=3×200 = 600 evals/fold (full budget)
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | 
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-19 13:41:19 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | Loading: QSAR_fish_toxicity  (DID=46954, task=regression) ...
+2026-03-19 13:41:19 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-19 13:41:19 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   QSAR_fish_toxicity | 907 x 6 | y mean=4.065  std=1.456
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark | 
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [HDMR-200]
+2026-03-19 13:41:19 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-19 13:42:35 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=0.8858 | best_val=0.6350 | evals=201 | 76.0s | ETA: 0:08:51

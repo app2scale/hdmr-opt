@@ -1,0 +1,5 @@
+Model,p,d,q,seasonal_periods,learning_rate,num_leaves,min_data_in_leaf,feature_fraction,bagging_fraction,max_depth,subsample,colsample_bytree,min_child_weight,gamma
+ARIMA,2.0,1.0,2.0,,,,,,,,,,,
+ETS,,,,26.0,,,,,,,,,,
+LIGHTGBM,,,,,0.1505,129.0,50.0,0.75,0.75,,,,,
+XGBOOST,,,,,0.17410722467944845,,,,,6.0,0.75,0.75,6.0,2.5

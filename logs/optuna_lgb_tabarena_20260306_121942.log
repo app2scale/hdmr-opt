@@ -1,0 +1,49 @@
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | ============================================================
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Optuna (TPE) Baseline  |  LightGBM HPO Benchmark
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Run ID   : 20260306_121942
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_lgb_tabarena_20260306_121942.log
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | ============================================================
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Configuration:
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark |   dataset  = openml:44959
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark |   trials   = 50  folds=3  seed=42
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark |   space    = TabArena Table C.3 LightGBM (12D)
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark |   sampler  = TPE (Tree-structured Parzen Estimator)
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Loading: 'openml:44959'
+2026-03-06 12:19:42 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Fetching OpenML dataset 44959 …
+2026-03-06 12:19:42 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-06 12:19:42 | DEBUG    | openml.datasets.dataset | Saved dataset 44959: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/44959/dataset_44959.pkl.py3
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | OpenML 44959: concrete_compressive_strength | 1030 x 8
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Dataset: concrete_compressive_strength | 1030 x 8 | target mean=35.82 std=16.70
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | --- Starting 3-Fold Outer CV ---
+2026-03-06 12:19:42 | INFO     | tpe.lgb.benchmark | Fold 1/3 | train=686  test=344
+2026-03-06 12:19:42 | DEBUG    | matplotlib | matplotlib data path: /mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/matplotlib/mpl-data
+2026-03-06 12:19:42 | DEBUG    | matplotlib | CONFIGDIR=/home/erdemy/.config/matplotlib
+2026-03-06 12:19:42 | DEBUG    | matplotlib | interactive is False
+2026-03-06 12:19:42 | DEBUG    | matplotlib | platform is linux
+2026-03-06 12:20:26 | INFO     | tpe.lgb.benchmark |   Best params: lr=0.0485  leaves=7  feat=0.65  l1=0.1789  l2=1.665  extra=False
+2026-03-06 12:20:26 | INFO     | tpe.lgb.benchmark |   Final model used 1122 trees
+2026-03-06 12:20:26 | INFO     | tpe.lgb.benchmark |   Fold 1 DONE | test_rmse=4.1952 | best_val=0.2653 | trials=50 | 44.3s | ETA: 0:01:28
+2026-03-06 12:20:26 | INFO     | tpe.lgb.benchmark | Fold 2/3 | train=687  test=343
+2026-03-06 12:21:37 | INFO     | tpe.lgb.benchmark |   Best params: lr=0.0151  leaves=183  feat=0.77  l1=0.003548  l2=1.42  extra=True
+2026-03-06 12:21:40 | INFO     | tpe.lgb.benchmark |   Final model used 2465 trees
+2026-03-06 12:21:40 | INFO     | tpe.lgb.benchmark |   Fold 2 DONE | test_rmse=4.6540 | best_val=0.2191 | trials=50 | 73.6s | ETA: 0:00:58
+2026-03-06 12:21:40 | INFO     | tpe.lgb.benchmark | Fold 3/3 | train=687  test=343
+2026-03-06 12:22:11 | INFO     | tpe.lgb.benchmark |   Best params: lr=0.0260  leaves=11  feat=0.95  l1=0.1215  l2=0.1681  extra=True
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark |   Final model used 2050 trees
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark |   Fold 3 DONE | test_rmse=3.8914 | best_val=0.2513 | trials=50 | 32.2s | ETA: done
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | ============================================================
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | Dataset           : concrete_compressive_strength
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | Method            : Optuna TPE
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | Optuna RMSE       : 4.2469 +/- 0.3135
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | Total evaluations : 150  (avg 50/fold)
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | Total wall time   : 0:02:30  (2.5 min)
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | 
+CONVERGENCE (avg best val_rmse at trial N):
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark |   trial  10 : 0.25928
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark |   trial  25 : 0.24586
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark |   trial  50 : 0.24527
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | 
+Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_lgb_20260306_121942.csv
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | ============================================================
+2026-03-06 12:22:12 | INFO     | tpe.lgb.benchmark | Experiment complete.

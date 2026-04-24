@@ -1,0 +1,38 @@
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | ============================================================
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | HDMR vs. TabArena  |  XGBoost HPO Benchmark
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | Run ID   : 20260306_111721
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_tabarena_20260306_111721.log
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | ============================================================
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | Configuration:
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark |   dataset    = transactions
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark |   basis      = Legendre  degree=3  samples=500
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark |   adaptive   = True  maxiter=15  k=50  eps=0.010  clip=0.90
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark |   folds      = 8  seed=42  dims=10  n_est=10000  es=50
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark |   space      = TabArena Table C.3 (10D, grow_policy + max_leaves)
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | Loading: 'transactions'
+2026-03-06 11:17:21 | DEBUG    | hdmr.benchmark | TS features: 2072 rows x 16 cols
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | Dataset: Transactions (transactions.csv) | 2072 x 16 | target mean=8.6 std=4.3
+2026-03-06 11:17:21 | INFO     | hdmr.benchmark | --- Runtime Estimation (probe fit) ---
+2026-03-06 11:17:22 | INFO     | hdmr.benchmark |   Probe    : 0.747s on 1813 rows
+2026-03-06 11:17:22 | INFO     | hdmr.benchmark |   Scale    : x1.0  ->  ~0.747s per XGBoost eval
+2026-03-06 11:17:22 | INFO     | hdmr.benchmark |   Budget   : 500 samples x 15 iters x 8 folds = 60000 total evals
+2026-03-06 11:17:22 | INFO     | hdmr.benchmark |   Estimate : 12:27:03  (747.1 min)
+2026-03-06 11:17:22 | WARNING  | hdmr.benchmark | Estimated runtime exceeds 10 min! Consider: HDMR_SAMPLES=100 HDMR_ADAPTIVE=0 N_FOLDS=3
+2026-03-06 11:17:22 | INFO     | hdmr.benchmark | --- Starting 8-Fold Outer CV ---
+2026-03-06 11:17:22 | INFO     | hdmr.benchmark | Fold 1/8 | train=1813  test=259
+2026-03-06 11:17:27 | DEBUG    | hdmr.benchmark | eval #001 | val_rmse=0.22098 | lr=0.0071 trees=3305 depth=7
+2026-03-06 11:17:29 | DEBUG    | hdmr.benchmark | eval #002 | val_rmse=0.22068 | lr=0.0163 trees=902 depth=8
+2026-03-06 11:17:30 | DEBUG    | hdmr.benchmark | eval #003 | val_rmse=0.21331 | lr=0.0636 trees=422 depth=10
+2026-03-06 11:17:36 | DEBUG    | hdmr.benchmark | eval #004 | val_rmse=0.21711 | lr=0.0051 trees=4092 depth=7
+2026-03-06 11:17:37 | DEBUG    | hdmr.benchmark | eval #005 | val_rmse=0.21544 | lr=0.0869 trees=393 depth=6
+2026-03-06 11:17:39 | DEBUG    | hdmr.benchmark | eval #006 | val_rmse=0.21486 | lr=0.0453 trees=1120 depth=6
+2026-03-06 11:17:40 | DEBUG    | hdmr.benchmark | eval #007 | val_rmse=0.21317 | lr=0.0093 trees=912 depth=5
+2026-03-06 11:17:41 | DEBUG    | hdmr.benchmark | eval #008 | val_rmse=0.21505 | lr=0.0291 trees=1497 depth=5
+2026-03-06 11:17:43 | DEBUG    | hdmr.benchmark | eval #009 | val_rmse=0.22094 | lr=0.0297 trees=351 depth=10
+2026-03-06 11:17:43 | DEBUG    | hdmr.benchmark | eval #010 | val_rmse=0.22170 | lr=0.0678 trees=643 depth=9
+2026-03-06 11:17:48 | DEBUG    | hdmr.benchmark | eval #011 | val_rmse=0.22208 | lr=0.0068 trees=3723 depth=6
+2026-03-06 11:17:49 | DEBUG    | hdmr.benchmark | eval #012 | val_rmse=0.21200 | lr=0.0262 trees=642 depth=9
+2026-03-06 11:17:50 | DEBUG    | hdmr.benchmark | eval #013 | val_rmse=0.21501 | lr=0.0345 trees=1024 depth=5
+2026-03-06 11:17:57 | DEBUG    | hdmr.benchmark | eval #014 | val_rmse=0.21618 | lr=0.0060 trees=2010 depth=8
+2026-03-06 11:17:58 | DEBUG    | hdmr.benchmark | eval #015 | val_rmse=0.21338 | lr=0.0155 trees=1184 depth=4
+2026-03-06 11:17:59 | DEBUG    | hdmr.benchmark | eval #016 | val_rmse=0.21413 | lr=0.0615 trees=752 depth=6

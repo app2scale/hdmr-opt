@@ -1,0 +1,23 @@
+{
+  "data_path": "src/data/transactions.csv",
+  "split_date": "2020-01-01",
+  "models": [
+    "lstm",
+    "gru",
+    "nbeats"
+  ],
+  "num_seeds": 3,
+  "base_seed": 42,
+  "hdmr_config": {
+    "N": 200,
+    "m": 5,
+    "basis": "Cosine",
+    "adaptive": false,
+    "maxiter": 25,
+    "k": 100,
+    "epsilon": 0.1,
+    "clip": 0.9
+  },
+  "timestamp": "20260114_211749",
+  "checkpoint_file": "results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv"
+}

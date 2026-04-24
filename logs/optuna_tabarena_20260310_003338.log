@@ -1,0 +1,39 @@
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | ======================================================================
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | Optuna TPE Baseline  |  XGBoost HPO  |  All 18 Datasets  v2.0
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | Run ID   : 20260310_003338
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_tabarena_20260310_003338.log
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | ======================================================================
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | Configuration:
+2026-03-10 00:33:38 | INFO     | tpe.benchmark |   sampler=TPE  trials=200/fold  outer_folds=8  seed=42
+2026-03-10 00:33:38 | INFO     | tpe.benchmark |   task_filter=all  datasets=[46949] (1 total)
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | 
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 00:33:38 | INFO     | tpe.benchmark |   DATASET: physiochemical_protein  (DID=46949)
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 00:33:38 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | Loading: physiochemical_protein  (DID=46949, task=regression) ...
+2026-03-10 00:33:38 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-03-10 00:33:38 | DEBUG    | openml.datasets.dataset | Saved dataset 46949: physiochemical_protein to file /home/erdemy/.cache/openml/org/openml/www/datasets/46949/dataset_46949.pkl.py3
+2026-03-10 00:33:38 | INFO     | tpe.benchmark |   physiochemical_protein | 45730 x 9 | y mean=7.749  std=6.118
+2026-03-10 00:33:38 | INFO     | tpe.benchmark | 
+2026-03-10 00:33:38 | INFO     | tpe.benchmark |   ┌─ physiochemical_protein  [Optuna-TPE-200]
+2026-03-10 00:33:38 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-10 04:11:18 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=3.3074 | best_val=0.5536 | trials=200 | 13060.0s | ETA: 1 day, 1:23:39
+2026-03-10 06:30:23 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=3.3954 | best_val=0.5622 | trials=200 | 8345.5s | ETA: 17:50:16
+2026-03-10 11:51:14 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=3.2237 | best_val=0.5531 | trials=200 | 19250.4s | ETA: 18:49:19
+2026-03-10 16:32:26 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=3.3381 | best_val=0.5476 | trials=200 | 16872.5s | ETA: 16:28:11
+2026-03-10 21:44:02 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=3.4190 | best_val=0.5513 | trials=200 | 18695.9s | ETA: 15:13:38
+2026-03-11 01:33:19 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=3.4232 | best_val=0.5493 | trials=200 | 13756.4s | ETA: 9:08:03
+2026-03-11 05:50:33 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=3.3576 | best_val=0.5392 | trials=200 | 15434.2s | ETA: 4:26:02
+2026-03-11 08:35:25 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=3.2628 | best_val=0.5578 | trials=200 | 9892.4s | ETA: done
+2026-03-11 08:35:25 | INFO     | tpe.benchmark |   └─ [Optuna] physiochemical_protein | RMSE=3.3409±0.0681 | 1921.8 min
+2026-03-11 08:35:25 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260310_003338.csv  (8 rows)
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | 
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | ======================================================================
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | ALL EXPERIMENTS COMPLETE
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | Datasets   : 1 / 1
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | Failed     : 0  
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | Wall time  : 1 day, 8:01:47  (32.0 hr)
+2026-03-11 08:35:25 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260310_003338.csv  (8 rows)
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | Results    : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260310_003338.csv
+2026-03-11 08:35:25 | INFO     | tpe.benchmark | ======================================================================

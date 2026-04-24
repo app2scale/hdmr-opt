@@ -1,0 +1,21 @@
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | ======================================================================
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | Optuna TPE Baseline  |  XGBoost HPO  |  All 18 Datasets  v2.0
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | Run ID   : 20260307_180209
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_tabarena_20260307_180209.log
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | ======================================================================
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | Configuration:
+2026-03-07 18:02:09 | INFO     | tpe.benchmark |   sampler=TPE  trials=200/fold  outer_folds=8  seed=42
+2026-03-07 18:02:09 | INFO     | tpe.benchmark |   task_filter=all  datasets=[46954, 46917, 46931, 46904, 46907, 46942, 46934, 46961, 46928, 46923, 46952, 46927, 46938, 46940, 46930, 46956, 46963, 46918] (18 total)
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | 
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:02:09 | INFO     | tpe.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-07 18:02:09 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | Loading: QSAR_fish_toxicity  (DID=46954, task=regression) ...
+2026-03-07 18:02:09 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-07 18:02:09 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-07 18:02:09 | INFO     | tpe.benchmark |   QSAR_fish_toxicity | 907 x 6 | y mean=4.065  std=1.456
+2026-03-07 18:02:09 | INFO     | tpe.benchmark | 
+2026-03-07 18:02:09 | INFO     | tpe.benchmark |   ┌─ QSAR_fish_toxicity  [Optuna-TPE-200]
+2026-03-07 18:02:09 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-07 18:03:40 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=0.9338 | best_val=0.6334 | trials=200 | 91.0s | ETA: 0:10:36

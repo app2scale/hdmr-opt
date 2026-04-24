@@ -1,0 +1,7 @@
+usage: sensitivity_analysis.py [-h]
+                               [--model {xgboost,lightgbm,lstm,gru,nbeats}]
+                               [--data DATA] [--split SPLIT]
+                               [--samples SAMPLES] [--degree DEGREE]
+                               [--basis {Legendre,Cosine}] [--seed SEED]
+                               [--output-dir OUTPUT_DIR]
+sensitivity_analysis.py: error: unrecognized arguments: --seeds 1 2 3

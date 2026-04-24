@@ -1,0 +1,37 @@
+2026-03-30 11:07:17 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-30 11:07:17 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-30 11:07:17 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-30 11:07:17 | DEBUG    | matplotlib | matplotlib data path: /mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/matplotlib/mpl-data
+2026-03-30 11:07:17 | DEBUG    | matplotlib | CONFIGDIR=/home/erdemy/.config/matplotlib
+2026-03-30 11:07:17 | DEBUG    | matplotlib | interactive is False
+2026-03-30 11:07:17 | DEBUG    | matplotlib | platform is linux
+2026-03-30 11:15:30 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-30 11:15:30 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-30 11:41:18 | INFO     | openml.datasets.dataset | pickle write healthcare_insurance_expenses
+2026-03-30 11:41:18 | DEBUG    | openml.datasets.dataset | Saved dataset 46931: healthcare_insurance_expenses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46931/dataset_46931.pkl.py3
+2026-03-30 11:47:07 | INFO     | openml.datasets.dataset | pickle write airfoil_self_noise
+2026-03-30 11:47:07 | DEBUG    | openml.datasets.dataset | Saved dataset 46904: airfoil_self_noise to file /home/erdemy/.cache/openml/org/openml/www/datasets/46904/dataset_46904.pkl.py3
+2026-03-30 13:19:45 | INFO     | openml.datasets.dataset | pickle write Another-Dataset-on-used-Fiat-500
+2026-03-30 13:19:45 | DEBUG    | openml.datasets.dataset | Saved dataset 46907: Another-Dataset-on-used-Fiat-500 to file /home/erdemy/.cache/openml/org/openml/www/datasets/46907/dataset_46907.pkl.py3
+2026-03-30 13:38:23 | INFO     | openml.datasets.dataset | pickle write houses
+2026-03-30 13:38:23 | DEBUG    | openml.datasets.dataset | Saved dataset 46934: houses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46934/dataset_46934.pkl.py3
+2026-03-30 18:44:24 | INFO     | openml.datasets.dataset | pickle write Food_Delivery_Time
+2026-03-30 18:44:24 | DEBUG    | openml.datasets.dataset | Saved dataset 46928: Food_Delivery_Time to file /home/erdemy/.cache/openml/org/openml/www/datasets/46928/dataset_46928.pkl.py3
+2026-03-30 21:31:20 | INFO     | openml.datasets.dataset | pickle write diamonds
+2026-03-30 21:31:20 | DEBUG    | openml.datasets.dataset | Saved dataset 46923: diamonds to file /home/erdemy/.cache/openml/org/openml/www/datasets/46923/dataset_46923.pkl.py3
+2026-03-31 00:57:56 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-03-31 00:57:56 | DEBUG    | openml.datasets.dataset | Saved dataset 46949: physiochemical_protein to file /home/erdemy/.cache/openml/org/openml/www/datasets/46949/dataset_46949.pkl.py3
+2026-04-01 06:36:45 | INFO     | openml.datasets.dataset | pickle write qsar-biodeg
+2026-04-01 06:36:45 | DEBUG    | openml.datasets.dataset | Saved dataset 46952: qsar-biodeg to file /home/erdemy/.cache/openml/org/openml/www/datasets/46952/dataset_46952.pkl.py3
+2026-04-01 06:50:02 | INFO     | openml.datasets.dataset | pickle write Fitness_Club
+2026-04-01 06:50:02 | DEBUG    | openml.datasets.dataset | Saved dataset 46927: Fitness_Club to file /home/erdemy/.cache/openml/org/openml/www/datasets/46927/dataset_46927.pkl.py3
+2026-04-01 06:53:44 | INFO     | openml.datasets.dataset | pickle write Is-this-a-good-customer
+2026-04-01 06:53:44 | DEBUG    | openml.datasets.dataset | Saved dataset 46938: Is-this-a-good-customer to file /home/erdemy/.cache/openml/org/openml/www/datasets/46938/dataset_46938.pkl.py3
+2026-04-01 06:57:28 | INFO     | openml.datasets.dataset | pickle write Marketing_Campaign
+2026-04-01 06:57:28 | DEBUG    | openml.datasets.dataset | Saved dataset 46940: Marketing_Campaign to file /home/erdemy/.cache/openml/org/openml/www/datasets/46940/dataset_46940.pkl.py3
+2026-04-01 07:08:33 | INFO     | openml.datasets.dataset | pickle write hazelnut-spread-contaminant-detection
+2026-04-01 07:08:33 | DEBUG    | openml.datasets.dataset | Saved dataset 46930: hazelnut-spread-contaminant-detection to file /home/erdemy/.cache/openml/org/openml/www/datasets/46930/dataset_46930.pkl.py3
+2026-04-01 07:44:44 | INFO     | openml.datasets.dataset | pickle write seismic-bumps
+2026-04-01 07:44:44 | DEBUG    | openml.datasets.dataset | Saved dataset 46956: seismic-bumps to file /home/erdemy/.cache/openml/org/openml/www/datasets/46956/dataset_46956.pkl.py3
+2026-04-01 07:48:42 | INFO     | openml.datasets.dataset | pickle write credit-g
+2026-04-01 07:48:42 | DEBUG    | openml.datasets.dataset | Saved dataset 46918: credit-g to file /home/erdemy/.cache/openml/org/openml/www/datasets/46918/dataset_46918.pkl.py3

@@ -1,0 +1,42 @@
+================================================================================
+HDMR SENSITIVITY ANALYSIS (AGGREGATED): XGBOOST
+================================================================================
+
+HYPERPARAMETER IMPORTANCE (MEAN ± STD over seeds)
+--------------------------------------------------------------------------------
+
+1. min_child_weight
+   Relative Importance: 46.79% ± 7.22%
+   Total Variance: 0.7696 ± 0.2271
+   Dominant Degree (mean±std): 6.00 ± 4.58
+   Significant Degrees (mean±std): 5.67 ± 1.15
+
+2. max_depth
+   Relative Importance: 34.77% ± 7.50%
+   Total Variance: 0.5532 ± 0.04891
+   Dominant Degree (mean±std): 5.67 ± 2.52
+   Significant Degrees (mean±std): 4.67 ± 0.58
+
+3. gamma
+   Relative Importance: 14.20% ± 3.89%
+   Total Variance: 0.2289 ± 0.06329
+   Dominant Degree (mean±std): 2.33 ± 2.31
+   Significant Degrees (mean±std): 5.67 ± 1.53
+
+4. subsample
+   Relative Importance: 1.60% ± 0.76%
+   Total Variance: 0.0265 ± 0.0156
+   Dominant Degree (mean±std): 8.00 ± 2.00
+   Significant Degrees (mean±std): 4.67 ± 1.53
+
+5. learning_rate
+   Relative Importance: 1.39% ± 0.52%
+   Total Variance: 0.02314 ± 0.01052
+   Dominant Degree (mean±std): 4.00 ± 5.20
+   Significant Degrees (mean±std): 4.67 ± 1.15
+
+6. colsample_bytree
+   Relative Importance: 1.25% ± 0.42%
+   Total Variance: 0.01975 ± 0.004278
+   Dominant Degree (mean±std): 6.00 ± 1.00
+   Significant Degrees (mean±std): 6.00 ± 1.00

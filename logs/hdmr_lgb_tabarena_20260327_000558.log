@@ -1,0 +1,374 @@
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | HDMR vs Adaptive HDMR  |  LightGBM HPO  |  16 Datasets  v1.0
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | Run ID   : 20260327_000558
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_lgb_tabarena_20260327_000558.log
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | Configuration:
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   basis=Legendre  degree=3  samples=20
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   k=50  eps=0.010  clip=0.90
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   outer_folds=2  seed=42  search_space=TabArena C.3 LightGBM (12D)
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   task_filter=all  datasets=[46954, 46917] (2 total)
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | 
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | Methods:
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   1) HDMR-200     — standard,   200 evals/fold
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   2) A-HDMR-200   — adaptive,   T=2×100 = 200 evals/fold (equal budget)
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   3) A-HDMR-600   — adaptive,   T=3×200 = 600 evals/fold (full budget)
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | 
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   DATASET: QSAR_fish_toxicity  (DID=46954)
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-27 00:05:58 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | Loading: QSAR_fish_toxicity  (DID=46954, task=regression) ...
+2026-03-27 00:05:58 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-03-27 00:05:58 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   QSAR_fish_toxicity | 907 x 6 | y mean=4.065  std=1.456
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark | 
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [HDMR-20]
+2026-03-27 00:05:58 | INFO     | hdmr.benchmark |   │  task=regression  samples=20  maxiter=1  → 20 evals/fold
+2026-03-27 00:05:58 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:58 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:05:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:00 | INFO     | hdmr.benchmark |   │  [HDMR-20] Fold 1/2 | RMSE=1.0626 | best_val=0.5491 | evals=21 | 2.0s | ETA: 0:00:02
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:01 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | INFO     | hdmr.benchmark |   │  [HDMR-20] Fold 2/2 | RMSE=0.9736 | best_val=0.6500 | evals=21 | 1.7s | ETA: done
+2026-03-27 00:06:02 | INFO     | hdmr.benchmark |   └─ [HDMR-20] QSAR_fish_toxicity | RMSE=1.0181±0.0445 | eff_dim=7/12 | 0.1 min
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/lgb_all16_20260327_000558.csv  (2 rows)
+2026-03-27 00:06:02 | INFO     | hdmr.benchmark | 
+2026-03-27 00:06:02 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [A-HDMR-20]
+2026-03-27 00:06:02 | INFO     | hdmr.benchmark |   │  task=regression  samples=10  maxiter=2  → 20 evals/fold
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:02 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:03 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:04 | INFO     | hdmr.benchmark |   │  [A-HDMR-20] Fold 1/2 | RMSE=1.0636 | best_val=0.6102 | evals=32 | 2.5s | ETA: 0:00:02
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:05 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:06 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | INFO     | hdmr.benchmark |   │  [A-HDMR-20] Fold 2/2 | RMSE=0.9250 | best_val=0.6410 | evals=32 | 2.2s | ETA: done
+2026-03-27 00:06:07 | INFO     | hdmr.benchmark |   └─ [A-HDMR-20] QSAR_fish_toxicity | RMSE=0.9943±0.0693 | eff_dim=2/12 | 0.1 min
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/lgb_all16_20260327_000558.csv  (4 rows)
+2026-03-27 00:06:07 | INFO     | hdmr.benchmark | 
+2026-03-27 00:06:07 | INFO     | hdmr.benchmark |   ┌─ QSAR_fish_toxicity  [A-HDMR-60]
+2026-03-27 00:06:07 | INFO     | hdmr.benchmark |   │  task=regression  samples=20  maxiter=3  → 60 evals/fold
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:07 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:08 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:09 | INFO     | hdmr.benchmark |   │  [A-HDMR-60] Fold 1/2 | RMSE=1.0470 | best_val=0.5649 | evals=62 | 2.2s | ETA: 0:00:02
+2026-03-27 00:06:09 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:09 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:10 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:10 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:11 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:12 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:12 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:13 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:13 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:13 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark |   │  [A-HDMR-60] Fold 2/2 | RMSE=0.9298 | best_val=0.6391 | evals=62 | 6.5s | ETA: done
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark |   └─ [A-HDMR-60] QSAR_fish_toxicity | RMSE=0.9884±0.0586 | eff_dim=2/12 | 0.1 min
+2026-03-27 00:06:15 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/lgb_all16_20260327_000558.csv  (6 rows)
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark | 
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark |   DATASET: concrete_compressive_strength  (DID=46917)
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark | Loading: concrete_compressive_strength  (DID=46917, task=regression) ...
+2026-03-27 00:06:15 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-27 00:06:15 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark |   concrete_compressive_strength | 1030 x 8 | y mean=35.818  std=16.698
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark | 
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark |   ┌─ concrete_compressive_strength  [HDMR-20]
+2026-03-27 00:06:15 | INFO     | hdmr.benchmark |   │  task=regression  samples=20  maxiter=1  → 20 evals/fold
+2026-03-27 00:06:19 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:19 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:22 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:22 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:25 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:27 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:30 | INFO     | hdmr.benchmark |   │  [HDMR-20] Fold 1/2 | RMSE=6.2280 | best_val=0.3050 | evals=21 | 14.2s | ETA: 0:00:14
+2026-03-27 00:06:36 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:43 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:49 | INFO     | hdmr.benchmark |   │  [HDMR-20] Fold 2/2 | RMSE=5.1188 | best_val=0.2741 | evals=21 | 18.9s | ETA: done
+2026-03-27 00:06:49 | INFO     | hdmr.benchmark |   └─ [HDMR-20] concrete_compressive_strength | RMSE=5.6734±0.5546 | eff_dim=7/12 | 0.6 min
+2026-03-27 00:06:49 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/lgb_all16_20260327_000558.csv  (8 rows)
+2026-03-27 00:06:49 | INFO     | hdmr.benchmark | 
+2026-03-27 00:06:49 | INFO     | hdmr.benchmark |   ┌─ concrete_compressive_strength  [A-HDMR-20]
+2026-03-27 00:06:49 | INFO     | hdmr.benchmark |   │  task=regression  samples=10  maxiter=2  → 20 evals/fold
+2026-03-27 00:06:50 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:50 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:52 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:52 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:53 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:57 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:57 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:06:59 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:07:00 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:07:04 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:07:16 | INFO     | hdmr.benchmark |   │  [A-HDMR-20] Fold 1/2 | RMSE=5.2018 | best_val=0.3054 | evals=32 | 27.1s | ETA: 0:00:27
+2026-03-27 00:07:41 | INFO     | hdmr.benchmark |   │  [A-HDMR-20] Fold 2/2 | RMSE=4.8740 | best_val=0.2715 | evals=42 | 25.6s | ETA: done
+2026-03-27 00:07:41 | INFO     | hdmr.benchmark |   └─ [A-HDMR-20] concrete_compressive_strength | RMSE=5.0379±0.1639 | eff_dim=2/12 | 0.9 min
+2026-03-27 00:07:41 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/lgb_all16_20260327_000558.csv  (10 rows)
+2026-03-27 00:07:41 | INFO     | hdmr.benchmark | 
+2026-03-27 00:07:41 | INFO     | hdmr.benchmark |   ┌─ concrete_compressive_strength  [A-HDMR-60]
+2026-03-27 00:07:41 | INFO     | hdmr.benchmark |   │  task=regression  samples=20  maxiter=3  → 60 evals/fold
+2026-03-27 00:07:46 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:07:52 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+2026-03-27 00:07:58 | DEBUG    | hdmr.benchmark | LGB regression eval error: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.

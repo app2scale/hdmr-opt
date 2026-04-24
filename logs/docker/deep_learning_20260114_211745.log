@@ -1,0 +1,119 @@
+================================================================================
+HDMR FORECASTING BENCHMARK
+================================================================================
+
+Configuration:
+  Data: src/data/transactions.csv
+  Split date: 2020-01-01
+  Models: lstm, gru, nbeats
+  Seeds: 3 (base_seed=42)
+  HDMR: N=200, m=5, basis=Cosine, adaptive=False
+  Output dir: results/benchmarks
+  Checkpoint: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Loading data...
+  ✓ Train: 1525 samples
+  ✓ Test:  547 samples
+
+================================================================================
+MODEL: LSTM
+================================================================================
+
+Experiment 1 / 9: model=lstm, seed=42
+  Seed 42: initializing objective...
+  Seed 42: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 42: HDMR done in 480.7s (success=True)
+  Seed 42: training final model with optimized params...
+  Seed 42: MAPE=51.89% | RMSE=8.15 | train=1.9s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Experiment 2 / 9: model=lstm, seed=43
+  Seed 43: initializing objective...
+  Seed 43: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 43: HDMR done in 458.5s (success=True)
+  Seed 43: training final model with optimized params...
+  Seed 43: MAPE=51.90% | RMSE=8.151 | train=1.9s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Experiment 3 / 9: model=lstm, seed=44
+  Seed 44: initializing objective...
+  Seed 44: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 44: HDMR done in 487.0s (success=True)
+  Seed 44: training final model with optimized params...
+  Seed 44: MAPE=52.50% | RMSE=8.228 | train=1.9s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+================================================================================
+MODEL: GRU
+================================================================================
+
+Experiment 4 / 9: model=gru, seed=42
+  Seed 42: initializing objective...
+  Seed 42: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 42: HDMR done in 469.1s (success=True)
+  Seed 42: training final model with optimized params...
+  Seed 42: MAPE=18.80% | RMSE=3.739 | train=4.0s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Experiment 5 / 9: model=gru, seed=43
+  Seed 43: initializing objective...
+  Seed 43: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 43: HDMR done in 427.9s (success=True)
+  Seed 43: training final model with optimized params...
+  Seed 43: MAPE=49.61% | RMSE=7.859 | train=1.8s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Experiment 6 / 9: model=gru, seed=44
+  Seed 44: initializing objective...
+  Seed 44: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 44: HDMR done in 442.9s (success=True)
+  Seed 44: training final model with optimized params...
+  Seed 44: MAPE=51.85% | RMSE=8.145 | train=2.3s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+================================================================================
+MODEL: NBEATS
+================================================================================
+
+Experiment 7 / 9: model=nbeats, seed=42
+  Seed 42: initializing objective...
+  Seed 42: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 42: HDMR done in 1317.2s (success=True)
+  Seed 42: training final model with optimized params...
+  Seed 42: MAPE=12.92% | RMSE=2.471 | train=9.1s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Experiment 8 / 9: model=nbeats, seed=43
+  Seed 43: initializing objective...
+  Seed 43: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 43: HDMR done in 1367.7s (success=True)
+  Seed 43: training final model with optimized params...
+  Seed 43: MAPE=47.46% | RMSE=7.48 | train=8.1s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+Experiment 9 / 9: model=nbeats, seed=44
+  Seed 44: initializing objective...
+  Seed 44: running HDMR (N=200, m=5, basis=Cosine, adaptive=False)...
+  Seed 44: HDMR done in 1496.4s (success=True)
+  Seed 44: training final model with optimized params...
+  Seed 44: MAPE=47.46% | RMSE=7.48 | train=8.2s
+  ✓ Checkpoint updated: results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+ Model  Mean_MAPE  Std_MAPE  Best_MAPE  Worst_MAPE  Mean_Time_s  Success_Rate
+   GRU  40.085787 15.080413  18.798309   51.852348   449.316444           1.0
+  LSTM  52.096067  0.284620  51.894308   52.498580   478.247046           1.0
+NBEATS  35.948899 16.281602  12.923238   47.461730  1402.206625           1.0
+
+✓ Full results saved:   results/benchmarks/benchmark_N200_m5_standard_20260114_211749.csv
+✓ Summary saved:        results/benchmarks/summary_N200_m5_standard_20260114_211749.csv
+✓ Configuration saved:  results/benchmarks/config_N200_m5_standard_20260114_211749.json
+✓ Latest checkpoint:    results/benchmarks/checkpoint_N200_m5_standard_20260114_211749.csv
+
+================================================================================
+BENCHMARK COMPLETED
+================================================================================
+
+✓ Benchmark completed successfully!

@@ -1,0 +1,97 @@
+COMMAND:
+python -m src.forecast_example --algorithm arima --metric mape --samples 200 --basis Cosine --degree 7 --split 2020-01-01 --seed 42
+
+STDOUT:
+================================================================================
+HDMR-BASED FORECASTING HYPERPARAMETER OPTIMIZATION
+================================================================================
+
+1. Configuration
+--------------------------------------------------------------------------------
+   Algorithm:        ARIMA
+   Metric:           MAPE
+   Data Path:        /mnt/disk1/erdemy/app2scale/hdmr-opt/src/data/transactions.csv
+   Split Date:       2020-01-01
+   HDMR Samples:     200
+   Basis Function:   Cosine (degree 7)
+   Adaptive:         False
+   Plots enabled:    True
+   Date format:      MM/DD/YYYY (strict)
+
+2. Loading & Validating Data
+--------------------------------------------------------------------------------
+   ✓ Date parsing: auto-detected (2015-10-01 → 2021-06-30)
+   ✓ CSV rows:          2100
+   ✓ Date range:        2015-10-01 → 2021-06-30
+   ✓ Date format:       MM/DD/YYYY (strict)
+   ✓ Transactions dtype: float64
+   ✓ Train samples (after features): 1525
+   ✓ Test samples  (after features): 547
+   ✓ Feature count:                 32
+
+3. Hyperparameter Space
+--------------------------------------------------------------------------------
+   Number of hyperparameters: 3
+   p                    [  0.000000,   5.000000]
+   d                    [  0.000000,   2.000000]
+   q                    [  0.000000,   5.000000]
+
+4. Creating Optimization Objective
+--------------------------------------------------------------------------------
+   Objective: Minimize MAPE over ℝ^3
+
+5. Running HDMR Optimization
+--------------------------------------------------------------------------------
+   Initial point x0: [2.5 1.  2.5]
+   Optimization started...
+
+6. Optimization Results
+--------------------------------------------------------------------------------
+   Runtime:          409.16 seconds
+   Success:          True
+   Iterations:       1
+   Function evals:   200
+   Best MAPE:       19.909270
+
+   Optimal Hyperparameters (raw):
+      p                    = 2.500000
+      d                    = 1.000000
+      q                    = 2.500000
+
+   Optimal Hyperparameters (casted):
+      p                    = 2
+      d                    = 1
+      q                    = 2
+
+7. Final Model Evaluation
+--------------------------------------------------------------------------------
+   Test Set Metrics:
+      MSE      = 14.503356
+      RMSE     = 3.808327
+      MAE      = 3.054958
+      MAPE     = 19.909270
+      SMAPE    = 11.180930
+      MASE     = 2.783247
+
+   ✓ Results saved to: results/forecasting/forecast_arima_mape_hdmr_N200_m7.txt
+
+8. Saving Visualizations
+--------------------------------------------------------------------------------
+   ✓ Results plot saved to: results/forecasting/forecast_arima_mape_hdmr_results.png
+   ✓ Alpha plot saved to: results/forecasting/forecast_arima_mape_hdmr_alpha.png
+   ✓ Prediction plot saved to: results/forecasting/forecast_arima_mape_predictions.png
+
+================================================================================
+
+✓ Optimization completed successfully!
+✓ Best MAPE: 19.909270
+✓ Optimization time: 409.16 seconds
+✓ Results saved under results/forecasting/
+
+
+STDERR:
+/mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/xgboost/core.py:377: FutureWarning: Your system has an old version of glibc (< 2.28). We will stop supporting Linux distros with glibc older than 2.28 after **May 31, 2025**. Please upgrade to a recent Linux distro (with glibc >= 2.28) to use future versions of XGBoost.
+Note: You have installed the 'manylinux2014' variant of XGBoost. Certain features such as GPU algorithms or federated learning are not available. To use these features, please upgrade to a recent Linux distro with glibc 2.28+, and install the 'manylinux_2_28' variant.
+  warnings.warn(
+/mnt/disk1/erdemy/app2scale/hdmr-opt/src/functions_forecast.py:61: UserWarning: PyTorch not available. Install with: pip install torch
+  warnings.warn("PyTorch not available. Install with: pip install torch")

@@ -1,0 +1,27 @@
+HDMR FORECASTING OPTIMIZATION RESULTS
+================================================================================
+
+Algorithm:         ETS
+Metric:            MAPE
+Samples:           200
+Basis Function:    Cosine (degree 7)
+Adaptive:          False
+Split Date:        2020-01-01
+CSV Date Format:   MM/DD/YYYY (strict)
+
+Optimization Time: 157.86 seconds
+Iterations:        1
+Function Evals:    200
+
+Optimal Hyperparameters:
+--------------------------------------------------------------------------------
+  seasonal_periods     = 26
+
+Test Set Performance:
+--------------------------------------------------------------------------------
+  MSE      = 6.992475
+  RMSE     = 2.644329
+  MAE      = 2.022032
+  MAPE     = 13.828890
+  SMAPE    = 7.164447
+  MASE     = 1.842191

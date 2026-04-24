@@ -1,0 +1,96 @@
+2026-02-16 15:15:58,482 | INFO     | Output directory: results/systematic_benchmark_20260216_151558
+2026-02-16 15:15:58,482 | INFO     | Running COMPREHENSIVE benchmark suite
+2026-02-16 15:15:58,482 | INFO     | Purpose: Full evaluation with all function categories
+2026-02-16 15:15:58,482 | INFO     | ⚠️  This will take 6-8 hours to complete!
+2026-02-16 15:15:58,482 | INFO     | Total experiments: 3200
+2026-02-16 15:15:58,482 | INFO     | Estimated time: 480-800 seconds
+2026-02-16 15:15:58,482 | INFO     | Starting benchmark suite: 3200 experiments
+2026-02-16 15:15:58,483 | INFO     | Configuration: {'functions': ['rastrigin_2d', 'rosenbrock_2d', 'ackley_2d', 'branin_2d', 'camel16_2d', 'rosenbrock_10d', 'rastrigin_10d', 'griewank_10d', 'schwefel', 'levy', 'zakharov', 'sphere', 'styblinski_tang', 'dixon_price', 'michalewicz', 'sum_of_different_powers'], 'basis_functions': ['Legendre', 'Cosine'], 'orders': [1, 2, 3, 5, 7], 'modes': ['standard', 'adaptive'], 'num_samples': 1000, 'num_runs': 10, 'seed_start': 42, 'adaptive_maxiter': 25, 'adaptive_k': 100, 'adaptive_epsilon': 0.1, 'adaptive_clip': 0.9}
+2026-02-16 16:09:44,667 | INFO     | Benchmark completed: 3200 experiments
+2026-02-16 16:09:44,668 | INFO     | Successful runs: 3200 / 3200
+2026-02-16 16:09:44,669 | INFO     | 
+Benchmark completed in 3226.2s (53.8 minutes)
+2026-02-16 16:09:44,669 | INFO     | Computing summary statistics...
+2026-02-16 16:09:44,757 | INFO     | Saved raw results: results/systematic_benchmark_20260216_151558/raw_results.csv
+2026-02-16 16:09:44,764 | INFO     | Saved summary statistics: results/systematic_benchmark_20260216_151558/summary_statistics.csv
+2026-02-16 16:09:44,764 | INFO     | Saved configuration: results/systematic_benchmark_20260216_151558/config.json
+2026-02-16 16:09:44,765 | INFO     | 
+================================================================================
+2026-02-16 16:09:44,765 | INFO     | BENCHMARK SUMMARY
+2026-02-16 16:09:44,765 | INFO     | ================================================================================
+2026-02-16 16:09:44,765 | INFO     | Total experiments: 3200
+2026-02-16 16:09:44,765 | INFO     | Successful: 3200 (100.0%)
+2026-02-16 16:09:44,765 | INFO     | Total runtime: 3224.8s
+2026-02-16 16:09:44,765 | INFO     | 
+Best configuration per function:
+2026-02-16 16:09:44,768 | INFO     |   rastrigin_2d:
+2026-02-16 16:09:44,768 | INFO     |     Config: Cosine, order=3, adaptive
+2026-02-16 16:09:44,768 | INFO     |     Mean f(x*): 0.000000 (±0.000000)
+2026-02-16 16:09:44,768 | INFO     |     Optimality gap: 2.197616e-10
+2026-02-16 16:09:44,770 | INFO     |   rosenbrock_2d:
+2026-02-16 16:09:44,770 | INFO     |     Config: Legendre, order=1, adaptive
+2026-02-16 16:09:44,770 | INFO     |     Mean f(x*): 0.000619 (±0.000000)
+2026-02-16 16:09:44,770 | INFO     |     Optimality gap: 6.187157e-04
+2026-02-16 16:09:44,772 | INFO     |   ackley_2d:
+2026-02-16 16:09:44,772 | INFO     |     Config: Cosine, order=7, adaptive
+2026-02-16 16:09:44,773 | INFO     |     Mean f(x*): 0.000028 (±0.000030)
+2026-02-16 16:09:44,773 | INFO     |     Optimality gap: 2.825406e-05
+2026-02-16 16:09:44,775 | INFO     |   branin_2d:
+2026-02-16 16:09:44,775 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,775 | INFO     |     Mean f(x*): 0.583522 (±0.115320)
+2026-02-16 16:09:44,775 | INFO     |     Optimality gap: 1.856354e-01
+2026-02-16 16:09:44,777 | INFO     |   camel16_2d:
+2026-02-16 16:09:44,777 | INFO     |     Config: Legendre, order=7, adaptive
+2026-02-16 16:09:44,777 | INFO     |     Mean f(x*): -0.741920 (±0.863218)
+2026-02-16 16:09:44,777 | INFO     |     Optimality gap: 2.896800e-01
+2026-02-16 16:09:44,779 | INFO     |   rosenbrock_10d:
+2026-02-16 16:09:44,779 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,779 | INFO     |     Mean f(x*): 198.326183 (±86.763752)
+2026-02-16 16:09:44,779 | INFO     |     Optimality gap: 1.983262e+02
+2026-02-16 16:09:44,781 | INFO     |   rastrigin_10d:
+2026-02-16 16:09:44,782 | INFO     |     Config: Cosine, order=1, adaptive
+2026-02-16 16:09:44,782 | INFO     |     Mean f(x*): 0.000000 (±0.000000)
+2026-02-16 16:09:44,782 | INFO     |     Optimality gap: 5.334400e-10
+2026-02-16 16:09:44,784 | INFO     |   griewank_10d:
+2026-02-16 16:09:44,784 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,784 | INFO     |     Mean f(x*): 1.097146 (±0.058680)
+2026-02-16 16:09:44,784 | INFO     |     Optimality gap: 1.097146e+00
+2026-02-16 16:09:44,786 | INFO     |   schwefel:
+2026-02-16 16:09:44,786 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,786 | INFO     |     Mean f(x*): 1241.891183 (±440.419810)
+2026-02-16 16:09:44,786 | INFO     |     Optimality gap: 1.241891e+03
+2026-02-16 16:09:44,788 | INFO     |   levy:
+2026-02-16 16:09:44,788 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,788 | INFO     |     Mean f(x*): 0.205283 (±0.057015)
+2026-02-16 16:09:44,789 | INFO     |     Optimality gap: 2.052827e-01
+2026-02-16 16:09:44,791 | INFO     |   zakharov:
+2026-02-16 16:09:44,791 | INFO     |     Config: Legendre, order=7, adaptive
+2026-02-16 16:09:44,791 | INFO     |     Mean f(x*): 201125.025009 (±228338.839131)
+2026-02-16 16:09:44,791 | INFO     |     Optimality gap: 2.011250e+05
+2026-02-16 16:09:44,793 | INFO     |   sphere:
+2026-02-16 16:09:44,793 | INFO     |     Config: Cosine, order=1, adaptive
+2026-02-16 16:09:44,793 | INFO     |     Mean f(x*): 0.000000 (±0.000000)
+2026-02-16 16:09:44,793 | INFO     |     Optimality gap: 4.689628e-12
+2026-02-16 16:09:44,795 | INFO     |   styblinski_tang:
+2026-02-16 16:09:44,795 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,795 | INFO     |     Mean f(x*): -375.235042 (±8.500316)
+2026-02-16 16:09:44,795 | INFO     |     Optimality gap: 1.642486e+01
+2026-02-16 16:09:44,797 | INFO     |   dixon_price:
+2026-02-16 16:09:44,797 | INFO     |     Config: Legendre, order=2, adaptive
+2026-02-16 16:09:44,798 | INFO     |     Mean f(x*): 2.386148 (±0.401717)
+2026-02-16 16:09:44,798 | INFO     |     Optimality gap: 2.386148e+00
+2026-02-16 16:09:44,800 | INFO     |   michalewicz:
+2026-02-16 16:09:44,800 | INFO     |     Config: Legendre, order=7, adaptive
+2026-02-16 16:09:44,800 | INFO     |     Mean f(x*): -8.060860 (±0.846596)
+2026-02-16 16:09:44,800 | INFO     |     Optimality gap: 1.599290e+00
+2026-02-16 16:09:44,802 | INFO     |   sum_of_different_powers:
+2026-02-16 16:09:44,802 | INFO     |     Config: Cosine, order=1, adaptive
+2026-02-16 16:09:44,802 | INFO     |     Mean f(x*): 0.000000 (±0.000000)
+2026-02-16 16:09:44,802 | INFO     |     Optimality gap: 4.111518e-13
+2026-02-16 16:09:44,802 | INFO     | 
+✓ All results saved to: results/systematic_benchmark_20260216_151558
+2026-02-16 16:09:44,802 | INFO     | 
+Next steps:
+2026-02-16 16:09:44,802 | INFO     |   1. Analyze results: python analyze_benchmark.py results/systematic_benchmark_20260216_151558
+2026-02-16 16:09:44,802 | INFO     |   2. View raw data: cat results/systematic_benchmark_20260216_151558/raw_results.csv
+2026-02-16 16:09:44,802 | INFO     |   3. View summary: cat results/systematic_benchmark_20260216_151558/summary_statistics.csv

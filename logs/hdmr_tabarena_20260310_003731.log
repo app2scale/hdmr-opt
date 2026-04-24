@@ -1,0 +1,138 @@
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | HDMR vs Adaptive HDMR  |  XGBoost HPO  |  All 18 Datasets  v7.0
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | Run ID   : 20260310_003731
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/hdmr_tabarena_20260310_003731.log
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | Configuration:
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   basis=Legendre  degree=3  samples=200
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   k=50  eps=0.010  clip=0.90
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   outer_folds=8  seed=42  search_space=TabArena C.3 (10D)
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   task_filter=all  datasets=[46934, 46949] (2 total)
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | 
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | Methods:
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   1) HDMR-200     — standard,   200 evals/fold
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   2) A-HDMR-200   — adaptive,   T=2×100 = 200 evals/fold (equal budget)
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   3) A-HDMR-600   — adaptive,   T=3×200 = 600 evals/fold (full budget)
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | 
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark |   DATASET: houses  (DID=46934)
+2026-03-10 00:37:31 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 00:37:32 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-10 00:37:32 | INFO     | hdmr.benchmark | Loading: houses  (DID=46934, task=regression) ...
+2026-03-10 00:37:32 | INFO     | openml.datasets.dataset | pickle write houses
+2026-03-10 00:37:32 | DEBUG    | openml.datasets.dataset | Saved dataset 46934: houses to file /home/erdemy/.cache/openml/org/openml/www/datasets/46934/dataset_46934.pkl.py3
+2026-03-10 00:37:32 | INFO     | hdmr.benchmark |   houses | 20640 x 8 | y mean=12.085  std=0.569
+2026-03-10 00:37:32 | INFO     | hdmr.benchmark | 
+2026-03-10 00:37:32 | INFO     | hdmr.benchmark |   ┌─ houses  [HDMR-200]
+2026-03-10 00:37:32 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-10 01:00:18 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=0.2044 | best_val=0.3752 | evals=201 | 1366.3s | ETA: 2:39:24
+2026-03-10 01:19:26 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=0.2178 | best_val=0.3914 | evals=201 | 1148.4s | ETA: 2:05:44
+2026-03-10 01:41:28 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=0.2162 | best_val=0.3688 | evals=201 | 1321.1s | ETA: 1:46:33
+2026-03-10 02:07:44 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=0.2140 | best_val=0.3856 | evals=201 | 1576.6s | ETA: 1:29:54
+2026-03-10 02:27:06 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=0.2229 | best_val=0.3978 | evals=201 | 1161.9s | ETA: 1:07:39
+2026-03-10 02:51:21 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=0.2174 | best_val=0.3587 | evals=201 | 1455.2s | ETA: 0:46:35
+2026-03-10 03:14:57 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=0.2212 | best_val=0.3909 | evals=201 | 1415.7s | ETA: 0:22:24
+2026-03-10 03:37:47 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=0.2072 | best_val=0.3739 | evals=201 | 1369.9s | ETA: done
+2026-03-10 03:37:47 | INFO     | hdmr.benchmark |   └─ [HDMR-200] houses | RMSE=0.2151±0.0060 | eff_dim=5/10 | 180.3 min
+2026-03-10 03:37:47 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (8 rows)
+2026-03-10 03:37:47 | INFO     | hdmr.benchmark | 
+2026-03-10 03:37:47 | INFO     | hdmr.benchmark |   ┌─ houses  [A-HDMR-200]
+2026-03-10 03:37:47 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-10 03:57:19 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=0.2046 | best_val=0.3752 | evals=202 | 1172.1s | ETA: 2:16:44
+2026-03-10 04:17:01 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=0.2154 | best_val=0.3914 | evals=202 | 1181.9s | ETA: 1:57:42
+2026-03-10 04:37:41 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=0.2159 | best_val=0.3690 | evals=202 | 1240.2s | ETA: 1:39:50
+2026-03-10 05:04:58 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=0.2129 | best_val=0.3859 | evals=202 | 1636.4s | ETA: 1:30:11
+2026-03-10 05:24:34 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=0.2235 | best_val=0.3985 | evals=202 | 1176.9s | ETA: 1:07:33
+2026-03-10 05:48:36 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=0.2166 | best_val=0.3591 | evals=202 | 1441.9s | ETA: 0:47:16
+2026-03-10 06:12:34 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=0.2205 | best_val=0.3896 | evals=202 | 1437.7s | ETA: 0:22:32
+2026-03-10 06:35:32 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=0.2093 | best_val=0.3741 | evals=202 | 1377.7s | ETA: done
+2026-03-10 06:35:32 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] houses | RMSE=0.2148±0.0056 | eff_dim=6/10 | 177.7 min
+2026-03-10 06:35:32 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (16 rows)
+2026-03-10 06:35:32 | INFO     | hdmr.benchmark | 
+2026-03-10 06:35:32 | INFO     | hdmr.benchmark |   ┌─ houses  [A-HDMR-600]
+2026-03-10 06:35:32 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-10 07:34:43 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=0.2039 | best_val=0.3752 | evals=603 | 3551.3s | ETA: 6:54:19
+2026-03-10 08:31:49 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=0.2167 | best_val=0.3897 | evals=603 | 3426.0s | ETA: 5:48:51
+2026-03-10 09:34:45 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=0.2172 | best_val=0.3681 | evals=603 | 3776.0s | ETA: 4:58:42
+2026-03-10 10:43:52 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=0.2113 | best_val=0.3856 | evals=603 | 4146.7s | ETA: 4:12:11
+2026-03-10 11:48:08 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=0.2198 | best_val=0.3978 | evals=603 | 3856.4s | ETA: 3:16:19
+2026-03-10 12:59:08 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=0.2147 | best_val=0.3587 | evals=603 | 4259.5s | ETA: 2:16:15
+2026-03-10 14:06:40 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=0.2224 | best_val=0.3896 | evals=603 | 4052.2s | ETA: 1:07:36
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=0.2067 | best_val=0.3739 | evals=603 | 4525.1s | ETA: done
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] houses | RMSE=0.2141±0.0060 | eff_dim=5/10 | 526.6 min
+2026-03-10 15:22:05 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (24 rows)
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark | 
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark |   DATASET: physiochemical_protein  (DID=46949)
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark | Loading: physiochemical_protein  (DID=46949, task=regression) ...
+2026-03-10 15:22:05 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-03-10 15:22:05 | DEBUG    | openml.datasets.dataset | Saved dataset 46949: physiochemical_protein to file /home/erdemy/.cache/openml/org/openml/www/datasets/46949/dataset_46949.pkl.py3
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark |   physiochemical_protein | 45730 x 9 | y mean=7.749  std=6.118
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark | 
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark |   ┌─ physiochemical_protein  [HDMR-200]
+2026-03-10 15:22:05 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=1  → 200 evals/fold
+2026-03-10 16:38:56 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 1/8 | RMSE=3.3841 | best_val=0.5572 | evals=201 | 4611.6s | ETA: 8:58:01
+2026-03-10 17:38:41 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 2/8 | RMSE=3.4845 | best_val=0.5701 | evals=201 | 3584.7s | ETA: 6:49:48
+2026-03-10 18:44:27 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 3/8 | RMSE=3.3262 | best_val=0.5583 | evals=201 | 3945.7s | ETA: 5:37:16
+2026-03-10 19:57:18 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 4/8 | RMSE=3.4577 | best_val=0.5504 | evals=201 | 4371.5s | ETA: 4:24:29
+2026-03-10 20:57:52 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 5/8 | RMSE=3.4819 | best_val=0.5560 | evals=201 | 3633.3s | ETA: 3:19:10
+2026-03-10 22:01:09 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 6/8 | RMSE=3.4830 | best_val=0.5535 | evals=201 | 3797.6s | ETA: 2:11:08
+2026-03-10 23:03:56 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 7/8 | RMSE=3.3924 | best_val=0.5421 | evals=201 | 3766.8s | ETA: 1:02:12
+2026-03-11 00:06:01 | INFO     | hdmr.benchmark |   │  [HDMR-200] Fold 8/8 | RMSE=3.2928 | best_val=0.5636 | evals=201 | 3724.9s | ETA: done
+2026-03-11 00:06:01 | INFO     | hdmr.benchmark |   └─ [HDMR-200] physiochemical_protein | RMSE=3.4128±0.0707 | eff_dim=3/10 | 523.9 min
+2026-03-11 00:06:01 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (32 rows)
+2026-03-11 00:06:01 | INFO     | hdmr.benchmark | 
+2026-03-11 00:06:01 | INFO     | hdmr.benchmark |   ┌─ physiochemical_protein  [A-HDMR-200]
+2026-03-11 00:06:01 | INFO     | hdmr.benchmark |   │  task=regression  samples=100  maxiter=2  → 200 evals/fold
+2026-03-11 01:15:37 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 1/8 | RMSE=3.3637 | best_val=0.5562 | evals=202 | 4176.2s | ETA: 8:07:13
+2026-03-11 02:13:02 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 2/8 | RMSE=3.4702 | best_val=0.5697 | evals=202 | 3445.3s | ETA: 6:21:04
+2026-03-11 03:18:39 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 3/8 | RMSE=3.2845 | best_val=0.5575 | evals=202 | 3936.7s | ETA: 5:21:03
+2026-03-11 04:31:10 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 4/8 | RMSE=3.4195 | best_val=0.5524 | evals=202 | 4351.3s | ETA: 4:20:44
+2026-03-11 05:33:25 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 5/8 | RMSE=3.4724 | best_val=0.5569 | evals=202 | 3734.4s | ETA: 3:20:22
+2026-03-11 06:36:31 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 6/8 | RMSE=3.4740 | best_val=0.5557 | evals=202 | 3785.7s | ETA: 2:11:54
+2026-03-11 07:39:53 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 7/8 | RMSE=3.4121 | best_val=0.5437 | evals=202 | 3802.3s | ETA: 1:02:54
+2026-03-11 08:43:14 | INFO     | hdmr.benchmark |   │  [A-HDMR-200] Fold 8/8 | RMSE=3.3130 | best_val=0.5636 | evals=202 | 3801.2s | ETA: done
+2026-03-11 08:43:14 | INFO     | hdmr.benchmark |   └─ [A-HDMR-200] physiochemical_protein | RMSE=3.4012±0.0693 | eff_dim=4/10 | 517.2 min
+2026-03-11 08:43:14 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (40 rows)
+2026-03-11 08:43:14 | INFO     | hdmr.benchmark | 
+2026-03-11 08:43:14 | INFO     | hdmr.benchmark |   ┌─ physiochemical_protein  [A-HDMR-600]
+2026-03-11 08:43:14 | INFO     | hdmr.benchmark |   │  task=regression  samples=200  maxiter=3  → 600 evals/fold
+2026-03-11 12:45:00 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 1/8 | RMSE=3.3290 | best_val=0.5572 | evals=603 | 14505.4s | ETA: 1 day, 4:12:18
+2026-03-11 16:30:55 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 2/8 | RMSE=3.4433 | best_val=0.5657 | evals=603 | 13555.1s | ETA: 23:23:01
+2026-03-11 20:30:20 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 3/8 | RMSE=3.2719 | best_val=0.5581 | evals=603 | 14365.0s | ETA: 19:38:29
+2026-03-12 00:36:43 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 4/8 | RMSE=3.3945 | best_val=0.5504 | evals=603 | 14783.4s | ETA: 15:48:57
+2026-03-12 04:32:42 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 5/8 | RMSE=3.4568 | best_val=0.5560 | evals=603 | 14159.2s | ETA: 12:01:47
+2026-03-12 08:32:41 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 6/8 | RMSE=3.4690 | best_val=0.5532 | evals=603 | 14399.1s | ETA: 8:01:34
+2026-03-12 12:20:10 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 7/8 | RMSE=3.3924 | best_val=0.5421 | evals=603 | 13648.3s | ETA: 3:54:28
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   │  [A-HDMR-600] Fold 8/8 | RMSE=3.2877 | best_val=0.5627 | evals=603 | 13726.2s | ETA: done
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   └─ [A-HDMR-600] physiochemical_protein | RMSE=3.3806±0.0716 | eff_dim=3/10 | 1885.7 min
+2026-03-12 16:08:56 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (48 rows)
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | 
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ==========================================================================================
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   REGRESSION  ─  RMSE (mean±std over 8 folds)
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ==========================================================================================
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   Dataset                                     A-HDMR-200            A-HDMR-600            HDMR-200              Winner
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   houses                                      0.2148±0.0056    0.2141±0.0060 ★  0.2151±0.0060    A-HDMR-600
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   physiochemical_protein                      3.4012±0.0693    3.3806±0.0716 ★  3.4128±0.0707    A-HDMR-600
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   Wins                                        0                     2                     0                   
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | 
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   SENSITIVITY SUMMARY  (HDMR-200, top-3 params per dataset)
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   Dataset                                 Top-1                   Top-2                   Top-3                   EffDim
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   houses                                  max_leaves(0.249)       max_depth(0.238)        subsample(0.173)        5/10
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark |   physiochemical_protein                  max_leaves(0.384)       max_depth(0.349)        learning_rate(0.137)    3/10
+2026-03-12 16:08:56 | DEBUG    | hdmr.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv  (48 rows)
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | 
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ======================================================================
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ALL EXPERIMENTS COMPLETE
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | Datasets completed : 2 / 2
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | Total summaries    : 6  (dataset × method)
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | Failed             : 0  
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | Total wall time    : 2 days, 15:31:24  (63.5 hr)
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | Results            : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/hdmr_all18_20260310_003731.csv
+2026-03-12 16:08:56 | INFO     | hdmr.benchmark | ======================================================================

@@ -1,0 +1,76 @@
+HDMR 2D Benchmark Runner - Summary
+Run ID: 20260113_175018
+Timestamp: 2026-01-13T17:50:18+0300
+
+[Config]
+NUM_SAMPLES=1000
+NUM_VARS=2
+BASIS_FUNCTION=Cosine
+DEGREE=7
+RUNS=5
+SEED=42
+NO_PLOTS=1
+
+[Adaptive Config]
+ADAPTIVE_MAXITER=25
+ADAPTIVE_K=100
+ADAPTIVE_EPSILON=0.1
+ADAPTIVE_CLIP=0.9
+
+[Functions]
+rastrigin_2d
+rosenbrock_2d
+ackley_2d
+camel16_2d
+branin_2d
+
+
+>>> rastrigin_2d [standard] key lines:
+Mean f(x*):     0.000000
+Best f(x*):     0.000000
+
+
+>>> rastrigin_2d [adaptive] key lines:
+Mean f(x*):     0.000000
+Best f(x*):     0.000000
+
+
+>>> rosenbrock_2d [standard] key lines:
+Mean f(x*):     1.000000
+Best f(x*):     1.000000
+
+
+>>> rosenbrock_2d [adaptive] key lines:
+Mean f(x*):     1.000000
+Best f(x*):     1.000000
+
+
+>>> ackley_2d [standard] key lines:
+Mean f(x*):     -0.000000
+Best f(x*):     -0.000000
+
+
+>>> ackley_2d [adaptive] key lines:
+Mean f(x*):     -0.000000
+Best f(x*):     -0.000000
+
+
+>>> camel16_2d [standard] key lines:
+Mean f(x*):     0.000000
+Best f(x*):     0.000000
+
+
+>>> camel16_2d [adaptive] key lines:
+Mean f(x*):     0.000000
+Best f(x*):     0.000000
+
+
+>>> branin_2d [standard] key lines:
+Mean f(x*):     65.513162
+Best f(x*):     65.513162
+
+
+>>> branin_2d [adaptive] key lines:
+Mean f(x*):     6.907537
+Best f(x*):     6.907537
+

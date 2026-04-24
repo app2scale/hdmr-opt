@@ -1,0 +1,74 @@
+[
+  {
+    "algorithm": "xgboost",
+    "metric": "mape",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "xgboost",
+    "metric": "rmse",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "xgboost",
+    "metric": "mae",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "lightgbm",
+    "metric": "mape",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "lightgbm",
+    "metric": "rmse",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "lightgbm",
+    "metric": "mae",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "arima",
+    "metric": "mape",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "arima",
+    "metric": "rmse",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "arima",
+    "metric": "mae",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "ets",
+    "metric": "mape",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "ets",
+    "metric": "rmse",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  },
+  {
+    "algorithm": "ets",
+    "metric": "mae",
+    "status": "failed",
+    "error": "python: can't open file '/mnt/disk1/erdemy/app2scale/hdmr-opt/forecast_example.py': [Errno 2] No such file or directory\n"
+  }
+]

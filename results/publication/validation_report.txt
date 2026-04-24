@@ -1,0 +1,109 @@
+==============================================================================
+ HDMR PUBLICATION — VALIDATION & SUMMARY REPORT  (v2.0)
+ Generated: 2026-02-03  |  Compiler: results_compiler.py v2.0
+==============================================================================
+
+A. BENCHMARK RESULTS — GROUND-TRUTH VALIDATION
+------------------------------------------------------------------------------
+
+  ┌─ Ackley  │  f* = 0.0  │  interaction: none
+  │  Standard  : best=   -0.000000  mean=   -0.000000  std=  0.000000  [✓ OPTIMAL]  (5 runs)
+  │  Adaptive  : best=   -0.000000  mean=   -0.000000  std=  0.000000  [✓ OPTIMAL]  (5 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Branin  │  f* = 0.397887  │  interaction: x₁²−x₂ interaction
+  │  Standard  : best=   65.513162  mean=   65.513162  std=  0.000000  [✗ GAP = +65.1153]  (5 runs)
+  │  Adaptive  : best=    6.907537  mean=    6.907537  std=  0.000000  [✗ GAP = +6.5097]  (5 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Six-Hump Camel  │  f* = -1.0316  │  interaction: x₁x₂ cross-term
+  │  Standard  : best=    0.000000  mean=    0.000000  std=  0.000000  [✗ GAP = +1.0316]  (5 runs)
+  │  Adaptive  : best=    0.000000  mean=    0.000000  std=  0.000000  [✗ GAP = +1.0316]  (5 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Rastrigin  │  f* = 0.0  │  interaction: none
+  │  Standard  : best=    0.000000  mean=    0.000000  std=  0.000000  [✓ OPTIMAL]  (5 runs)
+  │  Adaptive  : best=    0.000000  mean=    0.000000  std=  0.000000  [✓ OPTIMAL]  (5 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Rosenbrock  │  f* = 0.0  │  interaction: x₁²−x₂ coupling
+  │  Standard  : best=    1.000000  mean=    1.000000  std=  0.000000  [✗ GAP = +1.0000]  (5 runs)
+  │  Adaptive  : best=    1.000000  mean=    1.000000  std=  0.000000  [✗ GAP = +1.0000]  (5 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Rastrigin-10D  │  f* = 0.0  │  interaction: none
+  │  Standard  : best=    0.000000  mean=    0.000000  std=  0.000000  [✓ OPTIMAL]  (3 runs)
+  │  Adaptive  : best=    0.000000  mean=    0.000000  std=  0.000000  [✓ OPTIMAL]  (3 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Rosenbrock-10D  │  f* = 0.0  │  interaction: xᵢ²−xᵢ₊₁ coupling
+  │  Standard  : best=  673.996278  mean=  673.996278  std=  0.000000  [✗ GAP = +673.9963]  (3 runs)
+  │  Adaptive  : best=  673.996278  mean=  673.996278  std=  0.000000  [✗ GAP = +673.9963]  (3 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+  ┌─ Griewank-10D  │  f* = 0.0  │  interaction: ∏cos(…) product term
+  │  Standard  : best=   25.998676  mean=   25.998676  std=  0.000000  [✗ GAP = +25.9987]  (3 runs)
+  │  Adaptive  : best=   25.998676  mean=   25.998676  std=  0.000000  [✗ GAP = +25.9987]  (3 runs)
+  └──────────────────────────────────────────────────────────────────────────
+
+B. AGGREGATE STATISTICS
+------------------------------------------------------------------------------
+  Standard HDMR — optimal reached:   3 / 8
+  Adaptive HDMR — optimal reached:   3 / 8
+  Separable functions:               3 / 3 optimal
+  Interaction functions:             0 / 5 optimal
+
+C. KNOWN ISSUES — PUBLICATION NOTES
+------------------------------------------------------------------------------
+  • First-order HDMR limitation
+        Additive decomposition f₀ + Σ gᵢ(xᵢ) cannot represent cross-variable
+        interactions. Affected: Six-Hump Camel, Rosenbrock, Branin, Griewank.
+        Mitigation: second-order HDMR with interaction terms (future work).
+
+  • Branin domain asymmetry
+        function_ranges.json uses [-5, 15] symmetric.  Standard domain is
+        x₁ ∈ [-5, 10], x₂ ∈ [0, 15].  All 3 global minima lie within
+        [-5, 15]² so results are valid, but search space is 2× larger.
+
+  • Six-Hump Camel — f(0,0) = 0 ≠ f*
+        f* = −1.0316.  Any report claiming f ≈ 0 as optimal is incorrect;
+        (0, 0) is a saddle point.  v1 compiler reported this as 'success'.
+
+  • Rosenbrock — f(0,0) = 1.0 ≠ f*
+        f* = 0.  Optimizer stuck at origin due to narrow curved valley
+        that first-order HDMR cannot resolve.
+
+  • Previous Improvement % bug
+        v1 used abs(f_found) in denominator, completely masking negative
+        optima.  v2 uses signed gap-to-optimum throughout.
+
+D. FORECASTING RESULTS
+------------------------------------------------------------------------------
+   Model      MAE  MAPE (%)     RMSE  Opt Time (s)  Evals
+   ARIMA 3.054958 19.909270 3.808327        409.16    200
+     ETS 2.013056 13.771152 2.639323        157.86    200
+LIGHTGBM 1.899619 12.723548 2.542885        648.33    200
+ XGBOOST 1.561528 10.336508 2.174479        145.04    200
+
+E. METHOD COMPARISON (HDMR vs OPTUNA)
+------------------------------------------------------------------------------
+       Method  Mean MAPE  Std MAPE  Best MAPE  Median Time (s)  Mean Evaluations
+hdmr_adaptive   8.987181  0.229467   8.697114       818.866143            5000.0
+       optuna   9.103597  0.061119   9.051515         9.899843              20.0
+random_search   9.225467  0.168457   9.007654        13.942298              20.0
+hdmr_standard   9.649561  0.545269   9.006204        44.204070             200.0
+      default   9.663572  0.000000   9.663572         0.200003               1.0
+
+F. SENSITIVITY ANALYSIS
+------------------------------------------------------------------------------
+       Parameter  Total_Variance_Mean  Total_Variance_Std  Mean_Abs_Coeff_Mean  Mean_Abs_Coeff_Std  Max_Abs_Coeff_Mean  Max_Abs_Coeff_Std  Dominant_Degree_Mean  Dominant_Degree_Std  Significant_Degrees_Mean  Significant_Degrees_Std  Relative_Importance_Mean  Relative_Importance_Std
+min_child_weight             0.769638            0.227075             0.220887            0.029018            0.561966           0.084304              6.000000             4.582576                  5.666667                 1.154701                 46.792538                 7.217325
+       max_depth             0.553187            0.048908             0.188341            0.008325            0.445579           0.026901              5.666667             2.516611                  4.666667                 0.577350                 34.773295                 7.502741
+           gamma             0.228908            0.063290             0.122051            0.024076            0.264798           0.024442              2.333333             2.309401                  5.666667                 1.527525                 14.199576                 3.889735
+       subsample             0.026505            0.015601             0.039774            0.013688            0.108174           0.022464              8.000000             2.000000                  4.666667                 1.527525                  1.595098                 0.758603
+   learning_rate             0.023137            0.010518             0.038975            0.010779            0.093301           0.019616              4.000000             5.196152                  4.666667                 1.154701                  1.388845                 0.517989
+colsample_bytree             0.019753            0.004278             0.038065            0.005560            0.080665           0.018681              6.000000             1.000000                  6.000000                 1.000000                  1.250648                 0.421966
+
+==============================================================================
+ END OF REPORT
+==============================================================================

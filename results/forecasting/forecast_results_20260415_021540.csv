@@ -1,0 +1,2 @@
+run_id,dataset,model,method,fold,mape,rmse,mae,best_val,duration_sec,n_evals,param_learning_rate,param_max_depth,param_min_child_weight,param_subsample,param_colsample_bylevel,param_colsample_bynode,param_reg_alpha,param_reg_lambda,param_grow_policy,param_max_leaves
+20260415_021540,medianova,XGBoost,HDMR-200,1,29.2047,1.2157,1.1504,1.1760038226439662,210.05,201,0.005000000000000002,4,4.9999999999999964,0.8927268473431887,0.6,0.6,0.0001,0.0001,depthwise,8

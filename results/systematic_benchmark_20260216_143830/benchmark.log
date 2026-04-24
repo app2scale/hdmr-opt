@@ -1,0 +1,5 @@
+2026-02-16 14:38:30,144 | INFO     | Output directory: results/systematic_benchmark_20260216_143830
+2026-02-16 14:38:30,144 | INFO     | Running in QUICK mode (reduced configurations)
+2026-02-16 14:38:30,144 | INFO     | Total experiments: 12
+2026-02-16 14:38:30,144 | INFO     | Starting benchmark suite: 12 experiments
+2026-02-16 14:38:30,145 | INFO     | Configuration: {'functions': ['rastrigin_2d', 'rosenbrock_2d'], 'basis_functions': ['Cosine'], 'orders': [3, 7], 'modes': ['standard'], 'num_samples': 500, 'num_runs': 3, 'seed_start': 42, 'adaptive_maxiter': 15, 'adaptive_k': 50, 'adaptive_epsilon': 0.1, 'adaptive_clip': 0.9}

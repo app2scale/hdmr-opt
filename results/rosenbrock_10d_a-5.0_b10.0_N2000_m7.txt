@@ -1,0 +1,30 @@
+HDMR OPTIMIZATION RESULTS
+======================================================================
+
+Run 1:
+ message: HDMR optimization completed
+ success: True
+     fun: 673.9962780832853
+       x: [-4.583e-01  1.104e+00 -3.479e-01  9.177e-01  1.178e+00
+            7.540e-01 -5.177e-01  1.110e-01  9.397e-01  4.416e-01]
+     nit: 1
+    nfev: 2000
+
+Run 2:
+ message: HDMR optimization completed
+ success: True
+     fun: 673.9962780832853
+       x: [-4.583e-01  1.104e+00 -3.479e-01  9.177e-01  1.178e+00
+            7.540e-01 -5.177e-01  1.110e-01  9.397e-01  4.416e-01]
+     nit: 1
+    nfev: 2000
+
+Run 3:
+ message: HDMR optimization completed
+ success: True
+     fun: 673.9962780832853
+       x: [-4.583e-01  1.104e+00 -3.479e-01  9.177e-01  1.178e+00
+            7.540e-01 -5.177e-01  1.110e-01  9.397e-01  4.416e-01]
+     nit: 1
+    nfev: 2000
+

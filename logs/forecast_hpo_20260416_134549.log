@@ -1,0 +1,55 @@
+2026-04-16 13:45:52,322 | INFO     | hdmr.forecast | GPU: NVIDIA GeForce RTX 2080
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast | ======================================================================
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast | FORECAST HPO  run_id=20260416_134549
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast |   Datasets  : ['payten']
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast |   Models    : ['ARIMA']
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast |   Methods   : ['HDMR-200', 'RS-200', 'Optuna-200']
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast |   HORIZON=7  N_FOLDS=2  HDMR_SAMPLES=20  OPTUNA_TRIALS=20  RS_SAMPLES=20  SEED=42
+2026-04-16 13:45:52,323 | INFO     | hdmr.forecast | ======================================================================
+2026-04-16 13:45:52,335 | INFO     | hdmr.forecast | Loaded 'Payten (Transactions)': 2100 rows, target='transactions', special_days=86 entries
+2026-04-16 13:45:52,373 | INFO     | hdmr.forecast | 
+[Payten (Transactions)]  2070 rows after engineering  16 features  2 folds
+2026-04-16 13:45:52,374 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][HDMR-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:47:59,923 | INFO     | hdmr.forecast |   └─ MAPE=5.60%  RMSE=0.8094  MAE=0.6467  best_val=3.2433  evals=21  127.5s  ETA: 0:10:37
+2026-04-16 13:47:59,927 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][HDMR-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:50:57,947 | INFO     | hdmr.forecast |   └─ MAPE=4.82%  RMSE=0.8292  MAE=0.7554  best_val=0.3364  evals=21  178.0s  ETA: 0:10:11
+2026-04-16 13:50:57,949 | INFO     | hdmr.forecast |   [payten][ARIMA][HDMR-200]  MAPE=5.21±0.39  RMSE=0.8193  MAE=0.7010
+2026-04-16 13:50:57,951 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][RS-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:52:59,356 | INFO     | hdmr.forecast |   └─ MAPE=5.14%  RMSE=0.9521  MAE=0.6463  best_val=0.5547  evals=20  121.4s  ETA: 0:07:06
+2026-04-16 13:52:59,359 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][RS-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:55:11,566 | INFO     | hdmr.forecast |   └─ MAPE=5.30%  RMSE=1.0228  MAE=0.8361  best_val=0.4227  evals=20  132.2s  ETA: 0:04:47
+2026-04-16 13:55:11,569 | INFO     | hdmr.forecast |   [payten][ARIMA][RS-200]  MAPE=5.22±0.08  RMSE=0.9874  MAE=0.7412
+2026-04-16 13:55:11,570 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][Optuna-200] fold 1/2  (train=1549  test=7)
+2026-04-16 13:57:08,511 | INFO     | hdmr.forecast |   └─ MAPE=5.23%  RMSE=0.9746  MAE=0.6613  best_val=0.4799  evals=20  116.9s  ETA: 0:02:03
+2026-04-16 13:57:08,514 | INFO     | hdmr.forecast |   ┌─ [payten][ARIMA][Optuna-200] fold 2/2  (train=2063  test=7)
+2026-04-16 13:59:01,116 | INFO     | hdmr.forecast |   └─ MAPE=8.31%  RMSE=1.4334  MAE=1.3071  best_val=0.5040  evals=20  112.6s  ETA: done
+2026-04-16 13:59:01,118 | INFO     | hdmr.forecast |   [payten][ARIMA][Optuna-200]  MAPE=6.77±1.54  RMSE=1.2040  MAE=0.9842
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | 
+==========================================================================
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | FORECASTING HPO RESULTS SUMMARY — Payten (Transactions)
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | ==========================================================================
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | Model        Metric        HDMR-200    A-HDMR-200    A-HDMR-600        RS-200    Optuna-200
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | -------------------------------------------------------------------------------------------
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | XGBoost      mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | XGBoost      rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | LightGBM     mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | LightGBM     rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | N-BEATS      mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | N-BEATS      rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,119 | INFO     | hdmr.forecast | LSTM         mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | LSTM         rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | ARIMA        mape         5.21±0.39           N/A           N/A     5.22±0.08     6.77±1.54
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | ARIMA        rmse         0.82±0.01           N/A           N/A     0.99±0.04     1.20±0.23
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | GRU          mape               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | GRU          rmse               N/A           N/A           N/A           N/A           N/A
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | Best MAPE: HDMR-200 with ARIMA = 4.82%
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | ==========================================================================
+2026-04-16 13:59:01,120 | INFO     | hdmr.forecast | 
+============================================================
+2026-04-16 13:59:01,121 | INFO     | hdmr.forecast | SENSITIVITY SUMMARY  (first-order Sobol indices, HDMR)
+2026-04-16 13:59:01,121 | INFO     | hdmr.forecast | ============================================================
+2026-04-16 13:59:01,121 | INFO     | hdmr.forecast | [ARIMA] Top sensitivity: q(0.33) > p(0.18) > P(0.18)
+2026-04-16 13:59:01,121 | INFO     | hdmr.forecast | 
+All experiments complete.
+2026-04-16 13:59:01,121 | INFO     | hdmr.forecast | Results  : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/forecasting/forecast_results_20260416_134549.csv
+2026-04-16 13:59:01,121 | INFO     | hdmr.forecast | Log      : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/forecast_hpo_20260416_134549.log

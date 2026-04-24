@@ -1,0 +1,31 @@
+HDMR FORECASTING OPTIMIZATION RESULTS
+================================================================================
+
+Algorithm:         LIGHTGBM
+Metric:            MAE
+Samples:           200
+Basis Function:    Cosine (degree 7)
+Adaptive:          False
+Split Date:        2020-01-01
+CSV Date Format:   MM/DD/YYYY (strict)
+
+Optimization Time: 646.63 seconds
+Iterations:        1
+Function Evals:    200
+
+Optimal Hyperparameters:
+--------------------------------------------------------------------------------
+  learning_rate        = 0.1505
+  num_leaves           = 129
+  min_data_in_leaf     = 50
+  feature_fraction     = 0.75
+  bagging_fraction     = 0.75
+
+Test Set Performance:
+--------------------------------------------------------------------------------
+  MSE      = 6.466264
+  RMSE     = 2.542885
+  MAE      = 1.899619
+  MAPE     = 12.723548
+  SMAPE    = 6.666999
+  MASE     = 1.730665

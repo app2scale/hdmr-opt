@@ -1,0 +1,73 @@
+================================================================================
+HDMR SENSITIVITY ANALYSIS REPORT: XGBOOST_SEED3
+================================================================================
+
+HYPERPARAMETER IMPORTANCE RANKING
+--------------------------------------------------------------------------------
+
+1. min_child_weight
+   Relative Importance: 54.36%
+   Dominant Degree: 7
+   Significant Degrees: 5
+
+2. max_depth
+   Relative Importance: 29.23%
+   Dominant Degree: 3
+   Significant Degrees: 5
+
+3. gamma
+   Relative Importance: 11.38%
+   Dominant Degree: 1
+   Significant Degrees: 7
+
+4. subsample
+   Relative Importance: 2.35%
+   Dominant Degree: 10
+   Significant Degrees: 6
+
+5. learning_rate
+   Relative Importance: 1.64%
+   Dominant Degree: 1
+   Significant Degrees: 4
+
+6. colsample_bytree
+   Relative Importance: 1.03%
+   Dominant Degree: 5
+   Significant Degrees: 5
+
+================================================================================
+INTERPRETATION GUIDELINES
+================================================================================
+
+High Relative Importance (>20%):
+  → Critical hyperparameter requiring careful tuning
+
+Medium Relative Importance (10-20%):
+  → Important hyperparameter with moderate impact
+
+Low Relative Importance (<10%):
+  → Secondary hyperparameter, less sensitive
+
+Dominant Degree:
+  - Degree 1: Linear relationship
+  - Degree 2-3: Quadratic/cubic non-linearity
+  - Degree 4+: Complex non-linear effects
+
+Significant Degrees:
+  - Few (1-2): Simple functional form
+  - Many (4+): Complex interaction with objective
+
+================================================================================
+KEY INSIGHTS
+================================================================================
+
+Most Influential: min_child_weight
+  Contributes 54.4% of total sensitivity
+
+Low-Impact Hyperparameters:
+  - subsample (2.4%)
+  - learning_rate (1.6%)
+  - colsample_bytree (1.0%)
+  These can be set to reasonable defaults with minimal performance impact.
+
+================================================================================

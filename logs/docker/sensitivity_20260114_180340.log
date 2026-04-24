@@ -1,0 +1,285 @@
+================================================================================
+HDMR SENSITIVITY ANALYSIS
+================================================================================
+
+Model: XGBOOST
+HDMR Samples: 200
+Basis Degree: 10
+Basis Function: Cosine
+Seeds: [1, 2, 3]
+
+Loading data...
+✓ Train: 1525 samples
+✓ Test: 547 samples
+
+Running HDMR optimization (seed=1)...
+✓ Extracted HDMR coefficients: shape (10, 6)
+  Parameters: learning_rate, max_depth, subsample, colsample_bytree, min_child_weight, gamma
+
+Analyzing sensitivity (seed=1)...
+✓ Sensitivity metrics saved: results/sensitivity/sensitivity_xgboost_seed1.csv
+
+Generating interpretation report (seed=1)...
+✓ Interpretation report saved: results/sensitivity/sensitivity_report_xgboost_seed1.txt
+
+================================================================================
+HDMR SENSITIVITY ANALYSIS REPORT: XGBOOST_SEED1
+================================================================================
+
+HYPERPARAMETER IMPORTANCE RANKING
+--------------------------------------------------------------------------------
+
+1. min_child_weight
+   Relative Importance: 46.03%
+   Dominant Degree: 1
+   Significant Degrees: 7
+
+2. max_depth
+   Relative Importance: 31.77%
+   Dominant Degree: 6
+   Significant Degrees: 4
+
+3. gamma
+   Relative Importance: 18.64%
+   Dominant Degree: 1
+   Significant Degrees: 6
+
+4. learning_rate
+   Relative Importance: 1.73%
+   Dominant Degree: 1
+   Significant Degrees: 6
+
+5. colsample_bytree
+   Relative Importance: 0.99%
+   Dominant Degree: 6
+   Significant Degrees: 6
+
+6. subsample
+   Relative Importance: 0.84%
+   Dominant Degree: 6
+   Significant Degrees: 5
+
+================================================================================
+INTERPRETATION GUIDELINES
+================================================================================
+
+High Relative Importance (>20%):
+  → Critical hyperparameter requiring careful tuning
+
+Medium Relative Importance (10-20%):
+  → Important hyperparameter with moderate impact
+
+Low Relative Importance (<10%):
+  → Secondary hyperparameter, less sensitive
+
+Dominant Degree:
+  - Degree 1: Linear relationship
+  - Degree 2-3: Quadratic/cubic non-linearity
+  - Degree 4+: Complex non-linear effects
+
+Significant Degrees:
+  - Few (1-2): Simple functional form
+  - Many (4+): Complex interaction with objective
+
+================================================================================
+KEY INSIGHTS
+================================================================================
+
+Most Influential: min_child_weight
+  Contributes 46.0% of total sensitivity
+
+Low-Impact Hyperparameters:
+  - learning_rate (1.7%)
+  - colsample_bytree (1.0%)
+  - subsample (0.8%)
+  These can be set to reasonable defaults with minimal performance impact.
+
+================================================================================
+
+Running HDMR optimization (seed=2)...
+✓ Extracted HDMR coefficients: shape (10, 6)
+  Parameters: learning_rate, max_depth, subsample, colsample_bytree, min_child_weight, gamma
+
+Analyzing sensitivity (seed=2)...
+✓ Sensitivity metrics saved: results/sensitivity/sensitivity_xgboost_seed2.csv
+
+Generating interpretation report (seed=2)...
+✓ Interpretation report saved: results/sensitivity/sensitivity_report_xgboost_seed2.txt
+
+================================================================================
+HDMR SENSITIVITY ANALYSIS REPORT: XGBOOST_SEED2
+================================================================================
+
+HYPERPARAMETER IMPORTANCE RANKING
+--------------------------------------------------------------------------------
+
+1. max_depth
+   Relative Importance: 43.31%
+   Dominant Degree: 8
+   Significant Degrees: 5
+
+2. min_child_weight
+   Relative Importance: 39.98%
+   Dominant Degree: 10
+   Significant Degrees: 5
+
+3. gamma
+   Relative Importance: 12.58%
+   Dominant Degree: 5
+   Significant Degrees: 4
+
+4. colsample_bytree
+   Relative Importance: 1.74%
+   Dominant Degree: 7
+   Significant Degrees: 7
+
+5. subsample
+   Relative Importance: 1.59%
+   Dominant Degree: 8
+   Significant Degrees: 3
+
+6. learning_rate
+   Relative Importance: 0.79%
+   Dominant Degree: 10
+   Significant Degrees: 4
+
+================================================================================
+INTERPRETATION GUIDELINES
+================================================================================
+
+High Relative Importance (>20%):
+  → Critical hyperparameter requiring careful tuning
+
+Medium Relative Importance (10-20%):
+  → Important hyperparameter with moderate impact
+
+Low Relative Importance (<10%):
+  → Secondary hyperparameter, less sensitive
+
+Dominant Degree:
+  - Degree 1: Linear relationship
+  - Degree 2-3: Quadratic/cubic non-linearity
+  - Degree 4+: Complex non-linear effects
+
+Significant Degrees:
+  - Few (1-2): Simple functional form
+  - Many (4+): Complex interaction with objective
+
+================================================================================
+KEY INSIGHTS
+================================================================================
+
+Most Influential: max_depth
+  Contributes 43.3% of total sensitivity
+
+Low-Impact Hyperparameters:
+  - colsample_bytree (1.7%)
+  - subsample (1.6%)
+  - learning_rate (0.8%)
+  These can be set to reasonable defaults with minimal performance impact.
+
+================================================================================
+
+Running HDMR optimization (seed=3)...
+✓ Extracted HDMR coefficients: shape (10, 6)
+  Parameters: learning_rate, max_depth, subsample, colsample_bytree, min_child_weight, gamma
+
+Analyzing sensitivity (seed=3)...
+✓ Sensitivity metrics saved: results/sensitivity/sensitivity_xgboost_seed3.csv
+
+Generating interpretation report (seed=3)...
+✓ Interpretation report saved: results/sensitivity/sensitivity_report_xgboost_seed3.txt
+
+================================================================================
+HDMR SENSITIVITY ANALYSIS REPORT: XGBOOST_SEED3
+================================================================================
+
+HYPERPARAMETER IMPORTANCE RANKING
+--------------------------------------------------------------------------------
+
+1. min_child_weight
+   Relative Importance: 54.36%
+   Dominant Degree: 7
+   Significant Degrees: 5
+
+2. max_depth
+   Relative Importance: 29.23%
+   Dominant Degree: 3
+   Significant Degrees: 5
+
+3. gamma
+   Relative Importance: 11.38%
+   Dominant Degree: 1
+   Significant Degrees: 7
+
+4. subsample
+   Relative Importance: 2.35%
+   Dominant Degree: 10
+   Significant Degrees: 6
+
+5. learning_rate
+   Relative Importance: 1.64%
+   Dominant Degree: 1
+   Significant Degrees: 4
+
+6. colsample_bytree
+   Relative Importance: 1.03%
+   Dominant Degree: 5
+   Significant Degrees: 5
+
+================================================================================
+INTERPRETATION GUIDELINES
+================================================================================
+
+High Relative Importance (>20%):
+  → Critical hyperparameter requiring careful tuning
+
+Medium Relative Importance (10-20%):
+  → Important hyperparameter with moderate impact
+
+Low Relative Importance (<10%):
+  → Secondary hyperparameter, less sensitive
+
+Dominant Degree:
+  - Degree 1: Linear relationship
+  - Degree 2-3: Quadratic/cubic non-linearity
+  - Degree 4+: Complex non-linear effects
+
+Significant Degrees:
+  - Few (1-2): Simple functional form
+  - Many (4+): Complex interaction with objective
+
+================================================================================
+KEY INSIGHTS
+================================================================================
+
+Most Influential: min_child_weight
+  Contributes 54.4% of total sensitivity
+
+Low-Impact Hyperparameters:
+  - subsample (2.4%)
+  - learning_rate (1.6%)
+  - colsample_bytree (1.0%)
+  These can be set to reasonable defaults with minimal performance impact.
+
+================================================================================
+
+Aggregating results across seeds...
+✓ Aggregated sensitivity saved: results/sensitivity/sensitivity_xgboost_agg.csv
+
+Generating aggregated interpretation report...
+✓ Aggregated interpretation report saved: results/sensitivity/sensitivity_report_xgboost_agg.txt
+
+Generating aggregated visualizations (mean importance)...
+✓ Heatmap saved: results/sensitivity/sensitivity_heatmap_xgboost_agg.png
+✓ Importance chart saved: results/sensitivity/sensitivity_importance_xgboost_agg.png
+✓ Evolution plot saved: results/sensitivity/sensitivity_evolution_xgboost_agg.png
+✓ Cumulative variance plot saved: results/sensitivity/sensitivity_cumulative_xgboost_agg.png
+
+================================================================================
+SENSITIVITY ANALYSIS COMPLETED
+================================================================================
+
+All outputs saved to: results/sensitivity/
+
+✓ Analysis complete!

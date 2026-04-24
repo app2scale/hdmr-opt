@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{XGBoost Regression Results (RMSE). Mean $\pm$ std across 8 outer CV folds. \textbf{Bold} = best among our methods. TabArena baselines: Default / Tuned / Tuned+Ens (single XGBoost).}}
+\label{tab:results_regression}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+\textbf{Dataset} & \textbf{HDMR-200} & \textbf{A-HDMR-200} & \textbf{A-HDMR-600} & \textbf{RS-200} & \textbf{Optuna-200} & \textbf{TabArena-Default} & \textbf{TabArena-Tuned} & \textbf{TabArena-Ens} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-9}
+\midrule
+QSAR_fish_toxicity & 0.8855±0.0675 & 0.8843±0.0729 & 0.8855±0.0747 & \textbf{0.8799±0.0588} & 0.8982±0.0731 & 0.9050±0.0500 & 0.8810±0.0430 & 0.8790±0.0420 \\
+concrete_compressive_strength & 4.2457±0.5230 & 4.1755±0.4956 & 4.1492±0.4035 & 4.1528±0.4281 & \textbf{4.0502±0.5589} & 4.7550±0.3870 & 4.2360±0.3730 & 4.2220±0.3840 \\
+healthcare_insurance_expenses & 4485.1027±656.8792 & 4471.7984±643.8662 & 4496.8254±676.4953 & 4511.7300±641.4634 & \textbf{4460.6726±655.6741} & 4672.0000±306.3000 & 4523.3000±319.7000 & 4519.6000±320.2000 \\
+airfoil_self_noise & 1.4614±0.2583 & 1.3961±0.2293 & \textbf{1.3392±0.2005} & 1.4012±0.2309 & 1.3548±0.2172 & 1.5490±0.1040 & 1.4390±0.1040 & 1.4430±0.1040 \\
+Fiat500_used & 752.9347±65.3413 & 755.8616±64.1084 & 746.3006±59.2566 & 749.5702±62.4794 & \textbf{742.8195±62.4125} & 754.6000±23.0000 & 741.4000±22.2000 & 737.1000±22.6000 \\
+houses & 0.2155±0.0064 & 0.2151±0.0064 & 0.2153±0.0065 & 0.2151±0.0073 & \textbf{0.2140±0.0066} & 0.2150±0.0030 & 0.2150±0.0020 & 0.2150±0.0020 \\
+Food_Delivery_Time & 7.3736±0.0627 & \textbf{7.3693±0.0609} & 7.3719±0.0584 & 7.3712±0.0626 & 7.3708±0.0628 & 7.3970±0.0550 & 7.3970±0.0550 & 7.4000±0.0550 \\
+diamonds & 530.6115±20.6884 & \textbf{527.0291±17.4892} & 529.3844±17.8368 & 528.7087±17.3838 & 527.8093±16.2527 & 539.0000±10.0000 & 530.1000±10.0000 & 528.2000±10.9000 \\
+physiochemical_protein & 3.3966±0.0643 & 3.3699±0.0724 & 3.3599±0.0666 & 3.3588±0.0765 & \textbf{3.3409±0.0728} & 3.5130±0.0240 & 3.3900±0.0240 & 3.3900±0.0240 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

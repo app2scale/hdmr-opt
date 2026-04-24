@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{HDMR first-order sensitivity indices $S_i$ (mean across 8 folds). Values sum to 1.0 per dataset. Bold = top-ranked parameter.}
+\label{tab:sensitivity}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Parameter} & \textbf{Concrete} & \textbf{Airfoil} & \textbf{QSAR Fish} \\
+\midrule
+$\alpha$ (L1 reg) & $0.8083$ & $0.7955$ & $0.3269$ \\
+subsample & $0.0565$ & $0.0177$ & $0.2019$ \\
+col/node & $0.0217$ & $0.0571$ & $0.0671$ \\
+col/level & $0.0146$ & $0.0312$ & $0.0868$ \\
+max depth & $0.0128$ & $0.0228$ & $0.0934$ \\
+max leaves & $0.0254$ & $0.0080$ & $0.0833$ \\
+min child wt. & $0.0120$ & $0.0160$ & $0.0692$ \\
+$\lambda$ (L2 reg) & $0.0183$ & $0.0149$ & $0.0265$ \\
+learning rate & $0.0166$ & $0.0214$ & $0.0192$ \\
+grow policy & $0.0139$ & $0.0154$ & $0.0259$ \\
+\midrule
+\textit{Effective dim.} & $1/10$ & $2/10$ & $6/10$ \\
+\bottomrule
+\end{tabular}
+\end{table}

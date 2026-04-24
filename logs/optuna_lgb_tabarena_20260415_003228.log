@@ -1,0 +1,37 @@
+2026-04-15 00:32:28 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-04-15 00:32:28 | INFO     | root | Starting [get] request for the URL https://www.openml.org/api/v1/xml/data/46954
+2026-04-15 00:32:28 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): www.openml.org:443
+2026-04-15 00:32:29 | DEBUG    | urllib3.connectionpool | https://www.openml.org:443 "GET /api/v1/xml/data/46954 HTTP/1.1" 200 1485
+2026-04-15 00:32:29 | INFO     | root | 0.5169544s taken for [get] request for the URL https://www.openml.org/api/v1/xml/data/46954
+2026-04-15 00:32:29 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): data.openml.org:80
+2026-04-15 00:32:29 | DEBUG    | urllib3.connectionpool | http://data.openml.org:80 "HEAD /datasets/0004/46954/dataset_46954.pq HTTP/1.1" 301 0
+2026-04-15 00:32:29 | DEBUG    | urllib3.util.retry | Incremented Retry for (url='http://data.openml.org/datasets/0004/46954/dataset_46954.pq'): Retry(total=4, connect=None, read=None, redirect=None, status=None)
+2026-04-15 00:32:29 | INFO     | urllib3.poolmanager | Redirecting http://data.openml.org/datasets/0004/46954/dataset_46954.pq -> https://data.openml.org:443/datasets/0004/46954/dataset_46954.pq
+2026-04-15 00:32:29 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): data.openml.org:443
+2026-04-15 00:32:29 | DEBUG    | urllib3.connectionpool | https://data.openml.org:443 "HEAD /datasets/0004/46954/dataset_46954.pq HTTP/1.1" 200 0
+2026-04-15 00:32:30 | DEBUG    | urllib3.connectionpool | http://data.openml.org:80 "GET /datasets/0004/46954/dataset_46954.pq HTTP/1.1" 301 98
+2026-04-15 00:32:30 | DEBUG    | urllib3.util.retry | Incremented Retry for (url='http://data.openml.org/datasets/0004/46954/dataset_46954.pq'): Retry(total=4, connect=None, read=None, redirect=None, status=None)
+2026-04-15 00:32:30 | INFO     | urllib3.poolmanager | Redirecting http://data.openml.org/datasets/0004/46954/dataset_46954.pq -> https://data.openml.org:443/datasets/0004/46954/dataset_46954.pq
+2026-04-15 00:32:30 | DEBUG    | urllib3.connectionpool | https://data.openml.org:443 "GET /datasets/0004/46954/dataset_46954.pq HTTP/1.1" 200 24598
+2026-04-15 00:32:30 | INFO     | openml.datasets.dataset | pickle write QSAR_fish_toxicity
+2026-04-15 00:32:30 | DEBUG    | openml.datasets.dataset | Saved dataset 46954: QSAR_fish_toxicity to file /home/erdemy/.cache/openml/org/openml/www/datasets/46954/dataset_46954.pkl.py3
+2026-04-15 00:32:30 | DEBUG    | matplotlib | matplotlib data path: /mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/matplotlib/mpl-data
+2026-04-15 00:32:30 | DEBUG    | matplotlib | CONFIGDIR=/home/erdemy/.config/matplotlib
+2026-04-15 00:32:30 | DEBUG    | matplotlib | interactive is False
+2026-04-15 00:32:30 | DEBUG    | matplotlib | platform is linux
+2026-04-15 00:41:25 | INFO     | root | Starting [get] request for the URL https://www.openml.org/api/v1/xml/data/46917
+2026-04-15 00:41:25 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): www.openml.org:443
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | https://www.openml.org:443 "GET /api/v1/xml/data/46917 HTTP/1.1" 200 1430
+2026-04-15 00:41:26 | INFO     | root | 0.5589585s taken for [get] request for the URL https://www.openml.org/api/v1/xml/data/46917
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): data.openml.org:80
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | http://data.openml.org:80 "HEAD /datasets/0004/46917/dataset_46917.pq HTTP/1.1" 301 0
+2026-04-15 00:41:26 | DEBUG    | urllib3.util.retry | Incremented Retry for (url='http://data.openml.org/datasets/0004/46917/dataset_46917.pq'): Retry(total=4, connect=None, read=None, redirect=None, status=None)
+2026-04-15 00:41:26 | INFO     | urllib3.poolmanager | Redirecting http://data.openml.org/datasets/0004/46917/dataset_46917.pq -> https://data.openml.org:443/datasets/0004/46917/dataset_46917.pq
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): data.openml.org:443
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | https://data.openml.org:443 "HEAD /datasets/0004/46917/dataset_46917.pq HTTP/1.1" 200 0
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | http://data.openml.org:80 "GET /datasets/0004/46917/dataset_46917.pq HTTP/1.1" 301 98
+2026-04-15 00:41:26 | DEBUG    | urllib3.util.retry | Incremented Retry for (url='http://data.openml.org/datasets/0004/46917/dataset_46917.pq'): Retry(total=4, connect=None, read=None, redirect=None, status=None)
+2026-04-15 00:41:26 | INFO     | urllib3.poolmanager | Redirecting http://data.openml.org/datasets/0004/46917/dataset_46917.pq -> https://data.openml.org:443/datasets/0004/46917/dataset_46917.pq
+2026-04-15 00:41:26 | DEBUG    | urllib3.connectionpool | https://data.openml.org:443 "GET /datasets/0004/46917/dataset_46917.pq HTTP/1.1" 200 31354
+2026-04-15 00:41:26 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-04-15 00:41:26 | DEBUG    | openml.datasets.dataset | Saved dataset 46917: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/46917/dataset_46917.pkl.py3

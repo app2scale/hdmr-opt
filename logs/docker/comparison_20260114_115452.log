@@ -1,0 +1,6 @@
+usage: compare_optimizers.py [-h] [--model {xgboost,lightgbm,lstm,gru,nbeats}]
+                             [--data DATA] [--split SPLIT] [--trials TRIALS]
+                             [--hdmr-samples HDMR_SAMPLES] [--seeds SEEDS]
+                             [--methods METHODS [METHODS ...]]
+                             [--output-dir OUTPUT_DIR]
+compare_optimizers.py: error: unrecognized arguments: --samples 200

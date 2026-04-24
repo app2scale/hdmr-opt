@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering
+\caption{XGBoost HPO performance (RMSE, mean $\pm$ std, 8-fold CV). Search space: TabArena Table C.3 (10D). Budget: 200 evaluations/fold.}
+\label{tab:hpo_performance}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Dataset} & \textbf{HDMR} & \textbf{Random Search} & \textbf{Adaptive HDMR} & \textbf{Optuna (TPE)} \\
+\midrule
+Concrete & $4.103 \pm 0.536$ & $4.114 \pm 0.479$ & $4.171 \pm 0.525$ & \textbf{$4.023 \pm 0.579$} \\
+Airfoil & $1.403 \pm 0.236$ & $1.383 \pm 0.175$ & $1.341 \pm 0.149$ & \textbf{$1.286 \pm 0.105$} \\
+QSAR Fish & $0.888 \pm 0.079$ & $0.874 \pm 0.076$ & $0.880 \pm 0.077$ & \textbf{$0.873 \pm 0.066$} \\
+\bottomrule
+\end{tabular}
+\end{table}

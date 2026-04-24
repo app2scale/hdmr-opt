@@ -1,0 +1,39 @@
+2026-03-10 00:33:46 | INFO     | rs.benchmark | ======================================================================
+2026-03-10 00:33:46 | INFO     | rs.benchmark | Random Search Baseline  |  XGBoost HPO  |  All 18 Datasets  v2.0
+2026-03-10 00:33:46 | INFO     | rs.benchmark | Run ID   : 20260310_003346
+2026-03-10 00:33:46 | INFO     | rs.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/rs_tabarena_20260310_003346.log
+2026-03-10 00:33:46 | INFO     | rs.benchmark | ======================================================================
+2026-03-10 00:33:46 | INFO     | rs.benchmark | Configuration:
+2026-03-10 00:33:46 | INFO     | rs.benchmark |   sampler=Sobol-RS  samples=200/fold  outer_folds=8  seed=42
+2026-03-10 00:33:46 | INFO     | rs.benchmark |   task_filter=all  datasets=[46949] (1 total)
+2026-03-10 00:33:46 | INFO     | rs.benchmark | 
+2026-03-10 00:33:46 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 00:33:46 | INFO     | rs.benchmark |   DATASET: physiochemical_protein  (DID=46949)
+2026-03-10 00:33:46 | INFO     | rs.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-10 00:33:47 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-10 00:33:47 | INFO     | rs.benchmark | Loading: physiochemical_protein  (DID=46949, task=regression) ...
+2026-03-10 00:33:47 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-03-10 00:33:47 | DEBUG    | openml.datasets.dataset | Saved dataset 46949: physiochemical_protein to file /home/erdemy/.cache/openml/org/openml/www/datasets/46949/dataset_46949.pkl.py3
+2026-03-10 00:33:47 | INFO     | rs.benchmark |   physiochemical_protein | 45730 x 9 | y mean=7.749  std=6.118
+2026-03-10 00:33:47 | INFO     | rs.benchmark | 
+2026-03-10 00:33:47 | INFO     | rs.benchmark |   ┌─ physiochemical_protein  [RS-200]
+2026-03-10 00:33:47 | INFO     | rs.benchmark |   │  task=regression  samples=200/fold  (Sobol quasi-random)
+2026-03-10 01:56:18 | INFO     | rs.benchmark |   │  [RS] Fold 1/8 | RMSE=3.3204 | best_val=0.5562 | evals=200 | 4951.4s | ETA: 9:37:39
+2026-03-10 03:21:02 | INFO     | rs.benchmark |   │  [RS] Fold 2/8 | RMSE=3.4129 | best_val=0.5648 | evals=200 | 5084.1s | ETA: 8:21:46
+2026-03-10 04:46:00 | INFO     | rs.benchmark |   │  [RS] Fold 3/8 | RMSE=3.2522 | best_val=0.5565 | evals=200 | 5097.9s | ETA: 7:00:22
+2026-03-10 06:15:17 | INFO     | rs.benchmark |   │  [RS] Fold 4/8 | RMSE=3.3572 | best_val=0.5516 | evals=200 | 5356.6s | ETA: 5:45:18
+2026-03-10 07:38:23 | INFO     | rs.benchmark |   │  [RS] Fold 5/8 | RMSE=3.4335 | best_val=0.5567 | evals=200 | 4986.0s | ETA: 4:17:20
+2026-03-10 09:01:28 | INFO     | rs.benchmark |   │  [RS] Fold 6/8 | RMSE=3.4659 | best_val=0.5553 | evals=200 | 4985.6s | ETA: 2:50:18
+2026-03-10 10:22:39 | INFO     | rs.benchmark |   │  [RS] Fold 7/8 | RMSE=3.3603 | best_val=0.5431 | evals=200 | 4870.6s | ETA: 1:22:27
+2026-03-10 11:44:57 | INFO     | rs.benchmark |   │  [RS] Fold 8/8 | RMSE=3.2683 | best_val=0.5590 | evals=200 | 4938.0s | ETA: done
+2026-03-10 11:44:57 | INFO     | rs.benchmark |   └─ [RS] physiochemical_protein | RMSE=3.3588±0.0716 | 671.2 min
+2026-03-10 11:44:57 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_all18_20260310_003346.csv  (8 rows)
+2026-03-10 11:44:57 | INFO     | rs.benchmark | 
+2026-03-10 11:44:57 | INFO     | rs.benchmark | ======================================================================
+2026-03-10 11:44:57 | INFO     | rs.benchmark | ALL EXPERIMENTS COMPLETE
+2026-03-10 11:44:57 | INFO     | rs.benchmark | Datasets   : 1 / 1
+2026-03-10 11:44:57 | INFO     | rs.benchmark | Failed     : 0  
+2026-03-10 11:44:57 | INFO     | rs.benchmark | Wall time  : 11:11:10  (11.2 hr)
+2026-03-10 11:44:57 | DEBUG    | rs.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_all18_20260310_003346.csv  (8 rows)
+2026-03-10 11:44:57 | INFO     | rs.benchmark | Results    : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_all18_20260310_003346.csv
+2026-03-10 11:44:57 | INFO     | rs.benchmark | ======================================================================

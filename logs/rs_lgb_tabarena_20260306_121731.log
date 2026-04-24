@@ -1,0 +1,42 @@
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | ============================================================
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Random Search Baseline  |  LightGBM HPO Benchmark
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Run ID   : 20260306_121731
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/rs_lgb_tabarena_20260306_121731.log
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | ============================================================
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Configuration:
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark |   dataset  = openml:44959
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark |   samples  = 50  folds=3  seed=42
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark |   space    = TabArena Table C.3 LightGBM (12D)
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Loading: 'openml:44959'
+2026-03-06 12:17:31 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Fetching OpenML dataset 44959 …
+2026-03-06 12:17:31 | INFO     | openml.datasets.dataset | pickle write concrete_compressive_strength
+2026-03-06 12:17:31 | DEBUG    | openml.datasets.dataset | Saved dataset 44959: concrete_compressive_strength to file /home/erdemy/.cache/openml/org/openml/www/datasets/44959/dataset_44959.pkl.py3
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | OpenML 44959: concrete_compressive_strength | 1030 x 8
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Dataset: concrete_compressive_strength | 1030 x 8 | target mean=35.82 std=16.70
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | --- Starting 3-Fold Outer CV ---
+2026-03-06 12:17:31 | INFO     | rs.lgb.benchmark | Fold 1/3 | train=686  test=344
+2026-03-06 12:17:31 | DEBUG    | matplotlib | matplotlib data path: /mnt/disk1/erdemy/app2scale/hdmr-opt/hdmr-env/lib/python3.10/site-packages/matplotlib/mpl-data
+2026-03-06 12:17:31 | DEBUG    | matplotlib | CONFIGDIR=/home/erdemy/.config/matplotlib
+2026-03-06 12:17:31 | DEBUG    | matplotlib | interactive is False
+2026-03-06 12:17:31 | DEBUG    | matplotlib | platform is linux
+2026-03-06 12:18:00 | INFO     | rs.lgb.benchmark |   Fold 1 DONE | test_rmse=4.5318 | best_val=0.2294 | evals=50 | 29.0s | ETA: 0:00:57
+2026-03-06 12:18:00 | INFO     | rs.lgb.benchmark | Fold 2/3 | train=687  test=343
+2026-03-06 12:18:46 | INFO     | rs.lgb.benchmark |   Fold 2 DONE | test_rmse=4.7464 | best_val=0.2011 | evals=50 | 46.3s | ETA: 0:00:37
+2026-03-06 12:18:46 | INFO     | rs.lgb.benchmark | Fold 3/3 | train=687  test=343
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark |   Fold 3 DONE | test_rmse=4.6957 | best_val=0.2000 | evals=50 | 47.9s | ETA: done
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | ============================================================
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | Dataset          : concrete_compressive_strength
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | Method           : Random Search
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | RS RMSE          : 4.6580 +/- 0.0916
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | Total evaluations: 150  (avg 50/fold)
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | Total wall time  : 0:02:03  (2.1 min)
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | 
+CONVERGENCE (avg best val_rmse at eval N):
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark |   eval  10 : 0.27037
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark |   eval  25 : 0.22510
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark |   eval  50 : 0.21014
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | 
+Results saved -> /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/rs_lgb_20260306_121731.csv
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | ============================================================
+2026-03-06 12:19:34 | INFO     | rs.lgb.benchmark | Experiment complete.

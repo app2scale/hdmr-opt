@@ -1,0 +1,271 @@
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | ======================================================================
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | Optuna TPE Baseline  |  XGBoost HPO  |  All 18 Datasets  v2.0
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | Run ID   : 20260309_002910
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | Log file : /mnt/disk1/erdemy/app2scale/hdmr-opt/logs/optuna_tabarena_20260309_002910.log
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | ======================================================================
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | Configuration:
+2026-03-09 00:29:10 | INFO     | tpe.benchmark |   sampler=TPE  trials=200/fold  outer_folds=8  seed=42
+2026-03-09 00:29:10 | INFO     | tpe.benchmark |   task_filter=all  datasets=[46928, 46923, 46949, 46952, 46927, 46938, 46940, 46930, 46956, 46963, 46918] (11 total)
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | 
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 00:29:10 | INFO     | tpe.benchmark |   DATASET: Food_Delivery_Time  (DID=46928)
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 00:29:10 | INFO     | openml.config | No config file found at /home/erdemy/.config/openml/config, using default configuration.
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | Loading: Food_Delivery_Time  (DID=46928, task=regression) ...
+2026-03-09 00:29:10 | INFO     | openml.datasets.dataset | pickle write Food_Delivery_Time
+2026-03-09 00:29:10 | DEBUG    | openml.datasets.dataset | Saved dataset 46928: Food_Delivery_Time to file /home/erdemy/.cache/openml/org/openml/www/datasets/46928/dataset_46928.pkl.py3
+2026-03-09 00:29:10 | INFO     | tpe.benchmark |   Food_Delivery_Time | 45451 x 9 | y mean=26.291  std=9.382
+2026-03-09 00:29:10 | INFO     | tpe.benchmark | 
+2026-03-09 00:29:10 | INFO     | tpe.benchmark |   ┌─ Food_Delivery_Time  [Optuna-TPE-200]
+2026-03-09 00:29:10 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-09 00:39:10 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=7.4018 | best_val=0.7867 | trials=200 | 600.2s | ETA: 1:10:01
+2026-03-09 00:51:24 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=7.3161 | best_val=0.7897 | trials=200 | 733.9s | ETA: 1:06:42
+2026-03-09 01:02:13 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=7.2759 | best_val=0.7886 | trials=200 | 648.8s | ETA: 0:55:04
+2026-03-09 01:14:00 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=7.3064 | best_val=0.7826 | trials=200 | 706.5s | ETA: 0:46:25
+2026-03-09 01:18:44 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=7.4122 | best_val=0.7763 | trials=200 | 284.6s | ETA: 0:27:19
+2026-03-09 01:35:11 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=7.4354 | best_val=0.7774 | trials=200 | 986.8s | ETA: 0:21:58
+2026-03-09 01:50:19 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=7.4384 | best_val=0.7934 | trials=200 | 908.0s | ETA: 0:12:06
+2026-03-09 02:03:46 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=7.3800 | best_val=0.7828 | trials=200 | 807.2s | ETA: done
+2026-03-09 02:03:46 | INFO     | tpe.benchmark |   └─ [Optuna] Food_Delivery_Time | RMSE=7.3708±0.0588 | 94.6 min
+2026-03-09 02:03:46 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (8 rows)
+2026-03-09 02:03:46 | INFO     | tpe.benchmark | 
+2026-03-09 02:03:46 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 02:03:46 | INFO     | tpe.benchmark |   DATASET: diamonds  (DID=46923)
+2026-03-09 02:03:46 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 02:03:46 | INFO     | tpe.benchmark | Loading: diamonds  (DID=46923, task=regression) ...
+2026-03-09 02:03:46 | INFO     | openml.datasets.dataset | pickle write diamonds
+2026-03-09 02:03:46 | DEBUG    | openml.datasets.dataset | Saved dataset 46923: diamonds to file /home/erdemy/.cache/openml/org/openml/www/datasets/46923/dataset_46923.pkl.py3
+2026-03-09 02:03:46 | INFO     | tpe.benchmark |   diamonds | 53940 x 9 | y mean=3932.800  std=3989.403
+2026-03-09 02:03:46 | INFO     | tpe.benchmark | 
+2026-03-09 02:03:46 | INFO     | tpe.benchmark |   ┌─ diamonds  [Optuna-TPE-200]
+2026-03-09 02:03:46 | INFO     | tpe.benchmark |   │  task=regression  trials=200/fold
+2026-03-09 02:23:13 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | RMSE=504.8382 | best_val=0.1329 | trials=200 | 1167.0s | ETA: 2:16:08
+2026-03-09 02:43:57 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | RMSE=521.3429 | best_val=0.1341 | trials=200 | 1243.3s | ETA: 2:00:30
+2026-03-09 03:12:49 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | RMSE=527.1635 | best_val=0.1401 | trials=200 | 1732.9s | ETA: 1:55:05
+2026-03-09 03:51:48 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | RMSE=514.1978 | best_val=0.1349 | trials=200 | 2338.8s | ETA: 1:58:06
+2026-03-09 04:23:31 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | RMSE=542.8004 | best_val=0.1327 | trials=200 | 1903.1s | ETA: 1:39:34
+2026-03-09 04:39:45 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | RMSE=554.3117 | best_val=0.1258 | trials=200 | 974.0s | ETA: 0:57:57
+2026-03-09 04:57:58 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | RMSE=519.8451 | best_val=0.1305 | trials=200 | 1092.7s | ETA: 0:22:03
+2026-03-09 05:19:19 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | RMSE=537.9748 | best_val=0.1351 | trials=200 | 1280.8s | ETA: done
+2026-03-09 05:19:19 | INFO     | tpe.benchmark |   └─ [Optuna] diamonds | RMSE=527.8093±15.2030 | 195.5 min
+2026-03-09 05:19:19 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (16 rows)
+2026-03-09 05:19:19 | INFO     | tpe.benchmark | 
+2026-03-09 05:19:19 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:19:19 | INFO     | tpe.benchmark |   DATASET: openml_46949  (DID=46949)
+2026-03-09 05:19:19 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:19:19 | INFO     | tpe.benchmark | Loading: openml_46949  (DID=46949, task=classification) ...
+2026-03-09 05:19:19 | INFO     | root | Starting [get] request for the URL https://www.openml.org/api/v1/xml/data/46949
+2026-03-09 05:19:19 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): www.openml.org:443
+2026-03-09 05:19:19 | DEBUG    | urllib3.connectionpool | https://www.openml.org:443 "GET /api/v1/xml/data/46949 HTTP/1.1" 200 1364
+2026-03-09 05:19:19 | INFO     | root | 0.5844984s taken for [get] request for the URL https://www.openml.org/api/v1/xml/data/46949
+2026-03-09 05:19:19 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): data.openml.org:80
+2026-03-09 05:19:20 | DEBUG    | urllib3.connectionpool | http://data.openml.org:80 "HEAD /datasets/0004/46949/dataset_46949.pq HTTP/1.1" 301 0
+2026-03-09 05:19:20 | DEBUG    | urllib3.util.retry | Incremented Retry for (url='http://data.openml.org/datasets/0004/46949/dataset_46949.pq'): Retry(total=4, connect=None, read=None, redirect=None, status=None)
+2026-03-09 05:19:20 | INFO     | urllib3.poolmanager | Redirecting http://data.openml.org/datasets/0004/46949/dataset_46949.pq -> https://data.openml.org:443/datasets/0004/46949/dataset_46949.pq
+2026-03-09 05:19:20 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): data.openml.org:443
+2026-03-09 05:19:20 | DEBUG    | urllib3.connectionpool | https://data.openml.org:443 "HEAD /datasets/0004/46949/dataset_46949.pq HTTP/1.1" 200 0
+2026-03-09 05:19:20 | DEBUG    | urllib3.connectionpool | http://data.openml.org:80 "GET /datasets/0004/46949/dataset_46949.pq HTTP/1.1" 301 98
+2026-03-09 05:19:20 | DEBUG    | urllib3.util.retry | Incremented Retry for (url='http://data.openml.org/datasets/0004/46949/dataset_46949.pq'): Retry(total=4, connect=None, read=None, redirect=None, status=None)
+2026-03-09 05:19:20 | INFO     | urllib3.poolmanager | Redirecting http://data.openml.org/datasets/0004/46949/dataset_46949.pq -> https://data.openml.org:443/datasets/0004/46949/dataset_46949.pq
+2026-03-09 05:19:21 | DEBUG    | urllib3.connectionpool | https://data.openml.org:443 "GET /datasets/0004/46949/dataset_46949.pq HTTP/1.1" 200 2744600
+2026-03-09 05:19:21 | INFO     | openml.datasets.dataset | pickle write physiochemical_protein
+2026-03-09 05:19:21 | DEBUG    | openml.datasets.dataset | Saved dataset 46949: physiochemical_protein to file /home/erdemy/.cache/openml/org/openml/www/datasets/46949/dataset_46949.pkl.py3
+2026-03-09 05:19:21 | INFO     | tpe.benchmark |   openml_46949 | 45730 x 9 | classes=15903
+2026-03-09 05:19:21 | INFO     | tpe.benchmark | 
+2026-03-09 05:19:21 | INFO     | tpe.benchmark |   ┌─ openml_46949  [Optuna-TPE-200]
+2026-03-09 05:19:21 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 05:19:30 | ERROR    | tpe.benchmark | Test eval failed fold 1: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14557 14558 14559], got [    0     1     2 ... 15899 15901 15902]
+2026-03-09 05:19:30 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.7s | ETA: 0:01:04
+2026-03-09 05:19:39 | ERROR    | tpe.benchmark | Test eval failed fold 2: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14638 14639 14640], got [    0     1     2 ... 15899 15901 15902]
+2026-03-09 05:19:39 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.8s | ETA: 0:00:54
+2026-03-09 05:19:48 | ERROR    | tpe.benchmark | Test eval failed fold 3: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14565 14566 14567], got [    0     1     2 ... 15900 15901 15902]
+2026-03-09 05:19:48 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.8s | ETA: 0:00:44
+2026-03-09 05:19:56 | ERROR    | tpe.benchmark | Test eval failed fold 4: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14544 14545 14546], got [    0     2     3 ... 15900 15901 15902]
+2026-03-09 05:19:56 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.4s | ETA: 0:00:34
+2026-03-09 05:20:04 | ERROR    | tpe.benchmark | Test eval failed fold 5: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14607 14608 14609], got [    0     1     2 ... 15898 15901 15902]
+2026-03-09 05:20:04 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.1s | ETA: 0:00:25
+2026-03-09 05:20:13 | ERROR    | tpe.benchmark | Test eval failed fold 6: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14635 14636 14637], got [    0     1     2 ... 15898 15899 15900]
+2026-03-09 05:20:13 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.1s | ETA: 0:00:16
+2026-03-09 05:20:21 | ERROR    | tpe.benchmark | Test eval failed fold 7: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14541 14542 14543], got [    0     1     2 ... 15899 15900 15902]
+2026-03-09 05:20:21 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.5s | ETA: 0:00:08
+2026-03-09 05:20:30 | ERROR    | tpe.benchmark | Test eval failed fold 8: Invalid classes inferred from unique values of `y`.  Expected: [    0     1     2 ... 14579 14580 14581], got [    0     1     2 ... 15900 15901 15902]
+2026-03-09 05:20:30 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=nan | best_val=1000000.0000 | trials=200 | 8.7s | ETA: done
+2026-03-09 05:20:30 | INFO     | tpe.benchmark |   └─ [Optuna] openml_46949 | AUC=nan±nan | 1.1 min
+2026-03-09 05:20:30 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (24 rows)
+2026-03-09 05:20:30 | INFO     | tpe.benchmark | 
+2026-03-09 05:20:30 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:20:30 | INFO     | tpe.benchmark |   DATASET: qsar-biodeg  (DID=46952)
+2026-03-09 05:20:30 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:20:30 | INFO     | tpe.benchmark | Loading: qsar-biodeg  (DID=46952, task=classification) ...
+2026-03-09 05:20:30 | INFO     | openml.datasets.dataset | pickle write qsar-biodeg
+2026-03-09 05:20:30 | DEBUG    | openml.datasets.dataset | Saved dataset 46952: qsar-biodeg to file /home/erdemy/.cache/openml/org/openml/www/datasets/46952/dataset_46952.pkl.py3
+2026-03-09 05:20:30 | INFO     | tpe.benchmark |   qsar-biodeg | 1054 x 41 | classes=2
+2026-03-09 05:20:30 | INFO     | tpe.benchmark | 
+2026-03-09 05:20:30 | INFO     | tpe.benchmark |   ┌─ qsar-biodeg  [Optuna-TPE-200]
+2026-03-09 05:20:30 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 05:23:36 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.9525 | best_val=0.2152 | trials=200 | 185.7s | ETA: 0:21:40
+2026-03-09 05:26:38 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.9341 | best_val=0.3408 | trials=200 | 182.1s | ETA: 0:18:23
+2026-03-09 05:29:46 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.9201 | best_val=0.2307 | trials=200 | 188.6s | ETA: 0:15:27
+2026-03-09 05:31:40 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.9174 | best_val=0.2854 | trials=200 | 113.6s | ETA: 0:10:45
+2026-03-09 05:38:41 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.9295 | best_val=0.2231 | trials=200 | 421.6s | ETA: 0:12:03
+2026-03-09 05:42:22 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.9269 | best_val=0.2591 | trials=200 | 220.9s | ETA: 0:08:24
+2026-03-09 05:44:29 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.9480 | best_val=0.2743 | trials=200 | 126.9s | ETA: 0:04:16
+2026-03-09 05:46:43 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.9159 | best_val=0.3082 | trials=200 | 133.9s | ETA: done
+2026-03-09 05:46:43 | INFO     | tpe.benchmark |   └─ [Optuna] qsar-biodeg | AUC=0.9305±0.0128 | 26.2 min
+2026-03-09 05:46:43 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (32 rows)
+2026-03-09 05:46:43 | INFO     | tpe.benchmark | 
+2026-03-09 05:46:43 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:46:43 | INFO     | tpe.benchmark |   DATASET: Fitness_Club  (DID=46927)
+2026-03-09 05:46:43 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:46:43 | INFO     | tpe.benchmark | Loading: Fitness_Club  (DID=46927, task=classification) ...
+2026-03-09 05:46:43 | INFO     | openml.datasets.dataset | pickle write Fitness_Club
+2026-03-09 05:46:43 | DEBUG    | openml.datasets.dataset | Saved dataset 46927: Fitness_Club to file /home/erdemy/.cache/openml/org/openml/www/datasets/46927/dataset_46927.pkl.py3
+2026-03-09 05:46:43 | INFO     | tpe.benchmark |   Fitness_Club | 1500 x 6 | classes=2
+2026-03-09 05:46:43 | INFO     | tpe.benchmark | 
+2026-03-09 05:46:43 | INFO     | tpe.benchmark |   ┌─ Fitness_Club  [Optuna-TPE-200]
+2026-03-09 05:46:43 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 05:47:11 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.8571 | best_val=0.4904 | trials=200 | 27.8s | ETA: 0:03:14
+2026-03-09 05:47:50 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.7989 | best_val=0.4497 | trials=200 | 38.8s | ETA: 0:03:19
+2026-03-09 05:48:17 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.7269 | best_val=0.4710 | trials=200 | 26.9s | ETA: 0:02:35
+2026-03-09 05:48:49 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.8741 | best_val=0.4727 | trials=200 | 32.4s | ETA: 0:02:10
+2026-03-09 05:49:14 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.7790 | best_val=0.4648 | trials=200 | 24.8s | ETA: 0:01:24
+2026-03-09 05:50:43 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.8305 | best_val=0.5002 | trials=200 | 89.3s | ETA: 0:01:37
+2026-03-09 05:51:21 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.8013 | best_val=0.4663 | trials=200 | 37.5s | ETA: 0:00:50
+2026-03-09 05:51:53 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.7914 | best_val=0.4312 | trials=200 | 32.5s | ETA: done
+2026-03-09 05:51:53 | INFO     | tpe.benchmark |   └─ [Optuna] Fitness_Club | AUC=0.8074±0.0434 | 5.2 min
+2026-03-09 05:51:53 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (40 rows)
+2026-03-09 05:51:53 | INFO     | tpe.benchmark | 
+2026-03-09 05:51:53 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:51:53 | INFO     | tpe.benchmark |   DATASET: Is-this-a-good-customer  (DID=46938)
+2026-03-09 05:51:53 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:51:53 | INFO     | tpe.benchmark | Loading: Is-this-a-good-customer  (DID=46938, task=classification) ...
+2026-03-09 05:51:53 | INFO     | openml.datasets.dataset | pickle write Is-this-a-good-customer
+2026-03-09 05:51:53 | DEBUG    | openml.datasets.dataset | Saved dataset 46938: Is-this-a-good-customer to file /home/erdemy/.cache/openml/org/openml/www/datasets/46938/dataset_46938.pkl.py3
+2026-03-09 05:51:53 | INFO     | tpe.benchmark |   Is-this-a-good-customer | 1723 x 13 | classes=2
+2026-03-09 05:51:53 | INFO     | tpe.benchmark | 
+2026-03-09 05:51:53 | INFO     | tpe.benchmark |   ┌─ Is-this-a-good-customer  [Optuna-TPE-200]
+2026-03-09 05:51:53 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 05:52:29 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.7152 | best_val=0.3131 | trials=200 | 35.8s | ETA: 0:04:10
+2026-03-09 05:53:28 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.7946 | best_val=0.3143 | trials=200 | 59.2s | ETA: 0:04:45
+2026-03-09 05:53:54 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.7303 | best_val=0.2968 | trials=200 | 25.3s | ETA: 0:03:20
+2026-03-09 05:54:25 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.8741 | best_val=0.3508 | trials=200 | 31.0s | ETA: 0:02:33
+2026-03-09 05:54:53 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.6979 | best_val=0.3123 | trials=200 | 28.4s | ETA: 0:01:24
+2026-03-09 05:56:13 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.7956 | best_val=0.3057 | trials=200 | 80.1s | ETA: 0:01:32
+2026-03-09 05:56:45 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.7086 | best_val=0.2546 | trials=200 | 32.2s | ETA: 0:00:46
+2026-03-09 05:57:16 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.7265 | best_val=0.3321 | trials=200 | 31.1s | ETA: done
+2026-03-09 05:57:16 | INFO     | tpe.benchmark |   └─ [Optuna] Is-this-a-good-customer | AUC=0.7553±0.0568 | 5.4 min
+2026-03-09 05:57:16 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (48 rows)
+2026-03-09 05:57:16 | INFO     | tpe.benchmark | 
+2026-03-09 05:57:16 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:57:16 | INFO     | tpe.benchmark |   DATASET: Marketing_Campaign  (DID=46940)
+2026-03-09 05:57:16 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 05:57:16 | INFO     | tpe.benchmark | Loading: Marketing_Campaign  (DID=46940, task=classification) ...
+2026-03-09 05:57:16 | INFO     | openml.datasets.dataset | pickle write Marketing_Campaign
+2026-03-09 05:57:16 | DEBUG    | openml.datasets.dataset | Saved dataset 46940: Marketing_Campaign to file /home/erdemy/.cache/openml/org/openml/www/datasets/46940/dataset_46940.pkl.py3
+2026-03-09 05:57:16 | INFO     | tpe.benchmark |   Marketing_Campaign | 2240 x 25 | classes=2
+2026-03-09 05:57:16 | INFO     | tpe.benchmark | 
+2026-03-09 05:57:16 | INFO     | tpe.benchmark |   ┌─ Marketing_Campaign  [Optuna-TPE-200]
+2026-03-09 05:57:16 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 05:58:40 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.8791 | best_val=0.2398 | trials=200 | 83.3s | ETA: 0:09:42
+2026-03-09 06:01:11 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.9181 | best_val=0.2485 | trials=200 | 151.1s | ETA: 0:11:43
+2026-03-09 06:05:09 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.8994 | best_val=0.2481 | trials=200 | 238.5s | ETA: 0:13:08
+2026-03-09 06:08:08 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.8590 | best_val=0.2410 | trials=200 | 178.6s | ETA: 0:12:37
+2026-03-09 06:09:54 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.9235 | best_val=0.2588 | trials=200 | 105.9s | ETA: 0:08:43
+2026-03-09 06:12:04 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.8852 | best_val=0.2145 | trials=200 | 129.9s | ETA: 0:04:36
+2026-03-09 06:15:06 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.8918 | best_val=0.2701 | trials=200 | 182.6s | ETA: 0:02:19
+2026-03-09 06:16:46 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.9353 | best_val=0.2525 | trials=200 | 99.5s | ETA: done
+2026-03-09 06:16:46 | INFO     | tpe.benchmark |   └─ [Optuna] Marketing_Campaign | AUC=0.8989±0.0238 | 19.5 min
+2026-03-09 06:16:46 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (56 rows)
+2026-03-09 06:16:46 | INFO     | tpe.benchmark | 
+2026-03-09 06:16:46 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 06:16:46 | INFO     | tpe.benchmark |   DATASET: hazelnut-contaminant-detection  (DID=46930)
+2026-03-09 06:16:46 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 06:16:46 | INFO     | tpe.benchmark | Loading: hazelnut-contaminant-detection  (DID=46930, task=classification) ...
+2026-03-09 06:16:46 | INFO     | openml.datasets.dataset | pickle write hazelnut-spread-contaminant-detection
+2026-03-09 06:16:46 | DEBUG    | openml.datasets.dataset | Saved dataset 46930: hazelnut-spread-contaminant-detection to file /home/erdemy/.cache/openml/org/openml/www/datasets/46930/dataset_46930.pkl.py3
+2026-03-09 06:16:46 | INFO     | tpe.benchmark |   hazelnut-contaminant-detection | 2400 x 30 | classes=2
+2026-03-09 06:16:46 | INFO     | tpe.benchmark | 
+2026-03-09 06:16:46 | INFO     | tpe.benchmark |   ┌─ hazelnut-contaminant-detection  [Optuna-TPE-200]
+2026-03-09 06:16:46 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 06:25:50 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.9824 | best_val=0.1823 | trials=200 | 544.4s | ETA: 1:03:30
+2026-03-09 06:30:35 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.9742 | best_val=0.1769 | trials=200 | 284.9s | ETA: 0:41:27
+2026-03-09 06:35:06 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.9775 | best_val=0.2309 | trials=200 | 271.0s | ETA: 0:30:33
+2026-03-09 06:42:43 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.9768 | best_val=0.2022 | trials=200 | 456.6s | ETA: 0:22:29
+2026-03-09 06:47:25 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.9777 | best_val=0.2260 | trials=200 | 282.5s | ETA: 0:16:50
+2026-03-09 06:55:21 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.9802 | best_val=0.1320 | trials=200 | 475.6s | ETA: 0:13:29
+2026-03-09 07:02:17 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.9797 | best_val=0.1745 | trials=200 | 416.3s | ETA: 0:06:31
+2026-03-09 07:11:41 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.9739 | best_val=0.2266 | trials=200 | 564.1s | ETA: done
+2026-03-09 07:11:41 | INFO     | tpe.benchmark |   └─ [Optuna] hazelnut-contaminant-detection | AUC=0.9778±0.0027 | 54.9 min
+2026-03-09 07:11:41 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (64 rows)
+2026-03-09 07:11:41 | INFO     | tpe.benchmark | 
+2026-03-09 07:11:41 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 07:11:41 | INFO     | tpe.benchmark |   DATASET: seismic-bumps  (DID=46956)
+2026-03-09 07:11:41 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 07:11:41 | INFO     | tpe.benchmark | Loading: seismic-bumps  (DID=46956, task=classification) ...
+2026-03-09 07:11:41 | INFO     | openml.datasets.dataset | pickle write seismic-bumps
+2026-03-09 07:11:41 | DEBUG    | openml.datasets.dataset | Saved dataset 46956: seismic-bumps to file /home/erdemy/.cache/openml/org/openml/www/datasets/46956/dataset_46956.pkl.py3
+2026-03-09 07:11:41 | INFO     | tpe.benchmark |   seismic-bumps | 2584 x 15 | classes=2
+2026-03-09 07:11:41 | INFO     | tpe.benchmark | 
+2026-03-09 07:11:41 | INFO     | tpe.benchmark |   ┌─ seismic-bumps  [Optuna-TPE-200]
+2026-03-09 07:11:41 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 07:12:06 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.7286 | best_val=0.1831 | trials=200 | 24.7s | ETA: 0:02:52
+2026-03-09 07:12:34 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.7655 | best_val=0.1849 | trials=200 | 28.1s | ETA: 0:02:38
+2026-03-09 07:13:04 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.7778 | best_val=0.2324 | trials=200 | 29.7s | ETA: 0:02:17
+2026-03-09 07:13:40 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.8113 | best_val=0.1919 | trials=200 | 35.7s | ETA: 0:02:04
+2026-03-09 07:14:20 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.8109 | best_val=0.1998 | trials=200 | 40.1s | ETA: 0:01:45
+2026-03-09 07:14:54 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.7895 | best_val=0.2353 | trials=200 | 34.0s | ETA: 0:01:13
+2026-03-09 07:15:21 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.7273 | best_val=0.2158 | trials=200 | 27.4s | ETA: 0:00:33
+2026-03-09 07:16:06 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.6850 | best_val=0.1624 | trials=200 | 44.5s | ETA: done
+2026-03-09 07:16:06 | INFO     | tpe.benchmark |   └─ [Optuna] seismic-bumps | AUC=0.7620±0.0420 | 4.4 min
+2026-03-09 07:16:06 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (72 rows)
+2026-03-09 07:16:06 | INFO     | tpe.benchmark | 
+2026-03-09 07:16:06 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 07:16:06 | INFO     | tpe.benchmark |   DATASET: website_phishing  (DID=46963)
+2026-03-09 07:16:06 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 07:16:06 | INFO     | tpe.benchmark | Loading: website_phishing  (DID=46963, task=classification) ...
+2026-03-09 07:16:06 | INFO     | openml.datasets.dataset | pickle write website_phishing
+2026-03-09 07:16:06 | DEBUG    | openml.datasets.dataset | Saved dataset 46963: website_phishing to file /home/erdemy/.cache/openml/org/openml/www/datasets/46963/dataset_46963.pkl.py3
+2026-03-09 07:16:06 | INFO     | tpe.benchmark |   website_phishing | 1353 x 9 | classes=3
+2026-03-09 07:16:06 | INFO     | tpe.benchmark | 
+2026-03-09 07:16:06 | INFO     | tpe.benchmark |   ┌─ website_phishing  [Optuna-TPE-200]
+2026-03-09 07:16:06 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 07:19:53 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.9762 | best_val=0.3302 | trials=200 | 227.6s | ETA: 0:26:33
+2026-03-09 07:22:46 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.9786 | best_val=0.2344 | trials=200 | 172.4s | ETA: 0:19:59
+2026-03-09 07:24:26 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.9783 | best_val=0.2812 | trials=200 | 100.8s | ETA: 0:13:54
+2026-03-09 07:27:40 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.9795 | best_val=0.2017 | trials=200 | 194.0s | ETA: 0:10:22
+2026-03-09 07:30:13 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.9663 | best_val=0.2771 | trials=200 | 153.0s | ETA: 0:07:27
+2026-03-09 07:33:00 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.9778 | best_val=0.2870 | trials=200 | 166.5s | ETA: 0:05:42
+2026-03-09 07:35:57 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.9795 | best_val=0.2365 | trials=200 | 176.7s | ETA: 0:02:45
+2026-03-09 07:39:41 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.9800 | best_val=0.2488 | trials=200 | 224.7s | ETA: done
+2026-03-09 07:39:41 | INFO     | tpe.benchmark |   └─ [Optuna] website_phishing | AUC=0.9770±0.0042 | 23.6 min
+2026-03-09 07:39:41 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (80 rows)
+2026-03-09 07:39:41 | INFO     | tpe.benchmark | 
+2026-03-09 07:39:41 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 07:39:41 | INFO     | tpe.benchmark |   DATASET: credit-g  (DID=46918)
+2026-03-09 07:39:41 | INFO     | tpe.benchmark | ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+2026-03-09 07:39:41 | INFO     | tpe.benchmark | Loading: credit-g  (DID=46918, task=classification) ...
+2026-03-09 07:39:41 | INFO     | openml.datasets.dataset | pickle write credit-g
+2026-03-09 07:39:41 | DEBUG    | openml.datasets.dataset | Saved dataset 46918: credit-g to file /home/erdemy/.cache/openml/org/openml/www/datasets/46918/dataset_46918.pkl.py3
+2026-03-09 07:39:41 | INFO     | tpe.benchmark |   credit-g | 1000 x 20 | classes=2
+2026-03-09 07:39:41 | INFO     | tpe.benchmark | 
+2026-03-09 07:39:41 | INFO     | tpe.benchmark |   ┌─ credit-g  [Optuna-TPE-200]
+2026-03-09 07:39:41 | INFO     | tpe.benchmark |   │  task=classification  trials=200/fold
+2026-03-09 07:40:35 | INFO     | tpe.benchmark |   │  [Optuna] Fold 1/8 | AUC=0.7692 | best_val=0.4450 | trials=200 | 54.2s | ETA: 0:06:19
+2026-03-09 07:41:03 | INFO     | tpe.benchmark |   │  [Optuna] Fold 2/8 | AUC=0.8007 | best_val=0.5412 | trials=200 | 27.7s | ETA: 0:04:05
+2026-03-09 07:42:01 | INFO     | tpe.benchmark |   │  [Optuna] Fold 3/8 | AUC=0.7247 | best_val=0.5153 | trials=200 | 57.4s | ETA: 0:03:52
+2026-03-09 07:42:39 | INFO     | tpe.benchmark |   │  [Optuna] Fold 4/8 | AUC=0.7502 | best_val=0.4517 | trials=200 | 38.0s | ETA: 0:02:44
+2026-03-09 07:43:45 | INFO     | tpe.benchmark |   │  [Optuna] Fold 5/8 | AUC=0.7454 | best_val=0.4648 | trials=200 | 66.9s | ETA: 0:02:42
+2026-03-09 07:44:51 | INFO     | tpe.benchmark |   │  [Optuna] Fold 6/8 | AUC=0.8127 | best_val=0.4501 | trials=200 | 65.1s | ETA: 0:01:53
+2026-03-09 07:45:51 | INFO     | tpe.benchmark |   │  [Optuna] Fold 7/8 | AUC=0.7979 | best_val=0.4499 | trials=200 | 60.4s | ETA: 0:01:04
+2026-03-09 07:47:25 | INFO     | tpe.benchmark |   │  [Optuna] Fold 8/8 | AUC=0.7779 | best_val=0.4535 | trials=200 | 93.9s | ETA: done
+2026-03-09 07:47:25 | INFO     | tpe.benchmark |   └─ [Optuna] credit-g | AUC=0.7723±0.0287 | 7.7 min
+2026-03-09 07:47:25 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (88 rows)
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | 
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | ======================================================================
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | ALL EXPERIMENTS COMPLETE
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | Datasets   : 11 / 11
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | Failed     : 0  
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | Wall time  : 7:18:14  (7.3 hr)
+2026-03-09 07:47:25 | DEBUG    | tpe.benchmark | Results saved → /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv  (88 rows)
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | Results    : /mnt/disk1/erdemy/app2scale/hdmr-opt/results/tabarena/optuna_all18_20260309_002910.csv
+2026-03-09 07:47:25 | INFO     | tpe.benchmark | ======================================================================

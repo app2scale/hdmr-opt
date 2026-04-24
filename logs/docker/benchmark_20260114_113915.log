@@ -1,0 +1,24 @@
+================================================================================
+HDMR FORECASTING BENCHMARK
+================================================================================
+
+Configuration:
+  Data: src/data/transactions.csv
+  Split date: 2020-01-01
+  Models: xgboost, lightgbm, arima, ets
+  Seeds: 5 (starting from 42)
+  HDMR config: N=500, m=7, 
+               basis=Cosine, adaptive=False
+
+Loading data...
+  ✓ Train: 1525 samples
+  ✓ Test: 547 samples
+
+================================================================================
+Model: XGBOOST
+================================================================================
+
+  Seed 42: Running HDMR optimization...
+    MAPE: 10.50%, Time: 165.1s
+
+  Seed 43: Running HDMR optimization...
