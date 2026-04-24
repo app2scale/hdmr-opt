@@ -42,7 +42,7 @@ import pandas as pd
 from tqdm import tqdm
 
 # Add src to path
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Import HDMR components
 from src.main import HDMRConfig, HDMROptimizer, _ensure_2d, _safe_call

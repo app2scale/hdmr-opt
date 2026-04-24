@@ -1,0 +1,56 @@
+
+TabArena Dataset Downloader
+Mode    : DOWNLOAD + CACHE
+Datasets: 18
+Cache   : ~/.openml/  (auto-managed by openml-python)
+
+[ 1/18] 46954 QSAR_fish_toxicity ... OK  N=907  d=6  (0.03s)
+[ 2/18] 46917 concrete_compressive_strength ... OK  N=1030  d=8  (0.65s)
+[ 3/18] 46931 healthcare_insurance_expenses ... OK  N=1338  d=6  (0.98s)
+[ 4/18] 46904 airfoil_self_noise ... OK  N=1503  d=5  (0.53s)
+[ 5/18] 46907 Fiat500_used ... OK  N=1538  d=7  (0.6s)
+[ 6/18] 46942 miami_housing ... OK  N=13776  d=15  (0.83s)
+[ 7/18] 46934 houses ... OK  N=20640  d=8  (0.73s)
+[ 8/18] 46961 superconductivity ... OK  N=21263  d=81  (1.51s)
+[ 9/18] 46928 Food_Delivery_Time ... OK  N=45451  d=9  (0.81s)
+[10/18] 46923 diamonds ... OK  N=53940  d=9  (1.14s)
+[11/18] 46952 qsar-biodeg ... OK  N=1054  d=41  (0.87s)
+[12/18] 46927 Fitness_Club ... OK  N=1500  d=6  (0.57s)
+[13/18] 46938 Is-this-a-good-customer ... OK  N=1723  d=13  (1.29s)
+[14/18] 46940 Marketing_Campaign ... OK  N=2240  d=25  (2.93s)
+[15/18] 46930 hazelnut-spread-contaminant-detection ... OK  N=2400  d=30  (1.51s)
+[16/18] 46956 seismic-bumps ... OK  N=2584  d=15  (0.7s)
+[17/18] 46963 website_phishing ... OK  N=1353  d=9  (0.51s)
+[18/18] 46918 credit-g ... OK  N=1000  d=20  (0.58s)
+
+======================================================================
+  REGRESSION DATASETS (10/10)
+======================================================================
+  ✅  46954  QSAR_fish_toxicity                          N=907     d=6   
+  ✅  46917  concrete_compressive_strength               N=1030    d=8   
+  ✅  46931  healthcare_insurance_expenses               N=1338    d=6   
+  ✅  46904  airfoil_self_noise                          N=1503    d=5   
+  ✅  46907  Fiat500_used                                N=1538    d=7   
+  ✅  46942  miami_housing                               N=13776   d=15  
+  ✅  46934  houses                                      N=20640   d=8   
+  ✅  46961  superconductivity                           N=21263   d=81  
+  ✅  46928  Food_Delivery_Time                          N=45451   d=9   
+  ✅  46923  diamonds                                    N=53940   d=9   
+
+======================================================================
+  CLASSIFICATION DATASETS (8/8)
+======================================================================
+  ✅  46952  qsar-biodeg                                 N=1054    d=41  
+  ✅  46927  Fitness_Club                                N=1500    d=6   
+  ✅  46938  Is-this-a-good-customer                     N=1723    d=13  
+  ✅  46940  Marketing_Campaign                          N=2240    d=25  
+  ✅  46930  hazelnut-spread-contaminant-detection       N=2400    d=30  
+  ✅  46956  seismic-bumps                               N=2584    d=15  
+  ✅  46963  website_phishing                            N=1353    d=9   
+  ✅  46918  credit-g                                    N=1000    d=20  
+
+======================================================================
+  SUMMARY: 18/18 OK  |  0 errors
+======================================================================
+
+Dataset info saved → dataset_info.csv
