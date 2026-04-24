@@ -15,8 +15,10 @@ pipenv/
 
 # Results and outputs
 results/
+!codeocean/results/
 *.log
 *.png
+
 
 # Python cache
 __pycache__/

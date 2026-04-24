@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  comparison:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: python3 experiments/compare_optimizers.py --model xgboost
+    volumes:
+      - ../results:/workspace/results
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+  
+  sensitivity:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: python3 experiments/sensitivity_analysis.py --model xgboost
+    volumes:
+      - ../results:/workspace/results
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

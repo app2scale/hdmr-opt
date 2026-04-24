@@ -1,0 +1,40 @@
+# Core Scientific Computing
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.2.3
+
+# Bayesian Optimization
+optuna>=3.3.0
+
+# Visualization
+matplotlib==3.10.0
+plotly==6.0.0
+seaborn==0.13.2
+
+# Machine Learning - Gradient Boosting
+xgboost==3.0.5
+lightgbm==3.3.5
+scikit-learn==1.3.2
+
+# Statistical Forecasting
+statsmodels==0.14.4
+
+# Arrow
+pyarrow==14.0.2
+
+# Web Interface (optional in container)
+# streamlit==1.41.1
+
+# Utilities
+python-dotenv==1.0.1
+tqdm==4.67.1
+joblib==1.5.3
+threadpoolctl==3.6.0
+
+# Deep Learning
+torch>=2.0.0
+pytorch-lightning==2.2.4
+
+# Data Sources
+openml>=0.14.1
+
