@@ -2,9 +2,8 @@
 TabArena Optuna (TPE) Baseline: XGBoost HPO — All 18 Datasets
 ==============================================================
 
-Tüm 18 TabArena dataset üzerinde (10 regression + 8 classification)
-Optuna TPE baseline çalıştırır. tabarena_hdmr_xgb.py ile birebir aynı
-protokol ve search space kullanır — saf karşılaştırma sağlanır.
+Runs the Optuna TPE baseline on all 18 TabArena datasets (10 regression + 8 classification).
+Uses exactly the same protocol and search space as tabarena_hdmr_xgb.py for a fair comparison.
 
 Regression     → XGBRegressor  + RMSE / MAE / R²    (minimize val RMSE)
 Classification → XGBClassifier + ROC-AUC / Acc / LL (minimize val log-loss)
@@ -23,21 +22,22 @@ Datasets (TabArena v0.1, OpenML suite 457):
   Classification(8): 46952 46927 46938 46940 46930 46956 46963 46918
 
 Env vars:
-  DATASETS        virgülle ayrılmış DID listesi (default: tüm 18)
+  DATASETS        comma-separated DID list (default: all 18)
   TASK_FILTER     regression | classification | all (default: all)
-  OPTUNA_TRIALS   trial sayısı per fold (default: 200)
-  N_FOLDS         outer CV fold sayısı (default: 8)
+  OPTUNA_TRIALS   number of trials per fold (default: 200)
+  N_FOLDS         number of outer CV folds (default: 8)
   SEED            random seed (default: 42)
   LOG_LEVEL       DEBUG | INFO | WARNING (default: INFO)
 
-Çalıştırma:
+Usage:
   python tabarena_optuna_xgb.py
   TASK_FILTER=regression python tabarena_optuna_xgb.py
-  DATASETS=46917,46904 N_FOLDS=2 OPTUNA_TRIALS=20 python tabarena_optuna_xgb.py  # smoke
+  DATASETS=46917,46904 N_FOLDS=2 OPTUNA_TRIALS=20 python tabarena_optuna_xgb.py  # smoke test
 
 Author : HDMR Research
 Version: 2.0.0
 """
+
 
 from __future__ import annotations
 

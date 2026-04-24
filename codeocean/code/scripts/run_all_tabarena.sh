@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 # =============================================================================
 # run_all_tabarena.sh — v2
-# Mevcut 3 script üzerinde çalışır:
+# Runs across three core benchmarking scripts:
 #   tabarena_hdmr_xgb.py
 #   tabarena_optuna_xgb.py
 #   tabarena_random_search_xgb.py
 #
-# Kullanım:
+# Usage:
 #   bash run_all_tabarena.sh [method] [dataset_group]
 #
 # method: all | hdmr | adaptive200 | adaptive600 | rs | optuna | smoke
 # dataset_group: regression (default) | all18
 #
-# Örnekler:
+# Examples:
 #   bash run_all_tabarena.sh smoke
 #   bash run_all_tabarena.sh hdmr regression
 #   bash run_all_tabarena.sh all regression
 #   MAX_PARALLEL=4 bash run_all_tabarena.sh all regression
 # =============================================================================
+
 
 set -euo pipefail
 
@@ -124,7 +125,7 @@ launch() {
     local logfile="${LOG_DIR}/full_${tag}_${did}.log"
     local job="${tag}_${name:0:25}"
 
-    # Resume: tamamlanmis job'lari atla
+    # Resume: skip completed jobs
     if [ -f "$logfile" ] && grep -q "Experiment complete" "$logfile" 2>/dev/null; then
         log "SKIP (already done): $job"
         return

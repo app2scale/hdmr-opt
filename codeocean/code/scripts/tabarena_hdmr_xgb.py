@@ -2,15 +2,15 @@
 TabArena HDMR Benchmark: XGBoost HPO — All 18 Datasets
 =======================================================
 
-Tüm 18 TabArena dataset üzerinde (10 regression + 8 classification)
-HDMR-200, A-HDMR-200 ve A-HDMR-600 yöntemlerini karşılaştırır.
+Compares HDMR-200, A-HDMR-200, and A-HDMR-600 methods on all 18 TabArena datasets 
+(10 regression + 8 classification).
 
 Regression  → XGBRegressor  + RMSE / MAE / R²
 Classification → XGBClassifier + ROC-AUC / Accuracy / Log-loss
 
 Search space:
   Regression    : TabArena Table C.3 (10D)
-  Classification: TabArena Table C.3 — n_estimators kaldırılmış,
+  Classification: TabArena Table C.3 — n_estimators removed, 
                   use_label_encoder=False, eval_metric=logloss
 
 Datasets (TabArena v0.1, OpenML suite 457):
@@ -18,26 +18,27 @@ Datasets (TabArena v0.1, OpenML suite 457):
   Classification(8): 46952 46927 46938 46940 46930 46956 46963 46918
 
 Env vars:
-  DATASETS        virgülle ayrılmış DID listesi (default: tüm 18)
+  DATASETS        comma-separated DID list (default: all 18)
   TASK_FILTER     regression | classification | all (default: all)
-  HDMR_SAMPLES    her iterasyon başına sample sayısı (default: 200)
+  HDMR_SAMPLES    number of samples per iteration (default: 200)
   HDMR_BASIS      Legendre | Chebyshev | Cosine (default: Legendre)
-  HDMR_DEGREE     polinom derecesi (default: 3)
+  HDMR_DEGREE     polynomial degree (default: 3)
   HDMR_K          adaptive elite count (default: 50)
-  HDMR_EPSILON    convergence toleransı (default: 0.01)
-  HDMR_CLIP       adaptive arama daralma oranı (default: 0.90)
-  N_FOLDS         outer CV fold sayısı (default: 8)
+  HDMR_EPSILON    convergence tolerance (default: 0.01)
+  HDMR_CLIP       adaptive search shrinkage ratio (default: 0.90)
+  N_FOLDS         number of outer CV folds (default: 8)
   SEED            random seed (default: 42)
   LOG_LEVEL       DEBUG | INFO | WARNING (default: INFO)
 
-Çalıştırma:
-  python tabarena_hdmr_xgb.py                          # tüm 18 dataset
-  TASK_FILTER=regression python tabarena_hdmr_xgb.py   # sadece regression
-  DATASETS=46917,46904 N_FOLDS=2 HDMR_SAMPLES=20 python tabarena_hdmr_xgb.py  # smoke
+Usage:
+  python tabarena_hdmr_xgb.py                          # all 18 datasets
+  TASK_FILTER=regression python tabarena_hdmr_xgb.py   # regression only
+  DATASETS=46917,46904 N_FOLDS=2 HDMR_SAMPLES=20 python tabarena_hdmr_xgb.py  # smoke test
 
 Author : HDMR Research
 Version: 7.0.0
 """
+
 
 from __future__ import annotations
 

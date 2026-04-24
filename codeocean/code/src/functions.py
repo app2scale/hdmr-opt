@@ -1125,7 +1125,7 @@ def visualize_2d_function(
     
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"✓ Figure saved to: {save_path}")
+        print(f"[OK] Figure saved to: {save_path}")
     else:
         plt.show()
 

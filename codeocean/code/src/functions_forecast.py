@@ -88,7 +88,7 @@ def mean_absolute_percentage_error(
     """
     Calculate Mean Absolute Percentage Error (MAPE).
     
-    MAPE = (100/n) * Î£ |yáµ¢ - Å·áµ¢| / |yáµ¢|
+    MAPE = (100/n) * sum(|y_i - y_hat_i| / |y_i|)
     
     Parameters
     ----------
@@ -106,7 +106,7 @@ def mean_absolute_percentage_error(
     -----
     - MAPE is undefined when y_true contains zeros
     - Small values in y_true can lead to very large MAPE
-    - Not symmetric: MAPE(y, Å·) â‰  MAPE(Å·, y)
+    - Not symmetric: MAPE(y, y_hat) != MAPE(y_hat, y)
     """
     y_true, y_pred = np.array(y_true), np.array(y_pred)
     
@@ -125,7 +125,7 @@ def symmetric_mean_absolute_percentage_error(
     """
     Calculate Symmetric Mean Absolute Percentage Error (SMAPE).
     
-    SMAPE = (100/n) * Î£ |yáµ¢ - Å·áµ¢| / (|yáµ¢| + |Å·áµ¢|)
+    SMAPE = (100/n) * sum(|y_i - y_hat_i| / (|y_i| + |y_hat_i|))
     
     Parameters
     ----------
@@ -1377,9 +1377,9 @@ def optimize_helper(learning_rate: float, subsample: float) -> float:
     Parameters
     ----------
     learning_rate : float
-        XGBoost learning rate (0 < Î· â‰¤ 1).
+        XGBoost learning rate (0 < eta <= 1).
     subsample : float
-        Fraction of samples to use (0 < subsample â‰¤ 1).
+        Fraction of samples to use (0 < subsample <= 1).
     
     Returns
     -------
@@ -1461,7 +1461,7 @@ if __name__ == "__main__":
     }
     
     for name, forecaster_class in forecasters.items():
-        status = "âœ“ Available" if forecaster_class else "âœ— Not installed"
+        status = "[OK] Available" if forecaster_class else "[X] Not installed"
         print(f"   {name:15s} {status}")
         
         if forecaster_class:

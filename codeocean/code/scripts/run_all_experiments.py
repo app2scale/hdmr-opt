@@ -309,10 +309,10 @@ Examples:
     print("HDMR FORECASTING RESEARCH - MASTER EXPERIMENT RUNNER")
     print("=" * 80)
     print("\nExperiment Plan:")
-    print(f"  Benchmark: {'✓' if run_benchmark else '✗'}")
-    print(f"  Comparison: {'✓' if run_comparison else '✗'}")
-    print(f"  Sensitivity: {'✓' if run_sensitivity else '✗'}")
-    print(f"  Ablation: {'✓' if run_ablation else '✗'}")
+    print(f"  Benchmark: {'[YES]' if run_benchmark else '[NO]'}")
+    print(f"  Comparison: {'[YES]' if run_comparison else '[NO]'}")
+    print(f"  Sensitivity: {'[YES]' if run_sensitivity else '[NO]'}")
+    print(f"  Ablation: {'[YES]' if run_ablation else '[NO]'}")
     print(f"  Mode: {'QUICK' if args.quick else 'FULL'}")
     print("")
     
@@ -353,14 +353,14 @@ Examples:
     print("EXPERIMENT SUITE COMPLETED")
     print("=" * 80)
     print(f"Total runtime: {hours}h {minutes}m")
-    print(f"Status: {'✓ All experiments successful' if all_success else '✗ Some experiments failed'}")
+    print(f"Status: {'[SUCCESS] All experiments successful' if all_success else '[FAILED] Some experiments failed'}")
     print("\nResults saved in: results/")
     print("  - benchmarks/    : Model performance comparisons")
     print("  - comparisons/   : HDMR vs baseline optimizers")
     print("  - sensitivity/   : Hyperparameter importance analysis")
     if run_ablation:
         print("  - ablation/      : HDMR configuration studies")
-    print("\n✓ Ready for publication analysis!")
+    print("\n[INFO] Ready for publication analysis!")
 
 
 if __name__ == "__main__":

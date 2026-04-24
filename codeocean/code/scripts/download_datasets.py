@@ -1,14 +1,15 @@
 """
 download_datasets.py
 ====================
-TabArena'daki 18 dataset'i OpenML'den indirir ve cache'ler (~/.openml/).
-Her dataset için N, d, target, task bilgilerini raporlar.
+Downloads and caches the 18 TabArena datasets from OpenML (~/.openml/).
+Reports N, d, target, and task information for each dataset.
 
-Kullanım:
-    python download_datasets.py           # tüm 18 dataset
-    python download_datasets.py --verify  # sadece kontrol, indirmez
-    python download_datasets.py --ids 46917 46954  # belirli ID'ler
+Usage:
+    python download_datasets.py           # all 18 datasets
+    python download_datasets.py --verify  # metadata only, don't download
+    python download_datasets.py --ids 46917 46954  # specific IDs
 """
+
 
 from __future__ import annotations
 import argparse
@@ -129,7 +130,7 @@ def print_table(results: list[dict]) -> None:
     clf   = [r for r in results if r["task"] == "classification"]
 
     def fmt_row(r):
-        status = "✅" if r["status"].startswith("ok") else "❌"
+        status = "[OK]" if r["status"].startswith("ok") else "[FAIL]"
         n   = str(r["N"])  if r["N"]  else "—"
         d   = str(r["d"])  if r["d"]  else "—"
         err = f"  ← {r['error'][:50]}" if r["error"] else ""

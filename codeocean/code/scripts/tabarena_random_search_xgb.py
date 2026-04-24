@@ -2,9 +2,8 @@
 TabArena Random Search Baseline: XGBoost HPO — All 18 Datasets
 ===============================================================
 
-Tüm 18 TabArena dataset üzerinde (10 regression + 8 classification)
-Random Search baseline çalıştırır. tabarena_hdmr_xgb.py ile birebir
-aynı protokol ve search space kullanır — saf karşılaştırma sağlanır.
+Runs the Random Search baseline on all 18 TabArena datasets (10 regression + 8 classification).
+Uses exactly the same protocol and search space as tabarena_hdmr_xgb.py for a fair comparison.
 
 Regression     → XGBRegressor  + RMSE / MAE / R²    (minimize val RMSE)
 Classification → XGBClassifier + ROC-AUC / Acc / LL (minimize val log-loss)
@@ -22,21 +21,22 @@ Datasets (TabArena v0.1, OpenML suite 457):
   Classification(8): 46952 46927 46938 46940 46930 46956 46963 46918
 
 Env vars:
-  DATASETS        virgülle ayrılmış DID listesi (default: tüm 18)
+  DATASETS        comma-separated DID list (default: all 18)
   TASK_FILTER     regression | classification | all (default: all)
-  RS_SAMPLES      sample sayısı per fold (default: 200)
-  N_FOLDS         outer CV fold sayısı (default: 8)
+  RS_SAMPLES      number of samples per fold (default: 200)
+  N_FOLDS         number of outer CV folds (default: 8)
   SEED            random seed (default: 42)
   LOG_LEVEL       DEBUG | INFO | WARNING (default: INFO)
 
-Çalıştırma:
+Usage:
   python tabarena_random_search_xgb.py
   TASK_FILTER=regression python tabarena_random_search_xgb.py
-  DATASETS=46917,46904 N_FOLDS=2 RS_SAMPLES=20 python tabarena_random_search_xgb.py  # smoke
+  DATASETS=46917,46904 N_FOLDS=2 RS_SAMPLES=20 python tabarena_random_search_xgb.py  # smoke test
 
 Author : HDMR Research
 Version: 2.0.0
 """
+
 
 from __future__ import annotations
 

@@ -675,7 +675,7 @@ class HDMROptimizer:
                 rel_improvement = (prev_f - best_f) / (abs(prev_f) + 1e-10)
                 if rel_improvement < self.cfg.epsilon:
                     if self.cfg.disp:
-                        print(f"  ✓ Converged at iter {it} (rel_improvement={rel_improvement:.2e})")
+                        print(f"  [CONVERGED] at iter {it} (rel_improvement={rel_improvement:.2e})")
                     best.nit = it
                     best.nfev = total_nfev
                     if self.cfg.enable_plots:
@@ -1049,7 +1049,7 @@ Example (compare v3 vs v4):
         f.write("HDMR v4 OPTIMIZATION RESULTS\n" + "=" * 70 + "\n\n")
         for i, r in enumerate(results, 1):
             f.write(f"Run {i}:\n{r}\n\n")
-    print(f"\n✓ Results → {output_base}.txt")
+    print(f"\n[INFO] Results saved to → {output_base}.txt")
 
     if args.numberOfRuns == 1 and not args.noPlots and fig1 is not None:
         fig1.savefig(output_base + "_results.png", dpi=300, bbox_inches="tight")
@@ -1060,7 +1060,7 @@ Example (compare v3 vs v4):
 
         plt.show()
 
-    print("\n✓ HDMR v4 optimization completed.\n")
+    print("\n[SUCCESS] HDMR v4 optimization completed.\n")
 
 
 if __name__ == "__main__":

@@ -60,7 +60,7 @@ esac
 
 echo ""
 echo "----------------------------------------------------------"
-echo "✓ SUCCESS: All tasks completed successfully."
+echo "[SUCCESS] All tasks completed successfully."
 echo "Results Location: /results/"
 echo "End Time: $(date)"
 echo "----------------------------------------------------------"
